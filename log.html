@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Log In</title>
+
+        <!-- reset CSS -->
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+
+        <!-- embed fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Icon -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- styles -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <!-- Form -->
+        <div class="content">
+            <!-- Log In -->
+            <div class="form-wrapper log-in open" id="log-in">
+                <form action="" class="form">
+                    <p class="title">Login</p>
+                    <label for="text">Username</label>
+                    <div class="user-input">
+                        <i class="fa-solid fa-user ic"></i>
+                        <input
+                            id="text"
+                            type="text"
+                            placeholder="Enter your username or email"
+                        />
+                    </div>
+
+                    <label for="password">Password</label>
+                    <div class="pw-input">
+                        <i class="fa-solid fa-key ic"></i>
+                        <input
+                            id="password"
+                            type="password"
+                            placeholder="Enter your password"
+                        />
+                    </div>
+
+                    <div class="forget-pw">
+                        <a href="#!">Forget your password ?</a>
+                    </div>
+
+                    <a href="#!" class="submit">LOG IN</a>
+
+                    <span>Or log in with</span>
+
+                    <div class="log-in-op">
+                        <a href="#!"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#!"><i class="fa-brands fa-google"></i></a>
+                        <a href="#!"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+
+                    <div class="footer">
+                        <span>Not signed yet ?</span>
+
+                        <button class="link" id="sign-up-link">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sign Up -->
+            <div class="form-wrapper sign-up hidden" id="sign-up">
+                <form action="" class="form">
+                    <p class="title">Sign Up</p>
+                    <label for="text1">Username</label>
+                    <div class="user-input">
+                        <i class="fa-solid fa-user ic"></i>
+                        <input
+                            id="text1"
+                            type="text"
+                            placeholder="Enter your username or email"
+                        />
+                    </div>
+
+                    <label for="password1">Password</label>
+                    <div class="pw-input">
+                        <i class="fa-solid fa-key ic"></i>
+                        <input
+                            id="password1"
+                            type="password"
+                            placeholder="Enter your password"
+                        />
+                    </div>
+                    <label for="cf-password">Confirm</label>
+                    <div class="pw-input">
+                        <i class="fa-solid fa-key ic"></i>
+                        <input
+                            id="cf-password"
+                            type="password"
+                            placeholder="Confirm your password"
+                        />
+                    </div>
+
+                    <a href="#!" class="submit">SIGN UP</a>
+
+                    <span>Or sign up with</span>
+
+                    <div class="log-in-op">
+                        <a href="#!"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#!"><i class="fa-brands fa-google"></i></a>
+                        <a href="#!"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+
+                    <div class="footer">
+                        <span>Already have an account ?</span>
+
+                        <button class="link" id="log-in-link">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="./assets/js/log.js"></script>
+    </body>
+</html>
