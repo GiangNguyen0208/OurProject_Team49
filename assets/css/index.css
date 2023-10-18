@@ -1,0 +1,263 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    background-color: #fff;
+    letter-spacing: 1px;
+}
+ html {
+    font-size: 18px;
+    /* 1rem = 18px */
+    /* Nếu không khai báo font-size thì 1rem tự động là 16px */
+}
+button {
+    background-color: #ee6c4d;
+    border: 1px solid #293241;
+    border-radius: 7px;
+    color: black;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .5s;
+}
+button:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+/* HEADER */
+header {
+    background-color: #293241;
+    padding: 20px 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+
+}
+.header__content {
+    width: 90%;
+    text-transform: uppercase;
+    margin:0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__content p span {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.header__content .search input {
+    margin: 0 20px;
+    padding: 5px 10px 5px;
+    font-family: inherit;
+}
+.header__content .search input:focus {
+    outline: none;
+}
+.header__content .menu__bar {
+    list-style: none;
+}
+.header__content .menu__bar .menu__items {
+    display: inline;
+    margin: 0 1rem;
+}
+.header__content .menu__bar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: all .5s;
+}
+.header__content .menu__bar a:hover {
+    color: #ee6c4d;
+    border-bottom: 4px solid #ee6c4d;
+    padding-bottom: 25px;
+}
+.header__content p {
+    font-size: 2.3rem;
+    color: white;
+}
+.header__content .sign__in, .header__content .sign__in {
+    margin: 0 10px;
+}
+
+.header__content .sign__in a, .header__content .sign__up a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ee6c4d;
+    cursor: pointer;
+    opacity: 1;
+}
+/* sign__in and sign__up */
+.sign__in, .sign__up {
+    position: relative;
+}
+.sign__in i, .sign__up i {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 100%;
+    color: white;
+    opacity: 0;
+}
+.header__content .sign__in:hover i {
+    opacity: 1;
+}
+.header__content .sign__in:hover a {
+    opacity: 0;
+}
+.header__content .sign__up:hover i {
+    opacity: 1;
+}
+.header__content .sign__up:hover a {
+    opacity: 0;
+}
+
+/* Menu Item SẢN PHẨM  */
+.menu__bar .menu__items {
+    position: relative;
+}
+.menu__bar .menu__items .drum__container {
+    display: none;
+    position: absolute;
+    top: 37px;
+    left: -5px;
+    min-width: 100px;
+    height: 100%;
+}
+.menu__bar .menu__items .drum__container .drum__item {
+    background-color: #293241;
+    padding: 10px 0;
+    font-size: 0.8rem;
+}
+.menu__bar .menu__items .drum__container .drum__item:hover {
+    background-color: black;
+    color: white;
+    padding-bottom: 10px;
+}
+.menu__bar .menu__items .drum__container .drum__item a {
+    padding: 0 5px;
+}
+
+.menu__bar .menu__items:hover .drum__container {
+    display: block;
+}
+
+
+/* CAROUSEL  */
+.carousel{
+    background-image: url(./../img/carousel/c1.jpg);
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel .carousel__content h1 {
+    font-size: 4.5rem;
+    color: white;
+}
+.carousel .carousel__content p {
+    font-size: 1.06rem;
+    padding: 23px 0;
+}
+
+/* INTRO */
+.intro {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.intro .intro__img1{
+    grid-column: 2 / span 2;
+}
+.intro .intro__drum {
+    grid-column: 1 / span 2;
+}
+.intro .intro__img4 {
+    grid-column: 3 / span 2;
+}
+.intro__items img {
+    width: 100%;
+    display: block;
+}
+.intro__img3 img {
+    height: 385px
+}
+.intro__img4 img {
+    height: 385px
+}
+.intro .intro__text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 32px;
+}
+.intro .intro__drum {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 32px;
+}
+.intro__items h3 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 3.2rem;
+}
+.intro__items p {
+    color: #c1c1c1;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 29px;
+}
+.intro .intro__items:first-child, .intro .intro__items:nth-child(8) {
+    background-color: #293241;
+}
+.intro .intro__items:nth-child(3), .intro .intro__items:nth-child(4) {
+    background-color: #ee6c4d;
+}
+.intro .intro__items:nth-child(6) {
+    background-color: #465266;
+}
+
+/* PRODUCTS */
+.products {
+    padding: 50px 50px;
+    display: inline-block;
+}
+
+
+
+
+
+
+

@@ -7,6 +7,7 @@
 
         <!-- reset CSS -->
         <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/index.css">
 
         <!-- embed fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,6 +17,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <!-- FONT GOOGLE -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+        
+        <!-- FONT AWRSOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 
         <link
             href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
@@ -36,6 +44,145 @@
         />
         <!-- styles -->
         <link rel="stylesheet" href="./assets/css/style.css" />
+
+        <!-- OWL CAROUSEL CSS -->
+        <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
     </head>
-    <body></body>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="header__content">
+                <p><i class="fa fa-drum"></i>   <Span>Dr/</Span>um</p>
+                <div class="search">
+                    <input type="text" placeholder="Tìm kiếm">
+                    <button type="submit">Search</button>
+                </div>
+                <nav>
+                    <ul class="menu__bar">
+                        <li class="menu__items"><a href="#">Trang chính</a></li>
+                        <li class="menu__items"><a href="#">Giới thiệu</a></li>
+                        <li class="menu__items"><a href="#">Sản Phẩm</a>
+                            <ul class="drum__container">
+                                <li class="drum__item"><a href="#">Trống điện</a></li>
+                                <li class="drum__item"><a href="#">Trống bộ</a></li>
+                                <li class="drum__item"><a href="#">Trống lẻ</a></li>
+                                <li class="drum__item"><a href="#">Percussion</a></li>
+                                <li class="drum__item"><a href="#">Symbal</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu__items"><a href="#">Khuyến mãi</a></li>
+                        <li class="menu__items"><a href="#">Giáo dục</a></li>
+                        <li class="menu__items"><a href="#">Cho thuê</a></li>
+                    </ul>
+                </nav>
+                <div class="sign__in">
+                    <a href="#">Đăng Nhập</a>
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="sign__up">
+                    <a href="#">Đăng Ký</a>
+                    <i class="fa fa-user-plus"></i>
+                </div>
+            </div>
+        </header>
+        <!-- CAROUSEL -->
+        <section class="carousel">
+            <div class="carousel__content">
+                    <h1>Dịch vụ mua bán trống</h1>
+                    <p>Cung cấp những sản phẩm tốt nhất Việt Nam</p>
+                    <button>Tìm hiểu thêm</button>
+            </div>
+        </section>
+        <!-- INTRO -->
+        <section class="intro">
+            <div class="intro__items intro__text">
+                <div>
+                    <h3>Truyền thống và hiện đại</h3>
+                    <p>hể hiện sự kết hợp giữa truyền thống và hiện đại trong nghệ thuật chơi trống. Trống truyền thống vẫn được gìn giữ và phát triển trong thời đại ngày nay.</p>
+                </div>
+            </div>
+            <div class="intro__items intro__img1">
+                <img src="./assets/img/intro/intro1.jpg" alt="intro_1">
+            </div>
+            <div class="intro__items intro__text">
+                <div>
+                    <h3>Tính đa dạng</h3>
+                    <p>Sự đa dạng về hình dáng, kích thước và chất liệu, đa dạng về âm sắc và đa dạng về cách thức sử dụng.</p>
+                </div>
+            </div>
+            <div class="intro__items intro__drum">
+                <div>
+                    <h3>Chất lượng</h3>
+                    <p>Nơi Khách Hàng có thể đặt niềm tin về sự uy tín và chất lượng của từng sản phẩm.</p>
+                </div>
+            </div>
+            <div class="intro__items">
+                <img src="./assets/img/intro/intro2.jpg" alt="intro_2">
+            </div>
+            <div class="intro__items intro__text">
+                <div>
+                    <h3>Dịch vụ</h3>
+                    <p>Giá cả phải chăng, dịch vụ cho thuê Trống</p>
+                </div>
+            </div>
+            <div class="intro__items intro__img3">
+                <img src="./assets/img/intro/intro3.jpg" alt="intro_3">
+            </div>
+            <div class="intro__items intro__text">
+                <div>
+                    <h3>Niềm vui của cuộc sống</h3>
+                    <p>Niềm vui của cuộc sống</p>
+                </div>
+            </div>
+            <div class="intro__items intro__img4">
+                <img src="./assets/img/intro/intro4.jpg" alt="intro_4">
+            </div>
+        </section>
+        <!-- PRODUCTS -->
+        <section class="products">
+            <div class="box__order">
+                <label for="">Tìm theo</label>
+                <div class="box__order__items">
+                    <label for="">Giá</label>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="box__order__items">
+                    <label for="">Tính năng</label>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="box__order__items">
+                    <label for="">Thương hiệu</label>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="box__order__items right__side">
+                    <label for="">Sắp xếp theo</label>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+            </div>
+        </section>
+        <!-- FEEDBACK -->
+        <section></section>
+        <!-- CONTACT -->
+        <section></section>
+        <!-- FOOTER -->
+        <footer></footer>
+    </body>
+
+     <!-- OWL CAROUSEL JS -->
+     <script src="./asset/js/owl.carousel.min.js"></script>
+     <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            nav: false,
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+            responsive: {
+                0: {
+                    items: 1
+                }
+            }
+        })
+    </script>
 </html>
