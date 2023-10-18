@@ -8,16 +8,20 @@ var logInButton = document.getElementById("log-in-link");
 var logInForm = document.getElementById("log-in");
 
 // Lấy tham chiếu đến form đăng ký
-var signUpform = document.getElementById("sign-up");
+var signUpForm = document.getElementById("sign-up");
 
 // Thêm sự kiện click cho button Sign Up
 signUpButton.addEventListener("click", function() {
     logInForm.classList.remove("open");
-    signUpform.classList.add("open");
+    logInForm.classList.add("hidden");
+    signUpForm.classList.add("open");
+    signUpForm.classList.remove("hidden");
 });
 
 // Thêm sự kiện click cho button Log In
 logInButton.addEventListener("click", function() {
-    signUpform.classList.remove("open");
+    signUpForm.classList.remove("open");
+    signUpForm.classList.add("hidden");
     logInForm.classList.add("open");
+    logInForm.classList.remove("hidden");
 });

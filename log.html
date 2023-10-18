@@ -41,13 +41,14 @@
         <!-- Form -->
         <div class="content">
             <!-- Log In -->
-            <div class="form-wrapper log-in" id="log-in">
+            <div class="form-wrapper log-in open" id="log-in">
                 <form action="" class="form">
                     <p class="title">Login</p>
-                    <label for="username">Username</label>
+                    <label for="text">Username</label>
                     <div class="user-input">
                         <i class="fa-solid fa-user ic"></i>
                         <input
+                            id="text"
                             type="text"
                             placeholder="Enter your username or email"
                         />
@@ -57,14 +58,15 @@
                     <div class="pw-input">
                         <i class="fa-solid fa-key ic"></i>
                         <input
+                            id="password"
                             type="password"
                             placeholder="Enter your password"
                         />
                     </div>
 
-                    <label for="forget" class="forget-pw">
+                    <div class="forget-pw">
                         <a href="#!">Forget your password ?</a>
-                    </label>
+                    </div>
 
                     <a href="#!" class="submit">LOG IN</a>
 
@@ -85,29 +87,33 @@
             </div>
 
             <!-- Sign Up -->
-            <div class="form-wrapper sign-up" id="sign-up">
+            <div class="form-wrapper sign-up hidden" id="sign-up">
                 <form action="" class="form">
                     <p class="title">Sign Up</p>
-                    <label for="username">Username</label>
+                    <label for="text1">Username</label>
                     <div class="user-input">
                         <i class="fa-solid fa-user ic"></i>
                         <input
+                            id="text1"
                             type="text"
                             placeholder="Enter your username or email"
                         />
                     </div>
 
-                    <label for="password">Password</label>
+                    <label for="password1">Password</label>
                     <div class="pw-input">
                         <i class="fa-solid fa-key ic"></i>
                         <input
+                            id="password1"
                             type="password"
                             placeholder="Enter your password"
                         />
                     </div>
+                    <label for="cf-password">Confirm</label>
                     <div class="pw-input">
                         <i class="fa-solid fa-key ic"></i>
                         <input
+                            id="cf-password"
                             type="password"
                             placeholder="Confirm your password"
                         />

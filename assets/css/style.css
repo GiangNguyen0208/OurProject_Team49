@@ -33,6 +33,10 @@ span {
     display: block;
 }
 
+.form-wrapper.hidden {
+    display: none;
+}
+
 /* ========== Form ========== */
 
 .content {
@@ -44,7 +48,6 @@ span {
 }
 
 .form-wrapper {
-    display: none;
     height: 100%;
     text-align: center;
     max-width: 440px;
@@ -167,8 +170,11 @@ position: relative;
 
 .link {
     color: #000;
+    background: transparent;
+    border: none;
 }
 
 .link:hover {
+    cursor: pointer;
     opacity: 0.8;
 }
