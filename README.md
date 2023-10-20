@@ -28,4 +28,3 @@ Cho phép người dùng tạo tài khoản cá nhân trên trang web đó. Ch�
 Cho phép người dùng truy cập vào tài khoản cá nhân của mình trên trang web bằng cách nhập user name và password.
 -	Quên mật khẩu: Chức năng này cung cấp một cách để khách hàng khôi phục mật khẩu nếu họ quên.
 -	Tích hợp với các tài khoản xã hội: Một chức năng phổ biến khác là cho phép khách hàng đăng nhập bằng tài khoản xã hội như Facebook, Google hoặc Twitter.
->>>>>>> 71952233526e8bce44335f3395c234376eaf29dd
