@@ -1,6 +1,5 @@
 
-=======
-# OurProject_Team49  test
+# OurProject_Team49
 Phân tích chức năng hệ thống
 1.	Chức năng trưng bày sản phẩm
 Chức năng này giúp trình bày thông tin về tên sản phẩm, hình ảnh, mô tả, giá cả và các chi tiết khác để khách hàng dễ dàng tìm kiếm, xem và chọn mua sản phẩm.
