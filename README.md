@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# OurProject_Team49 
-SƠ LƯỢC VỀ CÁC CHỨC NĂNG CỦA TRANG WEB.
 
 =======
 # OurProject_Team49  test
