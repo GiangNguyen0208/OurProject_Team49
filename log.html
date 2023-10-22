@@ -42,35 +42,39 @@
         <div class="content">
             <!-- Log In -->
             <div class="form-wrapper log-in open" id="log-in">
-                <form action="" class="form">
-                    <p class="title">Login</p>
-                    <label for="text">Username</label>
+                <form action="" class="form" autocomplete="off">
+                    <p class="title">Đăng Nhập</p>
+                    <label for="username__login">Tài khoản</label>
                     <div class="user-input">
                         <i class="fa-solid fa-user ic"></i>
                         <input
-                            id="text"
+                            id="username__login"
                             type="text"
-                            placeholder="Enter your username or email"
+                            name="username"
+                            placeholder="Nhập tên tài khoản hoặc email..."
                         />
                     </div>
 
-                    <label for="password">Password</label>
+                    <label for="password__login">Mật khẩu</label>
                     <div class="pw-input">
                         <i class="fa-solid fa-key ic"></i>
                         <input
-                            id="password"
+                            id="password__login"
+                            name="password"
                             type="password"
-                            placeholder="Enter your password"
+                            placeholder="Nhập mật khẩu..."
                         />
                     </div>
 
                     <div class="forget-pw">
-                        <a href="#!">Forget your password ?</a>
+                        <a href="#!">Quên mật khẩu ?</a>
                     </div>
 
-                    <a href="#!" class="submit">LOG IN</a>
+                    <button href="#!" type="submit" class="submit">
+                        ĐĂNG NHẬP
+                    </button>
 
-                    <span>Or log in with</span>
+                    <span>Hoặc là đăng nhập với</span>
 
                     <div class="log-in-op">
                         <a href="#!"><i class="fa-brands fa-facebook-f"></i></a>
@@ -79,49 +83,74 @@
                     </div>
 
                     <div class="footer">
-                        <span>Not signed yet ?</span>
+                        <span>Chưa đăng ký tài khoản ?</span>
 
-                        <button class="link" id="sign-up-link">Sign Up</button>
+                        <button type="button" class="link" id="sign-up-link">
+                            Đăng ký
+                        </button>
                     </div>
                 </form>
             </div>
 
             <!-- Sign Up -->
             <div class="form-wrapper sign-up hidden" id="sign-up">
-                <form action="" class="form">
-                    <p class="title">Sign Up</p>
-                    <label for="text1">Username</label>
+                <form action="" class="form" autocomplete="off">
+                    <p class="title">Đăng Ký</p>
+                    <label for="username__signup">Tài khoản</label>
                     <div class="user-input">
                         <i class="fa-solid fa-user ic"></i>
                         <input
-                            id="text1"
+                            id="username__signup"
+                            name="username"
                             type="text"
-                            placeholder="Enter your username or email"
+                            placeholder="Nhập tên tài khoản hoặc email... "
+                            required
                         />
                     </div>
 
-                    <label for="password1">Password</label>
+                    <label for="email__signup">Email</label>
+                    <div class="user-input">
+                        <i class="fa-solid fa-user ic"></i>
+                        <input
+                            id="email__signup"
+                            name="email__signup"
+                            type="email"
+                            placeholder="Nhập email đăng ký... "
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            required
+                        />
+                    </div>
+
+                    <label for="password__signup">Mật khẩu</label>
                     <div class="pw-input">
                         <i class="fa-solid fa-key ic"></i>
                         <input
-                            id="password1"
+                            id="password__signup"
+                            name="password__signup"
                             type="password"
-                            placeholder="Enter your password"
+                            minlength="6"
+                            placeholder="Nhập mật khẩu..."
+                            required
                         />
                     </div>
-                    <label for="cf-password">Confirm</label>
+                    <label for="confirm-password">Xác nhận mật khẩu</label>
                     <div class="pw-input">
                         <i class="fa-solid fa-key ic"></i>
                         <input
-                            id="cf-password"
+                            id="confirm-password"
+                            name="confirm-password"
                             type="password"
-                            placeholder="Confirm your password"
+                            minlength="6"
+                            placeholder="Xác nhận mật khẩu"
+                            required
                         />
                     </div>
 
-                    <a href="#!" class="submit">SIGN UP</a>
+                    <button href="#!" type="submit" class="submit">
+                        ĐĂNG KÝ
+                    </button>
 
-                    <span>Or sign up with</span>
+                    <span>Hoặc là đăng ký với</span>
 
                     <div class="log-in-op">
                         <a href="#!"><i class="fa-brands fa-facebook-f"></i></a>
@@ -130,9 +159,11 @@
                     </div>
 
                     <div class="footer">
-                        <span>Already have an account ?</span>
+                        <span>Đã có tài khoản ?</span>
 
-                        <button class="link" id="log-in-link">Log In</button>
+                        <button type="button" class="link" id="log-in-link">
+                            Đăng Nhập
+                        </button>
                     </div>
                 </form>
             </div>
