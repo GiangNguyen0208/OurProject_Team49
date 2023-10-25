@@ -552,9 +552,13 @@ header {
 
 
 
-.cagories-item a:hover {
+/* .cagories-item a:hover {
     background-color: #ee6c4d;
     color: white;
+} */
+
+.cagories-item {
+    position: relative;
 }
 
 .cagories>ul {
@@ -589,7 +593,57 @@ header {
     margin: 0;
 }
 
+.cagories-list {
+    width: 100%;
+    float: left;
+    background: #fff;
+    z-index: 5;
+    max-height: 0;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    overflow: hidden;
+    position: absolute;
+    top: 49px;
+}
 
+.cagories-item-line {
+    width: 100%;
+    float: left;
+    color: #231f20;
+    font-family: Roboto-Light;
+    background-image: url(https://vietthuong.vn/assets/frontend/images/arrowcategory.png);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    padding-left: 15px;
+}
+
+.cagories>ul>div:hover>li>a,
+.cagories>ul>div>li.actived>a {
+    background: #ee6c4d;
+    color: #231f20
+}
+
+.cagories-item-line a {
+    color: #231f20;
+    margin-bottom: 5px;
+    display: block
+}
+
+.cagories-item-line a h3,
+.cagories>ul>div>li>a h2 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.cagories>ul>div>li.actived .cagories-list,
+.cagories>ul>div>li:hover .cagories-list {
+    border: 1px solid #ee6c4d;
+    max-height: 9999px;
+    padding: 10px 0 5px
+}
 
 
 
