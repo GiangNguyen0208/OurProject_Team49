@@ -5,10 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
 
-        <!-- reset CSS -->
-        <link rel="stylesheet" href="./assets/css/reset.css" />
-        <link rel="stylesheet" href="./assets/css/index.css">
-        <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
+        <!-- FONT GOOGLE -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+        
+        <!-- FONT AWRSOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+        rel="stylesheet"
+        />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+        />
 
         <!-- embed fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,28 +27,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-        <!-- FONT GOOGLE -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
         
-        <!-- FONT AWRSOME -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <!-- styles -->
-        <link rel="stylesheet" href="./assets/css/style.css" />
-
         <!-- OWL CAROUSEL CSS -->
         <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
         <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
+        
+        <!-- reset CSS -->
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/index.css">
+        <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
+
+        <!-- styles -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
+
     </head>
     <body>
         <!-- HEADER -->
@@ -69,12 +69,10 @@
                     </ul>
                 </nav>
                 <div class="sign__in">
-                    <a href="#">Đăng Nhập</a>
-                    <i class="fa fa-user"></i>
+                    <a href="./log.html">Đăng Nhập</a>
                 </div>
                 <div class="sign__up">
-                    <a href="#">Đăng Ký</a>
-                    <i class="fa fa-user-plus"></i>
+                    <a href="./log.html">Đăng Ký</a>
                 </div>
             </div>
         </header>
@@ -133,11 +131,308 @@
         </section>
         <!-- PRODUCTS -->
         <section class="products">
-          
+            <div class="box_products">
+				
+				
+                <div class="box_order">
+                          <label>Tìm theo</label>
+    
+                          <div class="box_order_item">
+                              <label class="sort_pricess">Giá  <i class="fa fa-caret-down caret"></i></label>
+                              <div id="sort_pricess" class="box_s hidden">
+                                  <input type="hidden" name="pricessss" id="prices" value="">
+                                  <div class="box_ss">
+                                      <ul>
+                                                                                         
+                                              <li>
+                                                  
+                                                  <input type="radio" name="prices" id="prices_1" value="duoi-3-trieu">
+                                                  <label for="prices_1">Dưới 3 Triệu</label>
+                                              </li>
+                                                                                         
+                                              <li>
+                                                  
+                                                  <input type="radio" name="prices" id="prices_2" value="3-5-trieu">
+                                                  <label for="prices_2">3 - 5 triệu</label>
+                                              </li>
+                                                                                         
+                                              <li>
+                                                  
+                                                  <input type="radio" name="prices" id="prices_3" value="5-10-trieu">
+                                                  <label for="prices_3">5 - 10 triệu</label>
+                                              </li>
+                                                                                         
+                                              <li>
+                                                  
+                                                  <input type="radio" name="prices" id="prices_4" value="10-20-trieu">
+                                                  <label for="prices_4">10 - 20 triệu</label>
+                                              </li>
+                                                                                         
+                                              <li>
+                                                  
+                                                  <input type="radio" name="prices" id="prices_5" value="20-40-trieu">
+                                                  <label for="prices_5">20 - 40 triệu</label>
+                                              </li>
+                                                                                         
+                                              <li>
+                                                  
+                                                  <input type="radio" name="prices" id="prices_6" value="40-100-trieu">
+                                                  <label for="prices_6">40 - 100 triệu</label>
+                                              </li>
+                                                                                         
+                                              <li>
+                                                  
+                                                  <input type="radio" name="prices" id="prices_7" value="100-300-trieu">
+                                                  <label for="prices_7">100 - 300 triệu</label>
+                                              </li>
+                                                                                    </ul>
+                                  
+                              </div>
+                              </div>
+                          </div>
+    
+                          <div class="box_order_item">
+                              <label class="sort_feature">Tính năng  <i class="fa fa-caret-down caret"></i>   </label>
+                              <div id="sort_feature" class="box_s hidden">
+                                  <input type="hidden" name="features" id="feature" value="">
+                                  <div class="box_ss">
+                                      <ul>
+                                                                                            
+                                              <li>
+                                                  
+                                                  <input type="radio" name="feature" id="feature_1" value="danh-cho-nguoi-moi-hoc">
+                                                  <label for="feature_1">Dành cho người mới học</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  
+                                                  <input type="radio" name="feature" id="feature_3" value="choi-chuyen-nghiep">
+                                                  <label for="feature_3">Chơi chuyên nghiệp</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  
+                                                  <input type="radio" name="feature" id="feature_2" value="dung-de-bieu-dien">
+                                                  <label for="feature_2">Dùng để biểu diễn</label>
+                                              </li>
+                                                                                    </ul>
+                                  
+                              </div>
+                              </div>
+                          </div>
+    
+                          <div class="box_order_item">
+                              <label class="sort_manufacturer">Thương hiệu  <i class="fa fa-caret-down caret"></i>    </label>
+                              <div id="sort_manufacturer" class="box_s hidden">
+                                  <input type="hidden" name="manufacturer" id="manufacturer" value="">
+                                  <div class="box_ss">
+                                      <ul>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="manufacturer" id="manufacturer_80" value="inrock">
+                                                  <label for="manufacturer_80">InRock</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="manufacturer" id="manufacturer_9" value="thuong-hieu-lazer.html">
+                                                  <label for="manufacturer_9">Lazer</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="manufacturer" id="manufacturer_58" value="pearl">
+                                                  <label for="manufacturer_58">Pearl Export</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="manufacturer" id="manufacturer_92" value="thuong-hieu-alesis">
+                                                  <label for="manufacturer_92">Alesis</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="manufacturer" id="manufacturer_56" value="thuong-hieu-pearl.html">
+                                                  <label for="manufacturer_56">Pearl</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="manufacturer" id="manufacturer_38" value="thuong-hieu-zildjian.html">
+                                                  <label for="manufacturer_38">Zildjian</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="manufacturer" id="manufacturer_81" value="thuong-hieu-meinl">
+                                                  <label for="manufacturer_81">Meinl</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="manufacturer" id="manufacturer_76" value="remo">
+                                                  <label for="manufacturer_76">Remo</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="manufacturer" id="manufacturer_16" value="thuong-hieu-roland.html">
+                                                  <label for="manufacturer_16">Roland</label>
+                                              </li>
+                                                                                    </ul>
+                                  
+                              </div>
+                              </div>
+                          </div>
+    
+                          <div class="box_order_item pull-right">
+                              <label class="sort_order">Sắp xếp theo  <i class="fa fa-caret-down caret"></i>  </label>
+                              <div id="sort_order" class="box_s box_orderss hidden">
+                                  <input type="hidden" name="order" id="order" value="">
+                                  <div class="box_ss">
+                                      <ul>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="orders" id="order_gia-thap-den-cao" value="gia-thap-den-cao">
+                                                  <label for="order_gia-thap-den-cao">Giá thấp đến cao</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="orders" id="order_gia-cao-xuong-thap" value="gia-cao-xuong-thap">
+                                                  <label for="order_gia-cao-xuong-thap">Giá cao xuống thấp</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="orders" id="order_ten-a-z" value="ten-a-z">
+                                                  <label for="order_ten-a-z">Tên A-Z</label>
+                                              </li>
+                                                                                            
+                                              <li>
+                                                  <input type="radio" name="orders" id="order_ten-z-a" value="ten-z-a">
+                                                  <label for="order_ten-z-a">Tên Z-A</label>
+                                              </li>
+                                        </ul>
+                                  
+                              </div>
+                              </div>
+                          </div>
+    
+                      </div>
+    
+    
+                     
+                  <div class="list-product">
+                  <div class="row">
+                       <div class="col col-third s-col-full mt-32">
+                        <div class="item">
+                             <div class="image">
+                                
+                                <a href=""><img id="image_list_cat_6423" src="./assets/img/product/product_1.webp" alt="LAZER P-702"></a>
+    
+                                
+                        </div>
+                        <div class="name"><a href=""><h3>TAMA ST50H6-LGS</h3></a></div>
+                        <div id="price_list_cat_6423">  
+                            <div class="price">
+                                <span class="price_new">15,510,000<span class="currency">đ</span></span>								
+                            </div>
+                        </div>
+                           
+                            
+                        </div>
+                        </div>
+                       <div class="col col-third s-col-full mt-32">
+                        <div class="item">
+                                                                <div class="image">
+                                
+                                <a href=""><img id="image_list_cat_5480" src="./assets/img/product/product_2.jpg" alt="Trống Pearl DMP925SP/C"></a>
+    
+                            </div>
+                        <div class="name"><a href=""><h3>Trống Pearl DMP925SP/C</h3></a></div>
+                        <div id="price_list_cat_5480">
+                            <div class="price">
+                                <span class="price_new">20,700,000<span class="currency">đ</span></span>								</div>
+                        </div>
+                          
+                            
+                        </div>
+                         </div>
+                       <div class="col col-third s-col-full mt-32">
+                        <div class="item">
+                                                                                                    <div class="image">
+                                
+                                <a href=""><img id="image_list_cat_6030" src="./assets/img/product/product_3.jpg" alt="Session Studio Select STS..."></a>
+    
+                                                                        
+                                
+                            </div>
+                        <div class="name"><a href=""><h3>Session Studio Select STS904XP/C</h3></a></div>
+                        <div id="price_list_cat_6030">
+                            <div class="price">
+                                Liên hệ								</div>
+                        </div>
+                            
+                        </div>
+                         </div>
+                        <div class="col col-third s-col-full mt-32">
+                        <div class="item">
+                                                                <div class="image">
+                                
+                                <a href=""><img id="image_list_cat_5448" src="./assets/img/product/product_4.webp" alt="Pearl Roadshow 584C/C"></a>
+    
+                               
+                                
+                            </div>
+                        <div class="name"><a href=""><h3>Pearl Roadshow RS525 C/CS</h3></a></div>   
+                        <div id="price_list_cat_5448">
+                            <div class="price">
+                                <span class="price_new">11,500,000<span class="currency">đ</span></span>								</div>
+                        </div>
+                            
+                        </div>
+                         </div>
+                        <div class="col col-third s-col-full mt-32">
+                        <div class="item">
+                                                                                                    <div class="image">
+                                
+                                <a href=""><img id="image_list_cat_5933" src="./assets/img/product/product_5.jpg" alt="Pearl EXA725XSP/C784"></a>
+    
+                                
+                            </div>
+                          <div class="name"><a href=""><h3>Pearl EXA725XSP/C784</h3></a></div>                       
+                        <div id="price_list_cat_5933">
+                            <div class="price">
+                                <span class="price_new">14,600,000<span class="currency">đ</span></span>								</div>
+                        </div>
+                            
+                        </div>
+                        </div>
+                        <div class="col col-third s-col-full mt-32">
+                        <div class="item">
+                            <div class="image">
+                                
+                                <a href=""><img id="image_list_cat_5719" src="./assets/img/product/product_6.jpg" alt="Pearl DMP943XP/C228"></a>
+    
+                                
+                            </div>
+                         <div class="name"><a href=""><h3>Pearl DMP943XP/C228</h3></a></div>
+                        <div id="price_list_cat_5719">
+                            <div class="price">
+                                <span class="price_new">7,640,000<span class="currency">đ</span></span></div>
+                        </div>
+                            
+                        </div>
+                        </div>
+                          
+                                        </div>
+                </div>
+                    <div class="pagination">
+                    <strong>1</strong>
+                    <a href="index.html" data-ci-pagination-page="2">2</a>
+                    <a href="index.html" data-ci-pagination-page="3">3</a>
+                    <a href="index.html" data-ci-pagination-page="2" rel="next">&gt;</a>
+                    <a href="index.html" data-ci-pagination-page="7">Last ›</a>
+                  </div>
+                                
+            </div>
+            <div class="clear"></div>
         </section>
         <!-- FEEDBACK -->
         <section class="feedback">
-            <h2>Phản hồi của Khách Hàng.</h2>
+            <h2>Phản hồi của khách hàng.</h2>
             <div class="feedback__content">
                 <div class="owl-carousel owl-theme">
                     <div class="item">
@@ -162,9 +457,92 @@
             </div>
         </section>
         <!-- CONTACT -->
-        <section></section>
+        <!-- <section></section> -->
         <!-- FOOTER -->
-        <footer></footer>
+        <footer>
+            <div class="footer__main">
+                <div class="footer__items">
+                    <h3>Thông tin của hàng</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Giới thiệu cửa hàng</a></li>
+                            <li><a href="#">Hệ thống showrom, đại lý</a></li>
+                            <li><a href="#">Liên hệ / Góp ý</a></li>
+                            <li><a href="#">Mua trả góp</a></li>
+                            <li><a href="#">Chương trình khách hàng thân thiết</a></li>
+                            <li><a href="#">Điều khoản sử dụng Website</a></li>
+                            <li><a href="#">Tuyển dụng</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__items">
+                    <h3>Hướng dẫn chung</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Giao hàng - Đổi trả</a></li>
+                            <li><a href="#">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#">Thanh toán và bảo mật</a></li>
+                            <li><a href="#">Chính sách bảo hành</a></li>
+                            <li><a href="#">Bảo trì đàn piano</a></li>
+                            <li><a href="#">Kích hoạt bảo hành</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__items">
+                    <h3>Hỗ trợ khách hàng</h3>
+                    <p>Gọi mua hàng: <span>1800 6715 </span> (Miễn Phí) </p>
+                    <p>Khiếu nại, Bảo hành: <span>028710 88 333</span></p>
+                    <p>Thời gian phục vụ: 8h-22h</p>
+                    <p>Email: <a href="">info@gteam49.vn</a></p>
+                </div>
+                <div class="footer__items">
+                    <div class="about__us">
+                        <h3>Mạng xã hội</h3>
+                        <div class="about__us__icon">
+                            <i class="fa-brands fa-square-facebook" style="color: #0080ff;"></i>                            
+                            <i class="fab fa-youtube-square" style="color: #ff0000;"></i>
+                            <i class="fab fa-twitter-square" style="color: #50a3f6;"></i>
+                        </div>
+                    </div>
+                    <div class="about__us">
+                        <h3>Hệ thống Website</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Team 49 Shop</a></li>
+                                <li><a href="#">Team 49 Music University</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer__items">
+                    <h3>Công ty Cổ Phần TM-DV-SX Team 49</h3>
+                    <div class="desc">
+                        <p>GPKD số 0304757232 do sở Kế hoạch Đầu tư TPHCM cấp ngày 01/01/2007 </p>
+                        <p>Địa chỉ: 386 CMT8, P.10, Q.3, TPHCM</p>
+                        <p>Điện thoại: <span>1800 6715</span></p>
+                        <p>Hotline: <span>028710 88 333</span></p>
+                        <p>Email: <a href="#">info@team49.vn</a></p>
+                    </div>
+                </div>
+                <div class="footer__items">
+                    <div class="payment">
+                        <h3>cách thức thanh toán</h3>
+                        <a href="#">
+                            <img src="https://vietthuong.vn/assets/frontend/images/thanhtoan.png" alt="Phuong_Thuc_thanh_toan">
+                        </a>
+                    </div>
+                    <div class="certification">
+                        <h3>Chứng nhận</h3>
+                        <a href="">
+                            <img src="https://vietthuong.vn/assets/frontend/images/cntb.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <p>&copy: 2023 Đồ án Lập Trình Web HK5. | Design by <span>Team 49</span></p>
+            </div>
+        </footer>
     </body>
 
     <!-- MAIN JS -->
@@ -182,7 +560,7 @@
             autoplayHoverPause:true,
             responsive: {
                 0: {
-                    items: 1
+                    items: 3
                 }
             }
         })
