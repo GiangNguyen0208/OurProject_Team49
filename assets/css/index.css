@@ -255,10 +255,9 @@ header {
     .box_products{
         width: 100%;
         float: left;
-        margin-top: 110px;
         margin-bottom: 110px;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 48px;
+        padding-right: 48px;
     
     }
     
@@ -443,7 +442,7 @@ header {
     }
     .list-product .item .name a:hover{
         text-decoration: none;
-        color: #ffdd00;
+        color: #ee6c4d;
     }
     .list-product .item:hover{
     
@@ -456,7 +455,6 @@ header {
     .list-product .item .price{
         color: #ed1c24;
         font-size: 15px;
-        /* text-align: center; */
         font-weight: bold;
         padding-left: 20px;
     }
@@ -483,6 +481,11 @@ header {
     
     .col-third {
         width: 33.33333%;
+    }
+
+    .col-five {
+        width: 20%;
+        
     }
     
     
@@ -525,6 +528,65 @@ header {
      
     }
     
+}
+
+/* Categories */
+.cagories {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.cagories-title {
+    padding: 0 0 0 15px;
+    font-size: 21px;
+    margin: 0px 8px 20px;
+    float: left;
+    width: 100%;
+    border-left: 8px solid #ee6c4d
+}
+
+.cagories-title h1 {
+    font-size: 3rem;
+}
+
+
+
+.cagories-item a:hover {
+    background-color: #ee6c4d;
+    color: white;
+}
+
+.cagories>ul {
+    padding: 0;
+    float: left;
+    width: 100%
+}
+
+.cagories>ul {
+    list-style: none;
+    margin: 0
+}
+
+.cagories>ul>div>li {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.cagories>ul>div>li>a {
+    width: 100%;
+    float: left;
+    text-align: center;
+    background: #12120f;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px 0
+}
+
+.cagories>ul>div>li>a>h2 {
+    font-size: 2rem;
+    margin: 0;
 }
 
 
