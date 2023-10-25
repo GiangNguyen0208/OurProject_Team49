@@ -594,7 +594,7 @@ header {
 }
 
 .cagories-list {
-    width: 100%;
+    width: calc(100% - 16px);
     float: left;
     background: #fff;
     z-index: 5;
@@ -606,7 +606,7 @@ header {
     transition: all .5s;
     overflow: hidden;
     position: absolute;
-    top: 49px;
+    top: 53px;
 }
 
 .cagories-item-line {
@@ -637,13 +637,22 @@ header {
     margin: 0;
     text-transform: uppercase;
 }
+.cagories-item-line a h3:hover {
+    color: #ee6c4d;
+}
 
 .cagories>ul>div>li.actived .cagories-list,
 .cagories>ul>div>li:hover .cagories-list {
     border: 1px solid #ee6c4d;
     max-height: 9999px;
-    padding: 10px 0 5px
+    padding: 10px 0 5px;
+   
 }
+
+
+
+
+
 
 
 
