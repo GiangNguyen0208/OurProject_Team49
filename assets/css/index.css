@@ -313,9 +313,6 @@ header {
         cursor: pointer;
     }
     
-    #sort_manufacturer .box_ss ul li{
-        width: 33.333333%;
-    }
     
     .box_order_item > label.sort_order{
         padding-right: 20px;
@@ -332,7 +329,7 @@ header {
         z-index: 9999;
     }
     .box_s.box_orderss{
-           width: 150px;
+        width: 150px;
         left: -32px;
     }
     .box_ss{
@@ -400,7 +397,7 @@ header {
        
     
     }
-    .list-product .item .image{
+    .list-product .item .item_image{
         width: 100%;
         float: left;
         position: relative;
@@ -411,7 +408,7 @@ header {
          margin-bottom: 7px;
          border-bottom: 1px solid #e6e7e8;
     }
-    .list-product .item .image > a > img{
+    .list-product .item .item_image > a > img{
         position: absolute;
         top: 50%;
         left: 50%;
@@ -424,23 +421,23 @@ header {
         max-height: 100%;
         z-index: 0;
     }
-    .list-product .item .name{
+    .list-product .item .item_name{
         width: 100%;
         float: left;
         padding: 5px 0px 24px 20px;
         /* height: 56px; */
         /* text-align: center; */
     }
-    .list-product .item .name a{
+    .list-product .item .item_name a{
         color: #333333;
         font-size: 16px;
     }
-    .list-product .item .name a h3{
+    .list-product .item .item_name a h3{
         font-size: 16px;
         margin: 0;
         font-weight: bold;
     }
-    .list-product .item .name a:hover{
+    .list-product .item .item_name a:hover{
         text-decoration: none;
         color: #ee6c4d;
     }
@@ -452,7 +449,7 @@ header {
         
     }
     
-    .list-product .item .price{
+    .list-product .item .item_price{
         color: #ed1c24;
         font-size: 15px;
         font-weight: bold;
@@ -532,7 +529,8 @@ header {
 
 /* Categories */
 .cagories {
-    margin-top: 40px;
+    height: 160px;
+    padding-top: 40px;
     padding-left: 40px;
     padding-right: 40px;
 }
