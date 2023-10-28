@@ -42,7 +42,9 @@ h2 {
     letter-spacing: 2px;
     text-align: center;
 }
-
+.clear {
+    clear: both;
+}
 
 /* HEADER */
 header {
@@ -259,7 +261,7 @@ header {
         margin-bottom: 110px;
         padding-left: 40px;
         padding-right: 40px;
-    
+        font-size:  inherit;
     }
     
     .box_order{
@@ -527,7 +529,122 @@ header {
     
 }
 
+/* FEEDBACK */
+.feedback {
+    background-image: url(./../img/feedback/fb1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+}
+.feedback h2 {
+    color: white;
+    text-align: center;
+}
 
+.feedback__content {
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #ee6c4d;
+    background-color: rgba(255, 255, 255, 0.524);
+    padding: 32px;
+} 
+.feedback__content i {
+    color: #ee6c4d;
+    font-size: 1.3rem;
+    padding: 0 19px;
+}
+.feedback__content p {
+    line-height: 30px;
+    letter-spacing: 0.4rem;
+    text-align: center;
+}
+.feedback__content .feedback__name {
+    color: white;
+}
+.feedback__content .owl-carousel .owl-dots .owl-dot span {
+    background: rgba(0, 0, 0, 0.503);
+}
+.feedback__content .owl-carousel .owl-dots .owl-dot.active span {
+    background-color: black;
+}
+.feedback__content .owl-theme .owl-dots .owl-dot:focus {
+    outline: none;
+} 
+
+
+
+/* FOOTER */
+footer {
+    background-color: black;
+    margin-top: 50px;
+}
+.footer__main {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 50px;
+    margin: 50px 0;
+    margin-right: 30px;
+}
+.footer__main h3 {
+    color: white;
+    margin: 20px 0;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+}
+.footer__main p {
+    color: white;
+    letter-spacing: 2px;
+    line-height: 32px;
+}
+.footer__main p span {
+    color: ee6c4d;
+}
+.footer__items .desc p span {
+    color: #ee6c4d;
+}
+.footer__items nav ul li a {
+    text-decoration: none;
+    color: white;
+    line-height: 32px;
+}
+.footer__items .about__us .about__us__icon i{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 2rem;
+    margin-right: 10px ;
+    border: 1px solid white;
+    transition: all .5s;
+}
+.footer__items .about__us .about__us__icon i:hover {
+    color: #0080ff;
+    border-color: #0080ff;
+}
+.footer__items .about__us nav ul li a:hover {
+    color: #ee6c4d;
+}
+.footer__main .footer__items:nth-child(5) {
+    grid-column: 1 / span 2;
+}
+.footer__main .footer__items:nth-child(6) {
+    grid-column: 3 / span 2;
+}
+
+.footer__copyright {
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.footer__copyright span {
+    color: #ee6c4d;
+    cursor: pointer;
+}
+.footer__copyright span:hover {
+    text-decoration: underline;
+    color: #0080ff;
+}
 
 
 
