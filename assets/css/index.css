@@ -42,7 +42,9 @@ h2 {
     letter-spacing: 2px;
     text-align: center;
 }
-
+.clear {
+    clear: both;
+}
 
 /* HEADER */
 header {
@@ -256,9 +258,7 @@ header {
         width: 100%;
         float: left;
         margin-bottom: 110px;
-        padding-left: 48px;
-        padding-right: 48px;
-    
+
     }
     
     .box_order{
@@ -527,130 +527,79 @@ header {
     
 }
 
-/* Categories */
-.cagories {
-    height: 160px;
-    padding-top: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
+
+/* FOOTER */
+footer {
+    background-color: black;
+    margin-top: 50px;
 }
-
-.cagories-title {
-    padding: 0 0 0 15px;
-    font-size: 21px;
-    margin: 0px 8px 20px;
-    float: left;
-    width: 100%;
-    border-left: 8px solid #ee6c4d
+.footer__main {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 50px;
+    margin: 50px 0;
+    margin-right: 30px;
 }
-
-.cagories-title h1 {
-    font-size: 3rem;
-}
-
-
-
-/* .cagories-item a:hover {
-    background-color: #ee6c4d;
+.footer__main h3 {
     color: white;
-} */
-
-.cagories-item {
-    position: relative;
-}
-
-.cagories>ul {
-    padding: 0;
-    float: left;
-    width: 100%
-}
-
-.cagories>ul {
-    list-style: none;
-    margin: 0
-}
-
-.cagories>ul>div>li {
-    float: left;
-    width: 100%;
-    margin-bottom: 20px
-}
-
-.cagories>ul>div>li>a {
-    width: 100%;
-    float: left;
-    text-align: center;
-    background: #12120f;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 15px 0
-}
-
-.cagories>ul>div>li>a>h2 {
-    font-size: 2rem;
-    margin: 0;
-}
-
-.cagories-list {
-    width: calc(100% - 16px);
-    float: left;
-    background: #fff;
-    z-index: 5;
-    max-height: 0;
-    -moz-transition: all .5s;
-    -ms-transition: all .5s;
-    -o-transition: all .5s;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-    overflow: hidden;
-    position: absolute;
-    top: 53px;
-}
-
-.cagories-item-line {
-    width: 100%;
-    float: left;
-    color: #231f20;
-    font-family: Roboto-Light;
-    background-image: url(https://vietthuong.vn/assets/frontend/images/arrowcategory.png);
-    background-repeat: no-repeat;
-    background-position: 5px 5px;
-    padding-left: 15px;
-}
-
-.cagories>ul>div:hover>li>a,
-.cagories>ul>div>li.actived>a {
-    background: #ee6c4d;
-    color: #231f20
-}
-
-.cagories-item-line a {
-    color: #231f20;
-    margin-bottom: 5px;
-    display: block
-}
-
-.cagories-item-line a h3,
-.cagories>ul>div>li>a h2 {
-    margin: 0;
+    margin: 20px 0;
+    font-size: 2.3rem;
     text-transform: uppercase;
 }
-.cagories-item-line a h3:hover {
+.footer__main p {
+    color: white;
+    letter-spacing: 2px;
+    line-height: 32px;
+}
+.footer__main p span {
+    color: ee6c4d;
+}
+.footer__items .desc p span {
     color: #ee6c4d;
 }
-
-.cagories>ul>div>li.actived .cagories-list,
-.cagories>ul>div>li:hover .cagories-list {
-    border: 1px solid #ee6c4d;
-    max-height: 9999px;
-    padding: 10px 0 5px;
-   
+.footer__items nav ul li a {
+    text-decoration: none;
+    color: white;
+    line-height: 32px;
+}
+.footer__items .about__us .about__us__icon i{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 2rem;
+    margin-right: 10px ;
+    border: 1px solid white;
+    transition: all .5s;
+}
+.footer__items .about__us .about__us__icon i:hover {
+    color: #0080ff;
+    border-color: #0080ff;
+}
+.footer__items .about__us nav ul li a:hover {
+    color: #ee6c4d;
+}
+.footer__main .footer__items:nth-child(5) {
+    grid-column: 1 / span 2;
+}
+.footer__main .footer__items:nth-child(6) {
+    grid-column: 3 / span 2;
 }
 
-
-
-
-
+.footer__copyright {
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.footer__copyright span {
+    color: #ee6c4d;
+    cursor: pointer;
+}
+.footer__copyright span:hover {
+    text-decoration: underline;
+    color: #0080ff;
+}
 
 
 
