@@ -42,7 +42,9 @@ h2 {
     letter-spacing: 2px;
     text-align: center;
 }
-
+.clear {
+    clear: both;
+}
 
 /* HEADER */
 header {
@@ -256,9 +258,9 @@ header {
         width: 100%;
         float: left;
         margin-bottom: 110px;
-        padding-left: 48px;
-        padding-right: 48px;
-    
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size:  inherit;
     }
     
     .box_order{
@@ -526,129 +528,6 @@ header {
     }
     
 }
-
-/* Categories */
-.cagories {
-    height: 160px;
-    padding-top: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.cagories-title {
-    padding: 0 0 0 15px;
-    font-size: 21px;
-    margin: 0px 8px 20px;
-    float: left;
-    width: 100%;
-    border-left: 8px solid #ee6c4d
-}
-
-.cagories-title h1 {
-    font-size: 3rem;
-}
-
-
-
-/* .cagories-item a:hover {
-    background-color: #ee6c4d;
-    color: white;
-} */
-
-.cagories-item {
-    position: relative;
-}
-
-.cagories>ul {
-    padding: 0;
-    float: left;
-    width: 100%
-}
-
-.cagories>ul {
-    list-style: none;
-    margin: 0
-}
-
-.cagories>ul>div>li {
-    float: left;
-    width: 100%;
-    margin-bottom: 20px
-}
-
-.cagories>ul>div>li>a {
-    width: 100%;
-    float: left;
-    text-align: center;
-    background: #12120f;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 15px 0
-}
-
-.cagories>ul>div>li>a>h2 {
-    font-size: 2rem;
-    margin: 0;
-}
-
-.cagories-list {
-    width: calc(100% - 16px);
-    float: left;
-    background: #fff;
-    z-index: 5;
-    max-height: 0;
-    -moz-transition: all .5s;
-    -ms-transition: all .5s;
-    -o-transition: all .5s;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-    overflow: hidden;
-    position: absolute;
-    top: 53px;
-}
-
-.cagories-item-line {
-    width: 100%;
-    float: left;
-    color: #231f20;
-    font-family: Roboto-Light;
-    background-image: url(https://vietthuong.vn/assets/frontend/images/arrowcategory.png);
-    background-repeat: no-repeat;
-    background-position: 5px 5px;
-    padding-left: 15px;
-}
-
-.cagories>ul>div:hover>li>a,
-.cagories>ul>div>li.actived>a {
-    background: #ee6c4d;
-    color: #231f20
-}
-
-.cagories-item-line a {
-    color: #231f20;
-    margin-bottom: 5px;
-    display: block
-}
-
-.cagories-item-line a h3,
-.cagories>ul>div>li>a h2 {
-    margin: 0;
-    text-transform: uppercase;
-}
-.cagories-item-line a h3:hover {
-    color: #ee6c4d;
-}
-
-.cagories>ul>div>li.actived .cagories-list,
-.cagories>ul>div>li:hover .cagories-list {
-    border: 1px solid #ee6c4d;
-    max-height: 9999px;
-    padding: 10px 0 5px;
-   
-}
-
-
-
 
 
 
