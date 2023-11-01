@@ -906,8 +906,9 @@ footer {
 
 
 .profile-return {
-    background-color: rgb(245, 245, 250);
+    background-color: #293241;
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .profile-container {
@@ -940,7 +941,7 @@ footer {
     -webkit-box-align: center;
     align-items: center;
     height: 40px;
-    color: rgb(128, 128, 137);
+    color: #fff;
     font-size: 14px;
     line-height: 20px;
     font-weight: 300;
@@ -957,10 +958,13 @@ footer {
 .profile-return .icon.icon-next {
     margin-left: 5.5px;
     margin-right: 8.5px;
+    color: #fff;
+    font-size: 10px;
+    margin-top: 2px;
 }
 
 .profile-return a.breadcrumb-item:last-child {
-    color: rgb(56, 56, 61);
+    color: #fff;
     cursor: default;
     overflow: hidden;
 }
@@ -970,43 +974,30 @@ footer {
     text-overflow: ellipsis;
 }
 
+.profile-return-content a.br1:hover {
+    color: #ee6c4d;
+}
+
 .profile-function {
     width: 250px;
     margin-right: 17px;
 }
 
-.profile-function-info {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    padding-left: 7px;
-    margin: 0px 0px 12px;
-}
-
-.profile-function-info img {
-    width: 45px;
-    margin: 0px 12px 0px 0px;
-    border-radius: 50%;
-}
-
-.profile-function-info .info {
-    flex: 1 1 0%;
-    font-size: 13px;
-    line-height: 15px;
-    color: rgb(51, 51, 51);
-    font-weight: 300;
+.profile-function-list-container {
+    background-color: #293241;
 }
 
 .profile-function-list {
-    margin: 0px;
+    height: 408px;
+    padding: 46px 0 0;
     padding: 0px;
     list-style: none;
     font-size: 13px;
 }
 
 .profile-function-list a:hover, .profile-function-list a:active, .profile-function-list a:focus, .profile-function-list a.is-active {
-    background-color: rgb(235, 235, 240);
-    color: rgb(0, 0, 0);
+    background-color: #ee6c4d;
+    color: #fff;
 }
 
 .profile-function-list a {
@@ -1014,14 +1005,14 @@ footer {
     -webkit-box-align: center;
     align-items: center;
     padding: 7px 18px;
-    color: rgb(74, 74, 74);
+    color: #fff;
 }
-.profile-function-list a svg, .profile-function-list a .icon {
+.profile-function-list a i, .profile-function-list a .icon {
     width: 24px;
     height: 24px;
     margin: 0px 22px 0px 0px;
-    font-size: 24px;
-    color: rgb(155, 155, 155);
+    font-size: 20px;
+    color: #fff;
 }
 
 
@@ -1317,6 +1308,8 @@ footer {
     width: 24px;
     height: 24px;
     vertical-align: bottom;
+    font-size: 20px;
+    color: rgb(155, 155, 155);
 }
 
 .icon-profile {
@@ -1378,68 +1371,6 @@ footer {
     cursor: pointer;
 }
 
-.profile-return .icon.icon-next {
-    margin-left: 5.5px;
-    margin-right: 8.5px;
-}
-
-.profile-return a.breadcrumb-item:last-child {
-    color: rgb(56, 56, 61);
-    cursor: default;
-    overflow: hidden;
-}
-
-.profile-return a.breadcrumb-item:last-child span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.profile-function {
-    width: 250px;
-    margin-right: 17px;
-}
-
-.profile-function-info {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    padding-left: 7px;
-    margin: 0px 0px 12px;
-}
-
-.profile-function-info img {
-    width: 45px;
-    margin: 0px 12px 0px 0px;
-    border-radius: 50%;
-}
-
-.profile-function-info .info {
-    flex: 1 1 0%;
-    font-size: 13px;
-    line-height: 15px;
-    color: rgb(51, 51, 51);
-    font-weight: 300;
-}
-
-.profile-function-list {
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    font-size: 13px;
-}
-
-.profile-function-list a:hover, .profile-function-list a:active, .profile-function-list a:focus, .profile-function-list a.is-active {
-    background-color: rgb(235, 235, 240);
-    color: rgb(0, 0, 0);
-}
-
-.profile-function-list a {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    padding: 7px 18px;
-    color: rgb(74, 74, 74);
-}
 
 .radio input[type="radio"] {
     position: absolute;
