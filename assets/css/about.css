@@ -1,0 +1,112 @@
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+
+}
+
+.col-full {
+    width: 100%;
+}
+
+.col-haft {
+    width: 50%;
+}
+
+.col-third {
+    width: 33.33333%;
+}
+
+.col-five {
+    width: 20%;
+    
+}
+
+
+.mt-32 {
+    margin-top: 20px !important;
+}
+
+.about__content {
+    padding-top: 80px;
+}
+
+.about__background {
+    height: 610px;
+    background-image: url(https://fieldingwines.com/wp-content/uploads/2022/08/staff-header.jpg);
+    background-size: cover;
+    width: 100%;
+    vertical-align: middle;
+    background-position: center 0;
+    background-repeat: no-repeat;
+}
+
+.about__row {
+   width: 100%;
+}
+
+
+.about__row__text, .about__row__our {
+    padding: 20px; 
+}
+
+
+.about__row__text {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+   
+    
+
+}
+
+.about__row__text .about__row__title {
+    padding: 30px 0 0;
+    margin: 0;
+}
+
+.about__row__text .about__row__sub {
+    padding: 45px 0 0;
+}
+
+.about__row__our {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+
+.about__our__item {
+    text-align: center;
+}
+
+.about__our__item .member__img {
+    width: 154px;
+    border-radius: 100%;
+    max-width: 100%; 
+    max-height: 100%;
+}
+
+.about__item__info {
+    width: 100%;
+    margin: 28px 0 0;
+    text-align: center;
+}
+
+.about__item__info .member__name {
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 6px;
+}
+
+.about__item__info .member__position {
+    color: #ee6c4d;
+    font-size: 15px;
+    margin-top: 6px;
+}
