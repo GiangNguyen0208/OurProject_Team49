@@ -20,6 +20,12 @@ function listPage(){
     let count = Math.ceil(list.length / limit);
     document.querySelector('.listPage').innerHTML = '';
 
+    if(thisPage != 1) {
+        let prev = document.createElement('li');
+        prev.innerText = 'Trước';
+        prev.setAttribute('onclick', "changePage(" + (thisPage - i) + ")")
+        document.querySelector('.listPage').appendChild(prev);
+    }
     
     for(i = 1; i <= count; i++){
         let newPage = document.createElement('li');
@@ -31,15 +37,9 @@ function listPage(){
         document.querySelector('.listPage').appendChild(newPage);
     }
     
-    if(thisPage != 1) {
-        let prev = document.createElement('li');
-        prev.innerText = 'PREV';
-        prev.setAttribute('onclick', "changePage(" + (thisPage - i) + ")")
-        document.querySelector('.listPage').appendChild(prev);
-    }
     if(thisPage != count) {
         let next = document.createElement('li');
-        newPage.innerText = 'NEXT';
+        newPage.innerText = 'Tiếp';
         prev.setAttribute('onclick', "changePage(" + (thisPage + i) + ")")
         document.querySelector('.listPage').appendChild(next);
     }
