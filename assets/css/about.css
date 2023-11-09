@@ -14,6 +14,10 @@
     width: 33.33333%;
 }
 
+.col-second {
+    width: 50%;
+}
+
 .mt-32 {
     margin-top: 20px !important;
 }
@@ -88,7 +92,7 @@
 }
 
 .about__row__text .about__row__sub {
-    padding: 45px 0 0;
+    padding: 25px 15% 0px !important;
     font-weight: 400;
     line-height: 2.6rem;
 }
@@ -150,4 +154,51 @@
 }
 
 /* PRODUCT INTRODUCTION */
+.aboutPro__background {
+    position: relative;
+    height: 505px;
+    background-image: url(https://fieldingwines.com/wp-content/uploads/2021/03/cider-final2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    background-color: #f6f6f6;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    z-index: 101;
+}
+
+.about__row__two {
+  
+    display: inline-block;
+    padding-top: 30px !important;
+    padding-bottom: 60px !important;
+    /* margin-left: 100px; */
+
+}
+
+.row__two__content {
+    display: inline-block;
+    padding: 25px 15% 0px !important;
+}
+
+.about__two__image {
+    
+}
+
+.about__two__image img {
+    width: 100%;
+    height: 100%;
+}
+
+.about__two__text {
+    padding: 60px 60px 0!important;
+    text-align: center;
+}
+
+.about__two__text {
+    font-size: 1.5em;
+    line-height: 1.4;   
+}
 
