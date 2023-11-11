@@ -145,7 +145,8 @@ header {
     min-width: 100px;
     height: 100%;
 }
-.menu__bar .menu__items .drum__container .drum__item {
+.menu__bar .menu__items .drum__container .drum__item
+ {
     background-color: #293241;
     padding: 10px 0;
     font-size: 0.8rem;
@@ -157,6 +158,7 @@ header {
 }
 .menu__bar .menu__items .drum__container .drum__item a {
     padding: 0 5px;
+    white-space: nowrap;
 }
 
 .menu__bar .menu__items:hover .drum__container {
