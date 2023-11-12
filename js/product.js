@@ -1,5 +1,4 @@
 
-
 $('.sort_pricess').click(function() {
     $('#sort_pricess').toggleClass('hidden');
     $('#sort_feature').addClass('hidden');
