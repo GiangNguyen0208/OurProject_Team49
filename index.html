@@ -61,7 +61,7 @@
         <header>
             <div class="header__content">
                 <p>
-                    <a href=""><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
+                    <a href="./index.html"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
                 </p>
                 <div class="search">
                     <input type="text" placeholder="Tìm kiếm" />
@@ -72,11 +72,15 @@
                         <li class="menu__items">
                             <a href="./index.html">Trang chính</a>
                         </li>
-                        <li class="menu__items">
-                            <a href="./aboutUs.html">Giới thiệu</a>
+                        <li class="menu__items"><a href="./html/aboutUs.html">Giới thiệu</a>
+                            <ul class="drum__container">
+                                <li class="drum__item"><a href="#">Xin chào</a></li>
+                                <li class="drum__item"><a href="./html/aboutUs.html">Thông tin về chúng tôi</a></li>
+                                <li class="drum__item"><a href="#">Sản phẩm</a></li>
+                            </ul>
                         </li>
                         <li class="menu__items">
-                            <a href="./product.html">Sản Phẩm</a>
+                            <a href="./html/product.html">Sản Phẩm</a>
                             <ul class="drum__container">
                                 <li class="drum__item">
                                     <a href="#">Trống điện</a>
@@ -98,17 +102,17 @@
                         <li class="menu__items"><a href="#">Khuyến mãi</a></li>
                         <li class="menu__items"><a href="#">Giáo dục</a></li>
                         <li class="menu__items">
-                            <a href="./policy.html">Chính sách</a>
+                            <a href="./html/policy.html">Chính sách</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="sign__in">
                     <i class="fa fa-user"></i>
-                    <a href="./log.html">Đăng Nhập</a>
+                    <a href="./html/log.html">Đăng Nhập</a>
                 </div>
                 <div class="cart__shopping">
                     <i class="fa fa-shopping-cart"></i>
-                    <a href="./log.html">Giỏ Hàng</a>
+                    <a href="./html/cart.html">Giỏ Hàng</a>
                 </div>
             </div>
         </header>
@@ -117,7 +121,9 @@
             <div class="carousel__content">
                 <h1>Dịch vụ mua bán trống</h1>
                 <p>Cung cấp những sản phẩm tốt nhất Việt Nam</p>
-                <button>Tìm hiểu thêm</button>
+                <a href="./html/aboutUs.html">
+                    <button>Tìm hiểu thêm</button>
+                </a>
             </div>
         </section>
         <!-- INTRO -->
@@ -384,22 +390,24 @@
                 </div>
                 <div class="container">
                     <div class="list">
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="./assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
+                        <a href="./html/productDetail.html">
+                            <div class="item">
+                                <div class="img">
+                                    <img
+                                        src="./assets/img/product/sp1.jpg"
+                                        alt="Roland VAD 706"
+                                    />
                                 </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
+                                <div class="item_content">
+                                    <div class="title">Roland VAD 706</div>
+                                    <div class="desc">
+                                        Bộ trống điện tử tinh tế với kiểu dáng gi
+                                    </div>
+                                    <div class="price">Liên Hệ</div>
+                                    <button class="add">Thêm vào giỏ hàng</button>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="item">
                             <div class="img">
                                 <img
@@ -1231,6 +1239,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/product.js"></script>
     <script src="./js/log.js"></script>
+    <script src="./js/paging.js"></script>
 
     <!-- OWL CAROUSEL JS -->
     <script src="./js/owl.carousel.min.js"></script>
