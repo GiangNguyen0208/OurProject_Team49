@@ -16,7 +16,7 @@ function loadItem() {
 }
 
 loadItem();
-function listPage(){    
+function listPage(){
     let count = Math.ceil(list.length / limit);
     document.querySelector('.listPage').innerHTML = '';
 
