@@ -63,3 +63,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // Gọi hàm chuyển đổi tự động sau mỗi khoảng thời gian
     var intervalId = setInterval(autoChange, 3000); // 3000 milliseconds = 3 seconds
 });
+
+// ReStorage Page
+  const aboutReturn = document.querySelector('.return');
+  const aboutConfidentiality = document.querySelector('.confidentiality');
+
+  const returnContent = document.querySelector('.about__return');
+  const confidentialityContent = document.querySelector('.about__confidentiality');
+
+  policyReturn.addEventListener('click', function() {
+    returnContent.classList.add('active');
+    confidentialityContent.classList.add('active');
+  });
+
+  policyConfidentiality.addEventListener('click', function() {
+    confidentialityContent.classList.add('active');
+    returnContent.classList.remove('active');
+});
+
