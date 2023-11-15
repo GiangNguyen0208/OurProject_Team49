@@ -339,7 +339,7 @@ header {
         width: 100%;
         float: left;
         color: #231f20;
-        font-family: Roboto-Light;
+        font-family: inherit;
         background-image: url(https://vietthuong.vn/assets/frontend/images/arrowcategory.png);
         background-repeat: no-repeat;
         background-position: 5px 5px;
@@ -391,7 +391,6 @@ header {
         text-transform: uppercase;
         padding:11px 10px;
         font-size: 14px;
-        font-family: 'Roboto-Medium';
         font-weight: normal;
         float: left;
         margin: 0;
@@ -402,7 +401,6 @@ header {
         position: relative;
     }
     .box_order_item > label{
-        font-family: 'Roboto-Medium';
         padding:9px 0px;
         font-size: 15px;
         font-weight: normal;
@@ -467,7 +465,6 @@ header {
         width: 100%;
     }
     .box_ss label{
-         font-family: 'Roboto-Medium';
         font-size: 14px;
         font-weight: normal;
         float: left;

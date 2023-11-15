@@ -166,7 +166,7 @@
     background-color: #f6f6f6;
     background-position: center 0;
     background-repeat: no-repeat;
-    z-index: 101;
+    z-index: 1;
 }
 
 .about__row__two {
