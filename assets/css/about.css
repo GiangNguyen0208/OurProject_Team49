@@ -155,7 +155,7 @@
 .aboutPro__background {
     position: relative;
     height: 520px;
-    background-image: url("./../img/about/aboutPro_background.jpg");
+    background-image: url("/assets/img/about/aboutPro_background.jpg");
     background-attachment: fixed;
     background-size: cover;
     display: inline-block;
@@ -163,8 +163,6 @@
     vertical-align: middle;
     background-color: #f6f6f6;
     background-position: center 0;
-    background-repeat: no-repeat;
-    z-index: 1;
 }
 
 .about__row__two {
