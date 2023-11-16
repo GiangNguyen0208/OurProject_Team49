@@ -99,8 +99,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="menu__items"><a href="#">Khuyến mãi</a></li>
-                        <li class="menu__items"><a href="#">Giáo dục</a></li>
+                        <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
+                        <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
                         <li class="menu__items">
                             <a href="./html/policy.html">Chính sách</a>
                         </li>
@@ -1049,8 +1049,8 @@
         <section class="feedback">
             <h2>Phản hồi của khách hàng.</h2>
             <div class="feedback__content">
-                <div class="owl-carousel owl-theme">
-                    <div class="item">
+                <div class="owl-carousel owl-theme" id="feedbackCarousel">
+                    <!-- <div class="item">
                         <p>
                             <i class="fa fa-quote-left"></i> Lorem ipsum dolor
                             sit amet consectetur adipisicing elit. Nihil facilis
@@ -1079,7 +1079,8 @@
                             <i class="fa fa-quote-right"></i>
                         </p>
                         <p class="feedback__name">THUONG</p>
-                    </div>
+                    </div> -->
+                    
                 </div>
             </div>
         </section>
@@ -1088,18 +1089,12 @@
             <h2>Liên Hệ</h2>
             <div class="contact__form">
                 <form action="">
-                    <input type="text" placeholder="Tên" />
-                    <input type="text" placeholder="Họ" />
-                    <input type="email" placeholder="Email" />
-                    <input type="tel" placeholder="SĐT" />
-                    <textarea
-                        name=""
-                        id=""
-                        cols="30"
-                        rows="10"
-                        placeholder="Message"
-                    ></textarea>
-                    <button type="submit">Send</button>
+                    <input type="text" placeholder="Tên" id="firstName" />
+                <input type="text" placeholder="Họ" id="lastName" />
+                <input type="email" placeholder="Email" id="email" />
+                <input type="tel" placeholder="SĐT" id="phone" />
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                <button type="button" onclick="submitFeedBack()">Send</button>
                 </form>
             </div>
             <div class="contect__map"></div>
@@ -1240,10 +1235,11 @@
     <script src="./js/product.js"></script>
     <script src="./js/log.js"></script>
     <script src="./js/paging.js"></script>
-
+    
     <!-- OWL CAROUSEL JS -->
     <script src="./js/owl.carousel.min.js"></script>
-    <script>
+    <script src="./js/feedback.js"></script>
+    <!-- <script>
         $(".owl-carousel").owlCarousel({
             loop: true,
             nav: false,
@@ -1256,5 +1252,5 @@
                 },
             },
         });
-    </script>
+    </script> -->
 </html>
