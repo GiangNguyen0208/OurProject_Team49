@@ -639,7 +639,7 @@ header {
         background-color: #293241;
     }
     .container .list {
-        width: calc(100% - 24px);
+        width: calc(100% - 96px);
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(3,1fr);

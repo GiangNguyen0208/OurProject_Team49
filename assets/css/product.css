@@ -107,17 +107,11 @@
     margin-bottom: 12px;
 }
 
-.directory__title {
-    margin-bottom: 12px;
-    font-size: 2rem;
-    color: #000;
-    font-weight: 600;
-}
-
 .directory__gerne .gerne-link {
     display: inline-block;
     padding: 12px;
-    font-size: 1.6rem;
+    width: 100%;
+    font-size: 2rem;
     color: #000;
     border-radius: 4px;
     transition: all 0.2s ease;
