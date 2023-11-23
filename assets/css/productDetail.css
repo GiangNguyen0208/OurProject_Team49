@@ -291,6 +291,10 @@ body {
     font-weight: 600;
 }
 
+.product-brand {
+    font-weight: 600;
+}
+
 #product__info .desc {
     margin-bottom: 12px;
     font-size: 1.8rem;
