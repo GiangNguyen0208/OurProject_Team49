@@ -51,6 +51,7 @@
                 </a>
                 <form
                     action="profile.jsp"
+
                     class="form"
                     autocomplete="off"
                 >

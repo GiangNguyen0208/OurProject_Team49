@@ -57,6 +57,7 @@
         <link
             rel="stylesheet"
             href="assets/css/owl.theme.default.min.css"
+
         />
     </head>
     <body>
@@ -65,6 +66,7 @@
             <div class="header__content">
                 <p>
                     <a href="index.jsp"
+
                         ><i class="fa fa-drum"></i> <span>Dr/</span>um</a
                     >
                 </p>
@@ -78,13 +80,18 @@
                             <a href="index.jsp">Trang chính</a>
                         </li>
                         <li class="menu__items">
+<<<<<<< HEAD:src/main/webapp/product.jsp
                             <a href="aboutUs.jsp">Giới thiệu</a>
+=======
+                            <a href="./aboutUs.html">Giới thiệu</a>
+>>>>>>> 2b86e7bc7c7a8056290d925f4d787a49dd0bec34:html/product.html
                             <ul class="drum__container">
                                 <li class="drum__item">
                                     <a href="#">Xin chào</a>
                                 </li>
                                 <li class="drum__item">
                                     <a href="aboutProduct.jsp"
+
                                         >Thông tin về chúng tôi</a
                                     >
                                 </li>
@@ -330,6 +337,7 @@
                             </a>
                             <div class="item_content">
                                 <a href="productDetail.jsp" class="title"
+
                                     >Roland VAD 706</a
                                 >
                                 <div class="desc">

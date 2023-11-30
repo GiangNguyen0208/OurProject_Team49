@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="assets/css/profile.css" />
         <link rel="stylesheet" href="assets/css/index.css" />
         <link rel="stylesheet" href="assets/css/style.css" />
+
         <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
         <!-- embed fonts -->
@@ -75,6 +76,7 @@
                             <a href="./index.html">Trang chính</a>
                         </li>
                         <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
+
     
                         </li>
                         <li class="menu__items">

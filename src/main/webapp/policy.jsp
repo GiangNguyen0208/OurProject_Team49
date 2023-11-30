@@ -72,7 +72,11 @@
                         <li class="menu__items">
                             <a href="index.jsp">Trang chính</a>
                         </li>
+<<<<<<< HEAD:src/main/webapp/policy.jsp
                         <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
+=======
+                        <li class="menu__items"><a href="./aboutUs.html">Giới thiệu</a>
+>>>>>>> 2b86e7bc7c7a8056290d925f4d787a49dd0bec34:html/policy.html
                 
                         </li>
                         <li class="menu__items">

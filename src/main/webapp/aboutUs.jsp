@@ -167,7 +167,7 @@
                         
                         Ngày xưa, trống xuất hiện như một phương tiện giao tiếp cơ bản trong các cộng đồng. Với âm thanh đơn giản nhưng mạnh mẽ. Qua thời gian, sự sáng tạo và phát triển kỹ thuật đã đưa trống từ những chiếc trống đơn giản đến các bộ trống phức tạp và đa dạng ngày nay. Sự tiện lợi và linh hoạt của trống đã khiến nó trở thành một công cụ âm nhạc không thể thiếu trong nhiều thể loại, từ nhạc dân dụ đến rock, jazz, và thậm chí là nhạc điện tử.
 Bằng sự kết hợp giữa truyền thống và hiện đại, sự ra đời và phát triển của trống đã tạo nên ảnh hưởng lớn của nó trong thế giới âm nhạc.
-                    
+                    </h4>
                 </div>
                 <div class="about__row__two">
                     <div class="row__two__content">
@@ -194,15 +194,15 @@ Bằng sự kết hợp giữa truyền thống và hiện đại, sự ra đờ
                     <div class="images__holder" style="clip-path: inset(0px); transition: all 2s ease 0s;">
                         <div class="images__slider" style="visibility: visible;">
                             <div class="images__slider__item img-prev" data-index="1">
-                                <div class="item__image" style="background-image: url('/assets/img/about/JazzDrum.jpg')">
+                                <div class="item__image" style="background-image: url('./assets/img/about/JazzDrum.jpg')">
                                 </div>
                             </div>
                             <div class="images__slider__item img-active" data-index="2">
-                                <div class="item__image" style="background-image: url('/assets/img/about/ElectronicDrum.jpg')">
+                                <div class="item__image" style="background-image: url('./assets/img/about/ElectronicDrum.jpg')">
                                 </div>
                             </div>
                             <div class="images__slider__item" data-index="3">
-                                <div class="item__image" style="background-image: url('/assets/img/about/TambourineDrum.jpg')">
+                                <div class="item__image" style="background-image: url('./assets/img/about/TambourineDrum.jpg')">
                                 </div>
                             </div>
                         </div>
@@ -407,5 +407,9 @@ Bằng sự kết hợp giữa truyền thống và hiện đại, sự ra đờ
 </body>
 <!-- MAIN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<<<<<<< HEAD:src/main/webapp/aboutUs.jsp
 <script src="js/about.js"></script>
+=======
+<script src="./../js/about.js"></script>
+>>>>>>> 2b86e7bc7c7a8056290d925f4d787a49dd0bec34:html/aboutUs.html
 </html>
