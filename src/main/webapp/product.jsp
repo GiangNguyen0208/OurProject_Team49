@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,7 +7,7 @@
         <title>Document</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./../assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
 
         <!-- embed fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,15 +48,16 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./../assets/css/index.css" />
-        <link rel="stylesheet" href="./../assets/css/style.css" />
-        <link rel="stylesheet" href="./../assets/css/product.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/product.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="./../assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
         <link
             rel="stylesheet"
-            href="./../assets/css/owl.theme.default.min.css"
+            href="assets/css/owl.theme.default.min.css"
+
         />
     </head>
     <body>
@@ -63,7 +65,8 @@
         <header>
             <div class="header__content">
                 <p>
-                    <a href="./../index.html"
+                    <a href="index.jsp"
+
                         ><i class="fa fa-drum"></i> <span>Dr/</span>um</a
                     >
                 </p>
@@ -74,16 +77,21 @@
                 <nav>
                     <ul class="menu__bar">
                         <li class="menu__items">
-                            <a href="./../index.html">Trang chính</a>
+                            <a href="index.jsp">Trang chính</a>
                         </li>
                         <li class="menu__items">
+<<<<<<< HEAD:src/main/webapp/product.jsp
+                            <a href="aboutUs.jsp">Giới thiệu</a>
+=======
                             <a href="./aboutUs.html">Giới thiệu</a>
+>>>>>>> 2b86e7bc7c7a8056290d925f4d787a49dd0bec34:html/product.html
                             <ul class="drum__container">
                                 <li class="drum__item">
                                     <a href="#">Xin chào</a>
                                 </li>
                                 <li class="drum__item">
-                                    <a href="./aboutProduct.html"
+                                    <a href="aboutProduct.jsp"
+
                                         >Thông tin về chúng tôi</a
                                     >
                                 </li>
@@ -115,17 +123,17 @@
                         <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
                         <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
                         <li class="menu__items">
-                            <a href="./policy.html">Chính sách</a>
+                            <a href="policy.jsp">Chính sách</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="sign__in">
                     <i class="fa fa-user"></i>
-                    <a href="./log.html">Đăng Nhập</a>
+                    <a href="log.jsp">Đăng Nhập</a>
                 </div>
                 <div class="cart__shopping">
                     <i class="fa fa-shopping-cart"></i>
-                    <a href="./cart.html">Giỏ Hàng</a>
+                    <a href="cart.jsp">Giỏ Hàng</a>
                 </div>
             </div>
         </header>
@@ -142,7 +150,7 @@
             <div class="hot-product">
                 <img
                     class="product-img"
-                    src="./../assets/img/product/sp1.jpg"
+                    src="assets/img/product/sp1.jpg"
                     alt=""
                 />
                 <div class="cover"></div>
@@ -321,14 +329,15 @@
                     </div>
                     <div class="product-list">
                         <div class="item">
-                            <a href="./productDetail.html" class="img">
+                            <a href="productDetail.jsp" class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </a>
                             <div class="item_content">
-                                <a href="./productDetail.html" class="title"
+                                <a href="productDetail.jsp" class="title"
+
                                     >Roland VAD 706</a
                                 >
                                 <div class="desc">
@@ -341,7 +350,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -357,7 +366,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -373,7 +382,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -389,7 +398,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -405,7 +414,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -614,11 +623,11 @@
 
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./../js/product.js"></script>
-        <script src="./../js/log.js"></script>
+        <script src="js/product.js"></script>
+        <script src="js/log.js"></script>
 
         <!-- OWL CAROUSEL JS -->
-        <script src="./../js/owl.carousel.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
         <script>
             $(".owl-carousel").owlCarousel({
                 loop: true,

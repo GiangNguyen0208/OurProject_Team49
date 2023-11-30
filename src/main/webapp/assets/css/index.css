@@ -168,7 +168,7 @@ header {
 
 /* CAROUSEL  */
 .carousel{
-    background-image: url(./../img/carousel/c1.jpg);
+    background-image: url(../img/carousel/c1.jpg);
     height: 700px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -724,7 +724,7 @@ header {
 
 /* FEEDBACK */
 .feedback {
-    background-image: url(./../img/feedback/fb2.jpg);
+    background-image: url(../img/feedback/fb2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 80px 0;
