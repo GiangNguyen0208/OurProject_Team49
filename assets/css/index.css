@@ -504,20 +504,17 @@ header {
         padding-bottom: 10px;
         position: relative;
     }
-    .list-product .item .width100{
-       
     
-    }
     .list-product .item .item_image{
         width: 100%;
         float: left;
         position: relative;
-         height: 300px;
-         text-align: center;
-         padding: 3px;
-         overflow: hidden;
-         margin-bottom: 7px;
-         border-bottom: 1px solid #e6e7e8;
+        height: 300px;
+        text-align: center;
+        padding: 3px;
+        overflow: hidden;
+        margin-bottom: 7px;
+        border-bottom: 1px solid #e6e7e8;
     }
     .list-product .item .item_image > a > img{
         position: absolute;
@@ -685,6 +682,10 @@ header {
         overflow: hidden;
         white-space: nowrap; 
         text-overflow: ellipsis;
+   }
+   .item .item_content .icon-review {
+        margin: 10px 0;
+        color: yellow;
    }
    .item .item_content .price {
         font-size: large ;
