@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin về Chúng tôi</title>
     <!-- reset CSS -->
-    <link rel="stylesheet" href="./../assets/css/reset.css" />
-    <link rel="stylesheet" href="./../assets/css/about.css" />
-    <link rel="stylesheet" href="./../assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/index.css">
     <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
      <!-- embed fonts -->
@@ -44,29 +45,27 @@
          referrerpolicy="no-referrer"
      />
      <!-- styles -->
-     <link rel="stylesheet" href="./../assets/css/style.css" />
+     <link rel="stylesheet" href="assets/css/style.css" />
     </head>
     <body>
     <!-- HEADER -->
     <header>
         <div class="header__content">
-            <p>
-                <a href="./index.html"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
-            </p>
+            <a href="index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
             <div class="search">    
                 <input type="text" placeholder="Tìm kiếm">
                 <button type="submit">Search</button>
             </div>
             <nav>
                 <ul class="menu__bar">
-                    <li class="menu__items"><a href="./../index.html">Trang chính</a></li>
+                    <li class="menu__items"><a href="index.jsp">Trang chính</a></li>
                     <li class="menu__items"><a href="./aboutUs.html">Giới thiệu</a>
                         <ul class="drum__container">
                             <li class="drum__item return"><a href="#Us">Giới thiệu về chúng tôi</a></li>
                             <li class="drum__item confidentiality"><a href="#Product">Giới thiệu về sản phẩm</a></li>
                         </ul>
                     </li>
-                    <li class="menu__items"><a href="./product.html">Sản Phẩm</a>
+                    <li class="menu__items"><a href="product.jsp">Sản Phẩm</a>
                         <ul class="drum__container">
                             <li class="drum__item"><a href="#">Trống điện</a></li>
                             <li class="drum__item"><a href="#">Trống bộ</a></li>
@@ -77,16 +76,16 @@
                     </li>
                     <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
                     <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
-                    <li class="menu__items"><a href="./policy.html">Chính sách</a></li>
+                    <li class="menu__items"><a href="policy.jsp">Chính sách</a></li>
                 </ul>
             </nav>
             <div class="sign__in">
                 <i class="fa fa-user"></i>
-                <a href="./log.html">Đăng Nhập</a>
+                <a href="log.jsp">Đăng Nhập</a>
             </div>
             <div class="cart__shopping">
                 <i class="fa fa-shopping-cart"></i>
-                <a href="./cart.html">Giỏ Hàng</a>
+                <a href="cart.jsp">Giỏ Hàng</a>
             </div>
         </div>
     </header>
@@ -118,7 +117,7 @@
                     <div class="about__our__list row">
                         <div class="about__our__item col col-third mt-32">
                             <div class="about__item__image">
-                                <img class = "member__img" decoding="async" src ="./../assets/img/team/ad3.PNG">
+                                <img class = "member__img" decoding="async" src ="assets/img/team/ad3.PNG">
                                 
                             </div>
                             <div class="about__item__info">
@@ -129,7 +128,7 @@
                         </div>
                         <div class="about__our__item col col-third mt-32">
                             <div class="about__item__image">
-                                <img class = "member__img" decoding="async" src ="./../assets/img/team/ad1.jpg">
+                                <img class = "member__img" decoding="async" src ="assets/img/team/ad1.jpg">
                                 
                             </div>
                             <div class="about__item__info">
@@ -140,7 +139,7 @@
                         </div>
                         <div class="about__our__item col col-third mt-32">
                             <div class="about__item__image">
-                                <img class = "member__img" decoding="async" src ="./../assets/img/team/ad2.jpg">
+                                <img class = "member__img" decoding="async" src ="assets/img/team/ad2.jpg">
                                                                         
                             </div>
                             <div class="about__item__info">
@@ -160,7 +159,7 @@
     <div class="about__content about__confidentiality ">  
         <div class="about__content__inner"    id="Product"> 
             <div class="aboutPro__background" id="aboutProBackground" >
-                
+
             </div>
             <div class="about__row">  
                 <div class="about__row__text">
@@ -168,7 +167,7 @@
                         
                         Ngày xưa, trống xuất hiện như một phương tiện giao tiếp cơ bản trong các cộng đồng. Với âm thanh đơn giản nhưng mạnh mẽ. Qua thời gian, sự sáng tạo và phát triển kỹ thuật đã đưa trống từ những chiếc trống đơn giản đến các bộ trống phức tạp và đa dạng ngày nay. Sự tiện lợi và linh hoạt của trống đã khiến nó trở thành một công cụ âm nhạc không thể thiếu trong nhiều thể loại, từ nhạc dân dụ đến rock, jazz, và thậm chí là nhạc điện tử.
 Bằng sự kết hợp giữa truyền thống và hiện đại, sự ra đời và phát triển của trống đã tạo nên ảnh hưởng lớn của nó trong thế giới âm nhạc.
-                    
+                    </h4>
                 </div>
                 <div class="about__row__two">
                     <div class="row__two__content">
@@ -195,15 +194,15 @@ Bằng sự kết hợp giữa truyền thống và hiện đại, sự ra đờ
                     <div class="images__holder" style="clip-path: inset(0px); transition: all 2s ease 0s;">
                         <div class="images__slider" style="visibility: visible;">
                             <div class="images__slider__item img-prev" data-index="1">
-                                <div class="item__image" style="background-image: url('/assets/img/about/JazzDrum.jpg')">
+                                <div class="item__image" style="background-image: url('./assets/img/about/JazzDrum.jpg')">
                                 </div>
                             </div>
                             <div class="images__slider__item img-active" data-index="2">
-                                <div class="item__image" style="background-image: url('/assets/img/about/ElectronicDrum.jpg')">
+                                <div class="item__image" style="background-image: url('./assets/img/about/ElectronicDrum.jpg')">
                                 </div>
                             </div>
                             <div class="images__slider__item" data-index="3">
-                                <div class="item__image" style="background-image: url('/assets/img/about/TambourineDrum.jpg')">
+                                <div class="item__image" style="background-image: url('./assets/img/about/TambourineDrum.jpg')">
                                 </div>
                             </div>
                         </div>
@@ -408,5 +407,9 @@ Bằng sự kết hợp giữa truyền thống và hiện đại, sự ra đờ
 </body>
 <!-- MAIN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<<<<<<< HEAD:src/main/webapp/aboutUs.jsp
+<script src="js/about.js"></script>
+=======
 <script src="./../js/about.js"></script>
+>>>>>>> 2b86e7bc7c7a8056290d925f4d787a49dd0bec34:html/aboutUs.html
 </html>

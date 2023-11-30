@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,8 +6,8 @@
         <title>Our Project 49</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./assets/css/reset.css" />
-        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
         <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
         <!-- embed fonts -->
@@ -49,12 +49,12 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <link rel="stylesheet" href="./assets/css/log.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/log.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
-        <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
     </head>
     <body>
         <!-- HEADER -->
@@ -72,10 +72,10 @@
                         <li class="menu__items">
                             <a href="./index.html">Trang chính</a>
                         </li>
-                        <li class="menu__items"><a href="./html/aboutUs.html">Giới thiệu</a>
+                        <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
                         </li>
                         <li class="menu__items">
-                            <a href="./html/product.html">Sản Phẩm</a>
+                            <a href="product.jsp">Sản Phẩm</a>
                             <ul class="drum__container">
                                 <li class="drum__item">
                                     <a href="#">Trống điện</a>
@@ -97,17 +97,17 @@
                         <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
                         <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
                         <li class="menu__items">
-                            <a href="./html/policy.html">Chính sách</a>
+                            <a href="policy.jsp">Chính sách</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="sign__in">
                     <i class="fa fa-user"></i>
-                    <a href="./html/log.html">Đăng Nhập</a>
+                    <a href="log.jsp">Đăng Nhập</a>
                 </div>
                 <div class="cart__shopping">
                     <i class="fa fa-shopping-cart"></i>
-                    <a href="./html/cart.html">Giỏ Hàng</a>
+                    <a href="cart.jsp">Giỏ Hàng</a>
                 </div>
             </div>
         </header>
@@ -116,7 +116,7 @@
             <div class="carousel__content">
                 <h1>Dịch vụ mua bán trống</h1>
                 <p>Cung cấp những sản phẩm tốt nhất Việt Nam</p>
-                <a href="./html/aboutUs.html">
+                <a href="aboutUs.jsp">
                     <button>Tìm hiểu thêm</button>
                 </a>
             </div>
@@ -134,7 +134,7 @@
                 </div>
             </div>
             <div class="intro__items intro__img1">
-                <img src="./assets/img/intro/intro1.jpg" alt="intro_1" />
+                <img src="assets/img/intro/intro1.jpg" alt="intro_1" />
             </div>
             <div class="intro__items intro__text">
                 <div>
@@ -155,7 +155,7 @@
                 </div>
             </div>
             <div class="intro__items">
-                <img src="./assets/img/intro/intro2.jpg" alt="intro_2" />
+                <img src="assets/img/intro/intro2.jpg" alt="intro_2" />
             </div>
             <div class="intro__items intro__text">
                 <div>
@@ -164,7 +164,7 @@
                 </div>
             </div>
             <div class="intro__items intro__img3">
-                <img src="./assets/img/intro/intro3.jpg" alt="intro_3" />
+                <img src="assets/img/intro/intro3.jpg" alt="intro_3" />
             </div>
             <div class="intro__items intro__text">
                 <div>
@@ -173,7 +173,7 @@
                 </div>
             </div>
             <div class="intro__items intro__img4">
-                <img src="./assets/img/intro/intro4.jpg" alt="intro_4" />
+                <img src="assets/img/intro/intro4.jpg" alt="intro_4" />
             </div>
         </section>
         <!-- PRODUCTS -->
@@ -362,11 +362,11 @@
                 </div>
                 <div class="container">
                     <div class="list">
-                        <a href="./html/productDetail.html">
+                        <a href="productDetail.jsp">
                             <div class="item">
                                 <div class="img">
                                     <img
-                                        src="./assets/img/product/sp1.jpg"
+                                        src="assets/img/product/sp1.jpg"
                                         alt="Roland VAD 706"
                                     />
                                 </div>
@@ -390,7 +390,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./assets/img/product/sp2.jpg"
+                                    src="assets/img/product/sp2.jpg"
                                     alt="Roland VAD 507"
                                 />
                             </div>
@@ -413,7 +413,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./assets/img/product/sp3.jpg"
+                                    src="assets/img/product/sp3.jpg"
                                     alt="Roland VAD 504"
                                 />
                             </div>
@@ -436,7 +436,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./assets/img/product/sp4.jpg"
+                                    src="assets/img/product/sp4.jpg"
                                     alt="Alesis Turbo Mesh Kit"
                                 />
                             </div>
@@ -459,7 +459,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./assets/img/product/sp5.jpg"
+                                    src="assets/img/product/sp5.jpg"
                                     alt="Alesis Crimson II SE"
                                 />
                             </div>
@@ -482,7 +482,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./assets/img/product/sp6.jpg"
+                                    src="assets/img/product/sp6.jpg"
                                     alt="Trống Pearl Roadshow 505"
                                 />
                             </div>
@@ -508,7 +508,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./assets/img/product/sp7.jpg"
+                                    src="assets/img/product/sp7.jpg"
                                     alt="Roland TD-1DMK"
                                 />
                             </div>
@@ -535,7 +535,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./assets/img/product/sp8.jpg"
+                                    src="assets/img/product/sp8.jpg"
                                     alt="Alesis Command Mesh Kit"
                                 />
                             </div>
@@ -562,7 +562,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./assets/img/product/sp9.jpg"
+                                    src="assets/img/product/sp9.jpg"
                                     alt="Alesis Surge Mesh Kit"
                                 />
                             </div>
@@ -587,7 +587,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/single/p1.jpg"
+                                    src="img_product/single/p1.jpg"
                                     alt="Meinl MT1415BN"
                                 />
                             </div>
@@ -612,7 +612,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/single/p2.jpg"
+                                    src="img_product/single/p2.jpg"
                                     alt="Pear Snare Drum STH1450S"
                                 />
                             </div>
@@ -638,7 +638,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/single/p3.jpg"
+                                    src="img_product/single/p3.jpg"
                                     alt="Pear Snare Drum STH1465S"
                                 />
                             </div>
@@ -664,7 +664,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/single/p4.jpg"
+                                    src="img_product/single/p4.jpg"
                                     alt="Pearl STH1450AL SensiTone Heritage Alloy 14"
                                 />
                             </div>
@@ -691,7 +691,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/single/p5.jpg"
+                                    src="img_product/single/p5.jpg"
                                     alt="Pearl STH1465AL SensiTone Heritage Alloy 14"
                                 />
                             </div>
@@ -718,7 +718,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/single/p6.jpg"
+                                    src="img_product/single/p6.jpg"
                                     alt="Pearl STH1465BR"
                                 />
                             </div>
@@ -742,7 +742,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/single/p7.jpg"
+                                    src="img_product/single/p7.jpg"
                                     alt="Pearl STH1450BR"
                                 />
                             </div>
@@ -766,7 +766,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/single/p8.jpg"
+                                    src="img_product/single/p8.jpg"
                                     alt="Pearl Matte Natural MUS1465M224"
                                 />
                             </div>
@@ -797,7 +797,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/sets/odery/p1_black.jpg"
+                                    src="img_product/sets/odery/p1_black.jpg"
                                     alt="Pearl Dacade Maple DMP943XP/C"
                                 />
                             </div>
@@ -823,7 +823,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/sets/odery/p2_black.jpg"
+                                    src="img_product/sets/odery/p2_black.jpg"
                                     alt="Pearl PSP923XP/C452"
                                 />
                             </div>
@@ -847,7 +847,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/sets/odery/p3_black.jpg"
+                                    src="img_product/sets/odery/p3_black.jpg"
                                     alt="PEARL Export Lacquer EXL725SP Standard"
                                 />
                             </div>
@@ -874,7 +874,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/sets/odery/p4_black.jpg"
+                                    src="img_product/sets/odery/p4_black.jpg"
                                     alt="Pearl DMP925SP/C"
                                 />
                             </div>
@@ -899,7 +899,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/sets/odery/p5_brown.jpg"
+                                    src="img_product/sets/odery/p5_brown.jpg"
                                     alt="Trống PEARL Roadshow RS525 standard"
                                 />
                             </div>
@@ -925,7 +925,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/sets/odery/p6_black.jpg"
+                                    src="img_product/sets/odery/p6_black.jpg"
                                     alt="Pearl Export Lacquer EXL725FP/C"
                                 />
                             </div>
@@ -952,7 +952,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/sets/pearl_jazz/p1__white.jpg"
+                                    src="img_product/sets/pearl_jazz/p1__white.jpg"
                                     alt="Trống Pearl Roadshow 584 Jazz style"
                                 />
                             </div>
@@ -979,7 +979,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/sets/pearl_jazz/p2.jpg"
+                                    src="img_product/sets/pearl_jazz/p2.jpg"
                                     alt="Odery InRock IR.80"
                                 />
                             </div>
@@ -1003,7 +1003,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/sets/pearl_jazz/p3__black.jpg"
+                                    src="img_product/sets/pearl_jazz/p3__black.jpg"
                                     alt="Odery cafekit"
                                 />
                             </div>
@@ -1030,7 +1030,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/cymbal/package/page1/p1.jpg"
+                                    src="img_product/cymbal/package/page1/p1.jpg"
                                     alt="Zildjian ZP4PK"
                                 />
                             </div>
@@ -1057,7 +1057,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/cymbal/package/page1/p2.jpg"
+                                    src="img_product/cymbal/package/page1/p2.jpg"
                                     alt="ZILDJIAN KCD900 "
                                 />
                             </div>
@@ -1083,7 +1083,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/cymbal/package/page1/p3.jpg"
+                                    src="img_product/cymbal/package/page1/p3.jpg"
                                     alt="Meinl HCS141620"
                                 />
                             </div>
@@ -1110,7 +1110,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/cymbal/package/page1/p4.jpg"
+                                    src="img_product/cymbal/package/page1/p4.jpg"
                                     alt="ZILDJIAN ILH16C"
                                 />
                             </div>
@@ -1132,7 +1132,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/cymbal/package/page1/p5.jpg"
+                                    src="img_product/cymbal/package/page1/p5.jpg"
                                     alt="ZILDJIAN ILHPRO"
                                 />
                             </div>
@@ -1154,7 +1154,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/cymbal/package/page1/p6.jpg"
+                                    src="img_product/cymbal/package/page1/p6.jpg"
                                     alt="Zildjian KC0801W"
                                 />
                             </div>
@@ -1181,7 +1181,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/cymbal/package/page1/p7.jpg"
+                                    src="img_product/cymbal/package/page1/p7.jpg"
                                     alt="Zildjian S390"
                                 />
                             </div>
@@ -1209,7 +1209,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/cymbal/package/page1/p8.jpg"
+                                    src="img_product/cymbal/package/page1/p8.jpg"
                                     alt="ZILDJIAN ZP20R"
                                 />
                             </div>
@@ -1231,7 +1231,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./img_product/cymbal/package/page1/p9.jpg"
+                                    src="img_product/cymbal/package/page1/p9.jpg"
                                     alt="Zildjan K0801C"
                                 />
                             </div>
@@ -1448,13 +1448,13 @@
 
     <!-- MAIN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/product.js"></script>
-    <script src="./js/log.js"></script>
-    <script src="./js/paging.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/log.js"></script>
+    <script src="js/paging.js"></script>
     
     <!-- OWL CAROUSEL JS -->
-    <script src="./js/owl.carousel.min.js"></script>
-    <script src="./js/feedback.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/feedback.js"></script>
     <!-- <script>
         $(".owl-carousel").owlCarousel({
             loop: true,
