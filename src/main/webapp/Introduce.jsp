@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -60,7 +61,7 @@
 <header>
     <div class="header__content">
         <p>
-            <a href="./../index.html"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
+            <a href="index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
         </p>
         <div class="search">
             <input type="text" placeholder="Tìm kiếm" />
@@ -72,7 +73,7 @@
 
                 <li class="menu__items"><a href="#">Trang chính</a></li>
                 <li class="menu__items"><a href="#">Giới thiệu</a></li>
-                <li class="menu__items"><a href="product.html">Sản Phẩm</a>
+                <li class="menu__items"><a href="product.jsp">Sản Phẩm</a>
                     <ul class="drum__container">
                         <li class="drum__item"><a href="#">Trống điện</a></li>
                         <li class="drum__item"><a href="#">Trống bộ</a></li>
@@ -84,10 +85,10 @@
                     <a href="./index.html">Trang chính</a>
                 </li>
                 <li class="menu__items">
-                    <a href="./aboutUs.html">Giới thiệu</a>
+                    <a href="aboutUs.jsp">Giới thiệu</a>
                 </li>
                 <li class="menu__items">
-                    <a href="./product.html">Sản Phẩm</a>
+                    <a href="product.jsp">Sản Phẩm</a>
                     <ul class="drum__container">
                         <li class="drum__item">
                             <a href="#">Trống điện</a>
@@ -111,17 +112,17 @@
 
                 <li class="menu__items"><a href="#">Cho thuê</a></li>
                 <li class="menu__items">
-                    <a href="./policy.html">Chính sách</a>
+                    <a href="policy.jsp">Chính sách</a>
                 </li>
             </ul>
         </nav>
         <div class="sign__in">
             <i class="fa fa-user"></i>
-            <a href="./log.html">Đăng Nhập</a>
+            <a href="log.jsp">Đăng Nhập</a>
         </div>
         <div class="cart__shopping">
             <i class="fa fa-shopping-cart"></i>
-            <a href="./log.html">Giỏ Hàng</a>
+            <a href="log.jsp">Giỏ Hàng</a>
         </div>
     </div>
 </header>

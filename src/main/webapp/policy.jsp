@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,9 +7,9 @@
         <title>Our Project 49</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./../assets/css/reset.css" />
-        <link rel="stylesheet" href="./../assets/css/index.css" />
-        <link rel="stylesheet" href="./../assets/css/policy.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/policy.css" />
 
         <!-- embed fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,18 +50,18 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./../assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="./../assets/css/owl.carousel.min.css" />
-        <link rel="stylesheet" href="./../assets/css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
     </head>
     <body>
         <!-- HEADER -->
         <header>
             <div class="header__content">
                 <p>
-                    <a href="./../index.html"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
+                    <a href="index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
                 </p>
                 <div class="search">
                     <input type="text" placeholder="Tìm kiếm" />
@@ -69,17 +70,13 @@
                 <nav>
                     <ul class="menu__bar">
                         <li class="menu__items">
-                            <a href="./../index.html">Trang chính</a>
+                            <a href="index.jsp">Trang chính</a>
                         </li>
-                        <li class="menu__items"><a href="./aboutUs.html">Giới thiệu</a>
-                            <ul class="drum__container">
-                                <li class="drum__item"><a href="#">Xin chào</a></li>
-                                <li class="drum__item"><a href="./aboutProduct.html">Thông tin về chúng tôi</a></li>
-                                <li class="drum__item"><a href="#">Sản phẩm</a></li>
-                            </ul>
+                        <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
+                
                         </li>
                         <li class="menu__items">
-                            <a href="./product.html">Sản Phẩm</a>
+                            <a href="product.jsp">Sản Phẩm</a>
                             <ul class="drum__container">
                                 <li class="drum__item">
                                     <a href="#">Trống điện</a>
@@ -107,11 +104,11 @@
                 </nav>
                 <div class="sign__in">
                     <i class="fa fa-user"></i>
-                    <a href="./log.html">Đăng Nhập</a>
+                    <a href="log.jsp">Đăng Nhập</a>
                 </div>
                 <div class="cart__shopping">
                     <i class="fa fa-shopping-cart"></i>
-                    <a href="./cart.html">Giỏ Hàng</a>
+                    <a href="cart.jsp">Giỏ Hàng</a>
                 </div>
             </div>
         </header>
@@ -348,7 +345,7 @@
         </footer>
 
         <!-- MAIN JS -->
-        <script src="./../js/log.js"></script>
-        <script src="./../js/policy.js"></script>
+        <script src="js/log.js"></script>
+        <script src="js/policy.js"></script>
     </body>
 </html>

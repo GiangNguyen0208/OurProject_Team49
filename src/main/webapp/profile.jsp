@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,8 +7,10 @@
         <title>Our Project 49</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./../assets/css/reset.css" />
-        <link rel="stylesheet" href="./../assets/css/profile.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/profile.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
         <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
         <!-- embed fonts -->
@@ -60,7 +63,7 @@
         <header>
             <div class="header__content">
                 <p>
-                    <a href="./../index.html"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
+                    <a href="index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
                 </p>
                 <div class="search">
                     <input type="text" placeholder="Tìm kiếm" />
@@ -71,15 +74,11 @@
                         <li class="menu__items">
                             <a href="./index.html">Trang chính</a>
                         </li>
-                        <li class="menu__items"><a href="./aboutUs.html">Giới thiệu</a>
-                            <ul class="drum__container">
-                                <li class="drum__item"><a href="#">Xin chào</a></li>
-                                <li class="drum__item"><a href="./aboutProduct.html">Thông tin về chúng tôi</a></li>
-                                <li class="drum__item"><a href="#">Sản phẩm</a></li>
-                            </ul>
+                        <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
+    
                         </li>
                         <li class="menu__items">
-                            <a href="./product.html">Sản Phẩm</a>
+                            <a href="product.jsp">Sản Phẩm</a>
                             <ul class="drum__container">
                                 <li class="drum__item">
                                     <a href="#">Trống điện</a>
@@ -101,17 +100,17 @@
                         <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
                         <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
                         <li class="menu__items">
-                            <a href="./policy.html">Chính sách</a>
+                            <a href="policy.jsp">Chính sách</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="sign__in">
                     <i class="fa fa-user"></i>
-                    <a href="./log.html">Đăng Nhập</a>
+                    <a href="log.jsp">Đăng Nhập</a>
                 </div>
                 <div class="cart__shopping">
                     <i class="fa fa-shopping-cart"></i>
-                    <a href="./log.html">Giỏ Hàng</a>
+                    <a href="log.jsp">Giỏ Hàng</a>
                 </div>
             </div>
         </header>
@@ -230,9 +229,7 @@
                                         </div>
                                         <div class="form-name">
                                             <div class="form-control">
-                                                <label class="input-label"
-                                                    >Họ &amp; Tên</label
-                                                >
+                                                <label class="input-label">First Name</label>
                                                 <div>
                                                     <div class="input-content">
                                                         <input
@@ -240,23 +237,21 @@
                                                             type="search"
                                                             name="fullName"
                                                             maxlength="128"
-                                                            placeholder="Thêm họ tên"
+                                                            placeholder="Thêm first name"
                                                             value
                                                         />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-control">
-                                                <label class="input-label"
-                                                    >Nickname</label
-                                                >
+                                                <label class="input-label">Last Name</label>
                                                 <div>
                                                     <div class="input-content">
                                                         <input
                                                             class="input-nickname"
                                                             name="userName"
                                                             maxlength="128"
-                                                            placeholder="Thêm nickname"
+                                                            placeholder="Thêm last name"
                                                             type="search"
                                                             value=""
                                                         />
@@ -795,20 +790,6 @@
                                         <span></span>
                                         <button class="button active">
                                             Cập nhật
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="list-item">
-                                    <div>
-                                        <i
-                                            class="fa fa-user-shield icon-profile"
-                                        ></i>
-                                        <span>Thiết lập mã PIN</span>
-                                    </div>
-                                    <div class="status">
-                                        <span></span>
-                                        <button class="button active">
-                                            Thiết lập
                                         </button>
                                     </div>
                                 </div>

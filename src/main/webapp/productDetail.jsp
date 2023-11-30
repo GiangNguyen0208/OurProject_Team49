@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,8 +7,8 @@
         <title>Chi tiết sản phẩm</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./../assets/css/reset.css" />
-        <link rel="stylesheet" href="./../assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
         <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
         <!-- embed fonts -->
@@ -49,19 +50,24 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./../assets/css/style.css" />
-        <link rel="stylesheet" href="./../assets/css/productDetail.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/productDetail.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="./../assets/css/owl.carousel.min.css" />
-        <link rel="stylesheet" href="./../assets/css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <link
+            rel="stylesheet"
+            href="assets/css/owl.theme.default.min.css"
+        />
     </head>
     <body>
         <!-- HEADER -->
         <header>
             <div class="header__content">
                 <p>
-                    <a href="./../index.html"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
+                    <a href="index.jsp"
+                        ><i class="fa fa-drum"></i> <span>Dr/</span>um</a
+                    >
                 </p>
                 <div class="search">
                     <input type="text" placeholder="Tìm kiếm" />
@@ -70,17 +76,27 @@
                 <nav>
                     <ul class="menu__bar">
                         <li class="menu__items">
-                            <a href="./../index.html">Trang chính</a>
-                        </li>
-                        <li class="menu__items"><a href="./aboutUs.html">Giới thiệu</a>
-                            <ul class="drum__container">
-                                <li class="drum__item"><a href="#">Xin chào</a></li>
-                                <li class="drum__item"><a href="./aboutProduct.html">Thông tin về chúng tôi</a></li>
-                                <li class="drum__item"><a href="#">Sản phẩm</a></li>
-                            </ul>
+                            <a href="index.jsp">Trang chính</a>
                         </li>
                         <li class="menu__items">
-                            <a href="./product.html">Sản Phẩm</a>
+                            <a href="aboutUs.jsp">Giới thiệu</a>
+                            <ul class="drum__container">
+                                <li class="drum__item">
+                                    <a href="#">Xin chào</a>
+                                </li>
+                                <li class="drum__item">
+                                    <a href="aboutProduct.jsp"
+                                        >Thông tin về chúng tôi</a
+                                    >
+                                </li>
+                                <li class="drum__item">
+                                    <a href="#">Sản phẩm</a>
+                                </li>
+                            </ul>
+                        <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
+                        </li>
+                        <li class="menu__items">
+                            <a href="product.jsp">Sản Phẩm</a>
                             <ul class="drum__container">
                                 <li class="drum__item">
                                     <a href="#">Trống điện</a>
@@ -102,17 +118,17 @@
                         <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
                         <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
                         <li class="menu__items">
-                            <a href="./policy.html">Chính sách</a>
+                            <a href="policy.jsp">Chính sách</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="sign__in">
                     <i class="fa fa-user"></i>
-                    <a href="./log.html">Đăng Nhập</a>
+                    <a href="log.jsp">Đăng Nhập</a>
                 </div>
                 <div class="cart__shopping">
                     <i class="fa fa-shopping-cart"></i>
-                    <a href="./cart.html">Giỏ Hàng</a>
+                    <a href="cart.jsp">Giỏ Hàng</a>
                 </div>
             </div>
         </header>
@@ -125,7 +141,7 @@
                 <div id="product__detail" class="product-content detail">
                     <div class="product__img">
                         <div class="product__img-spot">
-                            <img src="./../assets/img/product/sp1.jpg" alt="" />
+                            <img src="assets/img/product/sp1.jpg" alt="" />
                             <button class="cta-img left">
                                 <i class="fa-solid fa-arrow-left-long"></i>
                             </button>
@@ -136,27 +152,27 @@
                         <div class="product__img-sub">
                             <img
                                 class="item-img active"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                         </div>
@@ -209,18 +225,6 @@
                                 Thêm vào giỏ hàng
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
-                            <button class="quantity-cta favorite liked">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    height="1em"
-                                    viewBox="0 0 512 512"
-                                >
-                                    <path
-                                        d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"
-                                        fill="#ccc"
-                                    />
-                                </svg>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -260,7 +264,7 @@
                     </p>
 
                     <img
-                        src="./assets/img/product/sp1.jpg"
+                        src="assets/img/product/sp1.jpg"
                         alt=""
                         class="info-img"
                     />
@@ -286,7 +290,7 @@
                     </p>
 
                     <img
-                        src="./assets/img/product/sp1.jpg"
+                        src="assets/img/product/sp1.jpg"
                         alt=""
                         class="info-img"
                     />
@@ -484,11 +488,11 @@
 
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./../js/product.js"></script>
-        <script src="./../js/log.js"></script>
+        <script src="js/product.js"></script>
+        <script src="js/log.js"></script>
 
         <!-- OWL CAROUSEL JS -->
-        <script src="./../js/owl.carousel.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
         <script>
             $(".owl-carousel").owlCarousel({
                 loop: true,

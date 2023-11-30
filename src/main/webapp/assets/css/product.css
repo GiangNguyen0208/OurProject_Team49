@@ -107,17 +107,11 @@
     margin-bottom: 12px;
 }
 
-.directory__title {
-    margin-bottom: 12px;
-    font-size: 2rem;
-    color: #000;
-    font-weight: 600;
-}
-
 .directory__gerne .gerne-link {
     display: inline-block;
     padding: 12px;
-    font-size: 1.6rem;
+    width: 100%;
+    font-size: 2rem;
     color: #000;
     border-radius: 4px;
     transition: all 0.2s ease;
@@ -156,7 +150,6 @@
         text-transform: uppercase;
         padding:11px 10px;
         font-size: 14px;
-        font-family: 'Roboto-Medium';
         font-weight: normal;
         float: left;
         margin: 0;
@@ -167,7 +160,6 @@
         position: relative;
     }
     .box_order_item > label{
-        font-family: 'Roboto-Medium';
         padding:9px 0px;
         font-size: 15px;
         font-weight: normal;
@@ -232,7 +224,6 @@
         width: 100%;
     }
     .box_ss label{
-         font-family: 'Roboto-Medium';
         font-size: 14px;
         font-weight: normal;
         float: left;

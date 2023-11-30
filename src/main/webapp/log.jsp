@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,7 +7,7 @@
         <title>Đăng nhập</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./../assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
 
         <!-- embed fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,8 +36,8 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./../assets/css/style.css" />
-        <link rel="stylesheet" href="./../assets/css/log.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/log.css" />
     </head>
     <body>
         <!-- Form -->
@@ -44,11 +45,15 @@
         <div class="content">
             <!-- Log In -->
             <div class="form-wrapper log-in open" id="log-in">
-                <a href="./../index.html" class="back-cta">
+                <a href="index.jsp" class="back-cta">
                     <i class="fa-solid fa-chevron-left"></i>
                     Trở về trang chủ
                 </a>
-                <form action="" class="form" autocomplete="off">
+                <form
+                    action="profile.jsp"
+                    class="form"
+                    autocomplete="off"
+                >
                     <p class="title">Đăng Nhập</p>
                     <label for="username__login">Tài khoản</label>
                     <div class="user-input">
@@ -76,7 +81,11 @@
                         <a href="#!">Quên mật khẩu ?</a>
                     </div>
 
-                    <button href="#!" type="submit" class="submit">
+                    <button
+                        href="./../html/profile.html"
+                        type=""
+                        class="submit"
+                    >
                         ĐĂNG NHẬP
                     </button>
 
@@ -212,6 +221,6 @@
                 </form>
             </div>
         </div>
-        <script src="./../js/log.js"></script>
+        <script src="js/log.js"></script>
     </body>
 </html>
