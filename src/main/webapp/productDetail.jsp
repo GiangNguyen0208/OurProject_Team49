@@ -78,9 +78,6 @@
                 <nav>
                     <ul class="menu__bar">
                         <li class="menu__items">
-<<<<<<< HEAD:src/main/webapp/productDetail.jsp
-                            <a href="index.jsp">Trang chính</a>
-=======
                             <a href="./../index.html">Trang chính</a>
                         </li>
                         <li class="menu__items">
@@ -99,7 +96,6 @@
                                 </li>
                             </ul>
                         <li class="menu__items"><a href="./aboutUs.html">Giới thiệu</a>
->>>>>>> 2b86e7bc7c7a8056290d925f4d787a49dd0bec34:html/productDetail.html
                         </li>
                         <li class="menu__items">
                             <a href="aboutUs.jsp">Giới thiệu</a>
