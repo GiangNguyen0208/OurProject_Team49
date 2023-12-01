@@ -4,7 +4,6 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 import org.jdbi.v3.core.Jdbi;
 
 import java.sql.SQLException;
-ad
 public class JDBIConnector {
     private static Jdbi jdbi;
 
