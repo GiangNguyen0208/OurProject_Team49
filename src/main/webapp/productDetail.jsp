@@ -88,7 +88,7 @@
                                 </li>
                                 <li class="drum__item">
                                     <a href="./aboutProduct.html"
-                                        >Thông tin về chúng tôi</a
+                                    >Thông tin về chúng tôi</a
                                     >
                                 </li>
                                 <li class="drum__item">
@@ -105,7 +105,7 @@
                                 </li>
                                 <li class="drum__item">
                                     <a href="aboutProduct.jsp"
-                                        >Thông tin về chúng tôi</a
+                                    >Thông tin về chúng tôi</a
                                     >
                                 </li>
                                 <li class="drum__item">
