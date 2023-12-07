@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Thông tin tài khoản</title>
+        <title>Our Project 49</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./../assets/css/reset.css" />
-        <link rel="stylesheet" href="./../assets/css/profile.css" />
-        <link rel="stylesheet" href="./../assets/css/index.css" />
-        <link rel="stylesheet" href="./../assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/profile.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+
         <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
         <!-- embed fonts -->
@@ -59,62 +62,7 @@
     </head>
     <body>
         <!-- HEADER -->
-        <header>
-            <div class="header__content">
-                <p>
-                    <a href="./../index.html"
-                        ><i class="fa fa-drum"></i> <pan>Dr/</pan>um</a
-                    >
-                </p>
-                <div class="search">
-                    <input type="text" placeholder="Tìm kiếm" />
-                    <button type="submit">Search</button>
-                </div>
-                <nav>
-                    <ul class="menu__bar">
-                        <li class="menu__items">
-                            <a href="./index.html">Trang chính</a>
-                        </li>
-                        <li class="menu__items">
-                            <a href="./aboutUs.html">Giới thiệu</a>
-                        </li>
-                        <li class="menu__items">
-                            <a href="./product.html">Sản Phẩm</a>
-                            <ul class="drum__container">
-                                <li class="drum__item">
-                                    <a href="#">Trống điện</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống bộ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống lẻ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Percussion</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Symbal</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
-                        <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
-                        <li class="menu__items">
-                            <a href="./policy.html">Chính sách</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="sign__in">
-                    <i class="fa fa-user"></i>
-                    <a href="./log.html">Đăng Nhập</a>
-                </div>
-                <div class="cart__shopping">
-                    <i class="fa fa-shopping-cart"></i>
-                    <a href="./log.html">Giỏ Hàng</a>
-                </div>
-            </div>
-        </header>
+        <c:import url="header.jsp"/>
 
         <!-- PROFILE -->
         <div class="profile-container">
@@ -190,12 +138,12 @@
                                 <span>Thông tin thanh toán </span>
                             </a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a class="" href="/review-hub">
                                 <i class="fa fa-thumbs-up"></i>
                                 <span>Đánh giá sản phẩm</span>
                             </a>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -230,9 +178,7 @@
                                         </div>
                                         <div class="form-name">
                                             <div class="form-control">
-                                                <label class="input-label"
-                                                    >Họ</label
-                                                >
+                                                <label class="input-label">First Name</label>
                                                 <div>
                                                     <div class="input-content">
                                                         <input
@@ -240,23 +186,21 @@
                                                             type="search"
                                                             name="fullName"
                                                             maxlength="128"
-                                                            placeholder="Thêm họ"
+                                                            placeholder="Thêm first name"
                                                             value
                                                         />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-control">
-                                                <label class="input-label"
-                                                    >Tên</label
-                                                >
+                                                <label class="input-label">Last Name</label>
                                                 <div>
                                                     <div class="input-content">
                                                         <input
                                                             class="input-nickname"
                                                             name="userName"
                                                             maxlength="128"
-                                                            placeholder="Thêm tên"
+                                                            placeholder="Thêm last name"
                                                             type="search"
                                                             value=""
                                                         />

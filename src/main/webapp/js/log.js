@@ -48,3 +48,4 @@ loginPW.addEventListener('click', function() {
     forgotPWForm.classList.add('hidden');
     forgotPWForm.classList.remove('open');
 });
+

@@ -4,6 +4,13 @@
     --blue-color: #293241;
 }
 
+.text-danger {
+    color: red;
+    max-width: 210px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
 .form-wrapper.open {
     display: block;
 }
@@ -18,20 +25,30 @@
     color: var(--blue-color);
 }
 
+.form-grp.invalid input {
+    border-bottom: 1px solid red;
+}
+
+.errorMessage {
+    margin-top: 8px;
+    color: red;
+    font-size: 1.4rem;
+}
+
 /* ========== Form ========== */
 
 .content {
+    display: flex;
+    align-items: center;
     width: 100%;
     min-height: 100vh;
-    padding: 12px;
     background: url(https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=1770);
     object-fit: cover;
 }
 
 .form-wrapper {
-    height: 100%;
     text-align: center;
-    max-width: 440px;
+    min-width: 440px;
     padding: 24px 32px;
     margin: 0 auto;
     border-radius: 12px;
@@ -40,10 +57,14 @@
 
 .form {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.form:has(:invalid) .sub-btn {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .form .title {
@@ -53,11 +74,10 @@
     margin: 24px 0 12px;
 }
 
-.form label {
-    margin-right: auto;
+.form-grp {
+    text-align: left;
+    margin-bottom: 6px;
 }
-
-
 
 .user-input,
 .pw-input  {
@@ -88,8 +108,9 @@
     opacity: 0.8;
 }
 
-.form .forget-pw a{
-    font-size: 1.2rem;
+.form .forget-pw span{
+    cursor: pointer;
+    font-size: 1.4rem;
     color: var(--blue-color);
 }
 
@@ -101,10 +122,6 @@
     background: transparent;
     border: none;
     border-bottom: 1px solid var(--blue-color);
-}
-
-.form input:placeholder-shown {
-    border-bottom: 1px solid #ccc;
 }
 
 .form .submit{
@@ -123,30 +140,6 @@
     background: var(--blue-color);
 }
 
-.log-in-op {
-    margin-top: 12px;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.log-in-op a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 46px;
-    min-height: 46px;
-    font-size: 2rem;
-    color: var(--blue-color);
-    border: 1px solid var(--blue-color);
-    border-radius: 50%;
-    transition: all 0.2s ease;
-}
-
-.log-in-op a:hover {
-    color: #fff;
-    background: var(--blue-color);
-}
-
 .footer {
     display: flex;
     flex-direction: column;
@@ -155,6 +148,9 @@
 }
 
 .link {
+    margin-top: 12px;
+    font-size: 1.6rem;
+    text-transform: uppercase;
     color: var(--blue-color);
     background: transparent;
     border: none;

@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,7 +7,7 @@
         <title>Admin</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./../assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
 
         <!-- FONT AWRSOME -->
         <link
@@ -41,8 +42,8 @@
             rel="stylesheet"
         />
 
-        <link rel="stylesheet" href="../assets/css/admin.css" />
-        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/admin.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
     </head>
     <body>
         <div class="container">
@@ -346,6 +347,6 @@
             </div>
         </div>
 
-        <script src="../js/admin.js"></script>
+        <script src="js/admin.js"></script>
     </body>
 </html>

@@ -155,7 +155,7 @@
 .aboutPro__background {
     position: relative;
     height: 520px;
-    background-image: url("./../img/about/aboutPro_background.jpg");
+    background-image: url("../img/about/aboutPro_background.jpg");
     background-attachment: fixed;
     background-size: cover;
     display: inline-block;

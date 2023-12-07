@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<%@ page import="java.util.List" %>
+<%@ page import="bean.Category" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    List<Category> categories = (List<Category>) request.getAttribute("categories");
+    if(categories == null) categories = new ArrayList<>();
+%>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,7 +14,7 @@
         <title>Sản phẩm</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./../assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
 
         <!-- embed fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,88 +55,21 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./../assets/css/index.css" />
-        <link rel="stylesheet" href="./../assets/css/style.css" />
-        <link rel="stylesheet" href="./../assets/css/product.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/product.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="./../assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
         <link
             rel="stylesheet"
-            href="./../assets/css/owl.theme.default.min.css"
+            href="assets/css/owl.theme.default.min.css"
+
         />
     </head>
     <body>
         <!-- HEADER -->
-        <header>
-            <div class="header__content">
-                <p>
-                    <a href="./../index.html"
-                        ><i class="fa fa-drum"></i> <span>Dr/</span>um</a
-                    >
-                </p>
-                <div class="search">
-                    <input type="text" placeholder="Tìm kiếm" />
-                    <button type="submit">Search</button>
-                </div>
-                <nav>
-                    <ul class="menu__bar">
-                        <li class="menu__items">
-                            <a href="./../index.html">Trang chính</a>
-                        </li>
-                        <li class="menu__items">
-                            <a href="./aboutUs.html">Giới thiệu</a>
-                            <ul class="drum__container">
-                                <li class="drum__item">
-                                    <a href="#">Xin chào</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="./aboutProduct.html"
-                                        >Thông tin về chúng tôi</a
-                                    >
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Sản phẩm</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu__items">
-                            <a href="./product.html">Sản Phẩm</a>
-                            <ul class="drum__container">
-                                <li class="drum__item">
-                                    <a href="#">Trống điện</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống bộ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống lẻ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Percussion</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Symbal</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
-                        <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
-                        <li class="menu__items">
-                            <a href="./policy.html">Chính sách</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="sign__in">
-                    <i class="fa fa-user"></i>
-                    <a href="./log.html">Đăng Nhập</a>
-                </div>
-                <div class="cart__shopping">
-                    <i class="fa fa-shopping-cart"></i>
-                    <a href="./cart.html">Giỏ Hàng</a>
-                </div>
-            </div>
-        </header>
+        <c:import url="header.jsp"/>
 
         <div class="search-product">
             <input type="text" placeholder="Tìm kiếm sản phẩm" />
@@ -142,7 +83,7 @@
             <div class="hot-product">
                 <img
                     class="product-img"
-                    src="./../assets/img/product/sp1.jpg"
+                    src="assets/img/product/sp1.jpg"
                     alt=""
                 />
                 <div class="cover"></div>
@@ -153,23 +94,12 @@
                         <div class="directory-title">Danh mục</div>
                         <div class="directory__list">
                             <ul class="directory__item">
+                                <% for (Category c : categories) { %>
                                 <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link"
-                                        >Trống điện tử</a
-                                    >
+                                    <a href="#!" class="gerne-link"><%= c.getName() %></a>
                                 </li>
-                                <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link">Trống bộ</a>
-                                </li>
-                                <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link">Trống lẻ</a>
-                                </li>
-                                <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link">Bộ gõ</a>
-                                </li>
-                                <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link">Cymbal</a>
-                                </li>
+                                <% }%>
+
                             </ul>
                         </div>
                     </div>
@@ -321,14 +251,15 @@
                     </div>
                     <div class="product-list">
                         <div class="item">
-                            <a href="./productDetail.html" class="img">
+                            <a href="productDetail.jsp" class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </a>
                             <div class="item_content">
-                                <a href="./productDetail.html" class="title"
+                                <a href="productDetail.jsp" class="title"
+
                                     >Roland VAD 706</a
                                 >
                                 <div class="desc">
@@ -341,7 +272,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -357,7 +288,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -373,7 +304,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -389,7 +320,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -405,7 +336,7 @@
                         <div class="item">
                             <div class="img">
                                 <img
-                                    src="./../assets/img/product/sp1.jpg"
+                                    src="assets/img/product/sp1.jpg"
                                     alt="Roland VAD 706"
                                 />
                             </div>
@@ -614,11 +545,11 @@
 
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./../js/product.js"></script>
-        <script src="./../js/log.js"></script>
+        <script src="js/product.js"></script>
+        <script src="js/log.js"></script>
 
         <!-- OWL CAROUSEL JS -->
-        <script src="./../js/owl.carousel.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
         <script>
             $(".owl-carousel").owlCarousel({
                 loop: true,

@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,8 +8,8 @@
         <title>Chi tiết sản phẩm</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./../assets/css/reset.css" />
-        <link rel="stylesheet" href="./../assets/css/index.css" />
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
         <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
         <!-- embed fonts -->
@@ -49,87 +51,19 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./../assets/css/style.css" />
-        <link rel="stylesheet" href="./../assets/css/productDetail.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/productDetail.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="./../assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
         <link
             rel="stylesheet"
-            href="./../assets/css/owl.theme.default.min.css"
+            href="./assets/css/owl.theme.default.min.css"
         />
     </head>
     <body>
         <!-- HEADER -->
-        <header>
-            <div class="header__content">
-                <p>
-                    <a href="./../index.html"
-                        ><i class="fa fa-drum"></i> <span>Dr/</span>um</a
-                    >
-                </p>
-                <div class="search">
-                    <input type="text" placeholder="Tìm kiếm" />
-                    <button type="submit">Search</button>
-                </div>
-                <nav>
-                    <ul class="menu__bar">
-                        <li class="menu__items">
-                            <a href="./../index.html">Trang chính</a>
-                        </li>
-                        <ul class="menu__items">
-                            <a href="./aboutUs.html">Giới thiệu</a>
-                            <ul class="drum__container">
-                                <li class="drum__item">
-                                    <a href="#">Xin chào</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="./aboutProduct.html"
-                                        >Thông tin về chúng tôi</a
-                                    >
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Sản phẩm</a>
-                                </li>
-                            </ul>
-                        </ul>
-                        <li class="menu__items">
-                            <a href="./product.html">Sản Phẩm</a>
-                            <ul class="drum__container">
-                                <li class="drum__item">
-                                    <a href="#">Trống điện</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống bộ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống lẻ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Percussion</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Symbal</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
-                        <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
-                        <li class="menu__items">
-                            <a href="./policy.html">Chính sách</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="sign__in">
-                    <i class="fa fa-user"></i>
-                    <a href="./log.html">Đăng Nhập</a>
-                </div>
-                <div class="cart__shopping">
-                    <i class="fa fa-shopping-cart"></i>
-                    <a href="./cart.html">Giỏ Hàng</a>
-                </div>
-            </div>
-        </header>
+        <c:import url="header.jsp"/>
 
         <!-- PRODUCT DETAIL -->
         <div class="product__detail">
@@ -139,7 +73,7 @@
                 <div id="product__detail" class="product-content detail">
                     <div class="product__img">
                         <div class="product__img-spot">
-                            <img src="./../assets/img/product/sp1.jpg" alt="" />
+                            <img src="./assets/img/product/sp1.jpg" alt="" />
                             <button class="cta-img left">
                                 <i class="fa-solid fa-arrow-left-long"></i>
                             </button>
@@ -150,27 +84,27 @@
                         <div class="product__img-sub">
                             <img
                                 class="item-img active"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="./assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="./assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="./assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="./assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./../assets/img/product/sp1.jpg"
+                                src="./assets/img/product/sp1.jpg"
                                 alt=""
                             />
                         </div>
@@ -266,7 +200,7 @@
                     </p>
 
                     <img
-                        src="../assets/img/product/sp1.jpg"
+                        src="./assets/img/product/sp1.jpg"
                         alt=""
                         class="info-img"
                     />
@@ -292,7 +226,7 @@
                     </p>
 
                     <img
-                        src="../assets/img/product/sp1.jpg"
+                        src="./assets/img/product/sp1.jpg"
                         alt=""
                         class="info-img"
                     />
@@ -490,11 +424,11 @@
 
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./../js/product.js"></script>
-        <script src="./../js/log.js"></script>
+        <script src="./js/product.js"></script>
+        <script src="./js/log.js"></script>
 
         <!-- OWL CAROUSEL JS -->
-        <script src="./../js/owl.carousel.min.js"></script>
+        <script src="./js/owl.carousel.min.js"></script>
         <script>
             $(".owl-carousel").owlCarousel({
                 loop: true,
