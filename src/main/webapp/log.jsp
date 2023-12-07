@@ -53,7 +53,7 @@
                 action="./log"
                 method="post"
                 class="form"
-                autocomplete="on"
+                autocomplete="off"
         >
             <p class="title">Đăng Nhập</p>
             <c:set var="error" value="${requestScope.error}"/>
@@ -136,7 +136,6 @@
                             name="username-signup"
                             type="text"
                             placeholder="Nhập tên tài khoản hoặc email... "
-                            required
                     />
                 </div>
                 <div class="errorMessage"></div>
@@ -250,11 +249,27 @@
 <script src="js/validation.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // validate cho form đăng nhập
         Validator({
             form: '#log-in',
             rules: [
                 Validator.isRequired('#username__login'),
                 Validator.isRequired('#password__login')
+            ]
+        });
+
+        // validate cho form đăng ký
+        Validator({
+            form: '#sign-up',
+            rules: [
+                // username__signup
+                // email__signup
+                // password__signup
+                // confirm-password
+
+                // Validator.isEmail('#email__signup'),
+                Validator.isRequired('#password__signup'),
+                Validator.isRequired('#confirm-password'),
             ]
         });
     });
