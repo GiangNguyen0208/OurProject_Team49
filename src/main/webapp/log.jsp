@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -53,7 +53,7 @@
                 action="./log"
                 method="post"
                 class="form"
-                autocomplete="off"
+                autocomplete="on"
         >
             <p class="title">Đăng Nhập</p>
             <c:set var="error" value="${requestScope.error}"/>
@@ -71,7 +71,7 @@
                             type="text"
                             name="username"
                             required
-                            placeholder="Nhập tên tài khoản hoặc email..."
+                            placeholder="Nhập tên tài khoản hoặc email ..."
                     />
                 </div>
                 <div class="errorMessage"></div>
@@ -86,8 +86,7 @@
                             name="password"
                             type="password"
                             required
-                            minlength="6"
-                            placeholder="Nhập mật khẩu..."
+                            placeholder="Nhập mật khẩu ..."
                     />
                 </div>
                 <div class="errorMessage"></div>
@@ -135,7 +134,7 @@
                             id="username__signup"
                             name="username-signup"
                             type="text"
-                            placeholder="Nhập tên tài khoản hoặc email... "
+                            placeholder="Nhập tên tài khoản ... "
                     />
                 </div>
                 <div class="errorMessage"></div>
@@ -149,8 +148,8 @@
                             id="email__signup"
                             name="email__signup"
                             type="email"
-                            placeholder="Nhập email đăng ký... "
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            placeholder="Nhập email đăng ký ... "
+<%--                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"--%>
                             required
                     />
                 </div>
@@ -165,8 +164,7 @@
                             id="password__signup"
                             name="password__signup"
                             type="password"
-                            minlength="6"
-                            placeholder="Nhập mật khẩu..."
+                            placeholder="Nhập mật khẩu ..."
                             required
                     />
                 </div>
@@ -181,7 +179,6 @@
                             id="confirm-password"
                             name="confirm-password"
                             type="password"
-                            minlength="6"
                             placeholder="Xác nhận mật khẩu"
                             required
                     />
@@ -216,14 +213,14 @@
             <p class="title">Quên mật khẩu</p>
 
             <div class="form-grp">
-                <label for="username__forgot">Tài khoản</label>
+                <label for="username__forgot">Email</label>
                 <div class="user-input">
                     <i class="fa-solid fa-user ic"></i>
                     <input
                             id="username__forgot"
                             name="username_forgot"
                             type="text"
-                            placeholder="Nhập email... "
+                            placeholder="Nhập email ... "
                             required
                     />
                 </div>
@@ -252,24 +249,41 @@
         // validate cho form đăng nhập
         Validator({
             form: '#log-in',
+            parentError: '.form-grp',
+            errorSelector: '.errorMessage',
             rules: [
                 Validator.isRequired('#username__login'),
-                Validator.isRequired('#password__login')
+                Validator.minLength('#password__login', 6)
             ]
         });
 
         // validate cho form đăng ký
         Validator({
             form: '#sign-up',
+            parentError: '.form-grp',
+            errorSelector: '.errorMessage',
             rules: [
-                // username__signup
-                // email__signup
-                // password__signup
-                // confirm-password
+                Validator.isRequired('#username__signup'),
 
-                // Validator.isEmail('#email__signup'),
-                Validator.isRequired('#password__signup'),
-                Validator.isRequired('#confirm-password'),
+                Validator.isRequired('#email__signup'),
+                Validator.isEmail('#email__signup'),
+
+                Validator.minLength('#password__signup', 6),
+
+                Validator.isRequired('#confirm-password', 'Vui lòng nhập đúng mật khẩu trước'),
+                Validator.confirmPassword('#confirm-password', function (){
+                    return document.querySelector('#password__signup').value;
+                }, 'Mật khẩu xác thực chưa đúng, vui lòng nhập lại')
+            ]
+        });
+
+        Validator({
+            form: '#forgot-pw__form',
+            parentError: '.form-grp',
+            errorSelector: '.errorMessage',
+            rules: [
+                Validator.isRequired('#username__forgot'),
+                Validator.isEmail('#username__forgot')
             ]
         });
     });

@@ -30,7 +30,7 @@
 }
 
 .errorMessage {
-    margin-top: 4px;
+    line-height: 1.5;
     color: red;
     font-size: 1.4rem;
 }
@@ -48,7 +48,7 @@
 
 .form-wrapper {
     text-align: center;
-    min-width: 440px;
+    min-width: 500px;
     padding: 24px 32px;
     margin: 0 auto;
     border-radius: 12px;
