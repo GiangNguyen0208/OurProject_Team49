@@ -1,5 +1,6 @@
-package controller;
+package service;
 
+import bean.User;
 import dao.UserDAO;
 import db.JDBIConnector;
 
@@ -11,11 +12,6 @@ import java.util.stream.Collectors;
 public class UserService {
     static Map<String, String> data = new HashMap<>();
 
-    static {
-        data.put("abc@gmail.com", "1234");
-        data.put("dai@gmail.com", "12345");
-    }
-
     public static UserService instance;
 
     public static UserService getInstance() {
@@ -24,10 +20,15 @@ public class UserService {
 
     }
 
-    public User checkLogin(String email,String password) {
-        User userByEmail = UserDAO.getUserByEmail(email);
-        if(userByEmail != null && userByEmail.getEmail().equals(email) && userByEmail.getPassword().equals(password)) {
+    public User checkLogin(String username, String password) {
+        
+        User userByEmail = UserDAO.getUserByEmail(username);
+        User userByUsername = UserDAO.getUserByUsername(username);
+            
+        if (userByEmail != null && userByEmail.getEmail().equals(username) && userByEmail.getPassword().equals(password)) {
             return userByEmail;
+        } else if( userByUsername != null && userByUsername.getUsername().equals(username) && userByUsername.getPassword().equals(password)) {
+            return userByUsername;
         }
         return null;
     }

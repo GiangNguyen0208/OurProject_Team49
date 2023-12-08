@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <html lang="en">
@@ -61,61 +62,7 @@
     </head>
     <body>
         <!-- HEADER -->
-        <header>
-            <div class="header__content">
-                <p>
-                    <a href="index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
-                </p>
-                <div class="search">
-                    <input type="text" placeholder="Tìm kiếm" />
-                    <button type="submit">Search</button>
-                </div>
-                <nav>
-                    <ul class="menu__bar">
-                        <li class="menu__items">
-                            <a href="./index.html">Trang chính</a>
-                        </li>
-                        <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
-
-    
-                        </li>
-                        <li class="menu__items">
-                            <a href="product.jsp">Sản Phẩm</a>
-                            <ul class="drum__container">
-                                <li class="drum__item">
-                                    <a href="#">Trống điện</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống bộ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống lẻ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Percussion</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Symbal</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
-                        <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
-                        <li class="menu__items">
-                            <a href="policy.jsp">Chính sách</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="sign__in">
-                    <i class="fa fa-user"></i>
-                    <a href="log.jsp">Đăng Nhập</a>
-                </div>
-                <div class="cart__shopping">
-                    <i class="fa fa-shopping-cart"></i>
-                    <a href="log.jsp">Giỏ Hàng</a>
-                </div>
-            </div>
-        </header>
+        <c:import url="header.jsp"/>
 
         <!-- PROFILE -->
         <div class="profile-container">

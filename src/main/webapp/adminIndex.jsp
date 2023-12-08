@@ -82,10 +82,6 @@
 
                     <div class="content">
                         <div class="content-header">
-                            <button class="delete">
-                                <i class="fa-solid fa-minus"></i>
-                                Xóa
-                            </button>
                             <div class="content-search">
                                 <input
                                     type="text"
@@ -231,7 +227,6 @@
                                     <th>Thương hiệu</th>
                                     <th>Danh mục</th>
                                     <th>Mô tả sản phẩm</th>
-                                    <th>Ngày thêm</th>
                                     <th>Số lượng</th>
                                 </tr>
                             </thead>
@@ -256,7 +251,6 @@
                                         Sự kết hợp hoàn hảo của trống acoustic
                                         và trống điện
                                     </td>
-                                    <td>16/11/2023</td>
                                     <td>20</td>
                                 </tr>
                                 <tr>
@@ -279,7 +273,6 @@
                                         Sự kết hợp hoàn hảo của trống acoustic
                                         và trống điện
                                     </td>
-                                    <td>16/11/2023</td>
                                     <td>20</td>
                                 </tr>
                             </tbody>
@@ -326,7 +319,7 @@
                                     </td>
                                     <td>001</td>
                                     <td>001</td>
-                                    <td>Online</td>
+                                    <td>VISA</td>
                                     <td>16/11/2023</td>
                                     <td>2000000</td>
                                     <td>Đã thanh toán</td>
@@ -342,7 +335,7 @@
                                     </td>
                                     <td>001</td>
                                     <td>001</td>
-                                    <td>Offline</td>
+                                    <td>COD</td>
                                     <td>16/11/2023</td>
                                     <td>4500000</td>
                                     <td>Đã thanh toán</td>
