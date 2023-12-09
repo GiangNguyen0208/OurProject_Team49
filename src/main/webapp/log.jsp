@@ -270,7 +270,7 @@
 
                 Validator.minLength('#password__signup', 6),
 
-                Validator.isRequired('#confirm-password', 'Vui lòng nhập đúng mật khẩu trước'),
+                Validator.isRequired('#confirm-password', 'Vui lòng nhập mật khẩu trước'),
                 Validator.confirmPassword('#confirm-password', function (){
                     return document.querySelector('#password__signup').value;
                 }, 'Mật khẩu xác thực chưa đúng, vui lòng nhập lại')
