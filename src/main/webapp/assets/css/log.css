@@ -62,11 +62,6 @@
     gap: 12px;
 }
 
-.form:has(:invalid) .sub-btn {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
 .form .title {
     font-size: 4.2rem;
     font-weight: 600;

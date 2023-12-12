@@ -34,6 +34,8 @@ public class UserService {
         return null;
     }
 
+
+
     public static void main(String[] args) {
         List<User> users = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("select * from users").mapToBean(User.class).collect(Collectors.toList())

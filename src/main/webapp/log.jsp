@@ -43,9 +43,13 @@
 <!-- Form -->
 
 <div class="content">
+    <c:set var="error" value="${requestScope.error}"/>
+    <c:set var="username" value="${requestScope.username}"/>
+    <c:set var="username__signup" value="${requestScope.username__signup}"/>
+    <c:set var="email__signup" value="${requestScope.email__signup}"/>
     <!-- Log In -->
     <div class="form-wrapper log-in open" id="log-in">
-        <a href="index.jsp" class="back-cta">
+        <a href="./index.jsp" class="back-cta">
             <i class="fa-solid fa-chevron-left"></i>
             Trở về trang chủ
         </a>
@@ -56,7 +60,6 @@
                 autocomplete="on"
         >
             <p class="title">Đăng Nhập</p>
-            <c:set var="error" value="${requestScope.error}"/>
             <c:if test="${error != null}">
                 <p class="text-danger">
                    ${error}
@@ -72,6 +75,7 @@
                             name="username"
                             required
                             placeholder="Nhập tên tài khoản hoặc email ..."
+                            value="${username}"
                     />
                 </div>
                 <div class="errorMessage"></div>
@@ -99,6 +103,7 @@
             <button
                     type="submit"
                     class="submit sub-btn"
+                    id="signin"
             >
                 ĐĂNG NHẬP
             </button>
@@ -115,12 +120,12 @@
 
     <!-- Sign Up -->
     <div class="form-wrapper sign-up hidden" id="sign-up">
-        <a href="index.jsp" class="back-cta">
+        <a href="./index.jsp" class="back-cta">
             <i class="fa-solid fa-chevron-left"></i>
             Trở về trang chủ
         </a>
         <form
-                action="./log.jsp"
+                action="./signup"
                 method="post"
                 class="form"
                 autocomplete="off">
@@ -132,9 +137,11 @@
                     <i class="fa-solid fa-user ic"></i>
                     <input
                             id="username__signup"
-                            name="username-signup"
+                            name="username__signup"
                             type="text"
                             placeholder="Nhập tên tài khoản ... "
+                            required
+                            value="${username__signup}"
                     />
                 </div>
                 <div class="errorMessage"></div>
@@ -149,8 +156,8 @@
                             name="email__signup"
                             type="email"
                             placeholder="Nhập email đăng ký ... "
-<%--                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"--%>
                             required
+                            value="${email__signup}"
                     />
                 </div>
                 <div class="errorMessage"></div>
@@ -187,7 +194,7 @@
             </div>
 
 
-            <button type="submit" class="submit sub-btn">
+            <button type="submit" class="submit sub-btn" id="signup">
                 ĐĂNG KÝ
             </button>
 
@@ -205,7 +212,7 @@
 
     <!-- Forgot password -->
     <div class="form-wrapper sign-up hidden" id="forgot-pw__form">
-        <a href="index.jsp" class="back-cta">
+        <a href="./index.jsp" class="back-cta">
             <i class="fa-solid fa-chevron-left"></i>
             Trở về trang chủ
         </a>
@@ -227,7 +234,7 @@
                 <div class="errorMessage"></div>
             </div>
 
-            <button type="submit" class="submit sub-btn">
+            <button type="submit" class="submit sub-btn" id="forgot__pw">
                 XÁC NHẬN
             </button>
 
@@ -242,7 +249,6 @@
     </div>
 </div>
 <script src="js/log.js"></script>
-<!-- Đặt script ở cuối trang hoặc sử dụng sự kiện DOMContentLoaded -->
 <script src="js/validation.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -274,8 +280,13 @@
                 Validator.confirmPassword('#confirm-password', function (){
                     return document.querySelector('#password__signup').value;
                 }, 'Mật khẩu xác thực chưa đúng, vui lòng nhập lại')
-            ]
+            ],
+            onsubmit: function (data) {
+
+            }
         });
+
+        console.log(document.querySelector('#password__signup').value);
 
         Validator({
             form: '#forgot-pw__form',
@@ -290,4 +301,5 @@
 </script>
 
 </body>
+
 </html>

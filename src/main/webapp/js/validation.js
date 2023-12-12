@@ -35,6 +35,7 @@ function Validator(option) {
                 errorElement.innerText = '';
                 parentElement.classList.remove('invalid');
             }
+            return !!errorMessage;
         }
 
 
@@ -42,6 +43,7 @@ function Validator(option) {
     let formElement = document.querySelector(option.form);
 
     if (formElement) {
+
         option.rules.forEach(function (rule) {
 
             // Lưu các rules lại cho mỗi input
@@ -58,10 +60,8 @@ function Validator(option) {
                 inputElement.onblur = function () {
                     validate(inputElement, rule);
                 };
-
                 // xử lý trường hợp user đang nhập
                 inputElement.oninput = function () {
-
                     let parentElement = inputElement.closest(option.parentError);
                     let errorElement = parentElement.querySelector(option.errorSelector);
 
@@ -88,7 +88,7 @@ Validator.isEmail = function (selector, message) {
         selector: selector,
         check: function (value) {
             let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            return regex.test(regex) ? undefined : message ||'Vui lòng nhập đúng định dạng email \n' + 'abc@gmail.com OR abc@edu.com ...';
+            return value.match(regex) ? undefined : message ||'Vui lòng nhập đúng định dạng email \n' + 'abc@gmail.com OR abc@edu.com ...';
         }
     }
 }
@@ -106,7 +106,9 @@ Validator.confirmPassword = function (selector, getConfirmPassword, message) {
     return {
         selector: selector,
         check: function (value) {
-            return value === getConfirmPassword ? undefined : message || 'Xác thực mật khẩu chưa đúng, vui lòng nhập lại';
+            const confirmPassword = getConfirmPassword();
+
+            return value === confirmPassword ? undefined : message || 'Xác thực mật khẩu chưa đúng, vui lòng nhập lại';
         }
     }
 }
