@@ -20,13 +20,13 @@ public class Encode {
             output = Base64.encodeBase64String(md.digest(dataBytes));
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("error");
         }
 
         return output;
     }
 
     public static void main(String[] args) {
-        System.out.println(toSHA1("1234"));
+        System.out.println(toSHA1("dai0601"));
     }
 }
