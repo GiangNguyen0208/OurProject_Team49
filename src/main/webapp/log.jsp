@@ -45,8 +45,13 @@
 <div class="content">
     <c:set var="error" value="${requestScope.error}"/>
     <c:set var="username" value="${requestScope.username}"/>
+
     <c:set var="username__signup" value="${requestScope.username__signup}"/>
     <c:set var="email__signup" value="${requestScope.email__signup}"/>
+
+    <c:set var="emailError" value="${requestScope.emailError}"/>
+    <c:set var="usernameError" value="${requestScope.usernameError}"/>
+    <c:set var="confirmWrong" value="${requestScope.confirmWrong}"/>
     <!-- Log In -->
     <div class="form-wrapper log-in open" id="log-in">
         <a href="./index.jsp" class="back-cta">
@@ -118,6 +123,7 @@
         </form>
     </div>
 
+
     <!-- Sign Up -->
     <div class="form-wrapper sign-up hidden" id="sign-up">
         <a href="./index.jsp" class="back-cta">
@@ -144,7 +150,13 @@
                             value="${username__signup}"
                     />
                 </div>
-                <div class="errorMessage"></div>
+                <div class="errorMessage">
+                    <c:if test="${usernameError != null}">
+                        <p class="text-danger">
+                            ${usernameError}
+                        </p>
+                    </c:if>
+                </div>
             </div>
 
             <div class="form-grp">
@@ -160,7 +172,13 @@
                             value="${email__signup}"
                     />
                 </div>
-                <div class="errorMessage"></div>
+                <div class="errorMessage">
+                    <c:if test="${emailError != null}">
+                        <p class="text-danger">
+                                ${emailError}
+                        </p>
+                    </c:if>
+                </div>
             </div>
 
             <div class="form-grp">
@@ -175,22 +193,34 @@
                             required
                     />
                 </div>
-                <div class="errorMessage"></div>
+                <div class="errorMessage">
+                    <c:if test="${confirmWrong != null}">
+                        <p class="text-danger">
+                                ${confirmWrong}
+                        </p>
+                    </c:if>
+                </div>
             </div>
 
             <div class="form-grp">
-                <label for="confirm-password">Xác nhận mật khẩu</label>
+                <label for="confirm__password">Xác nhận mật khẩu</label>
                 <div class="pw-input">
                     <i class="fa-solid fa-key ic"></i>
                     <input
-                            id="confirm-password"
-                            name="confirm-password"
+                            id="confirm__password"
+                            name="confirm__password"
                             type="password"
                             placeholder="Xác nhận mật khẩu"
                             required
                     />
                 </div>
-                <div class="errorMessage"></div>
+                <div class="errorMessage">
+                    <c:if test="${confirmWrong != null}">
+                        <p class="text-danger">
+                                ${confirmWrong}
+                        </p>
+                    </c:if>
+                </div>
             </div>
 
 

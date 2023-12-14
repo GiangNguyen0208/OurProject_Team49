@@ -34,15 +34,13 @@ public class SignUpService {
     }
 
     public boolean checkConfirmPassword(String password, String confirmPassword) {
-        return !password.equals(confirmPassword);
-    }
-
-    public boolean register(String username, String email, String password, String confirmPassword) {
-        return checkEmailExist(email) && checkUsernameExist(username) && checkConfirmPassword(password, confirmPassword);
+        return password.equals(confirmPassword);
     }
 
     public static void main(String[] args) {
         SignUpService signUpService = new SignUpService();
-        System.out.println(signUpService.checkEmailExist("dai0601@gmail.com"));
+        System.out.println(signUpService.checkEmailExist("dai12@gmail.com"));
+        System.out.println(signUpService.checkUsernameExist("dai0601"));
+        System.out.println(signUpService.checkConfirmPassword("dai123", "dai123"));
     }
 }

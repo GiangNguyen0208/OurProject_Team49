@@ -2,6 +2,7 @@ package controller;
 
 import bean.User;
 import service.UserService;
+import util.Encode;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +22,7 @@ public  class LoginController extends  HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         username = req.getParameter("username");
         pass = req.getParameter("password");
+        pass = Encode.toSHA1(pass);
 
         req.setAttribute("username", username);
 
