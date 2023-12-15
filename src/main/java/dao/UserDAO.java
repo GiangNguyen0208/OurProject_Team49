@@ -73,6 +73,7 @@ public class UserDAO {
 
 
     public static void main(String[] args) {
-        registerUser("haiba", "dai12@gmail.com", "dai0601");
+     UserDAO userDAO = new UserDAO();
+        System.out.println(userDAO.getUserList());
     }
 }
