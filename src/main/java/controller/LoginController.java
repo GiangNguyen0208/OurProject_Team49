@@ -2,6 +2,7 @@ package controller;
 
 import bean.User;
 import service.UserService;
+import util.Encode;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +11,7 @@ import  java.io.IOException;
 
 @WebServlet(name = "controller.LoginController", value = "/log")
 public  class LoginController extends  HttpServlet{
-     static String email, pass;
+     static String username, pass;
      public String error = "Bạn nhập sai tài khoản hoặc mật khẩu vui lòng nhập lại";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -19,10 +20,14 @@ public  class LoginController extends  HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        email = req.getParameter("username");
+        username = req.getParameter("username");
         pass = req.getParameter("password");
+        pass = Encode.toSHA1(pass);
+
+        req.setAttribute("username", username);
+
 //        Session
-        User user = UserService.getInstance().checkLogin(email, pass);
+        User user = UserService.getInstance().checkLogin(username, pass);
         if(user != null){
             HttpSession session = req.getSession();
             session.setAttribute("auth", user);

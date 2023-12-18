@@ -1,12 +1,15 @@
-<%@ page import="bean.User" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header>
+    <c:set var="auth" value="${sessionScope.auth}" />
     <div class="header__content">
         <p>
             <a href="./index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
         </p>
         <div class="search">
-            <input type="text" placeholder="Tìm kiếm"/>
+            <label>
+                <input type="text" placeholder="Tìm kiếm"/>
+            </label>
             <button type="submit">Search</button>
         </div>
         <nav>
@@ -41,41 +44,44 @@
                 </li>
             </ul>
         </nav>
-        <%
-            User auth = (User) session.getAttribute("auth");
-        %>
-        <% if (auth == null) { %>
-        <a href="log.jsp" class="sign__in">
-            <i class="fa fa-user"></i>
-            <span >Đăng Nhập</span>
-        </a>
-        <%} else if (auth.getGender().equals("M")) { %>
-        <div class="avatar-user male">
-            <img src="./assets/img/icon/male.png" alt="">
-            <ul class="user-menu">
-                <li>Xin chào  <%= auth.getFullName() %></li>
-                <li>
-                    <a href="profile">Cài đặt</a>
-                </li>
-                <li>
-                    <a href="logout" class="sign-out">Đăng xuất</a>
-                </li>
-            </ul>
-        </div>
-        <%} else {%>
-        <div class="avatar-user fmale">
-            <img src="./assets/img/icon/female.png" alt="">
-            <ul class="user-menu">
-                <li>Xin chào  <%= auth.getFullName()%></li>
-                <li>
-                    <a href="profile">Cài đặt</a>
-                </li>
-                <li>
-                    <a href="logout" class="sign-out">Đăng xuất</a>
-                </li>
-            </ul>
-        </div>
-        <%}%>
+
+
+        <c:choose>
+            <c:when test="${empty auth}">
+                <a href="log.jsp" class="sign__in">
+                    <i class="fa fa-user"></i>
+                    <span>Đăng Nhập</span>
+                </a>
+            </c:when>
+            <c:when test="${auth.gender == 'M'}">
+                <div class="avatar-user male">
+                    <img src="./assets/img/icon/male.png" alt="">
+                    <ul class="user-menu">
+                        <li>Xin chào  ${auth.fullName}</li>
+                        <li>
+                            <a href="profile">Cài đặt</a>
+                        </li>
+                        <li>
+                            <a href="logout" class="sign-out">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </c:when>
+            <c:otherwise>
+                <div class="avatar-user female">
+                    <img src="./assets/img/icon/female.png" alt="">
+                    <ul class="user-menu">
+                        <li>Xin chào  ${auth.fullName}</li>
+                        <li>
+                            <a href="profile">Cài đặt</a>
+                        </li>
+                        <li>
+                            <a href="logout" class="sign-out">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </c:otherwise>
+        </c:choose>
 
 
 

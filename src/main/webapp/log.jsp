@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -43,9 +43,18 @@
 <!-- Form -->
 
 <div class="content">
+    <c:set var="error" value="${requestScope.error}"/>
+    <c:set var="username" value="${requestScope.username}"/>
+
+    <c:set var="username__signup" value="${requestScope.username__signup}"/>
+    <c:set var="email__signup" value="${requestScope.email__signup}"/>
+
+    <c:set var="emailError" value="${requestScope.emailError}"/>
+    <c:set var="usernameError" value="${requestScope.usernameError}"/>
+    <c:set var="confirmWrong" value="${requestScope.confirmWrong}"/>
     <!-- Log In -->
     <div class="form-wrapper log-in open" id="log-in">
-        <a href="index.jsp" class="back-cta">
+        <a href="./index.jsp" class="back-cta">
             <i class="fa-solid fa-chevron-left"></i>
             Trở về trang chủ
         </a>
@@ -56,7 +65,6 @@
                 autocomplete="on"
         >
             <p class="title">Đăng Nhập</p>
-            <c:set var="error" value="${requestScope.error}"/>
             <c:if test="${error != null}">
                 <p class="text-danger">
                    ${error}
@@ -71,7 +79,8 @@
                             type="text"
                             name="username"
                             required
-                            placeholder="Nhập tên tài khoản hoặc email..."
+                            placeholder="Nhập tên tài khoản hoặc email ..."
+                            value="${username}"
                     />
                 </div>
                 <div class="errorMessage"></div>
@@ -86,8 +95,7 @@
                             name="password"
                             type="password"
                             required
-                            minlength="6"
-                            placeholder="Nhập mật khẩu..."
+                            placeholder="Nhập mật khẩu ..."
                     />
                 </div>
                 <div class="errorMessage"></div>
@@ -100,6 +108,7 @@
             <button
                     type="submit"
                     class="submit sub-btn"
+                    id="signin"
             >
                 ĐĂNG NHẬP
             </button>
@@ -114,14 +123,15 @@
         </form>
     </div>
 
+
     <!-- Sign Up -->
     <div class="form-wrapper sign-up hidden" id="sign-up">
-        <a href="index.jsp" class="back-cta">
+        <a href="./index.jsp" class="back-cta">
             <i class="fa-solid fa-chevron-left"></i>
             Trở về trang chủ
         </a>
         <form
-                action="./log.jsp"
+                action="./signup"
                 method="post"
                 class="form"
                 autocomplete="off">
@@ -133,13 +143,20 @@
                     <i class="fa-solid fa-user ic"></i>
                     <input
                             id="username__signup"
-                            name="username-signup"
+                            name="username__signup"
                             type="text"
-                            placeholder="Nhập tên tài khoản hoặc email... "
+                            placeholder="Nhập tên tài khoản ... "
                             required
+                            value="${username__signup}"
                     />
                 </div>
-                <div class="errorMessage"></div>
+                <div class="errorMessage">
+                    <c:if test="${usernameError != null}">
+                        <p class="text-danger">
+                            ${usernameError}
+                        </p>
+                    </c:if>
+                </div>
             </div>
 
             <div class="form-grp">
@@ -150,12 +167,18 @@
                             id="email__signup"
                             name="email__signup"
                             type="email"
-                            placeholder="Nhập email đăng ký... "
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            placeholder="Nhập email đăng ký ... "
                             required
+                            value="${email__signup}"
                     />
                 </div>
-                <div class="errorMessage"></div>
+                <div class="errorMessage">
+                    <c:if test="${emailError != null}">
+                        <p class="text-danger">
+                                ${emailError}
+                        </p>
+                    </c:if>
+                </div>
             </div>
 
             <div class="form-grp">
@@ -166,32 +189,42 @@
                             id="password__signup"
                             name="password__signup"
                             type="password"
-                            minlength="6"
-                            placeholder="Nhập mật khẩu..."
+                            placeholder="Nhập mật khẩu ..."
                             required
                     />
                 </div>
-                <div class="errorMessage"></div>
+                <div class="errorMessage">
+                    <c:if test="${confirmWrong != null}">
+                        <p class="text-danger">
+                                ${confirmWrong}
+                        </p>
+                    </c:if>
+                </div>
             </div>
 
             <div class="form-grp">
-                <label for="confirm-password">Xác nhận mật khẩu</label>
+                <label for="confirm__password">Xác nhận mật khẩu</label>
                 <div class="pw-input">
                     <i class="fa-solid fa-key ic"></i>
                     <input
-                            id="confirm-password"
-                            name="confirm-password"
+                            id="confirm__password"
+                            name="confirm__password"
                             type="password"
-                            minlength="6"
                             placeholder="Xác nhận mật khẩu"
                             required
                     />
                 </div>
-                <div class="errorMessage"></div>
+                <div class="errorMessage">
+                    <c:if test="${confirmWrong != null}">
+                        <p class="text-danger">
+                                ${confirmWrong}
+                        </p>
+                    </c:if>
+                </div>
             </div>
 
 
-            <button type="submit" class="submit sub-btn">
+            <button type="submit" class="submit sub-btn" id="signup">
                 ĐĂNG KÝ
             </button>
 
@@ -209,7 +242,7 @@
 
     <!-- Forgot password -->
     <div class="form-wrapper sign-up hidden" id="forgot-pw__form">
-        <a href="index.jsp" class="back-cta">
+        <a href="./index.jsp" class="back-cta">
             <i class="fa-solid fa-chevron-left"></i>
             Trở về trang chủ
         </a>
@@ -217,21 +250,21 @@
             <p class="title">Quên mật khẩu</p>
 
             <div class="form-grp">
-                <label for="username__forgot">Tài khoản</label>
+                <label for="username__forgot">Email</label>
                 <div class="user-input">
                     <i class="fa-solid fa-user ic"></i>
                     <input
                             id="username__forgot"
                             name="username_forgot"
                             type="text"
-                            placeholder="Nhập email... "
+                            placeholder="Nhập email ... "
                             required
                     />
                 </div>
                 <div class="errorMessage"></div>
             </div>
 
-            <button type="submit" class="submit sub-btn">
+            <button type="submit" class="submit sub-btn" id="forgot__pw">
                 XÁC NHẬN
             </button>
 
@@ -246,19 +279,57 @@
     </div>
 </div>
 <script src="js/log.js"></script>
-<!-- Đặt script ở cuối trang hoặc sử dụng sự kiện DOMContentLoaded -->
 <script src="js/validation.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // validate cho form đăng nhập
         Validator({
             form: '#log-in',
+            parentError: '.form-grp',
+            errorSelector: '.errorMessage',
             rules: [
                 Validator.isRequired('#username__login'),
-                Validator.isRequired('#password__login')
+                Validator.minLength('#password__login', 6)
+            ]
+        });
+
+        // validate cho form đăng ký
+        Validator({
+            form: '#sign-up',
+            parentError: '.form-grp',
+            errorSelector: '.errorMessage',
+            rules: [
+                Validator.isRequired('#username__signup'),
+
+                Validator.isRequired('#email__signup'),
+                Validator.isEmail('#email__signup'),
+
+                Validator.minLength('#password__signup', 6),
+
+                Validator.isRequired('#confirm-password', 'Vui lòng nhập mật khẩu trước'),
+                Validator.confirmPassword('#confirm-password', function (){
+                    return document.querySelector('#password__signup').value;
+                }, 'Mật khẩu xác thực chưa đúng, vui lòng nhập lại')
+            ],
+            onsubmit: function (data) {
+
+            }
+        });
+
+        console.log(document.querySelector('#password__signup').value);
+
+        Validator({
+            form: '#forgot-pw__form',
+            parentError: '.form-grp',
+            errorSelector: '.errorMessage',
+            rules: [
+                Validator.isRequired('#username__forgot'),
+                Validator.isEmail('#username__forgot')
             ]
         });
     });
 </script>
 
 </body>
+
 </html>
