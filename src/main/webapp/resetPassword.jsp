@@ -39,7 +39,7 @@
     <body>
         <div class="content">
             <div class="form-wrapper log-in open" id="reset-password">
-                <a href="./log.jsp" class="back-cta">
+                <a href="./logIn.jsp" class="back-cta">
                     <i class="fa-solid fa-chevron-left"></i>
                     Trở về trang đăng nhập
                 </a>

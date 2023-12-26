@@ -1,7 +1,6 @@
 package controller;
 import dao.UserDAO;
 import service.SignUpService;
-import util.Encode;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 
 @WebServlet(value = "/signup")
 public class SignUpController extends HttpServlet {
@@ -19,6 +19,7 @@ public class SignUpController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         username = req.getParameter("username__signup");
@@ -28,7 +29,6 @@ public class SignUpController extends HttpServlet {
 
         req.setAttribute("username__signup", username);
         req.setAttribute("email__signup", email);
-
 
         if (SignUpService.getInstance().checkEmailExist(email)) {
             countError++;
@@ -47,15 +47,13 @@ public class SignUpController extends HttpServlet {
 
         if(countError == 0) {
             UserDAO.registerUser(username, email, password);
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect("logIn.jsp");
         }else {
             req.setAttribute("emailError", emailError);
             req.setAttribute("usernameError", usernameError);
             req.setAttribute("confirmWrong", confirmWrong);
-            req.getRequestDispatcher("log.jsp").forward(req, resp);
+            req.getRequestDispatcher("signUp.jsp").forward(req, resp);
         }
 
     }
-
-
 }

@@ -11,14 +11,6 @@
     line-height: 1.5;
 }
 
-.form-wrapper.open {
-    display: block;
-}
-
-.form-wrapper.hidden {
-    display: none;
-}
-
 .form-wrapper .back-cta {
     float: left;
     font-size: 1.2rem;

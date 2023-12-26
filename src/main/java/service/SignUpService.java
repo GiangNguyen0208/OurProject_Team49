@@ -18,7 +18,6 @@ public class SignUpService {
     public boolean checkUsernameExist(String usernameSignUp) {
         List<User> getUserList = userDAO.getUserList();
         for (User user : getUserList) {
-            System.out.println(user.getUsername());
             if(user.getUsername().equals(usernameSignUp)) {
                 return true;
             }
@@ -29,7 +28,6 @@ public class SignUpService {
     public boolean checkEmailExist(String email) {
         List<User> getUserList = userDAO.getUserList();
         for (User user : getUserList) {
-            System.out.println(user.getEmail());
             if(user.getEmail().equals(email)) {
                 return true;
             }
@@ -43,8 +41,8 @@ public class SignUpService {
 
     public static void main(String[] args) {
         SignUpService signUpService = new SignUpService();
-        System.out.println(signUpService.checkEmailExist("dai1@gmail.com"));
-        System.out.println(signUpService.checkUsernameExist("dai123"));
+        System.out.println(signUpService.checkUsernameExist("dai12345"));
+        System.out.println(signUpService.checkEmailExist("dai112@gmail.com"));
         System.out.println(signUpService.checkConfirmPassword("dai123", "dai123"));
     }
 }

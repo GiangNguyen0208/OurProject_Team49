@@ -48,7 +48,7 @@
 
         <c:choose>
             <c:when test="${empty auth}">
-                <a href="log.jsp" class="sign__in">
+                <a href="logIn.jsp" class="sign__in">
                     <i class="fa fa-user"></i>
                     <span>Đăng Nhập</span>
                 </a>
