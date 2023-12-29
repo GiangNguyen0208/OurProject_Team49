@@ -1,10 +1,17 @@
+<%@ page import="java.util.List" %>
+<%@ page import="bean.Category" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%--<%--%>
+<%--    List<Category> categories = (List<Category>) request.getAttribute("categories");--%>
+<%--    if(categories == null) categories = new ArrayList<>();--%>
+<%--%>--%>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Sản phẩm</title>
 
         <!-- reset CSS -->
         <link rel="stylesheet" href="assets/css/reset.css" />
@@ -62,81 +69,7 @@
     </head>
     <body>
         <!-- HEADER -->
-        <header>
-            <div class="header__content">
-                <p>
-                    <a href="index.jsp"
-
-                        ><i class="fa fa-drum"></i> <span>Dr/</span>um</a
-                    >
-                </p>
-                <div class="search">
-                    <input type="text" placeholder="Tìm kiếm" />
-                    <button type="submit">Search</button>
-                </div>
-                <nav>
-                    <ul class="menu__bar">
-                        <li class="menu__items">
-                            <a href="index.jsp">Trang chính</a>
-                        </li>
-                        <li class="menu__items">
-<<<<<<< HEAD:src/main/webapp/product.jsp
-                            <a href="aboutUs.jsp">Giới thiệu</a>
-=======
-                            <a href="./aboutUs.html">Giới thiệu</a>
->>>>>>> 2b86e7bc7c7a8056290d925f4d787a49dd0bec34:html/product.html
-                            <ul class="drum__container">
-                                <li class="drum__item">
-                                    <a href="#">Xin chào</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="aboutProduct.jsp"
-
-                                        >Thông tin về chúng tôi</a
-                                    >
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Sản phẩm</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu__items">
-                            <a href="./product.html">Sản Phẩm</a>
-                            <ul class="drum__container">
-                                <li class="drum__item">
-                                    <a href="#">Trống điện</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống bộ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống lẻ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Percussion</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Symbal</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
-                        <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
-                        <li class="menu__items">
-                            <a href="policy.jsp">Chính sách</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="sign__in">
-                    <i class="fa fa-user"></i>
-                    <a href="log.jsp">Đăng Nhập</a>
-                </div>
-                <div class="cart__shopping">
-                    <i class="fa fa-shopping-cart"></i>
-                    <a href="cart.jsp">Giỏ Hàng</a>
-                </div>
-            </div>
-        </header>
+        <c:import url="header.jsp"/>
 
         <div class="search-product">
             <input type="text" placeholder="Tìm kiếm sản phẩm" />
@@ -161,23 +94,18 @@
                         <div class="directory-title">Danh mục</div>
                         <div class="directory__list">
                             <ul class="directory__item">
-                                <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link"
-                                        >Trống điện tử</a
-                                    >
-                                </li>
-                                <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link">Trống bộ</a>
-                                </li>
-                                <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link">Trống lẻ</a>
-                                </li>
-                                <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link">Bộ gõ</a>
-                                </li>
-                                <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link">Cymbal</a>
-                                </li>
+<%--                                <% for (Category c : categories) { %>--%>
+<%--                                <li class="directory__gerne">--%>
+<%--                                    <a href="#!" class="gerne-link"><%= c.getName() %></a>--%>
+<%--                                </li>--%>
+<%--                                <% }%>--%>
+
+                                <c:forEach items="${requestScope.categories}" var="o">
+                                    <li class="directory__gerne">
+                                               <a href="#" class="gerne-link">${o.name}</a>
+                                    </li>
+                                </c:forEach>
+
                             </ul>
                         </div>
                     </div>

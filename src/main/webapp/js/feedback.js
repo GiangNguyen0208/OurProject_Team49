@@ -65,7 +65,6 @@ function submitFeedBack() {
                 <p class="feedback__name">${feedback.firstName}</p>
             </div>
         `
-        alert("123");
         );
         feedbackCarousel.append(feedbackElement);
         }

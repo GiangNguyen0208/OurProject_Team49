@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <html lang="en">
@@ -61,61 +62,7 @@
     </head>
     <body>
         <!-- HEADER -->
-        <header>
-            <div class="header__content">
-                <p>
-                    <a href="index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
-                </p>
-                <div class="search">
-                    <input type="text" placeholder="Tìm kiếm" />
-                    <button type="submit">Search</button>
-                </div>
-                <nav>
-                    <ul class="menu__bar">
-                        <li class="menu__items">
-                            <a href="/index.html">Trang chính</a>
-                        </li>
-                        <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
-
-    
-                        </li>
-                        <li class="menu__items">
-                            <a href="product.jsp">Sản Phẩm</a>
-                            <ul class="drum__container">
-                                <li class="drum__item">
-                                    <a href="#">Trống điện</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống bộ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Trống lẻ</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Percussion</a>
-                                </li>
-                                <li class="drum__item">
-                                    <a href="#">Symbal</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- <li class="menu__items"><a href="#">Khuyến mãi</a></li> -->
-                        <!-- <li class="menu__items"><a href="#">Giáo dục</a></li> -->
-                        <li class="menu__items">
-                            <a href="policy.jsp">Chính sách</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="sign__in">
-                    <i class="fa fa-user"></i>
-                    <a href="log.jsp">Đăng Nhập</a>
-                </div>
-                <div class="cart__shopping">
-                    <i class="fa fa-shopping-cart"></i>
-                    <a href="log.jsp">Giỏ Hàng</a>
-                </div>
-            </div>
-        </header>
+        <c:import url="header.jsp"/>
 
         <!-- PROFILE -->
         <div class="profile-container">
@@ -200,7 +147,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="account">
+            <div id="manage-account" class="account active">
                 <div class="account_title">Thông tin tài khoản</div>
                 <div class="style_info">
                     <div class="info">
@@ -214,15 +161,15 @@
                                                 <div>
                                                     <div class="avatar-view">
                                                         <img
-                                                            src="https://png.pngtree.com/png-clipart/20210613/original/pngtree-gray-silhouette-avatar-png-image_6404679.jpg"
-                                                            alt="avatar"
-                                                            class="default"
+                                                                src="https://png.pngtree.com/png-clipart/20210613/original/pngtree-gray-silhouette-avatar-png-image_6404679.jpg"
+                                                                alt="avatar"
+                                                                class="default"
                                                         />
                                                         <div class="edit">
                                                             <img
-                                                                src="https://frontend.tikicdn.com/_desktop-next/static/img/account/edit.png"
-                                                                class="edit_img"
-                                                                alt=""
+                                                                    src="https://frontend.tikicdn.com/_desktop-next/static/img/account/edit.png"
+                                                                    class="edit_img"
+                                                                    alt=""
                                                             />
                                                         </div>
                                                     </div>
@@ -235,12 +182,12 @@
                                                 <div>
                                                     <div class="input-content">
                                                         <input
-                                                            class="input-name"
-                                                            type="search"
-                                                            name="fullName"
-                                                            maxlength="128"
-                                                            placeholder="Thêm first name"
-                                                            value
+                                                                class="input-name"
+                                                                type="search"
+                                                                name="fullName"
+                                                                maxlength="128"
+                                                                placeholder="Thêm first name"
+                                                                value
                                                         />
                                                     </div>
                                                 </div>
@@ -250,12 +197,12 @@
                                                 <div>
                                                     <div class="input-content">
                                                         <input
-                                                            class="input-nickname"
-                                                            name="userName"
-                                                            maxlength="128"
-                                                            placeholder="Thêm last name"
-                                                            type="search"
-                                                            value=""
+                                                                class="input-nickname"
+                                                                name="userName"
+                                                                maxlength="128"
+                                                                placeholder="Thêm last name"
+                                                                type="search"
+                                                                value=""
                                                         />
                                                     </div>
                                                 </div>
@@ -264,7 +211,7 @@
                                     </div>
                                     <div class="form-control">
                                         <label class="input-label"
-                                            >Ngày sinh</label
+                                        >Ngày sinh</label
                                         >
                                         <div class="birthday">
                                             <select name="day">
@@ -303,21 +250,21 @@
                                                     31
                                                 </option></select
                                             ><select name="month">
-                                                <option value="0">Tháng</option>
-                                                <option value="1">1</option>
+                                            <option value="0">Tháng</option>
+                                            <option value="1">1</option>
 
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                            </select>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
                                             <select name="year">
                                                 <option value="0">Năm</option>
                                                 <option value="2023">
@@ -697,32 +644,32 @@
                                     </div>
                                     <div class="form-control">
                                         <label class="input-label"
-                                            >Giới tính</label
+                                        >Giới tính</label
                                         >
                                         <label class="radio">
                                             <input
-                                                type="radio"
-                                                name="gender"
-                                                value="male"
-                                                checked=""
+                                                    type="radio"
+                                                    name="gender"
+                                                    value="male"
+                                                    checked=""
                                             />
                                             <span class="radio-fake"></span
                                             ><span class="label">Nam</span>
                                         </label>
                                         <label class="radio">
                                             <input
-                                                type="radio"
-                                                name="gender"
-                                                value="female"
+                                                    type="radio"
+                                                    name="gender"
+                                                    value="female"
                                             />
                                             <span class="radio-fake"></span
                                             ><span class="label">Nữ</span>
                                         </label>
                                         <label class="radio">
                                             <input
-                                                type="radio"
-                                                name="gender"
-                                                value="other"
+                                                    type="radio"
+                                                    name="gender"
+                                                    value="other"
                                             />
                                             <span class="radio-fake"></span
                                             ><span class="label">Khác</span>
@@ -731,11 +678,11 @@
 
                                     <div class="form-control">
                                         <label class="input-label"
-                                            >&nbsp;</label
+                                        >&nbsp;</label
                                         >
                                         <button
-                                            type="submit"
-                                            class="styles__StyledBtnSubmit-sc-s5c7xj-3 cqEaiM btn-submit"
+                                                type="submit"
+                                                class="styles__StyledBtnSubmit-sc-s5c7xj-3 cqEaiM btn-submit"
                                         >
                                             Lưu thay đổi
                                         </button>
@@ -746,7 +693,7 @@
                         <div class="info-vertical"></div>
                         <div class="info-right">
                             <span class="info-title"
-                                >Số điện thoại và Email</span
+                            >Số điện thoại và Email</span
                             >
                             <!-- lCUBE -->
                             <div class="info-contact">
@@ -759,7 +706,7 @@
                                     </div>
                                     <div class="status">
                                         <span></span>
-                                        <button class="button active">
+                                        <button class="button active account-phone">
                                             Cập nhật
                                         </button>
                                     </div>
@@ -767,7 +714,7 @@
                                 <div class="list-item">
                                     <div class="info">
                                         <i
-                                            class="fa fa-envelope icon-profile"
+                                                class="fa fa-envelope icon-profile"
                                         ></i>
                                         <div class="detail">
                                             <span>Địa chỉ email</span>
@@ -775,28 +722,88 @@
                                     </div>
                                     <div class="status">
                                         <span></span>
-                                        <button class="button active">
+                                        <button class="button active account-mail">
                                             Cập nhật
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <span class="info-title">Bảo mật</span>
-                            <div class="info-contact">
-                                <div class="list-item">
-                                    <div>
-                                        <i class="fa fa-lock icon-profile"></i>
-                                        <span>Thiết lập mật khẩu</span>
-                                    </div>
-                                    <div class="status">
-                                        <span></span>
-                                        <button class="button active">
-                                            Cập nhật
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+<%--                            <span class="info-title">Bảo mật</span>--%>
+<%--                            <div class="info-contact">--%>
+<%--                                <div class="list-item">--%>
+<%--                                    <div>--%>
+<%--                                        <i class="fa fa-lock icon-profile"></i>--%>
+<%--                                        <span>Thiết lập mật khẩu</span>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="status">--%>
+<%--                                        <span></span>--%>
+<%--                                        <button class="button">--%>
+<%--                                            Cập nhật--%>
+<%--                                        </button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="account-phone" class="account">
+                <div class="account_title">Cập nhật số điện thoại</div>
+                <!-- Thông báo -->
+                <div class="submit-alert">
+                    <div class="process">
+                        <div class="process-content">
+                            <i class="fa fa-check"></i>
+                            <span>Bạn đã thay đổi thành công</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="account-container">
+                    <div class="info">
+                        <form class="form">
+                            <div class="form-control">
+                                <label class="input-label">Số điện thoại</label>
+                                <div>
+                                    <div class="input-content">
+                                        <i class="fa fa-phone icon-left"></i>
+                                        <input name="phone" maxlength="50" placeholder="Nhập số điện thoại" type="search" class="input-phone with-icon-left " value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="input-submit-btn submit-phone">Lưu thay đổi</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="account-mail" class="account">
+                <div class="account_title">Cập nhật email</div>
+                <!-- Thông báo thành công -->
+                <div class="submit-alert">
+                    <div class="process">
+                        <div class="process-content">
+                            <i class="fa fa-check"></i>
+                            <span>Bạn đã thay đổi thành công</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="account-container">
+                    <div class="info">
+                        <form class="form">
+                            <div class="form-control">
+                                <label class="input-label">Địa chỉ email</label>
+                                <div>
+                                    <div class="input-content">
+                                        <i class="fa fa-envelope icon-left"></i>
+                                        <input name="email" maxlength="50" placeholder="Nhập email" type="search" class="input-mail with-icon-left " value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit"  class="input-submit-btn submit-mail">Lưu thay đổi</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -806,4 +813,5 @@
     <!-- MAIN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/log.js"></script>
+    <script src="./js/profile.js"></script>
 </html>
