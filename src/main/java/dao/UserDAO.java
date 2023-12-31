@@ -71,9 +71,16 @@ public class UserDAO {
         });
     }
 
+    public static void verifyUser(String email) {
+        JDBIConnector.me().withHandle(handle -> {
+            return handle.createUpdate("UPDATE users SET status = 1 where email = :email")
+                    .bind("email", email).execute();
+        });
+        System.out.println("done");
+    }
 
     public static void main(String[] args) {
      UserDAO userDAO = new UserDAO();
-        System.out.println(userDAO.getUserList());
+        verifyUser("dai@edu.vn");
     }
 }

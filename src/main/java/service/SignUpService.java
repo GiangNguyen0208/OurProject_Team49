@@ -41,8 +41,8 @@ public class SignUpService {
 
     public static void main(String[] args) {
         SignUpService signUpService = new SignUpService();
-        System.out.println(signUpService.checkUsernameExist("dai12345"));
-        System.out.println(signUpService.checkEmailExist("dai112@gmail.com"));
-        System.out.println(signUpService.checkConfirmPassword("dai123", "dai123"));
+        System.out.println(signUpService.checkUsernameExist("iad123"));
+        System.out.println(signUpService.checkEmailExist("dai1234@gmail.com"));
+        System.out.println(signUpService.checkConfirmPassword("123123", "123123"));
     }
 }
