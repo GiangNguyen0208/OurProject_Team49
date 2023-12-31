@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header>
-    <c:set var="auth" value="${sessionScope.auth}" />
+    <c:set var="auth" value="${sessionScope.auth}"/>
     <div class="header__content">
         <p>
             <a href="./index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
@@ -71,9 +71,11 @@
                 <div class="avatar-user female">
                     <img src="./assets/img/icon/female.png" alt="">
                     <ul class="user-menu">
-                        <li>Xin chào  ${auth.fullName}</li>
                         <li>
-                            <a href="profile">Cài đặt</a>
+                            <a href="profile.jsp">Xin chào  ${auth.fullName}</a>
+                        </li>
+                        <li>
+                            <a href="profile.jsp">Cài đặt</a>
                         </li>
                         <li>
                             <a href="logout" class="sign-out">Đăng xuất</a>
@@ -82,8 +84,6 @@
                 </div>
             </c:otherwise>
         </c:choose>
-
-
 
         <a href="cart.jsp" class="cart__shopping">
             <i class="fa fa-shopping-cart"></i>

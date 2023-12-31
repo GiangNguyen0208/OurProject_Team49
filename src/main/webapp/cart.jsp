@@ -716,7 +716,6 @@
     <!-- MAIN JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/product.js"></script>
-    <script src="js/log.js"></script>
     <script src="js/paging.js"></script>
 </body>
 

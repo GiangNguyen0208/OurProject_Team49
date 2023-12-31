@@ -550,7 +550,6 @@
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/product.js"></script>
-        <script src="js/log.js"></script>
 
         <!-- OWL CAROUSEL JS -->
         <script src="js/owl.carousel.min.js"></script>

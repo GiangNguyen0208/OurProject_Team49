@@ -66,6 +66,16 @@
     margin-bottom: 6px;
 }
 
+.form-grp .email__signup {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.form-grp p {
+    margin: 12px 0;
+    font-size: 1.6rem;
+}
+
 .user-input,
 .pw-input  {
     position: relative;
