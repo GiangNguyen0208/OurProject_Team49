@@ -47,38 +47,44 @@
 
 <div class="content">
     <!-- Forgot password -->
-    <div class="form-wrapper sign-up" id="forgot-pw__form">
+    <c:set var="emailNotExist" value="${requestScope.emailNotExist}"/>
+    <div class="form-wrapper sign-up" id="forget-pw__form">
         <a href="./index.jsp" class="back-cta">
             <i class="fa-solid fa-chevron-left"></i>
             Trở về trang chủ
         </a>
-        <form action="" class="form" autocomplete="off">
+        <form action="./forgetPassword" class="form" autocomplete="off">
             <p class="title">Quên mật khẩu</p>
-
+            <c:if test="${emailNotExist != null}">
+                <p class=" text-danger">
+                        ${emailNotExist}
+                </p>
+            </c:if>
             <div class="form-grp">
-                <label for="username__forgot">Email</label>
+                <label for="username__forget">Email</label>
                 <div class="user-input">
                     <i class="fa-solid fa-user ic"></i>
                     <input
-                            id="username__forgot"
-                            name="username_forgot"
+                            id="username__forget"
+                            name="email__forget"
                             type="text"
                             placeholder="Nhập email ... "
                             required
                     />
                 </div>
-                <div class="errorMessage"></div>
+                <div class="errorMessage">
+
+                </div>
             </div>
 
-            <button type="submit" class="submit sub-btn" id="forgot__pw">
+            <button type="submit" class="submit sub-btn" id="forget__pw">
                 XÁC NHẬN
             </button>
 
             <div class="footer">
                 <span>Quay trở lại đăng nhập</span>
-
                 <button type="button" class="link login-in-pw" id="">
-                    <a href="logIn.jsp">Đăng Nhập</a>
+                    <a href="./logIn.jsp">Đăng Nhập</a>
                 </button>
             </div>
         </form>
@@ -89,12 +95,12 @@
     document.addEventListener('DOMContentLoaded', function () {
         // validate cho form quên mật khẩu
         Validator({
-            form: '#forgot-pw__form',
+            form: '#forget-pw__form',
             parentError: '.form-grp',
             errorSelector: '.errorMessage',
             rules: [
-                Validator.isRequired('#username__forgot'),
-                Validator.isEmail('#username__forgot')
+                Validator.isRequired('#username__forget'),
+                Validator.isEmail('#username__forget')
             ]
         });
     });

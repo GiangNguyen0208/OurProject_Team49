@@ -42,9 +42,11 @@
 <body>
 <!-- Verify Code -->
 <div class="content">
-    <c:set var="email__signup" value="${sessionScope.email__signup}"/>
+    <c:set var="email" value="${sessionScope.email}"/>
+    <c:set var="emailForgetPassword" value="${sessionScope.emailForgetPassword}"/>
     <c:set var="errorMessage" value="${requestScope.errorMessage}"/>
     <c:set var="verificationSuccess" value="${requestScope.verificationSuccess}"/>
+    <c:set var="emailNotExist" value="${requestScope.emailNotExist}"/>
 
     <c:set var="verificationCode" value="${sessionScope.verificationCode}"/>
     <c:set var="verificationTime" value="${sessionScope.verificationTime}"/>
@@ -70,7 +72,18 @@
                 >
                     <p class="title">Xác Thực</p>
                     <div class="form-grp">
-                        <p>Đã gửi mã xác minh đến <strong class="email__signup">${email__signup}</strong></p>
+                        <p>Đã gửi mã xác minh đến 
+                            <strong class="email__signup">
+                                <c:choose>
+                                    <c:when test="${not empty email}">
+                                        ${email}
+                                    </c:when>
+                                    <c:otherwise>
+                                        ${emailForgetPassword}
+                                    </c:otherwise>
+                                </c:choose>
+                            </strong>
+                        </p>
                         <label for="userEnteredCode">Nhập mã xác minh</label>
                         <div class="user-input">
                             <i class="fa-solid fa-circle-check ic"></i>
@@ -83,9 +96,9 @@
                                     ${errorMessage}
                                 </p>
                             </c:if>
-                            <c:if test="${not empty errorMessage}">
+                            <c:if test="${not empty emailNotExist}">
                                 <p class="text-danger">
-                                        ${errorMessage}
+                                        ${emailNotExist}
                                 </p>
                             </c:if>
                         </div>

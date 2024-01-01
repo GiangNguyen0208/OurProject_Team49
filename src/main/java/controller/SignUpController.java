@@ -60,15 +60,15 @@ public class SignUpController extends HttpServlet {
             req.removeAttribute("emailError");
             req.removeAttribute("usernameError");
             req.removeAttribute("confirmWrong");
-            MailService.send(email, SUBJECT, "Đây là mã xác minh của bạn : " + verifyCode);
             req.getRequestDispatcher("verify.jsp").forward(req, resp);
+            MailService.send(email, SUBJECT, "Đây là mã xác minh của bạn : " + verifyCode);
         }else {
             req.setAttribute("username__signup", username);
             req.setAttribute("email__signup", email);
             req.setAttribute("emailError", emailError);
             req.setAttribute("usernameError", usernameError);
             req.setAttribute("confirmWrong", confirmWrong);
-            req.getRequestDispatcher("signUp.jsp").forward(req, resp);
+            req.getRequestDispatcher("./signUp.jsp").forward(req, resp);
         }
 
     }
