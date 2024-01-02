@@ -18,6 +18,5 @@ public class ProfileUserController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.getRequestDispatcher("profile.jsp").forward(req, resp);
-
     }
 }

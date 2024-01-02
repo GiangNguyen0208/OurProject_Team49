@@ -71,8 +71,25 @@ public class UserDAO {
         });
     }
 
+    public static void verifyUser(String email) {
+        JDBIConnector.me().withHandle(handle -> {
+            return handle.createUpdate("UPDATE users SET status = 1 where email = :email")
+                    .bind("email", email).execute();
+        });
+//        System.out.println("done");
+    }
+
+    public static void changePassword(String email, String password) {
+        String passwordChanged = util.Encode.toSHA1(password);
+        JDBIConnector.me().withHandle(handle -> {
+            return handle.createUpdate("UPDATE users SET password = :password where email = :email")
+                    .bind("password", passwordChanged)
+                    .bind("email", email).execute();
+        });
+        System.out.println("done");
+    }
 
     public static void main(String[] args) {
-        registerUser("haiba", "dai12@gmail.com", "dai0601");
+     changePassword("cunoccho0601@gmail.com", "hahaha");
     }
 }
