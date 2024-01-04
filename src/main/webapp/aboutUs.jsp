@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin về Chúng tôi</title>
     <!-- reset CSS -->
-    <link rel="stylesheet" href="./assets/css/reset.css"/>
-    <link rel="stylesheet" href="./assets/css/about.css"/>
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/reset.css"/>
+    <link rel="stylesheet" href="assets/css/about.css"/>
+    <link rel="stylesheet" href="assets/css/index.css">
     <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
     <!-- embed fonts -->
@@ -45,7 +45,7 @@
             referrerpolicy="no-referrer"
     />
     <!-- styles -->
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
 <!-- HEADER -->
@@ -81,7 +81,7 @@
                 <div class="about__our__list row">
                     <div class="about__our__item col col-third mt-32">
                         <div class="about__item__image">
-                            <img class="member__img" decoding="async" src="./assets/img/team/ad3.PNG">
+                            <img class="member__img" decoding="async" src="assets/img/team/ad3.PNG">
 
                         </div>
                         <div class="about__item__info">
@@ -92,7 +92,7 @@
                     </div>
                     <div class="about__our__item col col-third mt-32">
                         <div class="about__item__image">
-                            <img class="member__img" decoding="async" src="./assets/img/team/ad1.jpg">
+                            <img class="member__img" decoding="async" src="assets/img/team/ad1.jpg">
 
                         </div>
                         <div class="about__item__info">
@@ -103,7 +103,7 @@
                     </div>
                     <div class="about__our__item col col-third mt-32">
                         <div class="about__item__image">
-                            <img class="member__img" decoding="async" src="./assets/img/team/ad2.jpg">
+                            <img class="member__img" decoding="async" src="assets/img/team/ad2.jpg">
 
                         </div>
                         <div class="about__item__info">
@@ -142,7 +142,7 @@
                 <div class="row__two__content">
                     <div class="col col-second mt-32">
                         <div class="about__two__image">
-                            <img src="./assets/img/about/DrumPlayer.jpg" alt="">
+                            <img src="assets/img/about/DrumPlayer.jpg" alt="">
 
                         </div>
                     </div>
@@ -166,17 +166,17 @@
                 <div class="images__holder" style="clip-path: inset(0px); transition: all 2s ease 0s;">
                     <div class="images__slider" style="visibility: visible;">
                         <div class="images__slider__item img-prev" data-index="1">
-                            <div class="item__image" style="background-image: url('./assets/img/about/JazzDrum.jpg')">
+                            <div class="item__image" style="background-image: url('assets/img/about/JazzDrum.jpg')">
                             </div>
                         </div>
                         <div class="images__slider__item img-active" data-index="2">
                             <div class="item__image"
-                                 style="background-image: url('./assets/img/about/ElectronicDrum.jpg')">
+                                 style="background-image: url('assets/img/about/ElectronicDrum.jpg')">
                             </div>
                         </div>
                         <div class="images__slider__item" data-index="3">
                             <div class="item__image"
-                                 style="background-image: url('./assets/img/about/TambourineDrum.jpg')">
+                                 style="background-image: url('assets/img/about/TambourineDrum.jpg')">
                             </div>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
                 <div class="list">
                     <div class="item">
                         <div class="img">
-                            <img src="./assets/img/product/sp1.jpg" alt="Roland VAD 706">
+                            <img src="assets/img/product/sp1.jpg" alt="Roland VAD 706">
                         </div>
                         <div class="item_content">
                             <div class="title">Roland VAD 706</div>
@@ -236,7 +236,7 @@
                     </div>
                     <div class="item">
                         <div class="img">
-                            <img src="./assets/img/product/sp2.jpg" alt="Roland VAD 507">
+                            <img src="assets/img/product/sp2.jpg" alt="Roland VAD 507">
                         </div>
                         <div class="item_content">
                             <div class="title">Roland VAD 507</div>
@@ -247,7 +247,7 @@
                     </div>
                     <div class="item">
                         <div class="img">
-                            <img src="./assets/img/product/sp3.jpg" alt="Roland VAD 504">
+                            <img src="assets/img/product/sp3.jpg" alt="Roland VAD 504">
                         </div>
                         <div class="item_content">
                             <div class="title">Roland VAD 504</div>
@@ -258,7 +258,7 @@
                     </div>
                     <div class="item">
                         <div class="img">
-                            <img src="./assets/img/product/sp4.jpg" alt="Alesis Turbo Mesh Kit">
+                            <img src="assets/img/product/sp4.jpg" alt="Alesis Turbo Mesh Kit">
                         </div>
                         <div class="item_content">
                             <div class="title">Alesis Turbo Mesh Kit</div>
@@ -269,7 +269,7 @@
                     </div>
                     <div class="item">
                         <div class="img">
-                            <img src="./assets/img/product/sp5.jpg" alt="Alesis Crimson II SE">
+                            <img src="assets/img/product/sp5.jpg" alt="Alesis Crimson II SE">
                         </div>
                         <div class="item_content">
                             <div class="title">Alesis Crimson II SE</div>
@@ -280,7 +280,7 @@
                     </div>
                     <div class="item">
                         <div class="img">
-                            <img src="./assets/img/product/sp6.jpg" alt="Trống Pearl Roadshow 505">
+                            <img src="assets/img/product/sp6.jpg" alt="Trống Pearl Roadshow 505">
                         </div>
                         <div class="item_content">
                             <div class="title">Trống Pearl Roadshow 505</div>
@@ -387,7 +387,7 @@
 </footer>
 <!-- MAIN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="./js/about.js"></script>
+<script src="js/about.js"></script>
 </body>
 
 </html>

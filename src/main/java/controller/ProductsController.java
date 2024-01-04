@@ -1,8 +1,9 @@
 package controller;
 
 import bean.Category;
-import dao.CategoryDAO;
+import bean.Product;
 import service.CategoryService;
+import service.ProductDetailService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "CategoryController", value = "/products")
-public class CategoryController extends HttpServlet {
+@WebServlet(name = "ProductsController", value = "/products")
+public class ProductsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
@@ -22,7 +23,10 @@ public class CategoryController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Category> categoryList = CategoryService.getInstance().getAllCategories();
+        List<Product> listProduct = ProductDetailService.getInstance().getProductList();
+        req.setAttribute("products", listProduct);
         req.setAttribute("categories", categoryList);
         req.getRequestDispatcher("product.jsp").forward(req, resp);
     }
 }
+

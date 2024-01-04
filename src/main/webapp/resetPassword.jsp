@@ -5,9 +5,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="./assets/css/log.css" />
-        <link rel="stylesheet" href="./assets/css/reset.css" />
-        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/log.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
 
         <!-- embed fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,7 +43,7 @@
     <c:set var="emailForgetPassword" value="${sessionScope.emailForgetPassword}"/>
         <div class="content">
             <div class="form-wrapper log-in open" id="reset-password">
-                <a href="./logIn.jsp" class="back-cta">
+                <a href="logIn.jsp" class="back-cta">
                     <i class="fa-solid fa-chevron-left"></i>
                     Trở về trang đăng nhập
                 </a>
@@ -117,7 +117,7 @@
                                 </c:if>
                             </p>
                             <button type="button" class="submit sub-btn">
-                                <a href="./logIn.jsp">QUAY TRỞ VỀ TRANG ĐĂNG NHẬP</a>
+                                <a href="logIn.jsp">QUAY TRỞ VỀ TRANG ĐĂNG NHẬP</a>
                             </button>
                         </form>
                     </c:otherwise>
@@ -128,7 +128,7 @@
         </div>
 
         <!-- Script -->
-        <script src="./js/validation.js"></script>
+        <script src="js/validation.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 // validate

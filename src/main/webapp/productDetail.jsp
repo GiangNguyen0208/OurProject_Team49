@@ -8,8 +8,8 @@
         <title>Chi tiết sản phẩm</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./assets/css/reset.css" />
-        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
         <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
         <!-- embed fonts -->
@@ -51,14 +51,14 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <link rel="stylesheet" href="./assets/css/productDetail.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/productDetail.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
         <link
             rel="stylesheet"
-            href="./assets/css/owl.theme.default.min.css"
+            href="assets/css/owl.theme.default.min.css"
         />
     </head>
     <body>
@@ -73,7 +73,7 @@
                 <div id="product__detail" class="product-content detail">
                     <div class="product__img">
                         <div class="product__img-spot">
-                            <img src="./assets/img/product/sp1.jpg" alt="" />
+                            <img src="assets/img/product/sp1.jpg" alt="" />
                             <button class="cta-img left">
                                 <i class="fa-solid fa-arrow-left-long"></i>
                             </button>
@@ -84,27 +84,27 @@
                         <div class="product__img-sub">
                             <img
                                 class="item-img active"
-                                src="./assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                             <img
                                 class="item-img"
-                                src="./assets/img/product/sp1.jpg"
+                                src="assets/img/product/sp1.jpg"
                                 alt=""
                             />
                         </div>
@@ -200,7 +200,7 @@
                     </p>
 
                     <img
-                        src="./assets/img/product/sp1.jpg"
+                        src="assets/img/product/sp1.jpg"
                         alt=""
                         class="info-img"
                     />
@@ -226,7 +226,7 @@
                     </p>
 
                     <img
-                        src="./assets/img/product/sp1.jpg"
+                        src="assets/img/product/sp1.jpg"
                         alt=""
                         class="info-img"
                     />
@@ -424,10 +424,10 @@
 
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./js/product.js"></script>
+        <script src="js/product.js"></script>
 
         <!-- OWL CAROUSEL JS -->
-        <script src="./js/owl.carousel.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
         <script>
             $(".owl-carousel").owlCarousel({
                 loop: true,
