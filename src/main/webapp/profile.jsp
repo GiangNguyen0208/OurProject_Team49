@@ -178,29 +178,29 @@
                                         </div>
                                         <div class="form-name">
                                             <div class="form-control">
-                                                <label class="input-label">First Name</label>
+                                                <label class="input-label">Họ</label>
                                                 <div>
                                                     <div class="input-content">
                                                         <input
                                                             class="input-name"
                                                             type="search"
-                                                            name="fullName"
+                                                            name="firstName"
                                                             maxlength="128"
-                                                            placeholder="Thêm first name"
+                                                            placeholder="Họ"
                                                             value
                                                         />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-control">
-                                                <label class="input-label">Last Name</label>
+                                                <label class="input-label">Tên</label>
                                                 <div>
                                                     <div class="input-content">
                                                         <input
                                                             class="input-nickname"
-                                                            name="userName"
+                                                            name="lastName"
                                                             maxlength="128"
-                                                            placeholder="Thêm last name"
+                                                            placeholder="Tên"
                                                             type="search"
                                                             value=""
                                                         />
@@ -227,29 +227,28 @@
                                                 <option value="9">9</option>
                                                 <option value="10">10</option>
                                                 <option value="11">11</option>
-                                                <option value="11">12</option>
-                                                <option value="11">13</option>
-                                                <option value="11">14</option>
-                                                <option value="11">15</option>
-                                                <option value="11">16</option>
-                                                <option value="11">17</option>
-                                                <option value="11">18</option>
-                                                <option value="11">19</option>
-                                                <option value="11">20</option>
-                                                <option value="11">21</option>
-                                                <option value="11">22</option>
-                                                <option value="11">23</option>
-                                                <option value="11">24</option>
-                                                <option value="11">25</option>
-                                                <option value="11">26</option>
-                                                <option value="11">27</option>
-                                                <option value="11">28</option>
-                                                <option value="11">29</option>
-                                                <option value="11">30</option>
-                                                <option value="11">
-                                                    31
-                                                </option></select
-                                            ><select name="month">
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select>
+                                            <select name="month">
                                                 <option value="0">Tháng</option>
                                                 <option value="1">1</option>
 
@@ -650,7 +649,7 @@
                                             <input
                                                 type="radio"
                                                 name="gender"
-                                                value="male"
+                                                value="M"
                                                 checked=""
                                             />
                                             <span class="radio-fake"></span
@@ -660,19 +659,10 @@
                                             <input
                                                 type="radio"
                                                 name="gender"
-                                                value="female"
+                                                value="F"
                                             />
                                             <span class="radio-fake"></span
                                             ><span class="label">Nữ</span>
-                                        </label>
-                                        <label class="radio">
-                                            <input
-                                                type="radio"
-                                                name="gender"
-                                                value="other"
-                                            />
-                                            <span class="radio-fake"></span
-                                            ><span class="label">Khác</span>
                                         </label>
                                     </div>
 
@@ -711,7 +701,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="list-item">
+                                <form class="list-item">
                                     <div class="info">
                                         <i
                                             class="fa fa-envelope icon-profile"
@@ -726,11 +716,11 @@
                                             Cập nhật
                                         </button>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <span class="info-title">Bảo mật</span>
                             <div class="info-contact">
-                                <div class="list-item">
+                                <form class="list-item">
                                     <div>
                                         <i class="fa fa-lock icon-profile"></i>
                                         <span>Thiết lập mật khẩu</span>
@@ -741,16 +731,15 @@
                                             Cập nhật
                                         </button>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- MAIN JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </body>
 
-    <!-- MAIN JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/log.js"></script>
 </html>

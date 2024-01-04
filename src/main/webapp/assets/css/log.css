@@ -11,14 +11,6 @@
     line-height: 1.5;
 }
 
-.form-wrapper.open {
-    display: block;
-}
-
-.form-wrapper.hidden {
-    display: none;
-}
-
 .form-wrapper .back-cta {
     float: left;
     font-size: 1.2rem;
@@ -30,7 +22,7 @@
 }
 
 .errorMessage {
-    margin-top: 8px;
+    line-height: 1.5;
     color: red;
     font-size: 1.4rem;
 }
@@ -48,7 +40,7 @@
 
 .form-wrapper {
     text-align: center;
-    min-width: 440px;
+    min-width: 500px;
     padding: 24px 32px;
     margin: 0 auto;
     border-radius: 12px;
@@ -62,11 +54,6 @@
     gap: 12px;
 }
 
-.form:has(:invalid) .sub-btn {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
 .form .title {
     font-size: 4.2rem;
     font-weight: 600;
@@ -77,6 +64,16 @@
 .form-grp {
     text-align: left;
     margin-bottom: 6px;
+}
+
+.form-grp .email__signup {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.form-grp p {
+    margin: 12px 0;
+    font-size: 1.6rem;
 }
 
 .user-input,

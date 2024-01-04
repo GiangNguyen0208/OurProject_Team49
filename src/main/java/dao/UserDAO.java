@@ -3,7 +3,7 @@ package dao;
 import bean.User;
 import db.JDBIConnector;
 
-import java.sql.PreparedStatement;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -14,7 +14,7 @@ public class UserDAO {
                 handle.createQuery("select * from users where email = ?")
                         .bind(0, email)
                         .mapToBean(User.class).stream().findFirst()
-                ));
+        ));
         return user.isEmpty() ? null : user.get();
     }
 
@@ -27,6 +27,7 @@ public class UserDAO {
         return user.isEmpty() ? null : user.get();
     }
 
+
     public List<User> getUserList() {
         return JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("select * from users")
@@ -36,12 +37,59 @@ public class UserDAO {
     }
 
     public User getUserById(String id) {
-        Optional<User> user =  JDBIConnector.me().withHandle((handle ->
-            handle.createQuery("select * from users where id = ?")
-                    .bind(0, id)
-                    .mapToBean(User.class).stream().findFirst()
+        Optional<User> user = JDBIConnector.me().withHandle((handle ->
+                handle.createQuery("select * from users where id = ?")
+                        .bind(0, id)
+                        .mapToBean(User.class).stream().findFirst()
         ));
-
         return user.isEmpty() ? null : user.get();
+    }
+
+    public static void registerUser(String username, String email, String password) {
+        int id = 0;
+        int phone = 0;
+        String first = "";
+        String last = "";
+        Date date = new Date();
+        String gender = "";
+        int role = 0;
+        int status = 0;
+        JDBIConnector.me().withHandle(handle -> {
+            return handle.createUpdate("INSERT INTO users VALUE (:id, :username, :password, :email, :phone, :first, :last, :date, :gender, :role, :status)")
+                    .bind("id", id)
+                    .bind("username", username)
+                    .bind("password", password)
+                    .bind("email", email)
+                    .bind("phone", phone)
+                    .bind("first", first)
+                    .bind("last", last)
+                    .bind("date", date)
+                    .bind("gender", gender)
+                    .bind("role", role)
+                    .bind("status", status)
+                    .execute();
+        });
+    }
+
+    public static void verifyUser(String email) {
+        JDBIConnector.me().withHandle(handle -> {
+            return handle.createUpdate("UPDATE users SET status = 1 where email = :email")
+                    .bind("email", email).execute();
+        });
+//        System.out.println("done");
+    }
+
+    public static void changePassword(String email, String password) {
+        String passwordChanged = util.Encode.toSHA1(password);
+        JDBIConnector.me().withHandle(handle -> {
+            return handle.createUpdate("UPDATE users SET password = :password where email = :email")
+                    .bind("password", passwordChanged)
+                    .bind("email", email).execute();
+        });
+        System.out.println("done");
+    }
+
+    public static void main(String[] args) {
+     changePassword("cunoccho0601@gmail.com", "hahaha");
     }
 }

@@ -20,18 +20,22 @@ public class UserService {
 
     }
 
+
     public User checkLogin(String username, String password) {
-        
+
         User userByEmail = UserDAO.getUserByEmail(username);
         User userByUsername = UserDAO.getUserByUsername(username);
-            
-        if (userByEmail != null && userByEmail.getEmail().equals(username) && userByEmail.getPassword().equals(password)) {
+
+        if (userByEmail != null && userByEmail.getEmail().equals(username) && userByEmail.getPassword().equals(password)
+        ) {
             return userByEmail;
-        } else if( userByUsername != null && userByUsername.getUsername().equals(username) && userByUsername.getPassword().equals(password)) {
+        } else if (userByUsername != null && userByUsername.getUsername().equals(username) && userByUsername.getPassword().equals(password)
+        ) {
             return userByUsername;
         }
         return null;
     }
+
 
     public static void main(String[] args) {
         List<User> users = JDBIConnector.me().withHandle(handle ->
