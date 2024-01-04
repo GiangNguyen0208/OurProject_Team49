@@ -7,9 +7,9 @@
         <title>Our Project 49</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="./assets/css/reset.css" />
-        <link rel="stylesheet" href="./assets/css/index.css" />
-        <link rel="stylesheet" href="./assets/css/policy.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/policy.css" />
 
         <!-- embed fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,11 +50,11 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
-        <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
     </head>
     <body>
         <!-- HEADER -->
@@ -292,6 +292,6 @@
         </footer>
 
         <!-- MAIN JS -->
-        <script src="./js/policy.js"></script>
+        <script src="js/policy.js"></script>
     </body>
 </html>

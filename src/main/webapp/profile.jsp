@@ -56,11 +56,11 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
-        <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
     </head>
     <body>
 
