@@ -39,7 +39,7 @@ public class VerifyEmail {
     }
 
     public static void main(String[] args) {
-        String toEmail = "21130503@st.hcmuaf.edu.vn"; // Địa chỉ email của người nhận
+        String toEmail = "21130338@st.hcmuaf.edu.vn"; // Địa chỉ email của người nhận
         String verificationCode = "123456"; // Mã xác thực (có thể tạo ngẫu nhiên)
 
         sendVerificationCode(toEmail, verificationCode);

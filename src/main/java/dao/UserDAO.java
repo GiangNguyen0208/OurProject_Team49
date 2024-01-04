@@ -3,6 +3,7 @@ package dao;
 import bean.User;
 import db.JDBIConnector;
 
+import java.sql.PreparedStatement;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -40,6 +41,7 @@ public class UserDAO {
                     .bind(0, id)
                     .mapToBean(User.class).stream().findFirst()
         ));
+
         return user.isEmpty() ? null : user.get();
     }
 }
