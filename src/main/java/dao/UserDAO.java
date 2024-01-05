@@ -28,7 +28,7 @@ public class UserDAO {
     }
 
 
-    public List<User> getUserList() {
+    public static List<User> getUserList() {
         return JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("select * from users")
                         .mapToBean(User.class)
@@ -36,7 +36,7 @@ public class UserDAO {
         );
     }
 
-    public User getUserById(String id) {
+    public static User getUserById(String id) {
         Optional<User> user = JDBIConnector.me().withHandle((handle ->
                 handle.createQuery("select * from users where id = ?")
                         .bind(0, id)
@@ -90,6 +90,8 @@ public class UserDAO {
     }
 
     public static void main(String[] args) {
-     changePassword("cunoccho0601@gmail.com", "hahaha");
+        for (User user: getUserList()) {
+            System.out.println(user.toString());
+        }
     }
 }

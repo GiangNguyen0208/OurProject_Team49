@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <html lang="en">
@@ -8,7 +9,7 @@
 
         <!-- reset CSS -->
         <link rel="stylesheet" href="assets/css/reset.css" />
-
+        <link rel="stylesheet" href="assets/css/index.css" />
         <!-- FONT AWRSOME -->
         <link
             rel="stylesheet"
@@ -46,6 +47,7 @@
         <link rel="stylesheet" href="assets/css/style.css" />
     </head>
     <body>
+    <c:import url="header.jsp"/>
         <div class="container">
             <div class="side-bar">
                 <div class="user-account">
@@ -102,91 +104,39 @@
                                     <th>Tên</th>
                                     <th>Email</th>
                                     <th>Số điện thoại</th>
-                                    <th>Trạng thái</th>
+                                    <th>Trạng thái tài khoản</th>
                                     <th>Vai trò</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <c:forEach items="${requestScope.userList}" var="o">
                                 <tr>
                                     <td>
                                         <input type="checkbox" />
                                     </td>
                                     <td>
                                         <i
-                                            class="fa-solid fa-pen-to-square"
+                                                class="fa-solid fa-pen-to-square"
                                         ></i>
                                     </td>
-                                    <td>001</td>
-                                    <td>Phạm Đức Đại</td>
-                                    <td>phducdai47@gmail.com</td>
-                                    <td>0943246357</td>
-                                    <td>1</td>
-                                    <td>0</td>
+                                    <td>${o.getId()}</td>
+                                    <td>${o.getFullName()}</td>
+                                    <td>${o.getEmail()}</td>
+                                    <td>${o.getPhone()}</td>
+                                    <td>
+                                        <c:if test="${o.getStatus()} = 1">
+                                            <p>Đã xác thực</p>
+                                        </c:if>
+                                        <p>Chưa xác thực</p>
+                                    </td>
+                                    <td>
+                                        <c:if test="${o.getRole()} = 1">
+                                            <p>Quản trị viên</p>
+                                        </c:if>
+                                        <p>Người dùng</p>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" />
-                                    </td>
-                                    <td>
-                                        <i
-                                            class="fa-solid fa-pen-to-square"
-                                        ></i>
-                                    </td>
-                                    <td>002</td>
-                                    <td>Nguyễn Văn A</td>
-                                    <td>nguyenvana@gmail.com</td>
-                                    <td>0922453213</td>
-                                    <td>1</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" />
-                                    </td>
-                                    <td>
-                                        <i
-                                            class="fa-solid fa-pen-to-square"
-                                        ></i>
-                                    </td>
-                                    <td>003</td>
-                                    <td>Hà Văn B</td>
-                                    <td>havanb@gmail.com</td>
-                                    <td>0977253423</td>
-                                    <td>0</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" />
-                                    </td>
-                                    <td>
-                                        <i
-                                            class="fa-solid fa-pen-to-square"
-                                        ></i>
-                                    </td>
-                                    <td>001</td>
-                                    <td>Trương Hoài C</td>
-                                    <td>truonghoaic@gmail.com</td>
-                                    <td>097422346</td>
-                                    <td>1</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" />
-                                    </td>
-                                    <td>
-                                        <i
-                                            class="fa-solid fa-pen-to-square"
-                                        ></i>
-                                    </td>
-                                    <td>001</td>
-                                    <td>Phan Văn H</td>
-                                    <td>phvanh@gmail.com</td>
-                                    <td>0924634214</td>
-                                    <td>1</td>
-                                    <td>0</td>
-                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

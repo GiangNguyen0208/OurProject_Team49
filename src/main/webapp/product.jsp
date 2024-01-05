@@ -1,10 +1,6 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%--<%--%>
-<%--    List<Category> categories = (List<Category>) request.getAttribute("categories");--%>
-<%--    if(categories == null) categories = new ArrayList<>();--%>
-<%--%>--%>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -92,11 +88,6 @@
                         <div class="directory-title">Danh mục</div>
                         <div class="directory__list">
                             <ul class="directory__item">
-<%--                                <% for (Category c : categories) { %>--%>
-<%--                                <li class="directory__gerne">--%>
-<%--                                    <a href="#!" class="gerne-link"><%= c.getName() %></a>--%>
-<%--                                </li>--%>
-<%--                                <% }%>--%>
 
                                 <c:forEach items="${requestScope.categories}" var="o">
                                     <li class="directory__gerne">

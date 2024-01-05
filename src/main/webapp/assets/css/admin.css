@@ -28,6 +28,7 @@ th {
 }
 
 .container {
+    margin-top: 1px;
     display: flex;
     min-height: 100vh;
 }
@@ -114,6 +115,7 @@ th {
 }
 
 .content-wrapper .header {
+    position: relative;
     display: flex;
     padding: 12px 24px;
     height: 80px;
