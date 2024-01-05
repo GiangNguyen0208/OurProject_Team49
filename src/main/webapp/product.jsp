@@ -1,6 +1,19 @@
-
+<%@ page import="java.util.List" %>
+<%@ page import="bean.Category" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="bean.Product" %>
+<%@ page import="service.ImageService" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    List<Category> categories = (List<Category>) request.getAttribute("categories");
+    if(categories == null) categories = new ArrayList<>();
+%>
+<%
+    List<Product> products = (List<Product>) request.getAttribute("products");
+    if (products == null) products = new ArrayList<>();
+
+%>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -88,12 +101,11 @@
                         <div class="directory-title">Danh mục</div>
                         <div class="directory__list">
                             <ul class="directory__item">
-
-                                <c:forEach items="${requestScope.categories}" var="o">
-                                    <li class="directory__gerne">
-                                               <a href="#" class="gerne-link">${o.name}</a>
-                                    </li>
-                                </c:forEach>
+                                <% for (Category c : categories) { %>
+                                <li class="directory__gerne">
+                                    <a href="#!" class="gerne-link"><%= c.getName() %></a>
+                                </li>
+                                <% }%>
 
                             </ul>
                         </div>
@@ -244,107 +256,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-list">
-                        <div class="item">
-                            <a href="productDetail.jsp" class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </a>
-                            <div class="item_content">
-                                <a href="productDetail.jsp" class="title"
-
-                                    >Roland VAD 706</a
-                                >
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
+                    <div class="list">
+                        <% for (Product p : products) { %>
+                            <div class="item">
+                                <a href="productDetail.jsp" class="img">
+                                    <img src="<%= ImageService.getInstance().getImageByProductId(p.getId()).get(0).getLink() %>"/>
+                                </a>
+                                <div class="item_content">
+                                    <a href="productDetail.jsp" class="title"
+                                    ><%= p.getName() %></a>
+                                    <div class="desc">
+                                        <%= p.getDescription() %>
+                                    </div>
+                                    <div class="price"><%= p.getTotalPrice() %> Đ</div>
+                                    <button class="add">Thêm vào giỏ hàng</button>
                                 </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
+                        <%}%>
                     </div>
+                    <ul class="listPage"></ul>
                 </div>
             </section>
         </section>
@@ -541,6 +471,8 @@
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/product.js"></script>
+        <script src="js/log.js"></script>
+        <script src="js/paging.js"></script>
 
         <!-- OWL CAROUSEL JS -->
         <script src="js/owl.carousel.min.js"></script>
