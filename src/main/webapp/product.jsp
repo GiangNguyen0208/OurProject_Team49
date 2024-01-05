@@ -3,17 +3,49 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="bean.Product" %>
 <%@ page import="service.ImageService" %>
+<%@ page import="service.ProductDetailService" %>
+<%@ page import="dao.ProductDAO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     List<Category> categories = (List<Category>) request.getAttribute("categories");
     if(categories == null) categories = new ArrayList<>();
-%>
-<%
+
     List<Product> products = (List<Product>) request.getAttribute("products");
     if (products == null) products = new ArrayList<>();
 
+//    Sort by Category
+    String category = request.getParameter("category");
+    String minPricePara = request.getParameter("minPrice");
+    String maxPricePara = request.getParameter("maxPrice");
+
+    if (category != null && !category.isEmpty()) {
+        try {
+           List<Product> filteredProducts = ProductDAO.getProductByCategory(category);
+           request.setAttribute("products", filteredProducts);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("error.jsp");
+        }
+    } else if (minPricePara != null && maxPricePara != null && !minPricePara.isEmpty() && !maxPricePara.isEmpty()) {
+        try {
+            double minPrice = Double.parseDouble(minPricePara);
+            double maxPrice = Double.parseDouble(maxPricePara);
+
+            // Call the method in ProductDAO to get products within the specified price range
+            List<Product> filteredProducts = ProductDAO.getProductByPriceRange(minPrice, maxPrice);
+            request.setAttribute("products", filteredProducts);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            // Handle invalid number format
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("error.jsp");
+        }
+    }
+
 %>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -103,10 +135,11 @@
                             <ul class="directory__item">
                                 <% for (Category c : categories) { %>
                                 <li class="directory__gerne">
-                                    <a href="#!" class="gerne-link"><%= c.getName() %></a>
+                                    <a href="products?category=<%=c.getName()%>" class="gerne-link">
+                                        <%--@declare id="category"--%><label for="category"><%=c.getName()%></label>
+                                    </a>
                                 </li>
                                 <% }%>
-
                             </ul>
                         </div>
                     </div>
@@ -122,25 +155,40 @@
                                 <div class="box_ss">
                                     <ul>
                                         <li>
-                                            <label>Dưới 3 Triệu</label>
+                                            <a href="products?minPrice=0&&maxPrice=3000000">
+                                                <label>Dưới 3 Triệu</label>
+                                            </a>
                                         </li>
                                         <li>
+                                            <a href="products?minPrice=3000000&&maxPrice=5000000">
                                             <label>3 - 5 triệu</label>
+                                            </a>
                                         </li>
                                         <li>
-                                            <label>5 - 10 triệu</label>
+                                            <a href="products?minPrice=5000000&&maxPrice=10000000">
+                                                <label>5 - 10 triệu</label>
+                                            </a>
                                         </li>
                                         <li>
-                                            <label>10 - 20 triệu</label>
+                                            <a href="products?minPrice=10000000&&maxPrice=20000000">
+                                                <label>10 - 20 triệu</label>
+                                            </a>
+
                                         </li>
                                         <li>
-                                            <label>20 - 40 triệu</label>
+                                            <a href="products?minPrice=20000000&&maxPrice=40000000">
+                                                <label>20 - 40 triệu</label>
+                                            </a>
                                         </li>
                                         <li>
-                                            <label>40 - 100 triệu</label>
+                                            <a href="products?minPrice=40000000&&maxPrice=100000000">
+                                                <label>40 - 100 triệu</label>
+                                            </a>
                                         </li>
                                         <li>
-                                            <label>100 - 300 triệu</label>
+                                            <a href="products?minPrice=100000000&&maxPrice=300000000">
+                                                <label>100 - 300 triệu</label>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -159,55 +207,55 @@
                                 <div class="box_ss">
                                     <ul>
                                         <li>
-                                            <label for="manufacturer_80"
+                                            <label for=""
                                                 >InRock</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="manufacturer_9"
+                                            <label for=""
                                                 >Lazer</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="manufacturer_58"
+                                            <label for=""
                                                 >Pearl Export</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="manufacturer_92"
+                                            <label for=""
                                                 >Alesis</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="manufacturer_56"
+                                            <label for=""
                                                 >Pearl</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="manufacturer_38"
+                                            <label for=""
                                                 >Zildjian</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="manufacturer_81"
+                                            <label for=""
                                                 >Meinl</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="manufacturer_76"
+                                            <label for=""
                                                 >Remo</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="manufacturer_16"
+                                            <label for=""
                                                 >Roland</label
                                             >
                                         </li>
@@ -228,26 +276,26 @@
                                 <div class="box_ss">
                                     <ul>
                                         <li>
-                                            <label for="order_gia-thap-den-cao"
+                                            <label for=""
                                                 >Giá thấp đến cao</label
                                             >
                                         </li>
 
                                         <li>
                                             <label
-                                                for="order_gia-cao-xuong-thap"
+                                                for=""
                                                 >Giá cao xuống thấp</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="order_ten-a-z"
+                                            <label for=""
                                                 >Tên A-Z</label
                                             >
                                         </li>
 
                                         <li>
-                                            <label for="order_ten-z-a"
+                                            <label for=""
                                                 >Tên Z-A</label
                                             >
                                         </li>

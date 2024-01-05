@@ -15,8 +15,16 @@ public class ProductDetailService {
     public List<Product> getProductList() {
         return ProductDAO.getProductList();
     }
+
+    public List<Product> getProductByCategory(String cateName) {
+        return ProductDAO.getProductByCategory(cateName);
+    }
+    public List<Product> getProductByPriceRange(double minPrice, double maxPrice) {
+        return ProductDAO.getProductByPriceRange(minPrice, maxPrice);
+    }
     public static void main(String[] args) {
         ProductDetailService productDetailService = new ProductDetailService();
         System.out.println(productDetailService.getProductList());
+        System.out.println(productDetailService.getProductByCategory("Cymbal"));
     }
 }
