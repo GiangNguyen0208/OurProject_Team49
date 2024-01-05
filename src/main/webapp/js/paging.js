@@ -1,7 +1,6 @@
 let thisPage = 1;
 let limit = 9;
 let list = document.querySelectorAll('.list .item');
-
 function loadItem() {
     let beginGet = limit * (thisPage - 1);
     let endGet = limit * thisPage - 1;
