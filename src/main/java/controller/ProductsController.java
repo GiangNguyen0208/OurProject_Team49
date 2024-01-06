@@ -25,6 +25,7 @@ public class ProductsController extends HttpServlet {
         String maxPricePara = req.getParameter("maxPrice");
         String brand = req.getParameter("brands");
         String azorza = req.getParameter("AZorZA");
+        String discount = req.getParameter("discounts");
 
         try {
             List<Product> productList = null;
@@ -40,6 +41,8 @@ public class ProductsController extends HttpServlet {
                 String sort = azorza.equals("ASC") ? "ASC" : "DESC";
                 productList = ProductDetailService.getInstance().getProductAZ(sort);
                 productList = ProductDetailService.getInstance().getProductAzPrice(sort);
+            } else if (discount != null && !discount.isEmpty()) {
+                productList = ProductDetailService.getInstance().getProductByDiscount();
             } else {
                 productList = ProductDetailService.getInstance().getProductList();
             }

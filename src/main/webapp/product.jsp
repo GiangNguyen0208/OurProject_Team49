@@ -3,10 +3,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="bean.Product" %>
 <%@ page import="service.ImageService" %>
-<%@ page import="service.ProductDetailService" %>
-<%@ page import="dao.ProductDAO" %>
 <%@ page import="bean.Brand" %>
-<%@ page import="dao.BrandDAO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
@@ -176,7 +173,10 @@
                             </div>
                         </div>
                         <div class="box_order_item">
-                            <label class="sort_feature">Khuyến mãi</label>
+                            <a href="products?discounts=discount">
+                                <label class="sort_feature">Khuyến mãi</label>
+
+                            </a>
                         </div>
 
                         <div class="box_order_item">

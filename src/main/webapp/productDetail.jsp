@@ -3,6 +3,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="bean.Product" %>
 <%@ page import="service.ImageService" %>
+<%@ page import="bean.Image_Product" %>
+<%@ page import="dao.ImageDAO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
@@ -10,6 +12,8 @@
     if(categories == null) categories = new ArrayList<>();
     List<Product> products = (List<Product>) request.getAttribute("products");
     if (products == null) products = new ArrayList<>();
+    List<Image_Product> imgs = (List<Image_Product>) request.getAttribute("imgs");
+    if (imgs == null) imgs = new ArrayList<>();
 %>
 <html lang="en">
     <head>
@@ -92,31 +96,33 @@
                             </button>
                         </div>
                         <div class="product__img-sub">
-                            <img
-                                class="item-img active"
-                                src="./assets/img/product/sp1.jpg"
-                                alt=""
-                            />
-                            <img
-                                class="item-img"
-                                src="./assets/img/product/sp1.jpg"
-                                alt=""
-                            />
-                            <img
-                                class="item-img"
-                                src="./assets/img/product/sp1.jpg"
-                                alt=""
-                            />
-                            <img
-                                class="item-img"
-                                src="./assets/img/product/sp1.jpg"
-                                alt=""
-                            />
-                            <img
-                                class="item-img"
-                                src="./assets/img/product/sp1.jpg"
-                                alt=""
-                            />
+                            <% for (Product p : products) {%>
+                                <% for (Image_Product img : imgs) {%>
+                                    <a href="productdetails?imgs=<%=img.getDetailId()%>">
+                                        <img class="item-img active" src="<%= ImageDAO.getImageByProductId(img.getDetailId())%>" alt=""/>
+                                    </a>
+                                <%}%>
+                            <%}%>
+<%--                            <img--%>
+<%--                                class="item-img"--%>
+<%--                                src="./assets/img/product/sp1.jpg"--%>
+<%--                                alt=""--%>
+<%--                            />--%>
+<%--                            <img--%>
+<%--                                class="item-img"--%>
+<%--                                src="./assets/img/product/sp1.jpg"--%>
+<%--                                alt=""--%>
+<%--                            />--%>
+<%--                            <img--%>
+<%--                                class="item-img"--%>
+<%--                                src="./assets/img/product/sp1.jpg"--%>
+<%--                                alt=""--%>
+<%--                            />--%>
+<%--                            <img--%>
+<%--                                class="item-img"--%>
+<%--                                src="./assets/img/product/sp1.jpg"--%>
+<%--                                alt=""--%>
+<%--                            />--%>
                         </div>
                     </div>
                     <div class="product__info">

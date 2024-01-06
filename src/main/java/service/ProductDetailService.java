@@ -32,6 +32,9 @@ public class ProductDetailService {
     public List<Product> getProductAzPrice(String AZorZA) {
         return ProductDAO.getProductAzPrice(AZorZA);
     }
+    public List<Product> getProductByDiscount() {
+        return ProductDAO.getProductByDiscount();
+    }
     public static void main(String[] args) {
         ProductDetailService productDetailService = new ProductDetailService();
         System.out.println(productDetailService.getProductList());

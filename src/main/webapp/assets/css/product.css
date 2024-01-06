@@ -178,6 +178,7 @@
     .sort_feature{
         float: left;
         cursor: pointer;
+        margin-top: 9px;
     }
     .sort_manufacturer{
         float: left;

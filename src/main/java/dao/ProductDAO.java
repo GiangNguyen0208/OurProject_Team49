@@ -77,13 +77,25 @@ public static List<Product> getProductByCategory(String cateName) {
         );
         return productList;
 }
+    public static List<Product> getProductByDiscount() {
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice " +
+                                "From product_details " +
+                                "Join discount on discount.id = product_details.categoryId " +
+                                "Where discount.amount > 0")
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
+        );
+        return productList;
+}
     public static void main(String[] args) {
         List<Product> all = ProductDAO.getProductList();
         List<Product> productByCate = ProductDAO.getProductByCategory("Electric");
         List<Product> productByPrice = ProductDAO.getProductByPriceRange(0,10000000);
         List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
         List<Product> productByASC = ProductDAO.getProductAZ("ASC");
-        System.out.println(productByASC);
+        List<Product> productDiscount = ProductDAO.getProductByDiscount();
+        System.out.println(productDiscount);
     }
 
 
