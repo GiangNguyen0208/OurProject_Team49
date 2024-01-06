@@ -46,10 +46,46 @@ public static List<Product> getProductByCategory(String cateName) {
         );
         return productList;
     }
+    public static List<Product> getProductByBrand(String brandName) {
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice FROM product_details \n" +
+                                "Join brands on brands.id = product_details.brandId \n" +
+                                "Where brands.name = ?")
+                        .bind(0, brandName)
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
+        );
+        return productList;
+    }
+    public static List<Product> getProductAZ(String AZorZA) {
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice\n" +
+                                "FROM product_details \n" +
+                                "Order By name " + AZorZA)
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
+        );
+        return productList;
+}
+    public static List<Product> getProductAzPrice(String AZorZA) {
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice\n" +
+                                "FROM product_details \n" +
+                                "Order By totalPrice " + AZorZA)
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
+        );
+        return productList;
+}
     public static void main(String[] args) {
         List<Product> all = ProductDAO.getProductList();
         List<Product> productByCate = ProductDAO.getProductByCategory("Electric");
         List<Product> productByPrice = ProductDAO.getProductByPriceRange(0,10000000);
-        System.out.println(productByPrice);
+        List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
+        List<Product> productByASC = ProductDAO.getProductAZ("ASC");
+        System.out.println(productByASC);
     }
+
+
+
 }

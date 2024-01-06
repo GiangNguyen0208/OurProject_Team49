@@ -1,6 +1,7 @@
 package service;
 
 import bean.Product;
+import dao.BrandDAO;
 import dao.ProductDAO;
 
 import java.awt.datatransfer.SystemFlavorMap;
@@ -21,6 +22,15 @@ public class ProductDetailService {
     }
     public List<Product> getProductByPriceRange(double minPrice, double maxPrice) {
         return ProductDAO.getProductByPriceRange(minPrice, maxPrice);
+    }
+    public List<Product> getProductByBrand(String brandName) {
+        return ProductDAO.getProductByBrand(brandName);
+    }
+    public List<Product> getProductAZ(String AZorZA) {
+        return ProductDAO.getProductAZ(AZorZA);
+    }
+    public List<Product> getProductAzPrice(String AZorZA) {
+        return ProductDAO.getProductAzPrice(AZorZA);
     }
     public static void main(String[] args) {
         ProductDetailService productDetailService = new ProductDetailService();

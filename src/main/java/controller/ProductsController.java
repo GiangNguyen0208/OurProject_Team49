@@ -1,7 +1,9 @@
 package controller;
 
+import bean.Brand;
 import bean.Category;
 import bean.Product;
+import service.BrandService;
 import service.CategoryService;
 import service.ProductDetailService;
 
@@ -21,25 +23,38 @@ public class ProductsController extends HttpServlet {
         String category = req.getParameter("category");
         String minPricePara = req.getParameter("minPrice");
         String maxPricePara = req.getParameter("maxPrice");
+        String brand = req.getParameter("brands");
+        String azorza = req.getParameter("AZorZA");
 
-        List<Product> productList = null;
-        if (category != null && !category.isEmpty()) {
-            productList = ProductDetailService.getInstance().getProductByCategory(category);
-        } else if (minPricePara != null && maxPricePara != null && !minPricePara.isEmpty() && !maxPricePara.isEmpty()) {
-            double minPrice = Double.parseDouble(minPricePara);
-            double maxPrice = Double.parseDouble(maxPricePara);
-            productList = ProductDetailService.getInstance().getProductByPriceRange(minPrice, maxPrice);
-        } else {
-            productList = ProductDetailService.getInstance().getProductList();
+        try {
+            List<Product> productList = null;
+            if (category != null && !category.isEmpty()) {
+                productList = ProductDetailService.getInstance().getProductByCategory(category);
+            } else if (minPricePara != null && maxPricePara != null && !minPricePara.isEmpty() && !maxPricePara.isEmpty()) {
+                double minPrice = Double.parseDouble(minPricePara);
+                double maxPrice = Double.parseDouble(maxPricePara);
+                productList = ProductDetailService.getInstance().getProductByPriceRange(minPrice, maxPrice);
+            } else if (brand != null && !brand.isEmpty()) {
+                productList = ProductDetailService.getInstance().getProductByBrand(brand);
+            } else if (azorza != null && !azorza.isEmpty()) {
+                String sort = azorza.equals("ASC") ? "ASC" : "DESC";
+                productList = ProductDetailService.getInstance().getProductAZ(sort);
+                productList = ProductDetailService.getInstance().getProductAzPrice(sort);
+            } else {
+                productList = ProductDetailService.getInstance().getProductList();
+            }
+            List<Category> categoryList = CategoryService.getInstance().getAllCategories();
+            List<Brand> brandList = BrandService.getInstance().getAllBrands();
+
+            req.setAttribute("categories", categoryList);
+            req.setAttribute("brands", brandList);
+            req.setAttribute("products", productList);
+            req.getRequestDispatcher("product.jsp").forward(req, resp);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();  // Handle or log the exception appropriately
+            resp.sendRedirect("error.jsp");
         }
-
-        List<Category> categoryList = CategoryService.getInstance().getAllCategories();
-
-        req.setAttribute("categories", categoryList);
-        req.setAttribute("products", productList);
-        req.getRequestDispatcher("product.jsp").forward(req, resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        List<Category> categoryList = CategoryService.getInstance().getAllCategories();

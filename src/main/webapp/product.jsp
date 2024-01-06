@@ -5,6 +5,8 @@
 <%@ page import="service.ImageService" %>
 <%@ page import="service.ProductDetailService" %>
 <%@ page import="dao.ProductDAO" %>
+<%@ page import="bean.Brand" %>
+<%@ page import="dao.BrandDAO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
@@ -14,35 +16,14 @@
     List<Product> products = (List<Product>) request.getAttribute("products");
     if (products == null) products = new ArrayList<>();
 
-//    Sort by Category
+    List<Brand> brands = (List<Brand>) request.getAttribute("brands");
+    if (brands == null) brands = new ArrayList<>();
+
     String category = request.getParameter("category");
+    String brand = request.getParameter("brands");
     String minPricePara = request.getParameter("minPrice");
     String maxPricePara = request.getParameter("maxPrice");
-
-    if (category != null && !category.isEmpty()) {
-        try {
-           List<Product> filteredProducts = ProductDAO.getProductByCategory(category);
-           request.setAttribute("products", filteredProducts);
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("error.jsp");
-        }
-    } else if (minPricePara != null && maxPricePara != null && !minPricePara.isEmpty() && !maxPricePara.isEmpty()) {
-        try {
-            double minPrice = Double.parseDouble(minPricePara);
-            double maxPrice = Double.parseDouble(maxPricePara);
-
-            // Call the method in ProductDAO to get products within the specified price range
-            List<Product> filteredProducts = ProductDAO.getProductByPriceRange(minPrice, maxPrice);
-            request.setAttribute("products", filteredProducts);
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-            // Handle invalid number format
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("error.jsp");
-        }
-    }
+    String azorza = request.getParameter("AZorZA");
 
 %>
 
@@ -206,59 +187,13 @@
                             <div id="sort_manufacturer" class="box_s hidden">
                                 <div class="box_ss">
                                     <ul>
+                                        <% for (Brand b: brands) {%>
                                         <li>
-                                            <label for=""
-                                                >InRock</label
-                                            >
+                                            <a href="products?brands=<%=b.getName()%>">
+                                                <%--@declare id="brands"--%><label for="brands"><%=b.getName()%></label>
+                                            </a>
                                         </li>
-
-                                        <li>
-                                            <label for=""
-                                                >Lazer</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for=""
-                                                >Pearl Export</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for=""
-                                                >Alesis</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for=""
-                                                >Pearl</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for=""
-                                                >Zildjian</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for=""
-                                                >Meinl</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for=""
-                                                >Remo</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for=""
-                                                >Roland</label
-                                            >
-                                        </li>
+                                        <%}%>
                                     </ul>
                                 </div>
                             </div>
@@ -276,28 +211,26 @@
                                 <div class="box_ss">
                                     <ul>
                                         <li>
-                                            <label for=""
-                                                >Giá thấp đến cao</label
-                                            >
+                                            <a href="products?AZorZA=ASC">
+                                                <label>Giá thấp đến cao</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="products?AZorZA=DESC">
+                                                <label>Giá cao xuống thấp</label>
+                                            </a>
                                         </li>
 
                                         <li>
-                                            <label
-                                                for=""
-                                                >Giá cao xuống thấp</label
-                                            >
+                                            <a href="products?AZorZA=ASC">
+                                                <%--@declare id="azorza"--%><label>Tên A-Z</label>
+                                            </a>
                                         </li>
 
                                         <li>
-                                            <label for=""
-                                                >Tên A-Z</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for=""
-                                                >Tên Z-A</label
-                                            >
+                                            <a href="products?AZorZA=DESC">
+                                                <label>Tên Z-A</label>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
