@@ -27,6 +27,7 @@ public class Encode {
     }
 
     public static void main(String[] args) {
+        Encode encodeInstance = new Encode();
         System.out.println(toSHA1("123123"));
     }
 }
