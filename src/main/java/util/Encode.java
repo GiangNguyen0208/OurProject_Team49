@@ -27,6 +27,6 @@ public class Encode {
     }
 
     public static void main(String[] args) {
-        System.out.println(toSHA1("dai0601"));
+        System.out.println(toSHA1("123123"));
     }
 }

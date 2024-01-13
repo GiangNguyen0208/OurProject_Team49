@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -34,57 +35,95 @@
             referrerpolicy="no-referrer"
         />
 
-        <title>Document</title>
+        <title>Đặt lại mật khẩu</title>
     </head>
     <body>
+    <c:set var="confirmWrong" value="${requestScope.confirmWrong}"/>
+    <c:set var="changedPassword" value="${requestScope.changedPassword}"/>
+    <c:set var="emailForgetPassword" value="${sessionScope.emailForgetPassword}"/>
         <div class="content">
             <div class="form-wrapper log-in open" id="reset-password">
-                <a href="./log.jsp" class="back-cta">
+                <a href="./logIn.jsp" class="back-cta">
                     <i class="fa-solid fa-chevron-left"></i>
                     Trở về trang đăng nhập
                 </a>
-                <form
-                    action="./resetPassword"
-                    method="post"
-                    class="form"
-                    autocomplete="off"
-                >
-                    <p class="title">Đặt lại mật khẩu</p>
+                <c:choose>
+                    <c:when test="${empty changedPassword}">
+                        <form
+                                action="./resetPassword"
+                                method="post"
+                                class="form"
+                                autocomplete="off"
+                        >
+                            <p class="title">Đặt lại mật khẩu</p>
+                            <p>Đang đặt lại mật khẩu cho ${emailForgetPassword}</p>
+                            <div class="form-grp">
+                                <label for="password">Mật khẩu</label>
+                                <div class="pw-input">
+                                    <i class="fa-solid fa-key ic"></i>
+                                    <input
+                                            id="password"
+                                            name="password"
+                                            type="password"
+                                            placeholder="Nhập mật khẩu mới ..."
+                                            required
+                                    />
+                                </div>
+                                <div class="errorMessage">
+                                    <c:if test="${not empty confirmWrong}">
+                                        <p class="text-danger">
+                                                ${confirmWrong}
+                                        </p>
+                                    </c:if>
+                                </div>
+                            </div>
 
-                    <div class="form-grp">
-                        <label for="password">Mật khẩu</label>
-                        <div class="pw-input">
-                            <i class="fa-solid fa-key ic"></i>
-                            <input
-                                id="password"
-                                name="password"
-                                type="password"
-                                placeholder="Nhập mật khẩu mới ..."
-                                required
-                            />
-                        </div>
-                        <div class="errorMessage"></div>
-                    </div>
+                            <div class="form-grp">
+                                <label for="confirm-password">Xác nhận mật khẩu</label>
+                                <div class="pw-input">
+                                    <i class="fa-solid fa-key ic"></i>
+                                    <input
+                                            id="confirm-password"
+                                            name="confirm-password"
+                                            type="password"
+                                            placeholder="Xác nhận mật khẩu ... "
+                                            required
+                                    />
+                                </div>
+                                <div class="errorMessage">
+                                    <c:if test="${not empty confirmWrong}">
+                                        <p class="text-danger">
+                                                ${confirmWrong}
+                                        </p>
+                                    </c:if>
+                                </div>
+                            </div>
 
-                    <div class="form-grp">
-                        <label for="confirm-password">Xác nhận mật khẩu</label>
-                        <div class="pw-input">
-                            <i class="fa-solid fa-key ic"></i>
-                            <input
-                                id="confirm-password"
-                                name="confirm-password"
-                                type="password"
-                                placeholder="Xác nhận mật khẩu ... "
-                                required
-                            />
-                        </div>
-                        <div class="errorMessage"></div>
-                    </div>
+                            <button type="submit" class="submit sub-btn">
+                                ĐỔI MẬT KHẨU
+                            </button>
+                        </form>
+                    </c:when>
+                    <c:otherwise>
+                        <form
+                                action=""
+                                method="post"
+                                class="form"
+                                autocomplete="off"
+                        >
+                            <p class="title">
+                                <c:if test="${changedPassword != null}">
+                                    ${changedPassword}
+                                </c:if>
+                            </p>
+                            <button type="button" class="submit sub-btn">
+                                <a href="./logIn.jsp">QUAY TRỞ VỀ TRANG ĐĂNG NHẬP</a>
+                            </button>
+                        </form>
+                    </c:otherwise>
+                </c:choose>
 
-                    <button type="submit" class="submit sub-btn">
-                        ĐỔI MẬT KHẨU
-                    </button>
-                </form>
+
             </div>
         </div>
 

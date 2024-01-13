@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Đăng nhập</title>
+    <title>Đăng Ký</title>
 
     <!-- reset CSS -->
     <link rel="stylesheet" href="assets/css/reset.css"/>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- embed fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -43,89 +46,15 @@
 <!-- Form -->
 
 <div class="content">
-    <c:set var="error" value="${requestScope.error}"/>
-    <c:set var="username" value="${requestScope.username}"/>
-
     <c:set var="username__signup" value="${requestScope.username__signup}"/>
     <c:set var="email__signup" value="${requestScope.email__signup}"/>
 
     <c:set var="emailError" value="${requestScope.emailError}"/>
     <c:set var="usernameError" value="${requestScope.usernameError}"/>
     <c:set var="confirmWrong" value="${requestScope.confirmWrong}"/>
-    <!-- Log In -->
-    <div class="form-wrapper log-in open" id="log-in">
-        <a href="./index.jsp" class="back-cta">
-            <i class="fa-solid fa-chevron-left"></i>
-            Trở về trang chủ
-        </a>
-        <form
-                action="./log"
-                method="post"
-                class="form"
-                autocomplete="on"
-        >
-            <p class="title">Đăng Nhập</p>
-            <c:if test="${error != null}">
-                <p class="text-danger">
-                   ${error}
-                </p>
-            </c:if>
-            <div class="form-grp">
-                <label for="username__login">Tài khoản</label>
-                <div class="user-input">
-                    <i class="fa-solid fa-user ic"></i>
-                    <input
-                            id="username__login"
-                            type="text"
-                            name="username"
-                            required
-                            placeholder="Nhập tên tài khoản hoặc email ..."
-                            value="${username}"
-                    />
-                </div>
-                <div class="errorMessage"></div>
-            </div>
-
-            <div class="form-grp">
-                <label for="password__login">Mật khẩu</label>
-                <div class="pw-input">
-                    <i class="fa-solid fa-key ic"></i>
-                    <input
-                            id="password__login"
-                            name="password"
-                            type="password"
-                            required
-                            placeholder="Nhập mật khẩu ..."
-                    />
-                </div>
-                <div class="errorMessage"></div>
-            </div>
-
-            <div class="forget-pw">
-                <span>Quên mật khẩu ?</span>
-            </div>
-
-            <button
-                    type="submit"
-                    class="submit sub-btn"
-                    id="signin"
-            >
-                ĐĂNG NHẬP
-            </button>
-
-            <div class="footer">
-                <span>Chưa đăng ký tài khoản ?</span>
-
-                <button type="button" class="link" id="sign-up-link">
-                    Đăng ký
-                </button>
-            </div>
-        </form>
-    </div>
-
 
     <!-- Sign Up -->
-    <div class="form-wrapper sign-up hidden" id="sign-up">
+    <div class="form-wrapper sign-up" id="sign-up">
         <a href="./index.jsp" class="back-cta">
             <i class="fa-solid fa-chevron-left"></i>
             Trở về trang chủ
@@ -150,10 +79,10 @@
                             value="${username__signup}"
                     />
                 </div>
-                <div class="errorMessage">
+                <div class="errorMessage" id="usernameError">
                     <c:if test="${usernameError != null}">
                         <p class="text-danger">
-                            ${usernameError}
+                                ${usernameError}
                         </p>
                     </c:if>
                 </div>
@@ -172,7 +101,7 @@
                             value="${email__signup}"
                     />
                 </div>
-                <div class="errorMessage">
+                <div class="errorMessage" id="emailError">
                     <c:if test="${emailError != null}">
                         <p class="text-danger">
                                 ${emailError}
@@ -193,7 +122,7 @@
                             required
                     />
                 </div>
-                <div class="errorMessage">
+                <div class="errorMessage" id="confirmWrong">
                     <c:if test="${confirmWrong != null}">
                         <p class="text-danger">
                                 ${confirmWrong}
@@ -234,65 +163,16 @@
                 <span>Đã có tài khoản ?</span>
 
                 <button type="button" class="link" id="log-in-link">
-                    Đăng Nhập
+                    <a href="logIn.jsp">Đăng Nhập</a>
                 </button>
             </div>
         </form>
     </div>
 
-    <!-- Forgot password -->
-    <div class="form-wrapper sign-up hidden" id="forgot-pw__form">
-        <a href="./index.jsp" class="back-cta">
-            <i class="fa-solid fa-chevron-left"></i>
-            Trở về trang chủ
-        </a>
-        <form action="" class="form" autocomplete="off">
-            <p class="title">Quên mật khẩu</p>
-
-            <div class="form-grp">
-                <label for="username__forgot">Email</label>
-                <div class="user-input">
-                    <i class="fa-solid fa-user ic"></i>
-                    <input
-                            id="username__forgot"
-                            name="username_forgot"
-                            type="text"
-                            placeholder="Nhập email ... "
-                            required
-                    />
-                </div>
-                <div class="errorMessage"></div>
-            </div>
-
-            <button type="submit" class="submit sub-btn" id="forgot__pw">
-                XÁC NHẬN
-            </button>
-
-            <div class="footer">
-                <span>Quay trở lại đăng nhập</span>
-
-                <button type="button" class="link login-in-pw" id="">
-                    Đăng Nhập
-                </button>
-            </div>
-        </form>
-    </div>
 </div>
-<script src="js/log.js"></script>
 <script src="js/validation.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // validate cho form đăng nhập
-        Validator({
-            form: '#log-in',
-            parentError: '.form-grp',
-            errorSelector: '.errorMessage',
-            rules: [
-                Validator.isRequired('#username__login'),
-                Validator.minLength('#password__login', 6)
-            ]
-        });
-
         // validate cho form đăng ký
         Validator({
             form: '#sign-up',
@@ -310,21 +190,6 @@
                 Validator.confirmPassword('#confirm-password', function (){
                     return document.querySelector('#password__signup').value;
                 }, 'Mật khẩu xác thực chưa đúng, vui lòng nhập lại')
-            ],
-            onsubmit: function (data) {
-
-            }
-        });
-
-        console.log(document.querySelector('#password__signup').value);
-
-        Validator({
-            form: '#forgot-pw__form',
-            parentError: '.form-grp',
-            errorSelector: '.errorMessage',
-            rules: [
-                Validator.isRequired('#username__forgot'),
-                Validator.isEmail('#username__forgot')
             ]
         });
     });
@@ -333,4 +198,3 @@
 </body>
 
 </html>
-

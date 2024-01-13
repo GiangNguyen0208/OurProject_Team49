@@ -292,7 +292,6 @@
         </footer>
 
         <!-- MAIN JS -->
-        <script src="./js/log.js"></script>
         <script src="./js/policy.js"></script>
     </body>
 </html>
