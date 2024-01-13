@@ -96,13 +96,17 @@
                             </button>
                         </div>
                         <div class="product__img-sub">
-                            <% for (Product p : products) {%>
-                                <% for (Image_Product img : imgs) {%>
-                                    <a href="productdetails?imgs=<%=img.getDetailId()%>">
-                                        <img class="item-img active" src="<%= ImageDAO.getImageByProductId(img.getDetailId())%>" alt=""/>
-                                    </a>
-                                <%}%>
-                            <%}%>
+                            <% for (Product product : products) { %>
+                                <% for (Image_Product img : imgs) { %>
+                                    <% if (product.getId() == img.getDetailId()) { %>
+                                        <div class="item">
+                                            <a href="productdetails?imgs=<%=img.getDetailId() %>">
+                                                <img class="item-img" src="<%= ImageDAO.getImageByProductId(img.getDetailId())%>" alt=""/>
+                                            </a>
+                                        </div>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
 <%--                            <img--%>
 <%--                                class="item-img"--%>
 <%--                                src="./assets/img/product/sp1.jpg"--%>

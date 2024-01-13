@@ -1,7 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="bean.User" %>
 <%@ page import="bean.Product" %>
-<%@ page import="service.ImageService" %>
 <%@ page import="bean.Brand" %>
 <%@ page import="bean.Category" %>
 <%@ page import="java.util.List" %>
@@ -146,47 +144,6 @@
 <!-- PRODUCTS -->
 <section class="products">
     <h2>Sản phẩm nổi bật</h2>
-    <!-- <div class="cagories">
-            <div class="cagories-title"> <h1>Trống Drum </h1></div>
-            <ul>
-                <div class="cagories-item col col-five ">
-                    <li><a href="#"><h2>Trống Điện Tử</h2></a>
-                    <div class="cagories-list">
-                         <div class="cagories-item-line"><a href=""><h3>ELECTRIC DRUMSET</h3></a></div>
-                    </div>
-                    </li>
-                   </div>
-                <div class="cagories-item col col-five">
-                    <li><a href="#"><h2>Trống Bộ</h2></a>
-                    <div class="cagories-list ">
-                        <div class="cagories-item-line"><a href="#"><h3>Trống Odery</h3></a></div>
-                        <div class="cagories-item-line"><a href="#"><h3>Pearl Jazz</h3></a></div>
-                    </div>
-                    </li>
-                   </div>
-                <div class="cagories-item col col-five">
-                    <li><a href="#"><h2>Trống Lẻ</h2></a></li>
-                   </div>
-                <div class="cagories-item col col-five">
-                    <li><a href="#"><h2>Bộ gõ</h2></a>
-                    <div class="cagories-list ">
-                        <div class="cagories-item-line"><a href="#"><h3>DIGITAL PERCUSSION</h3></a></div>
-                        <div class="cagories-item-line"><a href="#"><h3>Cajon </h3></a></div>
-                        <div class="cagories-item-line"><a href="#"><h3>DJEMBE</h3></a></div>
-                        <div class="cagories-item-line"><a href="#"><h3>BỘ GÕ KHÁC</h3></a></div>
-                    </div>
-                    </li>
-                   </div>
-                <div class="cagories-item col col-five">
-                    <li><a href="https://vietthuong.vn/cymbal-trong.jsp"><h2>Cymbal</h2></a>
-                    <div class="cagories-list ">
-                        <div class="cagories-item-line"><a href="#"><h3>PACKAGE</h3></a></div>
-                        <div class="cagories-item-line"><a href="#"><h3>SINGLE</h3></a></div>
-                    </div>
-                    </li>
-                   </div>
-            </ul>
-    </div> -->
     <div class="box_products">
         <div class="box_order">
             <label>Tìm theo</label>
@@ -329,14 +286,13 @@
         </div>
         <div class="container">
             <div class="list">
-<%--                <a href="home">--%>
                     <% for (Product p : products) {%>
                     <div class="item">
                         <a href="productDetail.jsp">
                             <div class="img">
                                 <img
-                                        src="<%= ImageDAO.getImageByProductId(p.getId()).get(0).getLink()%>"
-                                        alt="Roland VAD 706"
+                                    src="<%= ImageDAO.getImageByProductId(p.getId()).get(0).getLink()%>"
+                                    alt="Roland VAD 706"
                                 />
                             </div>
                             <div class="item_content">
@@ -351,13 +307,13 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
                                 </div>
-                                <div class="price"><%=p.getTotalPrice()%></div>
+                                <div class="price"><%=p.getTotalPrice()%> Đ</div>
+                                <c:url value="/index.jsp/addToCart?productId=$(p.getId)"/>
                                 <button class="add">Thêm vào giỏ hàng</button>
                             </div>
                         </a>
                     </div>
                     <%}%>
-<%--                </a>--%>
             </div>
         </div>
     </div>

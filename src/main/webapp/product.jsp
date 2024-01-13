@@ -244,7 +244,7 @@
                                     <img src="<%= ImageService.getInstance().getImageByProductId(p.getId()).get(0).getLink() %>"/>
                                 </a>
                                 <div class="item_content">
-                                    <a href="productDetail.jsp" class="title"
+                                    <a href="" class="title"
                                     ><%= p.getName() %></a>
                                     <div class="desc">
                                         <%= p.getDescription() %>
