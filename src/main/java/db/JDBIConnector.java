@@ -3,11 +3,13 @@ package db;
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.jdbi.v3.core.Jdbi;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 public class JDBIConnector {
     private static Jdbi jdbi;
+    private JDBIConnector instance;
 
-    private static void connect() {
+    public static void connect() {
         MysqlDataSource mysqlDataSource = new MysqlDataSource();
         mysqlDataSource.setURL("jdbc:mysql://" + DBProperties.host + ":" + DBProperties.port + "/" + DBProperties.name);
         System.out.println("jdbc:mysql://" + DBProperties.host + ":" + DBProperties.port + "/" + DBProperties.name);
@@ -31,6 +33,10 @@ public class JDBIConnector {
         return jdbi;
     }
 
+    public JDBIConnector getInstance() {
+        if (instance == null) instance = new JDBIConnector();
+        return  instance;
+    }
     public static void main(String[] args) {
         JDBIConnector test = new JDBIConnector();
         test.connect();

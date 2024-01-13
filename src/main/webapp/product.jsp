@@ -1,10 +1,29 @@
-
+<%@ page import="java.util.List" %>
+<%@ page import="bean.Category" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="bean.Product" %>
+<%@ page import="service.ImageService" %>
+<%@ page import="bean.Brand" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%--<%--%>
-<%--    List<Category> categories = (List<Category>) request.getAttribute("categories");--%>
-<%--    if(categories == null) categories = new ArrayList<>();--%>
-<%--%>--%>
+<%
+    List<Category> categories = (List<Category>) request.getAttribute("categories");
+    if(categories == null) categories = new ArrayList<>();
+
+    List<Product> products = (List<Product>) request.getAttribute("products");
+    if (products == null) products = new ArrayList<>();
+
+    List<Brand> brands = (List<Brand>) request.getAttribute("brands");
+    if (brands == null) brands = new ArrayList<>();
+
+    String category = request.getParameter("category");
+    String brand = request.getParameter("brands");
+    String minPricePara = request.getParameter("minPrice");
+    String maxPricePara = request.getParameter("maxPrice");
+    String azorza = request.getParameter("AZorZA");
+
+%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -92,18 +111,13 @@
                         <div class="directory-title">Danh mục</div>
                         <div class="directory__list">
                             <ul class="directory__item">
-<%--                                <% for (Category c : categories) { %>--%>
-<%--                                <li class="directory__gerne">--%>
-<%--                                    <a href="#!" class="gerne-link"><%= c.getName() %></a>--%>
-<%--                                </li>--%>
-<%--                                <% }%>--%>
-
-                                <c:forEach items="${requestScope.categories}" var="o">
-                                    <li class="directory__gerne">
-                                               <a href="#" class="gerne-link">${o.name}</a>
-                                    </li>
-                                </c:forEach>
-
+                                <% for (Category c : categories) { %>
+                                <li class="directory__gerne">
+                                    <a href="products?category=<%=c.getName()%>" class="gerne-link">
+                                        <%--@declare id="category"--%><label for="category"><%=c.getName()%></label>
+                                    </a>
+                                </li>
+                                <% }%>
                             </ul>
                         </div>
                     </div>
@@ -119,32 +133,50 @@
                                 <div class="box_ss">
                                     <ul>
                                         <li>
-                                            <label>Dưới 3 Triệu</label>
+                                            <a href="products?minPrice=0&&maxPrice=3000000">
+                                                <label>Dưới 3 Triệu</label>
+                                            </a>
                                         </li>
                                         <li>
+                                            <a href="products?minPrice=3000000&&maxPrice=5000000">
                                             <label>3 - 5 triệu</label>
+                                            </a>
                                         </li>
                                         <li>
-                                            <label>5 - 10 triệu</label>
+                                            <a href="products?minPrice=5000000&&maxPrice=10000000">
+                                                <label>5 - 10 triệu</label>
+                                            </a>
                                         </li>
                                         <li>
-                                            <label>10 - 20 triệu</label>
+                                            <a href="products?minPrice=10000000&&maxPrice=20000000">
+                                                <label>10 - 20 triệu</label>
+                                            </a>
+
                                         </li>
                                         <li>
-                                            <label>20 - 40 triệu</label>
+                                            <a href="products?minPrice=20000000&&maxPrice=40000000">
+                                                <label>20 - 40 triệu</label>
+                                            </a>
                                         </li>
                                         <li>
-                                            <label>40 - 100 triệu</label>
+                                            <a href="products?minPrice=40000000&&maxPrice=100000000">
+                                                <label>40 - 100 triệu</label>
+                                            </a>
                                         </li>
                                         <li>
-                                            <label>100 - 300 triệu</label>
+                                            <a href="products?minPrice=100000000&&maxPrice=300000000">
+                                                <label>100 - 300 triệu</label>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="box_order_item">
-                            <label class="sort_feature">Khuyến mãi</label>
+                            <a href="products?discounts=discount">
+                                <label class="sort_feature">Khuyến mãi</label>
+
+                            </a>
                         </div>
 
                         <div class="box_order_item">
@@ -155,59 +187,13 @@
                             <div id="sort_manufacturer" class="box_s hidden">
                                 <div class="box_ss">
                                     <ul>
+                                        <% for (Brand b: brands) {%>
                                         <li>
-                                            <label for="manufacturer_80"
-                                                >InRock</label
-                                            >
+                                            <a href="products?brands=<%=b.getName()%>">
+                                                <%--@declare id="brands"--%><label for="brands"><%=b.getName()%></label>
+                                            </a>
                                         </li>
-
-                                        <li>
-                                            <label for="manufacturer_9"
-                                                >Lazer</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for="manufacturer_58"
-                                                >Pearl Export</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for="manufacturer_92"
-                                                >Alesis</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for="manufacturer_56"
-                                                >Pearl</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for="manufacturer_38"
-                                                >Zildjian</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for="manufacturer_81"
-                                                >Meinl</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for="manufacturer_76"
-                                                >Remo</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for="manufacturer_16"
-                                                >Roland</label
-                                            >
-                                        </li>
+                                        <%}%>
                                     </ul>
                                 </div>
                             </div>
@@ -225,135 +211,51 @@
                                 <div class="box_ss">
                                     <ul>
                                         <li>
-                                            <label for="order_gia-thap-den-cao"
-                                                >Giá thấp đến cao</label
-                                            >
+                                            <a href="products?AZorZA=ASC">
+                                                <label>Giá thấp đến cao</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="products?AZorZA=DESC">
+                                                <label>Giá cao xuống thấp</label>
+                                            </a>
                                         </li>
 
                                         <li>
-                                            <label
-                                                for="order_gia-cao-xuong-thap"
-                                                >Giá cao xuống thấp</label
-                                            >
+                                            <a href="products?AZorZA=ASC">
+                                                <%--@declare id="azorza"--%><label>Tên A-Z</label>
+                                            </a>
                                         </li>
 
                                         <li>
-                                            <label for="order_ten-a-z"
-                                                >Tên A-Z</label
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <label for="order_ten-z-a"
-                                                >Tên Z-A</label
-                                            >
+                                            <a href="products?AZorZA=DESC">
+                                                <label>Tên Z-A</label>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="product-list">
-                        <div class="item">
-                            <a href="productDetail.jsp" class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </a>
-                            <div class="item_content">
-                                <a href="productDetail.jsp" class="title"
-
-                                    >Roland VAD 706</a
-                                >
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
+                    <div class="list">
+                        <% for (Product p : products) { %>
+                            <div class="item">
+                                <a href="productDetail.jsp" class="img">
+                                    <img src="<%= ImageService.getInstance().getImageByProductId(p.getId()).get(0).getLink() %>"/>
+                                </a>
+                                <div class="item_content">
+                                    <a href="productDetail.jsp" class="title"
+                                    ><%= p.getName() %></a>
+                                    <div class="desc">
+                                        <%= p.getDescription() %>
+                                    </div>
+                                    <div class="price"><%= p.getTotalPrice() %> Đ</div>
+                                    <button class="add">Thêm vào giỏ hàng</button>
                                 </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="img">
-                                <img
-                                    src="assets/img/product/sp1.jpg"
-                                    alt="Roland VAD 706"
-                                />
-                            </div>
-                            <div class="item_content">
-                                <div class="title">Roland VAD 706</div>
-                                <div class="desc">
-                                    Bộ trống điện tử tinh tế với kiểu dáng gi
-                                </div>
-                                <div class="price">Liên Hệ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
-                            </div>
-                        </div>
+                        <%}%>
                     </div>
+                    <ul class="listPage"></ul>
                 </div>
             </section>
         </section>
@@ -550,6 +452,8 @@
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/product.js"></script>
+        <script src="js/log.js"></script>
+        <script src="js/paging.js"></script>
 
         <!-- OWL CAROUSEL JS -->
         <script src="js/owl.carousel.min.js"></script>
