@@ -89,7 +89,23 @@ public class UserDAO {
         System.out.println("done");
     }
 
+    public static void changeInfo(User u) {
+        JDBIConnector.me().withHandle(handle -> {
+            return handle.createUpdate("UPDATE users SET email = :email, phone = :phone, firstName = :firstName, lastName = :lastName, birthDate = :birthDate, gender = :gender where username = :username")
+                    .bind("email", u.getEmail())
+                    .bind("phone", u.getPhone())
+                    .bind("firstName", u.getFirstName())
+                    .bind("lastName", u.getLastName())
+                    .bind("birthDate", u.getBirthDate())
+                    .bind("gender", u.getGender())
+                    .bind("username", u.getUsername()).execute();
+
+        });
+        System.out.println("done");
+    }
+
     public static void main(String[] args) {
      changePassword("cunoccho0601@gmail.com", "hahaha");
+
     }
 }

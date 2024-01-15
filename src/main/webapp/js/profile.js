@@ -1,37 +1,3 @@
-// Lấy ra các phần tử cần sử dụng
-const accountPhone = document.querySelectorAll('.account .account-phone');
-const accountPhoneContent = document.getElementById('account-phone');
-
-// Thêm sự kiện click cho từng nút cập nhật
-accountPhone.forEach(button => {
-    button.addEventListener('click', function(event) {
-        // Ẩn tất cả các phần tử .account
-        document.querySelectorAll('.account').forEach(account => {
-            account.classList.remove('active');
-        });
-
-        // Hiển thị nội dung của thẻ account-phone
-        accountPhoneContent.classList.add('active');
-    });
-});
-
-
-// Lấy ra các phần tử cần sử dụng
-const accountMail = document.querySelectorAll('.account .account-mail');
-const accountMailContent = document.getElementById('account-mail');
-
-// Thêm sự kiện click cho từng nút cập nhật
-accountMail.forEach(button => {
-    button.addEventListener('click', function(event) {
-        // Ẩn tất cả các phần tử .account
-        document.querySelectorAll('.account').forEach(account => {
-            account.classList.remove('active');
-        });
-
-        // Hiển thị nội dung của thẻ account-mail
-        accountMailContent.classList.add('active');
-    });
-});
 
 
 // JS Thông báo
@@ -42,7 +8,7 @@ const accountManageContent = document.getElementById('manage-account');
 buttons.forEach((button, index) => {
     button.addEventListener('click', (event) => {
         event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
-        alerts[index].style.right = '20px';
+        alerts[index].style.right = '34px';
         let length = 70;
         let process = alerts[index].querySelector('.process');
         const run = setInterval(() =>  {
@@ -52,16 +18,56 @@ buttons.forEach((button, index) => {
                 clearInterval(run);
                 alerts[index].style.right = '-500px';
 
-                setTimeout(() => {
-                    document.querySelectorAll('.account').forEach(account => {
-                        account.classList.remove('active');
-                    });
-
-                    accountManageContent.classList.add('active');
-                }, 1000);
             }
         }, 200);
     });
 });
+
+document.getElementById("updatePasswordLink").addEventListener("click", function(event) {
+    // Ngăn chặn hành vi mặc định của liên kết
+    event.preventDefault();
+
+    // Thực hiện các hành động khác nếu cần
+    // ...
+
+    // Chuyển hướng đến trang resetPassword.jsp bằng JavaScript
+    window.location.href = "./resetPassword.jsp";
+});
+
+//JS email error
+const emailField = document.getElementById("email");
+const emailError = document.getElementById("email-error");
+
+function validateEmail() {
+    if (!emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+        emailError.innerHTML = "Vui lòng nhập địa chỉ email hợp lệ";
+        emailField.style.border = "1px solid red";
+        emailError.style.top = "48%";
+        return false;
+    }
+
+    emailError.innerHTML = "";
+    emailField.style.border = "1px solid rgb(196, 196, 207)";
+    emailError.style.top = "40%";
+    return true;
+}
+
+//JS phone error
+const phoneField = document.getElementById("phone");
+const phoneError = document.getElementById("phone-error");
+function validatePhone() {
+    if (!phoneField.value.match(/^\d{10}$/)) {
+        phoneError.innerHTML = "Vui lòng nhập số điện thoại hợp lệ";
+        phoneField.style.border = "1px solid red";
+        phoneError.style.top = "32%";
+        return false;
+    }
+
+    phoneError.innerHTML = "";
+    phoneField.style.border = "1px solid rgb(196, 196, 207)";
+    phoneError.style.top = "40%";
+    return true;
+}
+
 
 

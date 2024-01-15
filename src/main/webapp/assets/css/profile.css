@@ -46,8 +46,8 @@ h2 {
 
 /* PROFILE */
 .account {
-    flex: 1 1 0%;
-    display: none;
+    float: left;
+    width: 80%;
     position: relative;
 }
 
@@ -63,7 +63,7 @@ h2 {
 }
 
 .profile-container {
-    display: flex;
+    /*display: flex;*/
     width: 100%;
     margin: 0px auto 20px;
     flex-wrap: wrap;
@@ -130,11 +130,12 @@ h2 {
 }
 
 .profile-function {
-    width: 250px;
+    width: 20%;
     margin-right: 17px;
 }
 
 .profile-function-list-container {
+    float: left;
     background-color: #293241;
 }
 
@@ -172,7 +173,12 @@ h2 {
     font-size: 20px;
     line-height: 32px;
     font-weight: 300;
-    margin: 4px 0px 12px;
+    margin: 4px 0px 12px 36px;
+}
+
+.style_info {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .style_info .info {
@@ -186,7 +192,7 @@ h2 {
 }
 
 .style_info .info-left {
-    width: 60%;
+    width: 55%;
     padding: 16px 24px 16px 16px;
 }
 
@@ -204,7 +210,7 @@ h2 {
 }
 
 .style_info .info-right {
-    width: calc(100% - 60%);
+    width: calc(100% - 55%);
     padding: 16px 16px 16px 24px;
     display: flex;
     flex-direction: column;
@@ -319,7 +325,8 @@ h2 {
 .input-content .input-nickname,
 .input-content .input-country,
 .input-content .input-mail,
-.input-content .input-phone
+.input-content .input-phone,
+.input-content .input-date
 {
     height: 36px;
     width: 100%;
@@ -330,6 +337,34 @@ h2 {
     flex: 1 1 0%;
     border: 1px solid rgb(196, 196, 207);
 }
+
+#email,
+#phone {
+    position: relative;
+    width: 150%;
+    float: right;
+    z-index: 10;
+}
+
+#phone-error {
+    position: absolute;
+    color: red;
+    font-weight: 400;
+    top: 24%;
+    left: 73.5%;
+    transition: top 0.5s;
+}
+
+#email-error
+{
+    position: absolute;
+    color: red;
+    font-weight: 400;
+    top: 40%;
+    left: 73.5%;
+    transition: top 0.5s;
+}
+
 
 
 .form-profile .form-control > div {
@@ -464,6 +499,7 @@ h2 {
     vertical-align: bottom;
     font-size: 20px;
     color: rgb(155, 155, 155);
+    margin-right: 8px;
 }
 
 .icon-profile {
@@ -481,7 +517,6 @@ h2 {
 .info-contact .list-item span {
     font-size: 14px;
     line-height: 20px;
-    margin: 0px 0px 0px 6px;
     color: rgb(56, 56, 61);
 }
 
@@ -603,7 +638,9 @@ h2 {
     margin: 0px 0px 34px;
 }
 
-.form-control .input-label {
+.form-control .input-label,
+.input-label
+{
     font-size: 14px;
     color: rgb(56, 56, 61);
     margin-bottom: 10px;
@@ -648,7 +685,7 @@ h2 {
     align-items: center;
     box-shadow: 0px 0px 5px #ee6c4d;
     position: absolute;
-    top: 20px;
+    top: -10px;
     right: -500px;
     border-radius: 10px;
     overflow: hidden;
