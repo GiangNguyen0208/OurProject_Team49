@@ -1,13 +1,13 @@
 
 
 // JS Thông báo
-const buttons = document.querySelectorAll('.input-submit-btn');
+const buttons = document.querySelectorAll('. ');
 const alerts = document.querySelectorAll('.submit-alert');
-const accountManageContent = document.getElementById('manage-account');
 
 buttons.forEach((button, index) => {
     button.addEventListener('click', (event) => {
         event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
+        event.stopPropagation();
         alerts[index].style.right = '34px';
         let length = 70;
         let process = alerts[index].querySelector('.process');

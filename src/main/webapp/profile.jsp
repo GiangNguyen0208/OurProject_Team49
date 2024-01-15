@@ -172,14 +172,14 @@
                 <div id="manage-account" class="account active">
                     <div class="account_title">Thông tin tài khoản</div>
                     <!-- Thông báo -->
-                    <div class="submit-alert">
-                        <div class="process">
-                            <div class="process-content">
-                                <i class="fa fa-check"></i>
-                                <span>Bạn đã thay đổi thành công</span>
-                            </div>
-                        </div>
-                    </div>
+<%--                    <div class="submit-alert">--%>
+<%--                        <div class="process">--%>
+<%--                            <div class="process-content">--%>
+<%--                                <i class="fa fa-check"></i>--%>
+<%--                                <span>Bạn đã thay đổi thành công</span>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
                     <div class="style_info">
                         <div class="info">
                             <div class="info-left">
@@ -281,14 +281,14 @@
                                         <label class="input-label"
                                         >&nbsp;</label
                                         >
-<%--                                        <button--%>
-<%--                                                id="save"--%>
-<%--                                                type="submit"--%>
-<%--                                                class="btn-submit"--%>
-<%--                                        >--%>
-<%--                                            Lưu thay đổi--%>
-<%--                                        </button>--%>
-                                    <button id="save" type="submit" class="input-submit-btn submit-phone">Lưu thay đổi</button>
+                                        <button
+                                                id="save"
+                                                type="submit"
+                                                class="btn-submit"
+                                        >
+                                            Lưu thay đổi
+                                        </button>
+<%--                                    <button id="save" type="submit" class="input-submit-btn submit-phone">Lưu thay đổi</button>--%>
                                     </div>
 <%--                                  </form>--%>
                                 </div>
