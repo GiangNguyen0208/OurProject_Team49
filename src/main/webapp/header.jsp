@@ -5,7 +5,7 @@
     <c:set var="auth" value="${sessionScope.auth}"/>
     <div class="header__content">
         <p>
-            <a href="./index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
+            <a href="./home"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
         </p>
         <div class="search">
             <label>
@@ -16,7 +16,7 @@
         <nav>
             <ul class="menu__bar">
                 <li class="menu__items">
-                    <a href="./index.jsp">Trang chính</a>
+                    <a href="./home">Trang chính</a>
                 </li>
                 <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
                 </li>

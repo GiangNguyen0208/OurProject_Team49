@@ -1,6 +1,8 @@
 package bean;
 
-public class Product {
+import dao.ProductDAO;
+
+public class Product extends ProductDAO {
     private int id;
     private String name;
     private int discountId;

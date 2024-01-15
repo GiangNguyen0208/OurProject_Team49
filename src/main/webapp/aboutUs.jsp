@@ -1,5 +1,14 @@
+<%@ page import="bean.Product" %>
+<%@ page import="dao.ImageDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    List<Product> products = (List<Product>) request.getAttribute("products");
+    if (products == null) products = new ArrayList<>();
+%>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -223,82 +232,24 @@
                     </div>
                 </div>
                 <div class="list">
-                    <div class="item">
-                        <div class="img">
-                            <img src="./assets/img/product/sp1.jpg" alt="Roland VAD 706">
+                    <% for (Product p : products) {%>
+                        <div class="item">
+                            <a href="productDetail.jsp">
+                                <div class="img">
+                                    <img src="<%=ImageDAO.getImageByProductId(p.getId()).get(0).getLink()%>" alt="<%=p.getName()%>">
+                                </div>
+                                <div class="item_content">
+                                    <div class="title"><%=p.getName()%></div>
+                                    <div class="desc"><%=p.getDescription()%></div>
+                                    <div class="price"><%=p.getTotalPrice()%></div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="item_content">
-                            <div class="title">Roland VAD 706</div>
-                            <div class="desc">Bộ trống điện tử tinh tế với kiểu dáng gi</div>
-                            <div class="price">Liên Hệ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="./assets/img/product/sp2.jpg" alt="Roland VAD 507">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Roland VAD 507</div>
-                            <div class="desc">Bộ trống điện tử tinh tế với kiểu dáng gi</div>
-                            <div class="price">124,000,000đ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="./assets/img/product/sp3.jpg" alt="Roland VAD 504">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Roland VAD 504</div>
-                            <div class="desc">Bộ trống điện tử tinh tế với kiểu dáng gi</div>
-                            <div class="price">99,000,000đ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="./assets/img/product/sp4.jpg" alt="Alesis Turbo Mesh Kit">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Alesis Turbo Mesh Kit</div>
-                            <div class="desc">Bộ trống điện tử 7 chi tiết mặt lưới</div>
-                            <div class="price">9,450,000đ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="./assets/img/product/sp5.jpg" alt="Alesis Crimson II SE">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Alesis Crimson II SE</div>
-                            <div class="desc">Bộ trống điện tử đệm mặt lưới 9 chi tiết</div>
-                            <div class="price">29,300,000đ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="./assets/img/product/sp6.jpg" alt="Trống Pearl Roadshow 505">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Trống Pearl Roadshow 505</div>
-                            <div class="desc">Pearl Roadshow series (5 trống, kick 20") 20"x16" Bass - 10"x07" Tom -
-                                12"x08&amp;quo
-                            </div>
-                            <div class="price">11,600,000đ</div>
-
-                        </div>
-                    </div>
-
-
+                    <%}%>
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>
 <!-- FOOTER -->
 <footer>
