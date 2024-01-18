@@ -123,6 +123,16 @@ public static List<Product> getProductByCategory(String cateName) {
         }
         return true;
     }
+    public Product getProductId(int id) {
+        Product product = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice FROM product_details WHERE id = :id")
+                        .bind("id", id)
+                        .mapTo(Product.class)
+                        .findOne()
+                        .orElse(null) // Giả sử trả về null nếu không tìm thấy sản phẩm
+        );
+        return product;
+    }
 
     public static void main(String[] args) {
         List<Product> all = ProductDAO.getProductList();
@@ -135,6 +145,9 @@ public static List<Product> getProductByCategory(String cateName) {
         int productQuantityInStock = ProductDAO.getQuantityInStock(1);
         System.out.println(productQuantityInStock);
     }
+
+
+
 
 
 

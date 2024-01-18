@@ -1,3 +1,6 @@
+<%@ page import="bean.ShoppingCart" %>
+<%@ page import="bean.Product" %>
+<%@ page import="java.util.Map" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -85,7 +88,14 @@
         </c:choose>
 
         <a href="cart.jsp" class="cart__shopping">
+<%--            <% ShoppingCart cart = (ShoppingCart) request.getAttribute("cart");%>--%>
+<%--            <% String items;%>--%>
             <i class="fa fa-shopping-cart"></i>
+<%--            <% if (cart.getCartItems().isEmpty()) {--%>
+<%--                items = "";--%>
+<%--            } else {--%>
+<%--                items = "("+cart.getCartItems().size()+")";--%>
+<%--            }%>--%>
             <span >Giỏ Hàng</span>
         </a>
     </div>

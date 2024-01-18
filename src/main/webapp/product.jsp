@@ -4,6 +4,7 @@
 <%@ page import="bean.Product" %>
 <%@ page import="service.ImageService" %>
 <%@ page import="bean.Brand" %>
+<%@ page import="java.util.Objects" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
@@ -21,6 +22,8 @@
     String minPricePara = request.getParameter("minPrice");
     String maxPricePara = request.getParameter("maxPrice");
     String azorza = request.getParameter("AZorZA");
+
+
 
 %>
 
@@ -250,7 +253,12 @@
                                         <%= p.getDescription() %>
                                     </div>
                                     <div class="price"><%= p.getTotalPrice() %> Đ</div>
-                                    <button class="add">Thêm vào giỏ hàng</button>
+                                    <form action="/cart" method="post">
+                                        <!-- Chuyển thông tin sản phẩm vào servlet khi nhấp vào nút "Thêm vào giỏ hàng" -->
+                                        <input type="hidden" name="productId" value="<%= p.getId() %>">
+                                        <button class="add" type="submit"><a class="text" href="<%= request.getContextPath() %>/cart?action=buy&id=<%= p.getId() %>">Thêm vào giỏ hàng</a></button>
+                                    </form>
+<%--                                    <button class="add">Thêm vào giỏ hàng</button>--%>
                                 </div>
                             </div>
                         <%}%>
