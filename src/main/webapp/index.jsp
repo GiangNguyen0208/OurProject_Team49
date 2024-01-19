@@ -309,7 +309,9 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
                                 <div class="price"><%=p.getTotalPrice()%> Đ</div>
-                                <button class="add">Thêm vào giỏ hàng</button>
+                                <a href="<%= request.getContextPath()%>/cart?action=buy&id=<%=p.getId()%>">
+                                    <button class="add">Thêm vào giỏ hàng</button>
+                                </a>
                             </div>
                         </a>
                     </div>

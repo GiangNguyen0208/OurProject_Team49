@@ -1,5 +1,6 @@
 package service;
 
+import bean.Item;
 import bean.Product;
 import dao.ProductDAO;
 
@@ -34,12 +35,11 @@ public class ProductDetailService {
         return ProductDAO.getProductByDiscount();
     }
     public Product getProductById(int id) {
-        return (Product) ProductDAO.getProductById(id);
+        return ProductDAO.getProductById(id).get(0);
     }
     public int getQuantityInStock(int id) {
         return ProductDAO.getQuantityInStock(id);
     }
-
     public static void main(String[] args) {
         ProductDetailService productDetailService = new ProductDetailService();
         System.out.println(productDetailService.getProductList());

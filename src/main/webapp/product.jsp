@@ -22,13 +22,15 @@
     String minPricePara = request.getParameter("minPrice");
     String maxPricePara = request.getParameter("maxPrice");
     String azorza = request.getParameter("AZorZA");
-
-
+    String images = request.getParameter("images");
+    
 
 %>
 
+
 <html lang="en">
     <head>
+        <jsp:useBean id="imageService" class="service.ImageService" scope="session"/>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sản phẩm</title>
@@ -241,27 +243,36 @@
                         </div>
                     </div>
                     <div class="list">
-                        <% for (Product p : products) { %>
+<%--                        <% for (Product p : products) { %>--%>
+                        <c:forEach var="item" items="${requestScope.products}">
                             <div class="item">
                                 <a href="productDetail.jsp" class="img">
-                                    <img src="<%= ImageService.getInstance().getImageByProductId(p.getId()).get(0).getLink() %>"/>
+                                    <img src="${imageService.getImageByProductId(item.id).get(0).link}"/>
                                 </a>
                                 <div class="item_content">
                                     <a href="" class="title"
-                                    ><%= p.getName() %></a>
+                                    >${item.name}</a>
                                     <div class="desc">
-                                        <%= p.getDescription() %>
+                                        ${item.description}
                                     </div>
-                                    <div class="price"><%= p.getTotalPrice() %> Đ</div>
-                                    <form action="/cart" method="post">
+                                    <div class="price">${item.totalPrice} Đ</div>
+                                    <form action="/cart" method="get">
                                         <!-- Chuyển thông tin sản phẩm vào servlet khi nhấp vào nút "Thêm vào giỏ hàng" -->
-                                        <input type="hidden" name="productId" value="<%= p.getId() %>">
-                                        <button class="add" type="submit"><a class="text" href="<%= request.getContextPath() %>/cart?action=buy&id=<%= p.getId() %>">Thêm vào giỏ hàng</a></button>
+<%--                                        <input type="hidden" name="productId" value="${item.id}">--%>
+                                        <c:url var="link" value="cart">
+                                            <c:param name="action" value="buy"></c:param>
+                                            <c:param name="id" value="${item.id}"></c:param>
+                                        </c:url>
+                                        <a href="${link}">
+                                            <div class="add">Thêm vào giỏ hàng</div>
+                                        </a>
                                     </form>
-<%--                                    <button class="add">Thêm vào giỏ hàng</button>--%>
+
                                 </div>
                             </div>
-                        <%}%>
+                        </c:forEach>
+
+<%--                        <%}%>--%>
                     </div>
                     <ul class="listPage"></ul>
                 </div>

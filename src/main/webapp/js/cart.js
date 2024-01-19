@@ -17,13 +17,13 @@ function increase() {
 
 // Hàm cập nhật lại giá tiền.
 function updateTotalPrice() {
-    var priceElement = document.getElementById('price');
-    var quantityInput = document.getElementById('quantity');
-    var totalPriceElement = document.getElementById('totalPrice');
+    let priceElement = document.getElementById('price');
+    var quantityInput = document.getElementById('quantity').value;
 
-    var price = parseInt(priceElement.innerText);
-    var quantity = parseInt(quantityInput.value);
-    var totalPrice = price * quantity;
-
-    totalPriceElement.innerText = totalPrice;
+    if (priceElement.length > 0) {
+        priceElement.slice(0, -1);
+        let price = priceElement.parseFloat();
+        var totalPrice = price * quantityInput;
+        document.getElementById('totalPriceOfProduct').innerText = totalPrice + " Đ";
+    }
 }

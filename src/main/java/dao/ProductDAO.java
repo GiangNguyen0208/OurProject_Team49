@@ -125,7 +125,7 @@ public static List<Product> getProductByCategory(String cateName) {
     }
     public Product getProductId(int id) {
         Product product = JDBIConnector.me().withHandle(handle ->
-                handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice FROM product_details WHERE id = :id")
+                handle.createQuery("SELECT product_details.id, product_details.name, totalPrice, quantity FROM product_details WHERE id = :id")
                         .bind("id", id)
                         .mapTo(Product.class)
                         .findOne()
@@ -143,6 +143,7 @@ public static List<Product> getProductByCategory(String cateName) {
         List<Product> productDiscount = ProductDAO.getProductByDiscount();
         List<Product> productById = ProductDAO.getProductById(1);
         int productQuantityInStock = ProductDAO.getQuantityInStock(1);
+//        Item item = ProductDAO.getItemById(1);
         System.out.println(productQuantityInStock);
     }
 

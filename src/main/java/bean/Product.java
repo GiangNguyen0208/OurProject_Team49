@@ -14,6 +14,9 @@ public class Product extends ProductDAO {
     private String description;
     private int status;
 
+    public Product() {
+    }
+
     public int getId() {
         return id;
     }

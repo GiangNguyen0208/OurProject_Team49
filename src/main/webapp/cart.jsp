@@ -7,21 +7,25 @@
 <%@ page import="dao.ImageDAO" %>
 <%@ page import="service.ImageService" %>
 <%@ page import="java.util.HashMap" %>
-<% ShoppingCart cart = (ShoppingCart) request.getAttribute("cart");
+<%@ page import="java.util.List" %>
+<% List<Item> shoppingCart = (List<Item>) request.getSession().getAttribute("cart");
     String announce = "";
 %>
-<% if (cart == null || cart.getCartItems().isEmpty()) {announce = "Giỏ hàng bạn hiện đang trống.!";%>
+<% if (shoppingCart == null || shoppingCart.isEmpty()) {announce = "Giỏ hàng bạn hiện đang trống.!";%>
 <%
 } else {
-    Map<Product, Integer> cartItems = cart.getCartItems();
-    announce = "Giỏ hàng bạn hiện đang có " + cartItems.size() + "Sản phẩm.!";
+    announce = "Giỏ hàng bạn hiện đang có " + shoppingCart.size() + " Sản phẩm.!";
+}
 %>
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ Hàng của bạn</title>
+
+    <title>
+        Giỏ Hàng của bạn
+    </title>
 
     <!-- reset CSS -->
     <link rel="stylesheet" href="assets/css/reset.css"/>
@@ -102,44 +106,50 @@
                             <th>Ảnh</th>
                             <th>Giá</th>
                             <th>Số lượng</th>
-                            <th>Tổng tiền</th>
+                            <th>Tổng giá</th>
                         </tr>
                         <%
                             int total = 0;
-                            Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cart");
+                            List<Item> cart = (List<Item>) session.getAttribute("cart");
                             if (cart != null) {
-                                for (Map.Entry<Product, Integer> entry : cart.entrySet()) {
-                                    Product item = entry.getKey();
-                                    int quantity = entry.getValue();
+                                for (int i = 0; i < cart.size(); i++) {
+                                    Product item = cart.get(i).getProduct();
+                                    int quantity = cart.get(i).getQuantity();
                                     total += item.getTotalPrice() * quantity;
                         %>
                         <tr>
-                            <td align="center">
+                            <td>
                                 <a href="<%= request.getContextPath() %>/cart?action=remove&id=<%= item.getId() %>"
-                                   onclick="return confirm('Are you sure?')">Remove</a>
+                                   onclick="return confirm('Bạn có chắc muốn xóa sản phẩm?')">
+                                    <button>Xóa</button>
+                                </a>
                             </td>
                             <td><%= item.getId() %></td>
                             <td><%= item.getName() %></td>
                             <td>
-                                <img src="<%= request.getContextPath() %>/assets/images/<%= item.getPhoto() %>" width="120">
+                                <img src="<%= ImageService.getInstance().getImageByProductId(item.getId()).get(0).getLink() %>" width="80">
                             </td>
-                            <td><%= item.getTotalPrice() %>Đ</td>
-                            <td><%= quantity %></td>
-                            <td><%= item.getTotalPrice() * quantity %>Đ</td>
+                            <td id="price"><%= item.getTotalPrice()%>Đ</td>
+                            <td>
+                                <input type="text" id="quantity" value="<%= quantity %>">
+                                <button onclick="decrease()">Giảm</button>
+                                <button onclick="increase()">Tăng</button>
+                            </td>
+                                <td id="totalPriceOfProduct"> Đ</td>
                         </tr>
                         <%
                                 }
                             }
                         %>
                         <tr>
-                            <td colspan="6" align="right">Total</td>
-                            <td>${total }Đ</td>
+                            <td colspan="6" align="right">Tổng tiền</td>
+                            <td text><%= total %>Đ</td>
                         </tr>
                     </table>
                     <br>
 
                 </div>
-                <button><a href="${pageContext.request.contextPath }/product">Tiếp tục mua sắm</a></button>
+                <button><a href="<%= request.getContextPath()%>/products">Tiếp tục mua sắm</a></button>
             </div>
             <div class="right__content">
                 <div class="box">

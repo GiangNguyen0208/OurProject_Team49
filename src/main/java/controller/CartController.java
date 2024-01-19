@@ -2,8 +2,10 @@ package controller;
 
 import bean.Item;
 import bean.Product;
+import bean.ShoppingCart;
 import bean.User;
 import dao.ProductDAO;
+import service.ProductDetailService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,15 +18,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/cart")
+@WebServlet(name ="CartController", value = "/cart")
 public class CartController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
+    ProductDetailService productDetailService = new ProductDetailService();
+
 
     public CartController() {
         super();
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -41,7 +44,7 @@ public class CartController extends HttpServlet {
 
     protected void doGet_DisplayCart(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("cart/index.jsp").forward(request, response);
+        request.getRequestDispatcher("cart.jsp").forward(request, response);
     }
 
     protected void doGet_Remove(HttpServletRequest request, HttpServletResponse response)
@@ -56,24 +59,27 @@ public class CartController extends HttpServlet {
 
     protected void doGet_Buy(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProductDAO productDAO = new ProductDAO();
         HttpSession session = request.getSession();
         if (session.getAttribute("cart") == null) {
-            List<Item> cart = new ArrayList<Item>();
-            cart.add(new Item(productDAO.getProductId(Integer.parseInt(request.getParameter("id"))), 1));
+            System.out.println("run if");
+            List<Item> cart = new ArrayList<>();
+            Item item = new Item(productDetailService.getProductById(Integer.parseInt(request.getParameter("id"))), 1);
+            cart.add(item);
             session.setAttribute("cart", cart);
         } else {
+            System.out.println("run else");
             List<Item> cart = (List<Item>) session.getAttribute("cart");
             int index = isExisting(Integer.parseInt(request.getParameter("id")), cart);
             if (index == -1) {
-                cart.add(new Item(productDAO.getProductId(Integer.parseInt(request.getParameter("id"))), 1));
+                cart.add(new Item(productDetailService.getProductById(Integer.parseInt(request.getParameter("id"))), 1));
             } else {
                 int quantity = cart.get(index).getQuantity() + 1;
                 cart.get(index).setQuantity(quantity);
             }
             session.setAttribute("cart", cart);
         }
-        response.sendRedirect("cart");
+
+       response.sendRedirect("cart.jsp");
     }
 
     private int isExisting(int id, List<Item> cart) {
