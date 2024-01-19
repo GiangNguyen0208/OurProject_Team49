@@ -8,6 +8,11 @@ public class Item implements Serializable {
     private int quantity;
     private double price;
 
+    public Item(Product product, int quantity) {
+        this.product = product;
+        this.quantity = quantity;
+    }
+
     public int getId() {
         return id;
     }
@@ -38,5 +43,15 @@ public class Item implements Serializable {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", product=" + product +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
     }
 }

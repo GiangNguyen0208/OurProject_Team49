@@ -16,6 +16,7 @@
     List<Brand> brands = (List<Brand>) request.getAttribute("brands");
     if (brands == null) brands = new ArrayList<>();
 %>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -308,8 +309,9 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
                                 <div class="price"><%=p.getTotalPrice()%> Đ</div>
-                                <c:url value="/index.jsp/addToCart?productId=$(p.getId)"/>
-                                <button class="add">Thêm vào giỏ hàng</button>
+                                <a href="<%= request.getContextPath()%>/cart?action=buy&id=<%=p.getId()%>">
+                                    <button class="add">Thêm vào giỏ hàng</button>
+                                </a>
                             </div>
                         </a>
                     </div>

@@ -21,8 +21,9 @@ public class ShoppingCart {
         this.billId = BillIdGenerator.generateBillId(); // Viết phương thức generateBillId để tạo billId duy nhất
         this.isCashOnDelivery = false; // Mặc định chọn chuyển khoản
     }
-
-
+    public Map<Product, Integer> getCartItems() {
+        return cartItems;
+    }
 
     public void setCartItems(Map<Product, Integer> cartItems) {
         this.cartItems = cartItems;
@@ -158,7 +159,7 @@ public class ShoppingCart {
     }
 
     // Phương thức liên kết thanh toán.
-    public initiatePayment(String paymentMethod) {
+    public void initiatePayment(String paymentMethod) {
         double totalAmount = calculatedTotal();
         this.payment = new Payment_Method(paymentMethod, totalAmount);
 
@@ -187,5 +188,6 @@ public class ShoppingCart {
     public static void main(String[] args) {
 
     }
+
 
 }
