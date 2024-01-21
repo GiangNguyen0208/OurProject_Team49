@@ -9,22 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdbbc4d8-a9e0-45e5-9cb7-e352305a5f57" name="Changes" comment="adminIndex">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminIndex.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/admin.js" afterDir="false" />
-    </list>
+    <list default="true" id="cdbbc4d8-a9e0-45e5-9cb7-e352305a5f57" name="Changes" comment="admin jsp" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -343,6 +328,7 @@
       <workItem from="1705580455817" duration="142000" />
       <workItem from="1705645513229" duration="7598000" />
       <workItem from="1705672825937" duration="16327000" />
+      <workItem from="1705809377368" duration="452000" />
     </task>
     <task id="LOCAL-00001" summary="fix header&#10;import header to all JSP&#10;login &#10;logout&#10;change path&#10;get categories from database&#10;bỏ phần đăng nhập bằng fb... &#10;kiểm tra phần đăng nhập của người dùng (validate)">
       <option name="closed" value="true" />
@@ -456,7 +442,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704432609801</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="admin jsp">
+      <option name="closed" value="true" />
+      <created>1705809460693</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1705809460693</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +483,8 @@
     <MESSAGE value="complete sign up new user and verify account" />
     <MESSAGE value="complete forget password and reset password" />
     <MESSAGE value="adminIndex" />
-    <option name="LAST_COMMIT_MESSAGE" value="adminIndex" />
+    <MESSAGE value="admin jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin jsp" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
