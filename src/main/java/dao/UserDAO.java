@@ -89,8 +89,17 @@ public class UserDAO {
         System.out.println("done");
     }
 
+    public static List<User> adminSearchUser(String value) {
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM users WHERE username LIKE :value OR email LIKE :value")
+                        .bind("value", "%" + value + "%")
+                        .mapToBean(User.class)
+                        .collect(Collectors.toList())
+        );
+    }
+
     public static void main(String[] args) {
-        for (User user: getUserList()) {
+        for (User user: adminSearchUser("e")) {
             System.out.println(user.toString());
         }
     }

@@ -36,11 +36,16 @@ th {
 /* ====== Side bar ===== */
 
 .side-bar {
+    margin-top: 80px;
     padding: 24px;
     width: 20%;
     flex-shrink: 0;
     background: var(--sub-main-color);
     border-right: 1px solid #fff;
+}
+
+.side-bar a {
+    color: #fff;
 }
 
 
@@ -110,13 +115,10 @@ th {
     height: 100%;
 }
 
-.content-wrapper {
-    display: none;
-}
-
-.content-wrapper .header {
+.content-wrapper .header-admin {
     position: relative;
     display: flex;
+    margin-top: 81px;
     padding: 12px 24px;
     height: 80px;
     align-items: center;
@@ -183,6 +185,13 @@ th {
     border: 1px solid var(--sub-main-color);
     border-radius: 999px;
     background: none;
+    transition: all 0.3s ease;
+}
+
+.content-header .delete:hover,
+.content-header .add:hover {
+    background: var(--sub-main-color);
+    color: #fff;
 }
 
 .header .icon {

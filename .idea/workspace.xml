@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Login:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cdbbc4d8-a9e0-45e5-9cb7-e352305a5f57" name="Changes" comment="adminIndex">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DB.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminIndex.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/admin.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;phamducdai092&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bbc43d05-a90f-4511-bd42-d783fb0862f3" />
+        <option name="url" value="https://github.com/GiangNguyen0208/OurProject_Team49.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2XQnA0QIlMreR5VEmOwXNvuYEXj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Dai&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Inteliji/theme/Dracula_Theme-1.15.2.zip&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controller.admin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.80">
+    <configuration name="CategoryDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.CategoryDAO" />
+      <module name="Login" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Encode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="util.Encode" />
+      <module name="Login" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.ProductDAO" />
+      <module name="Login" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.SignUpService" />
+      <module name="Login" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.UserDAO" />
+      <module name="Login" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="OurProject_Team49" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OurProject_Team49" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.80" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.80" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Login:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/BanTrong" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="c987967e-10f2-46ba-84d9-58189b659024" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52814" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Login:war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CategoryDAO" />
+      <item itemvalue="Application.ProductDAO" />
+      <item itemvalue="Application.Encode" />
+      <item itemvalue="Application.SignUpService" />
+      <item itemvalue="Application.UserDAO" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.80" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CategoryDAO" />
+        <item itemvalue="Application.ProductDAO" />
+        <item itemvalue="Application.UserDAO" />
+        <item itemvalue="Application.SignUpService" />
+        <item itemvalue="Application.Encode" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdbbc4d8-a9e0-45e5-9cb7-e352305a5f57" name="Changes" comment="" />
+      <created>1698570023209</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698570023209</updated>
+      <workItem from="1698570024236" duration="100000" />
+      <workItem from="1701062184237" duration="1017000" />
+      <workItem from="1701339001075" duration="817000" />
+      <workItem from="1701339833054" duration="86000" />
+      <workItem from="1701339932395" duration="581000" />
+      <workItem from="1701436468530" duration="4294000" />
+      <workItem from="1701445734932" duration="5163000" />
+      <workItem from="1701485483893" duration="9612000" />
+      <workItem from="1701528970425" duration="1275000" />
+      <workItem from="1701660832961" duration="617000" />
+      <workItem from="1701703907190" duration="2820000" />
+      <workItem from="1701743587099" duration="500000" />
+      <workItem from="1701770678402" duration="7735000" />
+      <workItem from="1701840652002" duration="3591000" />
+      <workItem from="1701922012780" duration="23170000" />
+      <workItem from="1701959829376" duration="2323000" />
+      <workItem from="1702003699160" duration="713000" />
+      <workItem from="1702025862159" duration="9374000" />
+      <workItem from="1702097125475" duration="16067000" />
+      <workItem from="1702283912454" duration="7613000" />
+      <workItem from="1702305556886" duration="3743000" />
+      <workItem from="1702362647154" duration="16839000" />
+      <workItem from="1702526043440" duration="7543000" />
+      <workItem from="1702569328309" duration="2464000" />
+      <workItem from="1702601390039" duration="4781000" />
+      <workItem from="1702622187363" duration="2428000" />
+      <workItem from="1702625286875" duration="1218000" />
+      <workItem from="1702808822587" duration="253000" />
+      <workItem from="1702993935174" duration="1910000" />
+      <workItem from="1703041953789" duration="18597000" />
+      <workItem from="1703175937289" duration="114000" />
+      <workItem from="1703474966605" duration="1269000" />
+      <workItem from="1703566225857" duration="18469000" />
+      <workItem from="1703594599448" duration="3538000" />
+      <workItem from="1703657192716" duration="13751000" />
+      <workItem from="1703687009279" duration="6640000" />
+      <workItem from="1703771864146" duration="12840000" />
+      <workItem from="1703787656523" duration="969000" />
+      <workItem from="1703836967355" duration="10496000" />
+      <workItem from="1703860410912" duration="2518000" />
+      <workItem from="1704023215101" duration="1176000" />
+      <workItem from="1704026827497" duration="13218000" />
+      <workItem from="1704100010251" duration="11895000" />
+      <workItem from="1704348649799" duration="5124000" />
+      <workItem from="1704432469487" duration="1398000" />
+      <workItem from="1704526562437" duration="20468000" />
+      <workItem from="1704822537711" duration="295000" />
+      <workItem from="1705509317501" duration="624000" />
+      <workItem from="1705580455817" duration="142000" />
+      <workItem from="1705645513229" duration="7598000" />
+      <workItem from="1705672825937" duration="16327000" />
+    </task>
+    <task id="LOCAL-00001" summary="fix header&#10;import header to all JSP&#10;login &#10;logout&#10;change path&#10;get categories from database&#10;bỏ phần đăng nhập bằng fb... &#10;kiểm tra phần đăng nhập của người dùng (validate)">
+      <option name="closed" value="true" />
+      <created>1701947777925</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701947777925</updated>
+    </task>
+    <task id="LOCAL-00002" summary="validate cho form đăng nhập">
+      <option name="closed" value="true" />
+      <created>1701962236464</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701962236464</updated>
+    </task>
+    <task id="LOCAL-00003" summary="validate cho form đăng ký và form quên mật khẩu">
+      <option name="closed" value="true" />
+      <created>1702036825883</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702036825883</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add reset password jsp">
+      <option name="closed" value="true" />
+      <created>1702114350469</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702114350469</updated>
+    </task>
+    <task id="LOCAL-00005" summary="sign up new user">
+      <option name="closed" value="true" />
+      <created>1702395038213</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702395038213</updated>
+    </task>
+    <task id="LOCAL-00006" summary="encode user's password">
+      <option name="closed" value="true" />
+      <created>1702545736400</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702545736400</updated>
+    </task>
+    <task id="LOCAL-00007" summary="change header.jsp (using jstl)">
+      <option name="closed" value="true" />
+      <created>1702576131593</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702576131593</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix sign up service">
+      <option name="closed" value="true" />
+      <created>1702605938271</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702605938271</updated>
+    </task>
+    <task id="LOCAL-00009" summary="split form in log.jsp to logIn.jsp, signUp.jsp, forgetPassword.jsp">
+      <option name="closed" value="true" />
+      <created>1703574261645</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703574261645</updated>
+    </task>
+    <task id="LOCAL-00010" summary="remove log.js , change some css in index.css">
+      <option name="closed" value="true" />
+      <created>1704037424329</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1704037424330</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add jakarta mail lib (pom.xml), add MailProperties.java, MailService.java to send mail when verify, forget password">
+      <option name="closed" value="true" />
+      <created>1704037510476</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1704037510476</updated>
+    </task>
+    <task id="LOCAL-00012" summary="complete sign up new user and verify account">
+      <option name="closed" value="true" />
+      <created>1704037562250</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1704037562250</updated>
+    </task>
+    <task id="LOCAL-00013" summary="complete forget password and reset password">
+      <option name="closed" value="true" />
+      <created>1704119082282</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1704119082282</updated>
+    </task>
+    <task id="LOCAL-00014" summary="adminIndex">
+      <option name="closed" value="true" />
+      <created>1704432609801</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1704432609801</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix header&#10;import header to all JSP&#10;login &#10;logout&#10;change path&#10;get categories from database&#10;bỏ phần đăng nhập bằng fb... &#10;kiểm tra phần đăng nhập của người dùng (validate)" />
+    <MESSAGE value="validate cho form đăng nhập" />
+    <MESSAGE value="validate cho form đăng ký và form quên mật khẩu" />
+    <MESSAGE value="add reset password jsp" />
+    <MESSAGE value="sign up new user" />
+    <MESSAGE value="encode user's password" />
+    <MESSAGE value="change header.jsp (using jstl)" />
+    <MESSAGE value="fix sign up service" />
+    <MESSAGE value="split form in log.jsp to logIn.jsp, signUp.jsp, forgetPassword.jsp" />
+    <MESSAGE value="complete verify account" />
+    <MESSAGE value="remove log.js , change some css in index.css" />
+    <MESSAGE value="add jakarta mail lib (pom.xml), add MailProperties.java, MailService.java to send mail when verify, forget password" />
+    <MESSAGE value="complete sign up new user and verify account" />
+    <MESSAGE value="complete forget password and reset password" />
+    <MESSAGE value="adminIndex" />
+    <option name="LAST_COMMIT_MESSAGE" value="adminIndex" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

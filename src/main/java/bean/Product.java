@@ -1,5 +1,9 @@
 package bean;
 
+import dao.CategoryDAO;
+
+import java.util.Objects;
+
 public class Product {
     private int id;
     private String name;
@@ -92,6 +96,28 @@ public class Product {
         this.status = status;
     }
 
+    public String getCategoryName(int id) {
+        return CategoryDAO.getCategoryName(id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Product product = (Product) obj;
+        return Objects.equals(id, product.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+
+    public String getBrandName(int id) {
+        return CategoryDAO.getBrandName(id);
+    }
     @Override
     public String toString() {
         return "Product{" +

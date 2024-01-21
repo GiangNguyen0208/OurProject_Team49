@@ -20,7 +20,6 @@ public class UserService {
 
     }
 
-
     public User checkLogin(String username, String password) {
 
         User userByEmail = UserDAO.getUserByEmail(username);

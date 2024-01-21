@@ -31,6 +31,14 @@
       <version>1.6.2</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-util -->
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-util</artifactId>
+      <version>10.0.27</version>
+    </dependency>
+
+
     <!-- https://mvnrepository.com/artifact/org.jdbi/jdbi3-core -->
     <dependency>
       <groupId>org.jdbi</groupId>

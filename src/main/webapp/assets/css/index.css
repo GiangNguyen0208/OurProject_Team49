@@ -48,7 +48,7 @@ h2 {
 }
 
 /* HEADER */
-header {
+.main-header {
     background-color: #293241;
     padding: 20px 0;
     top: 0;
