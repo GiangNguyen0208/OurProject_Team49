@@ -179,6 +179,7 @@
         float: left;
         cursor: pointer;
         margin-top: 9px;
+        color: black;
     }
     .sort_manufacturer{
         float: left;
@@ -230,11 +231,11 @@
         float: left;
         margin: 0;  
         cursor: pointer;
+        color: black;
     }
     .box_ss input{
         display: none;
     }
-    
     .sort_pricess{
         float: left;
         cursor: pointer;
@@ -242,6 +243,7 @@
     .sort_feature{
         float: left;
         cursor: pointer;
+        color: black;
     }
     .sort_manufacturer{
         float: left;
@@ -310,6 +312,14 @@
 .list .title {
     font-size: x-large;
     color: #fff;
+
+}
+
+.list .title a {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .list .desc {
@@ -320,6 +330,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
 
 .list .price {
     font-size: large;

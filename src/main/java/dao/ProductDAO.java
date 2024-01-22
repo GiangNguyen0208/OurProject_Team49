@@ -135,7 +135,6 @@ public static List<Product> getProductByCategory(String cateName) {
     }
 
     public static void main(String[] args) {
-        List<Product> all = ProductDAO.getProductList();
         List<Product> productByCate = ProductDAO.getProductByCategory("Electric");
         List<Product> productByPrice = ProductDAO.getProductByPriceRange(0,10000000);
         List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
@@ -144,7 +143,6 @@ public static List<Product> getProductByCategory(String cateName) {
         List<Product> productById = ProductDAO.getProductById(1);
         int productQuantityInStock = ProductDAO.getQuantityInStock(1);
 //        Item item = ProductDAO.getItemById(1);
-        System.out.println(productQuantityInStock);
     }
 
 

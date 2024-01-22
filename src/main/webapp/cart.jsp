@@ -8,6 +8,8 @@
 <%@ page import="service.ImageService" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.Locale" %>
+<%@ page import="java.text.NumberFormat" %>
 <% List<Item> shoppingCart = (List<Item>) request.getSession().getAttribute("cart");
     String announce = "";
 %>
@@ -109,13 +111,15 @@
                             <th>Tổng giá</th>
                         </tr>
                         <%
-                            int total = 0;
+                            double total = 0;
+                            double priceOfItem = 0;
                             List<Item> cart = (List<Item>) session.getAttribute("cart");
                             if (cart != null) {
                                 for (int i = 0; i < cart.size(); i++) {
                                     Product item = cart.get(i).getProduct();
                                     int quantity = cart.get(i).getQuantity();
-                                    total += item.getTotalPrice() * quantity;
+                                    priceOfItem = item.getTotalPrice() * quantity;
+                                    total += priceOfItem;
                         %>
                         <tr>
                             <td>
@@ -129,13 +133,13 @@
                             <td>
                                 <img src="<%= ImageService.getInstance().getImageByProductId(item.getId()).get(0).getLink() %>" width="80">
                             </td>
-                            <td id="price"><%= item.getTotalPrice()%>Đ</td>
+                            <td id="price<%= i %>"><%= formatCurrency(item.getTotalPrice()) %></td>
                             <td>
-                                <input type="text" id="quantity" value="<%= quantity %>">
-                                <button onclick="decrease()">Giảm</button>
-                                <button onclick="increase()">Tăng</button>
+                                <input type="text" id="quantity<%= i %>" value="<%= quantity %>">
+                                <button onclick="decrease(<%= i %>)">Giảm</button>
+                                <button onclick="increase(<%= i %>)">Tăng</button>
                             </td>
-                                <td id="totalPriceOfProduct"> Đ</td>
+                            <td id="totalPriceOfProduct<%= i %>"><%= formatCurrency(priceOfItem) %></td>
                         </tr>
                         <%
                                 }
@@ -143,7 +147,7 @@
                         %>
                         <tr>
                             <td colspan="6" align="right">Tổng tiền</td>
-                            <td text><%= total %>Đ</td>
+                            <td class="total"><%= formatCurrency(total) %></td>
                         </tr>
                     </table>
                     <br>
@@ -151,6 +155,8 @@
                 </div>
                 <button><a href="<%= request.getContextPath()%>/products">Tiếp tục mua sắm</a></button>
             </div>
+    </section>
+    <section class="cart__content">
             <div class="right__content">
                 <div class="box">
                     <div class="box__order">
@@ -272,6 +278,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/product.js"></script>
     <script src="js/paging.js"></script>
+
+<%!
+    private String formatCurrency(double totalPrice) {
+        Locale localeVN = new Locale("vi", "VN");
+        int price = (int) totalPrice;
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(localeVN);
+        return currencyFormatter.format(price);
+    }
+%>
     <script src="js/cart.js"></script>
 </body>
 </html>
