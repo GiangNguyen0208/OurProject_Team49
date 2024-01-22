@@ -9,7 +9,7 @@
 }
 
 table, td, th {
-    text-align: left;
+    text-align: center;
     border: 1px solid #ccc;
 }
 
@@ -19,7 +19,7 @@ tr {
 
 td, th{
     padding: 12px;
-    min-width: 120px;
+    text-align: center;
 }
 
 th {
@@ -27,11 +27,28 @@ th {
     background: var(--sub-main-color);
 }
 
+.s-cl {
+    min-width: 70px;
+}
+
+.m-cl {
+    min-width: 120px;
+}
+
+.l-cl {
+    min-width: 200px;
+}
+
 .container {
     margin-top: 1px;
     display: flex;
     min-height: 100vh;
 }
+
+.link {
+    color: var(--sub-main-color);
+}
+
 
 /* ====== Side bar ===== */
 
@@ -47,7 +64,6 @@ th {
 .side-bar a {
     color: #fff;
 }
-
 
 .user-account {
     display: flex;

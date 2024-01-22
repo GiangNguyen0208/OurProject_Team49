@@ -134,7 +134,7 @@
                     </div>
 
                     <div class="forget-pw">
-                        <a href="forgetPassword.jsp">Quên mật khẩu ?</a>
+                        <a class="link" href="forgetPassword.jsp">Quên mật khẩu ?</a>
                     </div>
 
                     <button
@@ -149,7 +149,7 @@
                         <span>Chưa đăng ký tài khoản ?</span>
 
                         <button type="button" class="link" id="sign-up-link">
-                            <a href="signUp.jsp">Đăng ký</a>
+                            <a class="link" href="signUp.jsp">Đăng ký</a>
                         </button>
                     </div>
                 </form>

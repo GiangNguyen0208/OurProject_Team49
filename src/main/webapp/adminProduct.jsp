@@ -52,9 +52,9 @@
     <c:import url="adminSideBar.jsp"/>
     <div class="main-content">
         <div id="manage-product" class="content-wrapper">
-            <header class="header-admin">
+            <div class="header-admin">
                 <div class="header-title">Quản lý sản phẩm</div>
-            </header>
+            </div>
 
             <div class="content-header">
                 <button class="delete">
@@ -83,31 +83,29 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>Xem</th>
-                        <th>Chỉnh sửa</th>
-                        <th>Product ID</th>
-                        <th>Tên</th>
-                        <th>Giá</th>
-                        <th>Danh mục</th>
-                        <th>Thương hiệu</th>
-                        <th>Số lượng</th>
+                        <th class="s-cl">Chỉnh sửa</th>
+                        <th class="m-cl">Product ID</th>
+                        <th class="l-cl">Tên</th>
+                        <th class="m-cl">Giá</th>
+                        <th class="m-cl">Danh mục</th>
+                        <th class="m-cl">Thương hiệu</th>
+                        <th class="s-cl">Số lượng</th>
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${requestScope.productList}" var="o">
                         <tr>
-                            <td>
-                                <i class="fa-solid fa-eye"></i>
+                            <td class="s-cl">
+                                <a class="link" href="adminViewProduct?productId=${o.getId()}">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
                             </td>
-                            <td>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                            <td>${o.getId()}</td>
-                            <td>${o.getName()}</td>
-                            <td>${o.getTotalPrice()}</td>
-                            <td>${o.getCategoryName(o.getCategoryId())}</td>
-                            <td>${o.getBrandName(o.getBrandId())}</td>
-                            <td>${o.getQuantity()}</td>
+                            <td class="m-cl">${o.getId()}</td>
+                            <td class="l-cl">${o.getName()}</td>
+                            <td class="m-cl">${o.getTotalPrice()}</td>
+                            <td class="m-cl">${o.getCategoryName(o.getCategoryId())}</td>
+                            <td class="m-cl">${o.getBrandName(o.getBrandId())}</td>
+                            <td class="s-cl">${o.getQuantity()}</td>
                         </tr>
                     </c:forEach>
 

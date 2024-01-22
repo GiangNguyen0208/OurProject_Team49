@@ -48,6 +48,14 @@ h2 {
 }
 
 /* HEADER */
+header {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background: #293241;
+    display: flex;
+    z-index: 999
+}
 .main-header {
     background-color: #293241;
     padding: 20px 0;

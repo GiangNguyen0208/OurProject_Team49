@@ -36,7 +36,7 @@ public class UserDAO {
         );
     }
 
-    public static User getUserById(String id) {
+    public User getUserById(String id) {
         Optional<User> user = JDBIConnector.me().withHandle((handle ->
                 handle.createQuery("select * from users where id = ?")
                         .bind(0, id)
@@ -89,6 +89,21 @@ public class UserDAO {
         System.out.println("done");
     }
 
+    public static void changeInfo(User u) {
+        JDBIConnector.me().withHandle(handle -> {
+            return handle.createUpdate("UPDATE users SET email = :email, phone = :phone, firstName = :firstName, lastName = :lastName, birthDate = :birthDate, gender = :gender where username = :username")
+                    .bind("email", u.getEmail())
+                    .bind("phone", u.getPhone())
+                    .bind("firstName", u.getFirstName())
+                    .bind("lastName", u.getLastName())
+                    .bind("birthDate", u.getBirthDate())
+                    .bind("gender", u.getGender())
+                    .bind("username", u.getUsername()).execute();
+
+        });
+        System.out.println("done");
+    }
+
     public static List<User> adminSearchUser(String value) {
         return JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT * FROM users WHERE username LIKE :value OR email LIKE :value")
@@ -99,8 +114,7 @@ public class UserDAO {
     }
 
     public static void main(String[] args) {
-        for (User user: adminSearchUser("e")) {
-            System.out.println(user.toString());
-        }
+        changePassword("cunoccho0601@gmail.com", "hahaha");
+
     }
 }

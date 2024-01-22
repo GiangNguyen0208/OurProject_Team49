@@ -17,8 +17,10 @@ public class ImageDAO {
         );
         return imageList;
     }
-
     public static void main(String[] args) {
+
         System.out.println(getImageByProductId(1));
     }
+
+
 }

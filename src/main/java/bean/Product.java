@@ -1,9 +1,11 @@
 package bean;
 
 import dao.CategoryDAO;
+import dao.ImageDAO;
+import dao.ProductDAO;
 
+import java.util.List;
 import java.util.Objects;
-
 public class Product {
     private int id;
     private String name;
@@ -15,6 +17,9 @@ public class Product {
     private double totalPrice;
     private String description;
     private int status;
+
+    public Product() {
+    }
 
     public int getId() {
         return id;
@@ -117,6 +122,31 @@ public class Product {
 
     public String getBrandName(int id) {
         return CategoryDAO.getBrandName(id);
+    }
+
+    public String getSupplierName(int id) {
+        return CategoryDAO.getSupplierName(id);
+    }
+
+    public List<Image_Product> imageProducts(int id) {
+        return ImageDAO.getImageByProductId(id);
+    }
+
+    public String getDiscountStartDay(int id){
+        return CategoryDAO.getDiscountStartDay(id);
+    }
+
+    public String getDiscountEndDay(int id) {
+        return CategoryDAO.getDiscountEndDay(id);
+    }
+
+    public Double getDiscountAmount(int id) {
+        return 100 * CategoryDAO.getDiscountAmount(id);
+    }
+
+    public static void main(String[] args) {
+        Product product = ProductDAO.adminViewProduct(1);
+        System.out.println(product.getDiscountAmount(1));
     }
     @Override
     public String toString() {

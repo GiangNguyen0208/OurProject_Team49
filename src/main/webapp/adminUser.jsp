@@ -52,9 +52,9 @@
     <c:import url="adminSideBar.jsp"/>
     <div class="main-content">
         <div id="manage-user" class="content-wrapper active">
-            <header class="header-admin">
+            <div class="header-admin">
                 <div class="header-title">Quản lý người dùng</div>
-            </header>
+            </div>
 
             <div class="content">
                 <div class="content-header">
@@ -75,15 +75,15 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>Xem</th>
-                        <th>Chỉnh sửa</th>
-                        <th>ID</th>
-                        <th>Tên</th>
-                        <th>Tài khoản</th>
-                        <th>Email</th>
-                        <th>Số điện thoại</th>
-                        <th>Trạng thái tài khoản</th>
-                        <th>Vai trò</th>
+                        <th class="s-cl">Xem</th>
+                        <th class="s-cl">Chỉnh sửa</th>
+                        <th class="s-cl">ID</th>
+                        <th class="l-cl">Tên</th>
+                        <th class="l-cl">Tài khoản</th>
+                        <th class="l-cl">Email</th>
+                        <th class="m-cl">Số điện thoại</th>
+                        <th class="m-cl">Trạng thái tài khoản</th>
+                        <th class="m-cl">Vai trò</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -1,10 +1,14 @@
+<%@ page import="bean.ShoppingCart" %>
+<%@ page import="bean.Product" %>
+<%@ page import="java.util.Map" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<header class="main-header ">
+
+<header>
     <c:set var="auth" value="${sessionScope.auth}"/>
     <div class="header__content">
         <p>
-            <a href="./index.jsp"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
+            <a href="./home"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
         </p>
         <div class="search">
             <label>
@@ -15,16 +19,16 @@
         <nav>
             <ul class="menu__bar">
                 <li class="menu__items">
-                    <a href="./index.jsp">Trang chính</a>
+                    <a href="./home">Trang chính</a>
                 </li>
                 <li class="menu__items"><a href="aboutUs.jsp">Giới thiệu</a>
                 </li>
                 <li class="menu__items">
                     <a href="products">Sản Phẩm</a>
                     <ul class="drum__container">
-                        <li class="drum__item">
-                            <a href="#">Trống điện</a>
-                        </li>
+                         <li class="drum__item">
+                            <a href="">Cymbal</a>
+                         </li>
                         <li class="drum__item">
                             <a href="#">Trống bộ</a>
                         </li>
@@ -44,8 +48,6 @@
                 </li>
             </ul>
         </nav>
-
-
         <c:choose>
             <c:when test="${empty auth}">
                 <a href="logIn.jsp" class="sign__in">
@@ -85,7 +87,14 @@
         </c:choose>
 
         <a href="cart.jsp" class="cart__shopping">
+<%--            <% ShoppingCart cart = (ShoppingCart) request.getAttribute("cart");%>--%>
+<%--            <% String items;%>--%>
             <i class="fa fa-shopping-cart"></i>
+<%--            <% if (cart.getCartItems().isEmpty()) {--%>
+<%--                items = "";--%>
+<%--            } else {--%>
+<%--                items = "("+cart.getCartItems().size()+")";--%>
+<%--            }%>--%>
             <span >Giỏ Hàng</span>
         </a>
     </div>

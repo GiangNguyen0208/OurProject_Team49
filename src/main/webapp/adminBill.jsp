@@ -52,9 +52,9 @@
     <c:import url="adminSideBar.jsp"/>
     <div class="main-content">
         <div id="manage-bill" class="content-wrapper">
-            <header class="header-admin">
+            <div class="header-admin">
                 <div class="header-title">Quản lý hóa đơn</div>
-            </header>
+            </div>
             <div class="content-header">
                 <div class="content-search">
                     <input
