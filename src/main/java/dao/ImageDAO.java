@@ -11,7 +11,8 @@ public class ImageDAO {
     public static List<Image_Product> getImageByProductId(int id) {
         List<Image_Product> imageList = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("Select * from image_products\n" +
-                                "where detailId ="+id)
+                                "where detailId = :id")
+                        .bind("id", id)
                         .mapToBean(Image_Product.class)
                         .collect(Collectors.toList())
         );

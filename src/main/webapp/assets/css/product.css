@@ -179,6 +179,7 @@
         float: left;
         cursor: pointer;
         margin-top: 9px;
+        color: black;
     }
     .sort_manufacturer{
         float: left;
@@ -230,11 +231,11 @@
         float: left;
         margin: 0;  
         cursor: pointer;
+        color: black;
     }
     .box_ss input{
         display: none;
     }
-    
     .sort_pricess{
         float: left;
         cursor: pointer;
@@ -242,6 +243,7 @@
     .sort_feature{
         float: left;
         cursor: pointer;
+        color: black;
     }
     .sort_manufacturer{
         float: left;
@@ -275,7 +277,20 @@
     margin-top: 50px;
     min-height: 200px;
     padding: 20px;
-}  
+}
+.item_content form a .add {
+    background-color: #ee6c4d;
+    border: 1px solid #293241;
+    border-radius: 7px;
+    color: black;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .5s;
+}
 
 .list .item .img {
     background: var(--main-color);
@@ -297,6 +312,14 @@
 .list .title {
     font-size: x-large;
     color: #fff;
+
+}
+
+.list .title a {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .list .desc {
@@ -307,6 +330,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
 
 .list .price {
     font-size: large;
@@ -320,12 +344,13 @@
     width: 100%;
     border: none;
 }
+
 .listPage {
     text-align: center;
     list-style: none;
     margin: 30px;
 }
-.listPage li {
+.listPage a {
     background-color: #ffffffBD;
     padding: 20px;
     display: inline-block;

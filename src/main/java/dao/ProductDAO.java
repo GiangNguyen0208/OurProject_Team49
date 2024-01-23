@@ -1,19 +1,11 @@
 package dao;
 
 import bean.*;
-import db.DBProperties;
 import db.JDBIConnector;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
-
-import static db.JDBIConnector.*;
-import static db.JDBIConnector.connect;
 
 public class ProductDAO {
 public static List<Product> getProductList(){
@@ -88,15 +80,84 @@ public static List<Product> getProductByCategory(String cateName) {
         );
         return productList;
 }
+    public static List<Product> getProductById(int id) {
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice " +
+                                "From product_details Where product_details.id = ?")
+                                        .bind(0, id)
+                                        .mapToBean(Product.class)
+                                        .collect(Collectors.toList())
+        );
+        return productList;
+}
+    public static int getQuantityInStock(int id) {
+    int quantityInStock = JDBIConnector.me().withHandle(handle ->
+            handle.createQuery("SELECT quantity FROM product_details WHERE id = :id")
+                    .bind("id", id)
+                    .mapTo(int.class)
+                    .findOne()
+                    .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
+    );
+    return quantityInStock;
+}
+
+    public static int getTotalProductNumber() {
+        int totalProductNumber = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT count(*) FROM product_details")
+                        .mapTo(int.class)
+                        .findOne()
+                        .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
+        );
+        return totalProductNumber;
+}
+
+    public void updateProductQuantityInStock(int newQuantity, int id) {
+        JDBIConnector.me().useHandle(handle ->
+                handle.createUpdate("UPDATE product_details SET quantity = :newQuantity WHERE id = :productId")
+                        .bind("newQuantity", newQuantity)
+                        .bind("productId", id)
+                        .execute()
+        );
+    }
+//    Phương thức để kiểm tra xem số lượng trong đơn hàng có vượt quá số lượng trong kho hay không
+    public boolean isOrderQuantityValid(Order order) {
+        for (Map.Entry<Product, Integer> entry : order.getOrderItems().entrySet()) {
+            Product product = entry.getKey();
+            int orderQuantity = entry.getValue();
+            int stockQuantity = getQuantityInStock(product.getId());
+
+            if (orderQuantity > stockQuantity) {
+                System.out.println("Số lượng sản phẩm " + product.getName() + " trong đơn hàng vượt quá số lượng trong kho.");
+                return false;
+            }
+        }
+        return true;
+    }
+    public Product getProductId(int id) {
+        Product product = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT product_details.id, product_details.name, totalPrice, quantity FROM product_details WHERE id = :id")
+                        .bind("id", id)
+                        .mapTo(Product.class)
+                        .findOne()
+                        .orElse(null) // Giả sử trả về null nếu không tìm thấy sản phẩm
+        );
+        return product;
+    }
+
     public static void main(String[] args) {
-        List<Product> all = ProductDAO.getProductList();
         List<Product> productByCate = ProductDAO.getProductByCategory("Electric");
         List<Product> productByPrice = ProductDAO.getProductByPriceRange(0,10000000);
         List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
         List<Product> productByASC = ProductDAO.getProductAZ("ASC");
         List<Product> productDiscount = ProductDAO.getProductByDiscount();
-        System.out.println(productDiscount);
+        List<Product> productById = ProductDAO.getProductById(1);
+        int totalProductNumber = ProductDAO.getTotalProductNumber();
+        System.out.println(totalProductNumber);
+//        Item item = ProductDAO.getItemById(1);
     }
+
+
+
 
 
 

@@ -1,10 +1,9 @@
 package service;
 
+import bean.Item;
 import bean.Product;
-import dao.BrandDAO;
 import dao.ProductDAO;
 
-import java.awt.datatransfer.SystemFlavorMap;
 import java.util.List;
 
 public class ProductDetailService {
@@ -35,9 +34,21 @@ public class ProductDetailService {
     public List<Product> getProductByDiscount() {
         return ProductDAO.getProductByDiscount();
     }
+    public Product getProductById(int id) {
+        return ProductDAO.getProductById(id).get(0);
+    }
+    public int getQuantityInStock(int id) {
+        return ProductDAO.getQuantityInStock(id);
+    }
+    public int getTotalProductNumber() {
+        return ProductDAO.getTotalProductNumber();
+    }
     public static void main(String[] args) {
         ProductDetailService productDetailService = new ProductDetailService();
         System.out.println(productDetailService.getProductList());
         System.out.println(productDetailService.getProductByCategory("Cymbal"));
     }
+
+
+
 }

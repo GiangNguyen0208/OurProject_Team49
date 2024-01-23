@@ -4,28 +4,32 @@
 <%@ page import="bean.Product" %>
 <%@ page import="service.ImageService" %>
 <%@ page import="bean.Brand" %>
+<%@ page import="java.util.Objects" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     List<Category> categories = (List<Category>) request.getAttribute("categories");
     if(categories == null) categories = new ArrayList<>();
 
-    List<Product> products = (List<Product>) request.getAttribute("products");
+    List<Product> products = (List<Product>) request.getAttribute("products");String category = request.getParameter("category");
+    String brand = request.getParameter("brands");
+    String minPricePara = request.getParameter("minPrice");
+    String maxPricePara = request.getParameter("maxPrice");
+    String azorza = request.getParameter("AZorZA");
+    String images = request.getParameter("images");
     if (products == null) products = new ArrayList<>();
 
     List<Brand> brands = (List<Brand>) request.getAttribute("brands");
     if (brands == null) brands = new ArrayList<>();
 
-    String category = request.getParameter("category");
-    String brand = request.getParameter("brands");
-    String minPricePara = request.getParameter("minPrice");
-    String maxPricePara = request.getParameter("maxPrice");
-    String azorza = request.getParameter("AZorZA");
-
+//
 %>
+
 
 <html lang="en">
     <head>
+        <jsp:useBean id="imageService" class="service.ImageService" scope="session"/>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sản phẩm</title>
@@ -87,12 +91,23 @@
     <body>
         <!-- HEADER -->
         <c:import url="header.jsp"/>
-
         <div class="search-product">
-            <input type="text" placeholder="Tìm kiếm sản phẩm" />
-            <button class="search-btn" type="submit">
-                <i class="fa-solid fa-magnifying-glass search-ic"></i>
-            </button>
+<%--            <form action="search?indexPage=1" method="post">--%>
+<%--                <input type="text" name="txtSearch" id="searchInput" placeholder="Tìm kiếm sản phẩm" />--%>
+<%--                <div id="searchResults" style="display: none;"></div>--%>
+<%--                <button class="search-btn" type="submit">--%>
+<%--                    <i class="fa-solid fa-magnifying-glass search-ic"></i>--%>
+<%--                </button>--%>
+<%--            </form>--%>
+            <form action="search?indexPage=${1}" method="post">
+                <input type="text" name="txtSearch" id="searchInput" placeholder="Tìm kiếm sản phẩm" />
+                <!-- Thêm hidden input để giữ giá trị txtSearch khi chưa ấn submit -->
+                <input type="hidden" name="hiddenSearch" value="${empty param.txtSearch ? '' : param.txtSearch}" />
+                <div id="searchResults" style="display: none;"></div>
+                <button class="search-btn" type="submit">
+                    <i class="fa-solid fa-magnifying-glass search-ic"></i>
+                </button>
+            </form>
         </div>
         <!-- PRODUCT -->
 
@@ -111,13 +126,15 @@
                         <div class="directory-title">Danh mục</div>
                         <div class="directory__list">
                             <ul class="directory__item">
-                                <% for (Category c : categories) { %>
+                                <%  if (categories != null) {
+                                    for (Category c : categories) { %>
                                 <li class="directory__gerne">
-                                    <a href="products?category=<%=c.getName()%>" class="gerne-link">
-                                        <%--@declare id="category"--%><label for="category"><%=c.getName()%></label>
+                                    <a href="products?category=<%= c.getName() %>&txtSearch=${param.txtSearch}" class="gerne-link">
+                                        <%--@declare id="brands"--%><label for="brands"><%= c.getName() %></label>
                                     </a>
                                 </li>
-                                <% }%>
+                                <%  }
+                                } %>
                             </ul>
                         </div>
                     </div>
@@ -187,13 +204,15 @@
                             <div id="sort_manufacturer" class="box_s hidden">
                                 <div class="box_ss">
                                     <ul>
-                                        <% for (Brand b: brands) {%>
-                                        <li>
-                                            <a href="products?brands=<%=b.getName()%>">
-                                                <%--@declare id="brands"--%><label for="brands"><%=b.getName()%></label>
-                                            </a>
-                                        </li>
-                                        <%}%>
+                                        <%  if (brands != null) {
+                                                for (Brand b : brands) { %>
+                                                    <li class="directory__gerne">
+                                                        <a href="products?brands=<%= b.getName() %>&txtSearch=${param.txtSearch}" class="gerne-link">
+                                                            <%--@declare id="brands"--%><label for="brands"><%= b.getName() %></label>
+                                                        </a>
+                                                    </li>
+                                            <%  }
+                                            } %>
                                     </ul>
                                 </div>
                             </div>
@@ -238,24 +257,106 @@
                         </div>
                     </div>
                     <div class="list">
-                        <% for (Product p : products) { %>
-                            <div class="item">
-                                <a href="productDetail.jsp" class="img">
-                                    <img src="<%= ImageService.getInstance().getImageByProductId(p.getId()).get(0).getLink() %>"/>
-                                </a>
-                                <div class="item_content">
-                                    <a href="productDetail.jsp" class="title"
-                                    ><%= p.getName() %></a>
-                                    <div class="desc">
-                                        <%= p.getDescription() %>
+                        <c:choose>
+                            <c:when test="${not empty products}">
+                                <!-- Hiển thị danh sách sản phẩm tìm kiếm -->
+                                <c:forEach var="item" items="${products}">
+                                    <div class="item">
+                                        <a href="productdetails?selectedProductId=${item.id}" class="img" onclick="redirectToProductDetail('${item.id}')">
+                                            <img src="${imageService.getImageByProductId(item.id).get(0).link}"/>
+                                        </a>
+                                        <div class="item_content">
+                                            <a href="" class="title">${item.name}</a>
+                                            <div class="desc">${item.description}</div>
+                                            <div class="price">
+                                                <fmt:formatNumber type="currency" value="${item.totalPrice}" currencySymbol="" currencyCode="VND" var="formattedCurrency" />
+                                                    ${formattedCurrency}
+                                            </div>
+                                            <form action="/cart" method="get">
+                                                <input type="hidden" name="productId" value="${item.id}">
+                                                <c:url var="link" value="cart">
+                                                    <c:param name="action" value="buy"></c:param>
+                                                    <c:param name="id" value="${item.id}"></c:param>
+                                                </c:url>
+                                                <a href="productdetails?selectedProductId=${item.id}">
+                                                    <!-- Change the text to "Xem chi tiết" -->
+                                                    <div class="add">Xem chi tiết</div>
+                                                </a>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="price"><%= p.getTotalPrice() %> Đ</div>
-                                    <button class="add">Thêm vào giỏ hàng</button>
-                                </div>
-                            </div>
-                        <%}%>
+                                </c:forEach>
+                            </c:when>
+                            <c:otherwise>
+                                <c:choose>
+                                    <c:when test="${not empty param.hiddenSearch}">
+                                        <!-- Hiển thị dữ liệu tìm kiếm sau khi submit -->
+                                        <c:set var="searchText" value="${param.hiddenSearch}" />
+                                        <c:set var="searchResults" value="${yourSearchMethod(searchText)}" />
+                                        <c:forEach var="item" items="${searchResults}">
+                                            <div class="item">
+                                                <a href="productdetails?selectedProductId=${item.id}" class="img" onclick="redirectToProductDetail('${item.id}')">
+                                                    <img src="${imageService.getImageByProductId(item.id).get(0).link}"/>
+                                                </a>
+                                                <div class="item_content">
+                                                    <a href="" class="title">${item.name}</a>
+                                                    <div class="desc">${item.description}</div>
+                                                    <div class="price">
+                                                        <fmt:formatNumber type="currency" value="${item.totalPrice}" currencySymbol="" currencyCode="VND" var="formattedCurrency" />
+                                                            ${formattedCurrency}
+                                                    </div>
+                                                    <form action="/cart" method="get">
+                                                        <input type="hidden" name="productId" value="${item.id}">
+                                                        <c:url var="link" value="cart">
+                                                            <c:param name="action" value="buy"></c:param>
+                                                            <c:param name="id" value="${item.id}"></c:param>
+                                                        </c:url>
+                                                        <a href="${link}">
+                                                            <div class="add">Thêm vào giỏ hàng</div>
+                                                        </a>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <!-- Hiển thị dữ liệu trước khi submit -->
+                                        <c:forEach var="item" items="${requestScope.products}">
+                                            <div class="item">
+                                                <a href="productdetails?selectedProductId=${item.id}" class="img" onclick="redirectToProductDetail('${item.id}')">
+                                                    <img src="${imageService.getImageByProductId(item.id).get(0).link}"/>
+                                                </a>
+                                                <div class="item_content">
+                                                    <a href="" class="title">${item.name}</a>
+                                                    <div class="desc">${item.description}</div>
+                                                    <div class="price">
+                                                        <fmt:formatNumber type="currency" value="${item.totalPrice}" currencySymbol="" currencyCode="VND" var="formattedCurrency" />
+                                                            ${formattedCurrency}
+                                                    </div>
+                                                    <form action="/cart" method="get">
+                                                        <input type="hidden" name="productId" value="${item.id}">
+                                                        <c:url var="link" value="cart">
+                                                            <c:param name="action" value="buy"></c:param>
+                                                            <c:param name="id" value="${item.id}"></c:param>
+                                                        </c:url>
+                                                        <a href="${link}">
+                                                            <div class="add">Thêm vào giỏ hàng</div>
+                                                        </a>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </c:forEach>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
-                    <ul class="listPage"></ul>
+<%--                    Phân trang--%>
+                    <div class="listPage">
+                        <c:forEach begin="1" end="${endPage}" var="i">\ư
+                            <lí><a href="search?index=${i}&&txtSearch=${txtSearch}>${i}</a></lí>
+                        </c:forEach>
+                    </div>
                 </div>
             </section>
         </section>
@@ -453,7 +554,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/product.js"></script>
         <script src="js/log.js"></script>
-        <script src="js/paging.js"></script>
+<%--        <script src="js/paging.js"></script>--%>
 
         <!-- OWL CAROUSEL JS -->
         <script src="js/owl.carousel.min.js"></script>

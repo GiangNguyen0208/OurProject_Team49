@@ -3,6 +3,7 @@ package controller;
 import bean.Brand;
 import bean.Category;
 import bean.Product;
+import dao.ProductDAO;
 import service.BrandService;
 import service.CategoryService;
 import service.ProductDetailService;
