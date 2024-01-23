@@ -316,7 +316,8 @@
                                                         maxlength="128"
                                                         placeholder="Phone"
                                                         onkeyup="validatePhone()"
-                                                        value = "0<%=phone%>"
+<%--                                                        value = "0<%=phone%>"--%>
+                                                        value="<%= phone == 0 ? "" : "0" + phone %>"
 
                                                 />
                                                 <span id = "phone-error"></span>

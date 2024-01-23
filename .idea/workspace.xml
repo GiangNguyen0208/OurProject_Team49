@@ -11,24 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/Catalina/localhost/Tomcat.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/catalina.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/catalina.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/jaspic-providers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/jaspic-providers.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/tomcat-users.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/catalina.2024-01-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/host-manager.2024-01-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/localhost.2024-01-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/localhost_access_log.2024-01-14.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/manager.2024-01-14.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/DB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DB.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,30 +64,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Thuong&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Thuong/Documents/ProjectLTW/OurProject_Team49&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Thuong",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/Thuong/Documents/ProjectLTW/OurProject_Team49",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.85">
     <configuration name="Tomcat 9.0.85" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.85" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Login:war">
@@ -356,7 +342,15 @@
       <workItem from="1705295470859" duration="10666000" />
       <workItem from="1705311212202" duration="8000" />
       <workItem from="1705312049260" duration="15637000" />
-      <workItem from="1705332286255" duration="1605000" />
+      <workItem from="1705332286255" duration="2940000" />
+      <workItem from="1705771692299" duration="598000" />
+      <workItem from="1705827074996" duration="4000" />
+      <workItem from="1705828272468" duration="3613000" />
+      <workItem from="1705834121671" duration="3385000" />
+      <workItem from="1705841268405" duration="2924000" />
+      <workItem from="1705868610057" duration="607000" />
+      <workItem from="1705916490368" duration="690000" />
+      <workItem from="1705924506648" duration="214000" />
     </task>
     <servers />
   </component>

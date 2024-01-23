@@ -247,6 +247,23 @@
                         class="info-img"
                     />
                 </div>
+                <div class = "product__preview">
+                    <ul>
+                        <li>
+                            <a>Bình luận</a>
+                        </li>
+                    </ul>
+
+                    <div id="comment">
+                        <div class="fb-comments"
+
+                             data-href=""
+
+                             data-width="1100" data-numposts="5">
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- FEEDBACK -->
@@ -441,6 +458,9 @@
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="./js/product.js"></script>
+
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0&appId=1368038260773645" nonce="THQkyD4s"></script>
 
         <!-- OWL CAROUSEL JS -->
         <script src="./js/owl.carousel.min.js"></script>
