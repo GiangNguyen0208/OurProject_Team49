@@ -54,7 +54,6 @@ public class ProductsController extends HttpServlet {
             req.setAttribute("brands", brandList);
             req.setAttribute("products", productList);
             req.getRequestDispatcher("product.jsp").forward(req, resp);
-//            req.getRequestDispatcher("product.jsp").forward(req, resp);
         } catch (NumberFormatException e) {
             e.printStackTrace();  // Handle or log the exception appropriately
             resp.sendRedirect("error.jsp");

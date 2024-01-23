@@ -40,6 +40,9 @@ public class ProductDetailService {
     public int getQuantityInStock(int id) {
         return ProductDAO.getQuantityInStock(id);
     }
+    public int getTotalProductNumber() {
+        return ProductDAO.getTotalProductNumber();
+    }
     public static void main(String[] args) {
         ProductDetailService productDetailService = new ProductDetailService();
         System.out.println(productDetailService.getProductList());
