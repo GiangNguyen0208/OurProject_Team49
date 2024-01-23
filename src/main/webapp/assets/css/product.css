@@ -350,7 +350,7 @@
     list-style: none;
     margin: 30px;
 }
-.listPage li {
+.listPage a {
     background-color: #ffffffBD;
     padding: 20px;
     display: inline-block;

@@ -58,7 +58,8 @@ public class SearchController extends HttpServlet {
             req.setAttribute("categories", categoryList);
             req.setAttribute("brands", brandList);
             req.setAttribute("endPage", endPage);
-            req.setAttribute("list", productList);
+            req.setAttribute("products", productList);
+            req.setAttribute("txtSearch", txtSearch);
             req.getRequestDispatcher("product.jsp").forward(req, resp);
         } catch (Exception e) {
             // Xử lý ngoại lệ

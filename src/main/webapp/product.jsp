@@ -99,7 +99,7 @@
 <%--                    <i class="fa-solid fa-magnifying-glass search-ic"></i>--%>
 <%--                </button>--%>
 <%--            </form>--%>
-            <form action="search?indexPage=1" method="post">
+            <form action="search?indexPage=${1}" method="post">
                 <input type="text" name="txtSearch" id="searchInput" placeholder="Tìm kiếm sản phẩm" />
                 <!-- Thêm hidden input để giữ giá trị txtSearch khi chưa ấn submit -->
                 <input type="hidden" name="hiddenSearch" value="${empty param.txtSearch ? '' : param.txtSearch}" />
@@ -262,7 +262,7 @@
                                 <!-- Hiển thị danh sách sản phẩm tìm kiếm -->
                                 <c:forEach var="item" items="${products}">
                                     <div class="item">
-                                        <a href="productDetail.jsp" class="img">
+                                        <a href="productdetails?selectedProductId=${item.id}" class="img" onclick="redirectToProductDetail('${item.id}')">
                                             <img src="${imageService.getImageByProductId(item.id).get(0).link}"/>
                                         </a>
                                         <div class="item_content">
@@ -278,8 +278,9 @@
                                                     <c:param name="action" value="buy"></c:param>
                                                     <c:param name="id" value="${item.id}"></c:param>
                                                 </c:url>
-                                                <a href="${link}">
-                                                    <div class="add">Thêm vào giỏ hàng</div>
+                                                <a href="productdetails?selectedProductId=${item.id}">
+                                                    <!-- Change the text to "Xem chi tiết" -->
+                                                    <div class="add">Xem chi tiết</div>
                                                 </a>
                                             </form>
                                         </div>
@@ -294,7 +295,7 @@
                                         <c:set var="searchResults" value="${yourSearchMethod(searchText)}" />
                                         <c:forEach var="item" items="${searchResults}">
                                             <div class="item">
-                                                <a href="productDetail.jsp" class="img">
+                                                <a href="productdetails?selectedProductId=${item.id}" class="img" onclick="redirectToProductDetail('${item.id}')">
                                                     <img src="${imageService.getImageByProductId(item.id).get(0).link}"/>
                                                 </a>
                                                 <div class="item_content">
@@ -322,7 +323,7 @@
                                         <!-- Hiển thị dữ liệu trước khi submit -->
                                         <c:forEach var="item" items="${requestScope.products}">
                                             <div class="item">
-                                                <a href="productDetail.jsp" class="img">
+                                                <a href="productdetails?selectedProductId=${item.id}" class="img" onclick="redirectToProductDetail('${item.id}')">
                                                     <img src="${imageService.getImageByProductId(item.id).get(0).link}"/>
                                                 </a>
                                                 <div class="item_content">
@@ -350,10 +351,10 @@
                             </c:otherwise>
                         </c:choose>
                     </div>
-
+<%--                    Phân trang--%>
                     <div class="listPage">
-                        <c:forEach begin="1" end="${endPage}" var="i">
-                            <a href="#">${i}</a>
+                        <c:forEach begin="1" end="${endPage}" var="i">\ư
+                            <lí><a href="search?index=${i}&&txtSearch=${txtSearch}>${i}</a></lí>
                         </c:forEach>
                     </div>
                 </div>
@@ -553,7 +554,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/product.js"></script>
         <script src="js/log.js"></script>
-        <script src="js/paging.js"></script>
+<%--        <script src="js/paging.js"></script>--%>
 
         <!-- OWL CAROUSEL JS -->
         <script src="js/owl.carousel.min.js"></script>

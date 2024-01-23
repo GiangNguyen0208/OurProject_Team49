@@ -101,6 +101,16 @@ public static List<Product> getProductByCategory(String cateName) {
     return quantityInStock;
 }
 
+    public static int getTotalProductNumber() {
+        int totalProductNumber = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT count(*) FROM product_details")
+                        .mapTo(int.class)
+                        .findOne()
+                        .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
+        );
+        return totalProductNumber;
+}
+
     public void updateProductQuantityInStock(int newQuantity, int id) {
         JDBIConnector.me().useHandle(handle ->
                 handle.createUpdate("UPDATE product_details SET quantity = :newQuantity WHERE id = :productId")
@@ -141,7 +151,8 @@ public static List<Product> getProductByCategory(String cateName) {
         List<Product> productByASC = ProductDAO.getProductAZ("ASC");
         List<Product> productDiscount = ProductDAO.getProductByDiscount();
         List<Product> productById = ProductDAO.getProductById(1);
-        int productQuantityInStock = ProductDAO.getQuantityInStock(1);
+        int totalProductNumber = ProductDAO.getTotalProductNumber();
+        System.out.println(totalProductNumber);
 //        Item item = ProductDAO.getItemById(1);
     }
 

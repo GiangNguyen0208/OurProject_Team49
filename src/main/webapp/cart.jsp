@@ -157,29 +157,34 @@
             </div>
     </section>
     <section class="cart__content">
-            <div class="right__content">
-                <div class="box">
-                    <div class="box__order">
-                        <div class="box__order__title">
-                            <h3>Thông tin đơn hàng</h3>
-                        </div>
-                        <div class="box__order__totalPrice">
-                            <p>
-                                Tổng tiền:
-                                <span class="total__price">0đ</span>
-                            </p>
-                        </div>
-                        <div class="box__order__text">
-                            <p>
-                                Phí vận chuyển sẽ được tính ở trang thanh toán.
-                                Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
-                            </p>
-                        </div>
-                        <div class="box__order__active">
-                            <a href="#" class="btn__payment">
-                                <button>Thanh toán</button>
-                            </a>
-                        </div>
+        <div class="right__content">
+            <div class="box">
+                <div class="box__order">
+                    <div class="box__order__title">
+                        <h3>Thông tin đơn hàng</h3>
+                    </div>
+                    <div class="box__order__totalPrice">
+                        <p>
+                            Tổng tiền:
+                            <span class="total__price"><%= formatCurrency(total) %></span>
+                        </p>
+                    </div>
+                    <div class="box__order__text">
+                        <p>
+                            Phí vận chuyển sẽ được tính ở trang thanh toán.
+                            Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
+                        </p>
+                    </div>
+                    <div class="box__order__active">
+                        <form action="bill.jsp" method="post">
+                            <!-- Include hidden input fields for order details -->
+                            <input type="hidden" name="total" value="<%= total %>">
+                            <!-- Add other necessary hidden fields -->
+
+                            <button type="submit" class="btn__payment"
+                                <a href="#">Thanh toán</a>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
