@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="admin change information product">
+    <list default="true" id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="fix admin add new brand">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddBrand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddBrand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BrandDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BrandDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/AdminViewProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminEditProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/adminEditProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminEditProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/logIn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logIn.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.BrandDAO">
+  <component name="RunManager" selected="Application.CategoryDAO">
     <configuration name="BrandDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.BrandDAO" />
       <module name="Login" />
@@ -344,9 +344,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CategoryDAO" />
         <item itemvalue="Application.BrandDAO" />
         <item itemvalue="Application.ProductDAO" />
-        <item itemvalue="Application.CategoryDAO" />
         <item itemvalue="Application.ImageDAO" />
         <item itemvalue="Application.Product" />
       </list>
@@ -399,7 +399,7 @@
       <workItem from="1705904873878" duration="22889000" />
       <workItem from="1705985187533" duration="925000" />
       <workItem from="1705986125669" duration="25793000" />
-      <workItem from="1706074674547" duration="17375000" />
+      <workItem from="1706074674547" duration="20578000" />
     </task>
     <task id="LOCAL-00001" summary="admin view product">
       <option name="closed" value="true" />
@@ -425,7 +425,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706093365940</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add brand and add category admin">
+      <option name="closed" value="true" />
+      <created>1706096379979</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706096379979</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix admin add new brand">
+      <option name="closed" value="true" />
+      <created>1706096658608</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706096658608</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,7 +462,9 @@
     <MESSAGE value="xml" />
     <MESSAGE value="admin view product" />
     <MESSAGE value="admin change information product" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin change information product" />
+    <MESSAGE value="add brand and add category admin" />
+    <MESSAGE value="fix admin add new brand" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix admin add new brand" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -115,6 +115,6 @@ public class CategoryDAO {
 //        Product product = ProductDAO.getProductById(4).get(0);
 //        System.out.println(product.toString());
 //        System.out.println(getDiscountAmount(product.getDiscountId()));
-        System.out.println(addNewCategory("haha"));
+        System.out.println(addNewCategory("new cate"));
     }
 }

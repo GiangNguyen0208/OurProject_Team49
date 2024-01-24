@@ -166,6 +166,7 @@
         </form>
         <form method="get" action="addCategory" class="dialog-category">
             <div class="dialog-wrapper">
+                <input value="${productId}" hidden="hidden" name="productId">
                 <div class="dialog-title">Thêm danh mục</div>
                 <span class="close-btn-cate" onclick="closeDialog()">X</span>
                 <label for="input1">Tên danh mục</label>
@@ -174,6 +175,7 @@
             </div>
         </form>
         <form method="get" action="addBrand" class="dialog-brand">
+            <input value="${productId}" hidden="hidden" name="productId">
             <div class="dialog-wrapper">
                 <div class="dialog-title">Thêm thương hiệu</div>
                 <span class="close-btn-brand" onclick="closeDialog()">x</span>

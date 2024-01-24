@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(value = "/adminViewProduct")
-public class AdminViewProduct extends HttpServlet {
+public class AdminEditProduct extends HttpServlet {
     int productId;
 
     @Override
