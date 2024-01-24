@@ -2,7 +2,7 @@ package bean;
 
 public class Supplier {
     private int id;
-    private Brand brand;
+    private int brandId;
     private String name;
     private String email;
     private int phone;
@@ -14,6 +14,17 @@ public class Supplier {
         this.phone = phone;
     }
 
+    public Supplier(int id, int brandId, String name, String email, int phone) {
+        this.id = id;
+        this.brandId = brandId;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public Supplier() {
+    }
+
     public int getId() {
         return id;
     }
@@ -22,12 +33,12 @@ public class Supplier {
         this.id = id;
     }
 
-    public Brand getBrand() {
-        return brand;
+    public int getBrandId() {
+        return brandId;
     }
 
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void setBrandId(int brandId) {
+        this.brandId = brandId;
     }
 
     public String getName() {
@@ -52,5 +63,16 @@ public class Supplier {
 
     public void setPhone(int phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Supplier{" +
+                "id=" + id +
+                ", brandId=" + brandId +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone=" + phone +
+                "\n";
     }
 }

@@ -28,7 +28,7 @@ public class UserDAO {
     }
 
 
-    public List<User> getUserList() {
+    public static List<User> getUserList() {
         return JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("select * from users")
                         .mapToBean(User.class)
@@ -89,7 +89,32 @@ public class UserDAO {
         System.out.println("done");
     }
 
+    public static void changeInfo(User u) {
+        JDBIConnector.me().withHandle(handle -> {
+            return handle.createUpdate("UPDATE users SET email = :email, phone = :phone, firstName = :firstName, lastName = :lastName, birthDate = :birthDate, gender = :gender where username = :username")
+                    .bind("email", u.getEmail())
+                    .bind("phone", u.getPhone())
+                    .bind("firstName", u.getFirstName())
+                    .bind("lastName", u.getLastName())
+                    .bind("birthDate", u.getBirthDate())
+                    .bind("gender", u.getGender())
+                    .bind("username", u.getUsername()).execute();
+
+        });
+        System.out.println("done");
+    }
+
+    public static List<User> adminSearchUser(String value) {
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM users WHERE username LIKE :value OR email LIKE :value")
+                        .bind("value", "%" + value + "%")
+                        .mapToBean(User.class)
+                        .collect(Collectors.toList())
+        );
+    }
+
     public static void main(String[] args) {
-     changePassword("cunoccho0601@gmail.com", "hahaha");
+        changePassword("cunoccho0601@gmail.com", "hahaha");
+
     }
 }

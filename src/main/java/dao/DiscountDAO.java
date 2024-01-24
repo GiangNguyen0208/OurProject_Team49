@@ -20,8 +20,19 @@ public class DiscountDAO {
         return discount;
     }
 
+    public static void changeDiscountDate(int id, String startDate, String endDate) {
+        JDBIConnector.me().useHandle(handle ->
+                handle.createUpdate("update discount set startDate = :startDate, endDate = :endDate where id = :id")
+                        .bind("startDate", startDate)
+                        .bind("endDate", endDate)
+                        .bind("id", id)
+                        .execute()
+        );
+    }
+
     public static void main(String[] args) {
         double amount = DiscountDAO.getDiscount(1);
         System.out.println(amount);
+
     }
 }

@@ -123,8 +123,8 @@ public class ShoppingCart {
                 System.out.println("Vui chọn lại số lượng");
                 return;
             }
-                // Cập nhật lại quantity database.
-                product.updateProductQuantityInStock(quantityInCart, product.getId());
+            // Cập nhật lại quantity database.
+//            product.updateProductQuantityInStock(quantityInCart, product.getId());
         }
         // Tạo đơn hàng mới
         Order newOrder = new Order(cartItems);

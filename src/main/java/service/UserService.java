@@ -20,7 +20,6 @@ public class UserService {
 
     }
 
-
     public User checkLogin(String username, String password) {
 
         User userByEmail = UserDAO.getUserByEmail(username);
@@ -34,6 +33,10 @@ public class UserService {
             return userByUsername;
         }
         return null;
+    }
+
+    public boolean isPhoneNumberValid(String phoneNumber) {
+        return phoneNumber.matches("^\\d{10}$");
     }
 
 
