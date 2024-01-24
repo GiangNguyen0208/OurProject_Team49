@@ -28,7 +28,7 @@ public class UserDAO {
     }
 
 
-    public List<User> getUserList() {
+    public static List<User> getUserList() {
         return JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("select * from users")
                         .mapToBean(User.class)
@@ -104,8 +104,17 @@ public class UserDAO {
         System.out.println("done");
     }
 
+    public static List<User> adminSearchUser(String value) {
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM users WHERE username LIKE :value OR email LIKE :value")
+                        .bind("value", "%" + value + "%")
+                        .mapToBean(User.class)
+                        .collect(Collectors.toList())
+        );
+    }
+
     public static void main(String[] args) {
-     changePassword("cunoccho0601@gmail.com", "hahaha");
+        changePassword("cunoccho0601@gmail.com", "hahaha");
 
     }
 }

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class BrandDAO {
     public static List<Brand> getAllBrands(){
         List<Brand> brandList = JDBIConnector.me().withHandle(handle ->
-                handle.createQuery("select name from brands")
+                handle.createQuery("select id, name from brands")
                         .mapToBean(Brand.class)
                         .collect(Collectors.toList())
         );
@@ -28,8 +28,31 @@ public class BrandDAO {
         return brand;
     }
 
+    public static int getBiggestBrandId() {
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("select max(id) from brands")
+                        .mapToBean(Integer.class)
+                        .findOne()
+                        .orElse(null)
+        );
+    }
+
+    public static boolean addNewBrand(String newBrand) {
+        int id = getBiggestBrandId() + 1;
+        try {
+            return JDBIConnector.me().withHandle(handle ->
+                    handle.createUpdate("INSERT INTO brands(id, name) VALUES (:id, :name)")
+                            .bind("name", newBrand)
+                            .bind("id", id)
+                            .execute() > 0);
+        } catch (Exception e) {
+            System.out.println("Lỗi");
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         Brand brand = getNameBrandById(1);
-        System.out.println(brand);
+        System.out.println(getBiggestBrandId());
     }
 }

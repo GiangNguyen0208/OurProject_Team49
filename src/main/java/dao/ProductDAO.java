@@ -6,6 +6,7 @@ import db.JDBIConnector;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ProductDAO {
 public static List<Product> getProductList(){
@@ -142,6 +143,79 @@ public static List<Product> getProductByCategory(String cateName) {
                         .orElse(null) // Giả sử trả về null nếu không tìm thấy sản phẩm
         );
         return product;
+    }
+
+    public static List<Product> adminSearchProductByCategories(String value) {
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM product_details WHERE product_details.categoryId IN (SELECT id FROM categories WHERE LOWER(name) like LOWER(:like))")
+                        .bind("like", "%" + value + "%")
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
+        );
+        return productList;
+    }
+
+    public static List<Product> adminSearchProductByBrands(String value) {
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM product_details WHERE product_details.brandId IN (SELECT id FROM brands WHERE LOWER(name) like LOWER(:like))")
+                        .bind("like", "%" + value + "%")
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
+        );
+        return productList;
+    }
+
+    public static List<Product> adminSearchProductByName(String value) {
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM product_details WHERE LOWER(name) like LOWER(:like)")
+                        .bind("like", "%" + value + "%")
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
+        );
+        return productList;
+    }
+
+    public static Product adminViewProduct(int id) {
+        Product product = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM product_details WHERE id = :id")
+                        .bind("id", id)
+                        .mapToBean(Product.class)
+                        .findOne()
+                        .orElse(null) // Giả sử trả về null nếu không tìm thấy sản phẩm
+        );
+        return product;
+
+    }
+
+    public static <Product> List<Product> mergeListsDistinct(List<Product>... lists) {
+        return Stream.of(lists)
+                .flatMap(List::stream)
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    public static void changeInforProduct(Product product) {
+        JDBIConnector.me().useHandle(handle ->
+                handle.createUpdate("UPDATE product_details set " +
+                                "name = :name, discountId = :discountId, categoryId = :categoryId, brandId = :brandId, supplierId = :supplierId, quantity = :quantity, totalPrice = :totalPrice, description = :description" +
+                                " where id = :id")
+                        .bind("name", product.getName())
+                        .bind("discountId", product.getDiscountId())
+                        .bind("categoryId", product.getCategoryId())
+                        .bind("brandId", product.getBrandId())
+                        .bind("supplierId", product.getSupplierId())
+                        .bind("quantity", product.getQuantity())
+                        .bind("totalPrice", product.getTotalPrice())
+                        .bind("description", product.getDescription())
+                        .bind("id", product.getId())
+                        .execute()
+        );
+        System.out.println("Done");
+    }
+
+    public static List<Product> adminSearchProduct(String value) {
+        List<Product> productList = mergeListsDistinct(adminSearchProductByName(value), adminSearchProductByCategories(value), adminSearchProductByBrands(value));
+        return productList;
     }
 
     public static void main(String[] args) {

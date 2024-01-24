@@ -163,7 +163,7 @@
                 <span>Đã có tài khoản ?</span>
 
                 <button type="button" class="link" id="log-in-link">
-                    <a href="logIn.jsp">Đăng Nhập</a>
+                    <a class="link" href="logIn.jsp">Đăng Nhập</a>
                 </button>
             </div>
         </form>
