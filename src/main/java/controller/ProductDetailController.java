@@ -4,6 +4,7 @@ import bean.Brand;
 import bean.Image_Product;
 import bean.Product;
 import bean.Product_Color;
+import dao.ColorDAO;
 import service.*;
 
 import javax.servlet.ServletException;
@@ -22,7 +23,6 @@ public class ProductDetailController extends HttpServlet {
         resp.setContentType("application/json;charset=UTF-8");
 
         try {
-
             int selectedProductId = Integer.parseInt(req.getParameter("selectedProductId"));
 
             // Lấy thông tin sản phẩm từ ID được chọn
@@ -36,7 +36,7 @@ public class ProductDetailController extends HttpServlet {
 
                 // Lấy thông tin ảnh và màu sắc của sản phẩm
                 List<Image_Product> productImages = ImageService.getInstance().getImageByProductId(selectedProductId);
-                List<Product_Color> productColors = ColorService.getInstance().getColorByProductId(selectedProductId);
+                List<Product_Color> productColors = ColorService.getInstance().getListColorCodeByIdProduct(selectedProductId);
 
                 // Đặt thông tin vào request
                 req.setAttribute("discount", discount);

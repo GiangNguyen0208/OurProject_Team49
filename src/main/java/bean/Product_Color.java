@@ -4,6 +4,15 @@ public class Product_Color {
     private int id;
     private String nameColor;
     private Product product;
+    private String codeColor;
+
+    public String getCodeColor() {
+        return codeColor;
+    }
+
+    public void setCodeColor(String codeColor) {
+        this.codeColor = codeColor;
+    }
 
     public int getId() {
         return id;
@@ -34,7 +43,8 @@ public class Product_Color {
         return "Product_Color{" +
                 "id=" + id +
                 ", nameColor='" + nameColor + '\'' +
-                ", product=" + product +
+                ", product='" + product + '\'' +
+                ", codeColor='" + codeColor + '\'' +
                 '}';
     }
 }

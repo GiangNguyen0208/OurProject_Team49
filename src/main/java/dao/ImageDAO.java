@@ -2,6 +2,7 @@ package dao;
 
 import bean.Image_Product;
 import bean.Product;
+import bean.Product_Color;
 import db.JDBIConnector;
 
 import java.util.List;
@@ -18,9 +19,8 @@ public class ImageDAO {
         );
         return imageList;
     }
-    public static void main(String[] args) {
 
-        System.out.println(getImageByProductId(1));
+    public static void main(String[] args) {
     }
 
 

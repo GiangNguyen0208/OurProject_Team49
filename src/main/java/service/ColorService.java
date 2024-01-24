@@ -16,4 +16,7 @@ public class ColorService {
     public List<Product_Color> getColorByProductId(int id) {
         return ColorDAO.getColorByProductId(id);
     }
+    public List<Product_Color> getListColorCodeByIdProduct(int id) {
+        return ColorDAO.getListColorCodeByIdProduct(id);
+    }
 }

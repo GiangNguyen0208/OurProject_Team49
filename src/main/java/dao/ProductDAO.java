@@ -150,15 +150,9 @@ public static List<Product> getProductByCategory(String cateName) {
         List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
         List<Product> productByASC = ProductDAO.getProductAZ("ASC");
         List<Product> productDiscount = ProductDAO.getProductByDiscount();
-        List<Product> productById = ProductDAO.getProductById(1);
         int totalProductNumber = ProductDAO.getTotalProductNumber();
-        System.out.println(totalProductNumber);
 //        Item item = ProductDAO.getItemById(1);
     }
-
-
-
-
 
 
 }
