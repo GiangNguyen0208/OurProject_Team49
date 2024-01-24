@@ -49,7 +49,7 @@
     <!-- Forgot password -->
     <c:set var="emailNotExist" value="${requestScope.emailNotExist}"/>
     <div class="form-wrapper sign-up" id="forget-pw__form">
-        <a href="./index.jsp" class="back-cta">
+        <a href="index.jsp" class="back-cta">
             <i class="fa-solid fa-chevron-left"></i>
             Trở về trang chủ
         </a>
@@ -84,7 +84,7 @@
             <div class="footer">
                 <span>Quay trở lại đăng nhập</span>
                 <button type="button" class="link login-in-pw" id="">
-                    <a href="./logIn.jsp">Đăng Nhập</a>
+                    <a href="logIn.jsp">Đăng Nhập</a>
                 </button>
             </div>
         </form>
