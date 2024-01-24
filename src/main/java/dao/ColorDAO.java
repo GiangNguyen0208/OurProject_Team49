@@ -20,7 +20,29 @@ public class ColorDAO {
         return colorList;
     }
 
+//    public static List<Product_Color> getCodeColor(String codeColor) {
+//        List<Product_Color> colorList = JDBIConnector.me().withHandle(handle ->
+//                handle.createQuery("Select Distinct product_color.codeColor from product_color\n"
+//                        .matches(Product_Color.class)
+//                        .collect(Collectors.toList()))
+//        );
+//        return colorList;
+//    }
+public static List<Product_Color> getListColorCodeByIdProduct(int id) {
+    List<Product_Color> listColor = JDBIConnector.me().withHandle(handle ->
+            handle.createQuery("SELECT product_color.nameColor, product_color.codeColor " +
+                            "From product_color " +
+                            "Inner Join product_details On product_color.detailId = product_details.id " +
+                            "Where product_color.detailId = :id")
+                    .bind("id", id)
+                    .mapToBean(Product_Color.class)
+                    .collect(Collectors.toList())
+    );
+    return listColor;
+}
     public static void main(String[] args) {
-        List<Product_Color> colorList = ColorDAO.getColorByProductId(1);
+
+        List<Product_Color> colorList = ColorDAO.getListColorCodeByIdProduct(1);
+        System.out.println(colorList);
     }
 }

@@ -1,38 +1,42 @@
-function decrease(rowId) {
-    var quantityElement = document.getElementById('quantity' + rowId);
-    var currentQuantity = parseInt(quantityElement.value);
-    currentQuantity = Math.max(1, currentQuantity - 1);
-    quantityElement.value = currentQuantity;
-    updateTotalPrice(rowId);
+function updateQuantity(index, change) {
+    var quantityInput = document.getElementById('quantity' + index);
+    var newQuantity = parseInt(quantityInput.value) + change;
+
+    // Make sure the new quantity is at least 1
+    newQuantity = Math.max(newQuantity, 1);
+
+    // Update the quantity display
+    quantityInput.value = newQuantity;
 }
 
-function increase(rowId) {
-    var quantityElement = document.getElementById('quantity' + rowId);
-    var currentQuantity = parseInt(quantityElement.value);
-    currentQuantity++;
-    quantityElement.value = currentQuantity;
-    updateTotalPrice(rowId);
+function submitQuantity(index) {
+    // Retrieve the current quantity
+    var quantityInput = document.getElementById('quantity' + index);
+    var newQuantity = parseInt(quantityInput.value);
+
+    // Send AJAX request to update quantity on the server
+    updateQuantityOnServer(index, newQuantity);
 }
 
-function updateTotalPrice(rowId) {
-    var quantityElement = document.getElementById('quantity' + rowId);
-    var currentQuantity = parseInt(quantityElement.value);
-    var priceElement = document.getElementById('price' + rowId);
-    var price = parseFloat(priceElement.innerText.replace('Đ', '').trim());
-    var totalPriceElement = document.getElementById('totalPriceOfProduct' + rowId);
-    var totalPrice = currentQuantity * price;
-    totalPriceElement.innerText = '<%= formatCurrency(' + totalPrice + ') %>';
-    updateTotal();
+function updateQuantityOnServer(index, newQuantity) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Update any other UI elements if needed
+            // For example, update the total price here
+            updateTotalPrice(index);
+        }
+    };
+
+    // Set up the request
+    xhr.open('POST', '<%= request.getContextPath() %>/updateQuantity', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // Send the data
+    var params = 'index=' + index + '&newQuantity=' + newQuantity;
+    xhr.send(params);
 }
 
-function updateTotal() {
-    var total = 0;
-    var rowCount = <%= cart.size() %>;
-    for (var i = 0; i < rowCount; i++) {
-        var totalPriceElement = document.getElementById('totalPriceOfProduct' + i);
-        var totalPrice = parseFloat(totalPriceElement.innerText.replace('Đ', '').trim());
-        total += totalPrice;
-    }
-    document.querySelector('.total').innerText = '<%= formatCurrency(' + total + ') %>';
-}
+function updateTotalPrice(index) {
+    var quantity = submitQuantity(index)
 }
