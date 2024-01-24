@@ -18,7 +18,7 @@ import java.util.List;
 
 @WebServlet(value = "/addCategory")
 public class AdminAddCategory extends HttpServlet {
-
+    String error = "Không thể thêm danh mục";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
@@ -30,6 +30,9 @@ public class AdminAddCategory extends HttpServlet {
         boolean addSuccess = CategoryDAO.addNewCategory(newCategory);
 
         if(addSuccess) {
+            req.getRequestDispatcher("/adminEditProduct.jsp").forward(req, resp);
+        }else {
+            req.setAttribute("error", error);
             req.getRequestDispatcher("/adminEditProduct.jsp").forward(req, resp);
         }
     }

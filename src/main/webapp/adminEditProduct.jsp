@@ -170,8 +170,7 @@
                 <span class="close-btn-cate" onclick="closeDialog()">X</span>
                 <label for="input1">Tên danh mục</label>
                 <input type="text" id="input1" name="new-category">
-                <input value="${product.getId()}" name="productId" hidden="hidden">
-                    <button type="submit">Thêm</button>
+                <button type="submit">Thêm</button>
             </div>
         </form>
         <form method="get" action="addBrand" class="dialog-brand">
@@ -179,10 +178,8 @@
                 <div class="dialog-title">Thêm thương hiệu</div>
                 <span class="close-btn-brand" onclick="closeDialog()">x</span>
                 <label>Tên thương hiệu</label>
-                <input type="text">
-                <button type="button">
-                    <a class="link" href=""> Thêm</a>
-                </button>
+                <input type="text" name="new-brand">
+                <button type="submit">Thêm</button>
             </div>
         </form>
     </div>

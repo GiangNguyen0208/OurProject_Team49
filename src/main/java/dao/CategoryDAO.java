@@ -41,12 +41,6 @@ public class CategoryDAO {
         );
     }
 
-//    public static void main(String[] args) {
-//        for (int i = 1; i < 8; i++) {
-//            System.out.println(getBrandName(i));
-//        }
-//    }
-
     public static String getSupplierName(int id) {
         return JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT name FROM suppliers WHERE id = :id")
@@ -110,10 +104,9 @@ public class CategoryDAO {
             return JDBIConnector.me().withHandle(handle ->
                     handle.createUpdate("INSERT INTO categories(name) VALUES (:name)")
                             .bind("name", newCategory)
-                            .execute() > 0); // Kiểm tra xem có bản ghi nào bị ảnh hưởng hay không
+                            .execute() > 0);
         } catch (Exception e) {
-            // Xử lý ngoại lệ nếu cần thiết
-            e.printStackTrace();
+            System.out.println("Lỗi");
             return false;
         }
     }
