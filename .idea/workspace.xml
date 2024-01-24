@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="add category">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddBrand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddBrand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddCategory.java" afterDir="false" />
-    </list>
+    <list default="true" id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="fix add brand and add category" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -396,7 +392,7 @@
       <workItem from="1705904873878" duration="22889000" />
       <workItem from="1705985187533" duration="925000" />
       <workItem from="1705986125669" duration="25793000" />
-      <workItem from="1706074674547" duration="21568000" />
+      <workItem from="1706074674547" duration="22787000" />
     </task>
     <task id="LOCAL-00001" summary="admin view product">
       <option name="closed" value="true" />
@@ -446,7 +442,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706099703554</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix add brand and add category">
+      <option name="closed" value="true" />
+      <created>1706100628393</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706100628393</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +474,8 @@
     <MESSAGE value="add brand and add category admin" />
     <MESSAGE value="fix admin add new brand" />
     <MESSAGE value="add category" />
-    <option name="LAST_COMMIT_MESSAGE" value="add category" />
+    <MESSAGE value="fix add brand and add category" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix add brand and add category" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
