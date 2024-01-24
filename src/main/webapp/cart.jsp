@@ -10,6 +10,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Locale" %>
 <%@ page import="java.text.NumberFormat" %>
+<%@ page import="service.ColorService" %>
 <% List<Item> shoppingCart = (List<Item>) request.getSession().getAttribute("cart");
     String announce = "";
 %>
@@ -113,6 +114,7 @@
                         <%
                             double total = 0;
                             double priceOfItem = 0;
+                            String codeColor = (String) request.getAttribute("selectedCodeColor");
                             List<Item> cart = (List<Item>) session.getAttribute("cart");
                             if (cart != null) {
                                 for (int i = 0; i < cart.size(); i++) {
@@ -133,11 +135,14 @@
                             <td>
                                 <img src="<%= ImageService.getInstance().getImageByProductId(item.getId()).get(0).getLink() %>" width="80">
                             </td>
+
                             <td id="price<%= i %>"><%= formatCurrency(item.getTotalPrice()) %></td>
                             <td>
-                                <input type="text" id="quantity<%= i %>" value="<%= quantity %>">
-                                <button onclick="decrease(<%= i %>)">Giảm</button>
-                                <button onclick="increase(<%= i %>)">Tăng</button>
+                                <form action="" method="post">
+                                    <input type="text" id="quantity<%= i %>" name="quantity<%= i %>" value="<%= quantity %>">
+                                    <button type="submit" name="action" value="minus">Giảm</button>
+                                    <button type="submit" name="action" value="add">Tăng</button>
+                                </form>
                             </td>
                             <td id="totalPriceOfProduct<%= i %>"><%= formatCurrency(priceOfItem) %></td>
                         </tr>
@@ -155,6 +160,7 @@
                 </div>
                 <button><a href="<%= request.getContextPath()%>/products">Tiếp tục mua sắm</a></button>
             </div>
+        </div>
     </section>
     <section class="cart__content">
         <div class="right__content">
@@ -176,12 +182,12 @@
                         </p>
                     </div>
                     <div class="box__order__active">
-                        <form action="bill.jsp" method="post">
+                        <form action="processPayment" method="post">
                             <!-- Include hidden input fields for order details -->
                             <input type="hidden" name="total" value="<%= total %>">
                             <!-- Add other necessary hidden fields -->
 
-                            <button type="submit" class="btn__payment"
+                            <button type="submit" class="btn__payment">
                                 <a href="#">Thanh toán</a>
                             </button>
                         </form>
