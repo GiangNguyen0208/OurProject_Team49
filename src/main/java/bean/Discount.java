@@ -48,7 +48,10 @@ public class Discount {
     @Override
     public String toString() {
         return "Discount{" +
-                "amount=" + amount +
+                "id=" + id +
+                ", amount=" + amount +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
                 '}';
     }
 }

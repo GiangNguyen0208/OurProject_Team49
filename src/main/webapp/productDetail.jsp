@@ -1,6 +1,32 @@
-
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="service.ImageService" %>
+<%@ page import="dao.ImageDAO" %>
+<%@ page import="java.awt.*" %>
+<%@ page import="java.text.DecimalFormat" %>
+<%@ page import="bean.*" %>
+<%@ page import="service.ProductDetailService" %>
+<%@ page import="java.util.Locale" %>
+<%@ page import="java.text.NumberFormat" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+
+    int selectedProductId  = Integer.parseInt(request.getParameter("selectedProductId"));
+    Product selectedProduct = ProductDetailService.getInstance().getProductById(selectedProductId);
+    String selectedBrandName = selectedProduct.getName();
+    double discount = (double) request.getAttribute("discount");
+    List<Image_Product> productImages = (List<Image_Product>) request.getAttribute("productImages");
+    List<Product_Color> productColors = (List<Product_Color>) request.getAttribute("productColors");
+
+    // Check if selectedProduct is not null before accessing its properties
+    if (selectedProduct != null) {
+        String basePrice = NumberFormat.getCurrencyInstance(new Locale("vi", "VN")).format(selectedProduct.getTotalPrice());
+        double priceDiscount = selectedProduct.getTotalPrice() * (1 - discount);
+        String discountPrice = NumberFormat.getCurrencyInstance(new Locale("vi", "VN")).format(priceDiscount);
+        // Calculate discounted price
+%>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -8,8 +34,8 @@
         <title>Chi tiết sản phẩm</title>
 
         <!-- reset CSS -->
-        <link rel="stylesheet" href="assets/css/reset.css" />
-        <link rel="stylesheet" href="assets/css/index.css" />
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
         <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
         <!-- embed fonts -->
@@ -51,14 +77,14 @@
             referrerpolicy="no-referrer"
         />
         <!-- styles -->
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="assets/css/productDetail.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/productDetail.css" />
 
         <!-- OWL CAROUSEL CSS -->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
         <link
             rel="stylesheet"
-            href="assets/css/owl.theme.default.min.css"
+            href="./assets/css/owl.theme.default.min.css"
         />
     </head>
     <body>
@@ -68,12 +94,12 @@
         <!-- PRODUCT DETAIL -->
         <div class="product__detail">
             <div class="product">
-                <div class="product-title">Pearl PSP923XP/C452</div>
+                <div class="product-title"><%= selectedProduct.getName() %></div>
 
                 <div id="product__detail" class="product-content detail">
                     <div class="product__img">
                         <div class="product__img-spot">
-                            <img src="assets/img/product/sp1.jpg" alt="" />
+                            <img src="<%= ((List<Image_Product>)request.getAttribute("productImages")).get(0).getLink()%>" alt="" />
                             <button class="cta-img left">
                                 <i class="fa-solid fa-arrow-left-long"></i>
                             </button>
@@ -82,61 +108,38 @@
                             </button>
                         </div>
                         <div class="product__img-sub">
-                            <img
-                                class="item-img active"
-                                src="assets/img/product/sp1.jpg"
-                                alt=""
-                            />
-                            <img
-                                class="item-img"
-                                src="assets/img/product/sp1.jpg"
-                                alt=""
-                            />
-                            <img
-                                class="item-img"
-                                src="assets/img/product/sp1.jpg"
-                                alt=""
-                            />
-                            <img
-                                class="item-img"
-                                src="assets/img/product/sp1.jpg"
-                                alt=""
-                            />
-                            <img
-                                class="item-img"
-                                src="assets/img/product/sp1.jpg"
-                                alt=""
-                            />
+                            <% for (Image_Product img : productImages) { %>
+                            <div class="item">
+                                <img class="item-img" src="<%= ImageDAO.getImageByProductId(img.getDetailId())%>" alt=""/>
+                            </div>
+                            <% } %>
                         </div>
                     </div>
                     <div class="product__info">
                         <div class="product__info-row">
                             <div class="product__info-price">
-                                <p class="discount-price">30.000.000 VND</p>
-                                <p class="base-price">35.000.000 VND</p>
+                                <p class="discount-price"><%= discountPrice %> VND</p>
+                                <p class="base-price"><%= basePrice %> VND</p>
                             </div>
-                            <p class="discount">-15%</p>
+                            <p class="discount"><%= (discount * 100) %> %</p>
                         </div>
                         <div class="product__info-row">
                             <div class="product-color title">Màu sắc</div>
                             <div class="product-color-cta">
-                                <button class="cta white"></button>
-                                <button class="cta black"></button>
+                                <% for (Product_Color color : productColors) { %>
+                                    <button class="cta <%= color.getNameColor().toLowerCase() %>"></button>
+                                <% } %>
                             </div>
                         </div>
                         <div class="product__info-row">
-                            <div class="product-color title">Thương hiệu:</div>
-                            <div class="product-brand title">Roland</div>
+                            <div class="product-color title">Thương hiệu: </div>
+                            <div class="product-brand title"><%= selectedBrandName %></div>
                         </div>
                         <div class="product__info-row">
                             <div class="product_desc">
                                 <p class="title">Giới thiệu</p>
                                 <p class="introduce">
-                                    Bộ trống VAD507 kết hợp bộ trống acoustic và
-                                    tính linh hoạt của trống điện. Nó bao gồm 5
-                                    loại trống gỗ, cảm biến tiên tiến, hi-hat
-                                    điện tử, và hộp tiếng TD-27 với nhiều cải
-                                    tiến.
+                                    <%= selectedProduct.getDescription()%>
                                 </p>
                                 <a href="#product__info">
                                     <button class="more-detail">
@@ -157,10 +160,19 @@
                                     </button>
                                 </div>
                             </div>
-                            <button class="add__cart">
-                                Thêm vào giỏ hàng
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <a href="<%= request.getContextPath()%>/cart?action=buy&id=<%=selectedProduct.getId()%>">
+<%--                                <c:url var="link" value="cart">--%>
+<%--                                    <c:param name="action" value="buy"></c:param>--%>
+<%--                                    <c:param name="id" value="${item.id}"></c:param>--%>
+<%--                                </c:url>--%>
+<%--                                <a href="${link}">--%>
+<%--                                    <div class="add">Xem chi tiết</div>--%>
+<%--                                </a>--%>
+                                <button class="add__cart">
+                                    Thêm vào giỏ hàng
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -200,7 +212,7 @@
                     </p>
 
                     <img
-                        src="assets/img/product/sp1.jpg"
+                        src="./assets/img/product/sp1.jpg"
                         alt=""
                         class="info-img"
                     />
@@ -226,7 +238,7 @@
                     </p>
 
                     <img
-                        src="assets/img/product/sp1.jpg"
+                        src="./assets/img/product/sp1.jpg"
                         alt=""
                         class="info-img"
                     />
@@ -424,10 +436,10 @@
 
         <!-- MAIN JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/product.js"></script>
+        <script src="./js/product.js"></script>
 
         <!-- OWL CAROUSEL JS -->
-        <script src="js/owl.carousel.min.js"></script>
+        <script src="./js/owl.carousel.min.js"></script>
         <script>
             $(".owl-carousel").owlCarousel({
                 loop: true,
@@ -444,3 +456,8 @@
         </script>
     </body>
 </html>
+<%
+    } else {
+        // Handle the case where selectedProduct is null
+    }
+%>

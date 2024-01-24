@@ -1,6 +1,10 @@
 package bean;
 
-public class Product {
+import dao.ProductDAO;
+
+import java.util.List;
+
+public class Product extends ProductDAO {
     private int id;
     private String name;
     private int discountId;
@@ -11,6 +15,19 @@ public class Product {
     private double totalPrice;
     private String description;
     private int status;
+    private Image_Product image;
+
+    public Product() {
+    }
+
+    public Product(int id, String s, String name, String category, double price, String desc) {
+        this.id = id;
+        this.name = name;
+        this.categoryId = categoryId;
+        this.totalPrice = totalPrice;
+        this.description = description;
+        this.image = image;
+    }
 
     public int getId() {
         return id;

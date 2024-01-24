@@ -1,10 +1,12 @@
 package service;
+
 import bean.Image_Product;
 import bean.Product;
 import dao.ImageDAO;
 import dao.ProductDAO;
 
 import java.util.List;
+
 public class ImageService {
     public static ImageService instance;
     public static ImageService getInstance() {

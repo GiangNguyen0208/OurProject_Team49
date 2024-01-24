@@ -1,14 +1,23 @@
+<%@ page import="bean.Product" %>
+<%@ page import="dao.ImageDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    List<Product> products = (List<Product>) request.getAttribute("products");
+    if (products == null) products = new ArrayList<>();
+%>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin về Chúng tôi</title>
     <!-- reset CSS -->
-    <link rel="stylesheet" href="assets/css/reset.css"/>
-    <link rel="stylesheet" href="assets/css/about.css"/>
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/reset.css"/>
+    <link rel="stylesheet" href="./assets/css/about.css"/>
+    <link rel="stylesheet" href="./assets/css/index.css">
     <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
     <!-- embed fonts -->
@@ -45,7 +54,7 @@
             referrerpolicy="no-referrer"
     />
     <!-- styles -->
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body>
 <!-- HEADER -->
@@ -81,7 +90,7 @@
                 <div class="about__our__list row">
                     <div class="about__our__item col col-third mt-32">
                         <div class="about__item__image">
-                            <img class="member__img" decoding="async" src="assets/img/team/ad3.PNG">
+                            <img class="member__img" decoding="async" src="./assets/img/team/ad3.PNG">
 
                         </div>
                         <div class="about__item__info">
@@ -92,7 +101,7 @@
                     </div>
                     <div class="about__our__item col col-third mt-32">
                         <div class="about__item__image">
-                            <img class="member__img" decoding="async" src="assets/img/team/ad1.jpg">
+                            <img class="member__img" decoding="async" src="./assets/img/team/ad1.jpg">
 
                         </div>
                         <div class="about__item__info">
@@ -103,7 +112,7 @@
                     </div>
                     <div class="about__our__item col col-third mt-32">
                         <div class="about__item__image">
-                            <img class="member__img" decoding="async" src="assets/img/team/ad2.jpg">
+                            <img class="member__img" decoding="async" src="./assets/img/team/ad2.jpg">
 
                         </div>
                         <div class="about__item__info">
@@ -142,7 +151,7 @@
                 <div class="row__two__content">
                     <div class="col col-second mt-32">
                         <div class="about__two__image">
-                            <img src="assets/img/about/DrumPlayer.jpg" alt="">
+                            <img src="./assets/img/about/DrumPlayer.jpg" alt="">
 
                         </div>
                     </div>
@@ -166,17 +175,17 @@
                 <div class="images__holder" style="clip-path: inset(0px); transition: all 2s ease 0s;">
                     <div class="images__slider" style="visibility: visible;">
                         <div class="images__slider__item img-prev" data-index="1">
-                            <div class="item__image" style="background-image: url('assets/img/about/JazzDrum.jpg')">
+                            <div class="item__image" style="background-image: url('./assets/img/about/JazzDrum.jpg')">
                             </div>
                         </div>
                         <div class="images__slider__item img-active" data-index="2">
                             <div class="item__image"
-                                 style="background-image: url('assets/img/about/ElectronicDrum.jpg')">
+                                 style="background-image: url('./assets/img/about/ElectronicDrum.jpg')">
                             </div>
                         </div>
                         <div class="images__slider__item" data-index="3">
                             <div class="item__image"
-                                 style="background-image: url('assets/img/about/TambourineDrum.jpg')">
+                                 style="background-image: url('./assets/img/about/TambourineDrum.jpg')">
                             </div>
                         </div>
                     </div>
@@ -223,82 +232,24 @@
                     </div>
                 </div>
                 <div class="list">
-                    <div class="item">
-                        <div class="img">
-                            <img src="assets/img/product/sp1.jpg" alt="Roland VAD 706">
+                    <% for (Product p : products) {%>
+                        <div class="item">
+                            <a href="productDetail.jsp">
+                                <div class="img">
+                                    <img src="<%=ImageDAO.getImageByProductId(p.getId()).get(0).getLink()%>" alt="<%=p.getName()%>">
+                                </div>
+                                <div class="item_content">
+                                    <div class="title"><%=p.getName()%></div>
+                                    <div class="desc"><%=p.getDescription()%></div>
+                                    <div class="price"><%=p.getTotalPrice()%></div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="item_content">
-                            <div class="title">Roland VAD 706</div>
-                            <div class="desc">Bộ trống điện tử tinh tế với kiểu dáng gi</div>
-                            <div class="price">Liên Hệ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="assets/img/product/sp2.jpg" alt="Roland VAD 507">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Roland VAD 507</div>
-                            <div class="desc">Bộ trống điện tử tinh tế với kiểu dáng gi</div>
-                            <div class="price">124,000,000đ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="assets/img/product/sp3.jpg" alt="Roland VAD 504">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Roland VAD 504</div>
-                            <div class="desc">Bộ trống điện tử tinh tế với kiểu dáng gi</div>
-                            <div class="price">99,000,000đ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="assets/img/product/sp4.jpg" alt="Alesis Turbo Mesh Kit">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Alesis Turbo Mesh Kit</div>
-                            <div class="desc">Bộ trống điện tử 7 chi tiết mặt lưới</div>
-                            <div class="price">9,450,000đ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="assets/img/product/sp5.jpg" alt="Alesis Crimson II SE">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Alesis Crimson II SE</div>
-                            <div class="desc">Bộ trống điện tử đệm mặt lưới 9 chi tiết</div>
-                            <div class="price">29,300,000đ</div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img">
-                            <img src="assets/img/product/sp6.jpg" alt="Trống Pearl Roadshow 505">
-                        </div>
-                        <div class="item_content">
-                            <div class="title">Trống Pearl Roadshow 505</div>
-                            <div class="desc">Pearl Roadshow series (5 trống, kick 20") 20"x16" Bass - 10"x07" Tom -
-                                12"x08&amp;quo
-                            </div>
-                            <div class="price">11,600,000đ</div>
-
-                        </div>
-                    </div>
-
-
+                    <%}%>
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>
 <!-- FOOTER -->
 <footer>
@@ -387,7 +338,7 @@
 </footer>
 <!-- MAIN JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/about.js"></script>
+<script src="./js/about.js"></script>
 </body>
 
 </html>

@@ -36,6 +36,10 @@ public class UserService {
         return null;
     }
 
+    public boolean isPhoneNumberValid(String phoneNumber) {
+        return phoneNumber.matches("^\\d{10}$");
+    }
+
 
     public static void main(String[] args) {
         List<User> users = JDBIConnector.me().withHandle(handle ->

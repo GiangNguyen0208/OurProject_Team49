@@ -1,4 +1,8 @@
 package dao;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0e3f2594ca2143b0867aaffefee7030c20aa9694
 import bean.Image_Product;
 import bean.Product;
 import db.JDBIConnector;
@@ -10,6 +14,8 @@ public class ImageDAO {
         List<Image_Product> imageList = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("Select * from image_products\n" +
                                 "where detailId ="+id)
+                                "where detailId = :id")
+                        .bind("id", id)
                         .mapToBean(Image_Product.class)
                         .collect(Collectors.toList())
         );
@@ -19,4 +25,10 @@ public class ImageDAO {
     public static void main(String[] args) {
         System.out.println(getImageByProductId(1));
     }
+
+    public static void main(String[] args) {
+
+        System.out.println(getImageByProductId(1));
+    }
+
 }

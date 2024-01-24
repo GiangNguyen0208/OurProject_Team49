@@ -30,7 +30,7 @@
     background: linear-gradient(90deg, transparent 0%, var(--sub-main-color) 90%);
 }
 
-.search-product {
+ .search-product {
     position: fixed;
     display: flex;
     align-items: center;
@@ -56,7 +56,7 @@
     border: none;
 }
 
-.search-ic {
+ .search-ic {
     margin-left: 12px;
     font-size: 2.4rem;
 
@@ -134,17 +134,17 @@
         float: left;
         margin-bottom: 110px;
     }
-
+    
     .box_order{
         width: 100%;
         float: left;
         margin-bottom: 20px;
         background: #f2f3f7;
     }
-
+    
     .box_order select{
         font-size: 13px;
-        padding: 5px 8px;
+            padding: 5px 8px;
     }
     .box_order > label{
         text-transform: uppercase;
@@ -166,11 +166,11 @@
         float: left;
         margin: 0;
     }
-
+    
     .pull-right {
         float: right!important;
     }
-
+    
     .sort_pricess{
         float: left;
         cursor: pointer;
@@ -178,13 +178,15 @@
     .sort_feature{
         float: left;
         cursor: pointer;
+        margin-top: 9px;
+        color: black;
     }
     .sort_manufacturer{
         float: left;
         cursor: pointer;
     }
-
-
+    
+    
     .box_order_item > label.sort_order{
         padding-right: 20px;
         cursor: pointer;
@@ -219,7 +221,7 @@
         float: left;
         margin-bottom: 5px;
     }
-
+    
     .box_s.box_orderss .box_ss ul li{
         width: 100%;
     }
@@ -227,13 +229,13 @@
         font-size: 14px;
         font-weight: normal;
         float: left;
-        margin: 0;
+        margin: 0;  
         cursor: pointer;
+        color: black;
     }
     .box_ss input{
         display: none;
     }
-
     .sort_pricess{
         float: left;
         cursor: pointer;
@@ -241,12 +243,13 @@
     .sort_feature{
         float: left;
         cursor: pointer;
+        color: black;
     }
     .sort_manufacturer{
         float: left;
         cursor: pointer;
     }
-
+    
     #sort_manufacturer .box_ss ul li{
         width: 33.333333%;
     }
@@ -275,6 +278,19 @@
     min-height: 200px;
     padding: 20px;
 }
+.item_content form a .add {
+    background-color: #ee6c4d;
+    border: 1px solid #293241;
+    border-radius: 7px;
+    color: black;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .5s;
+}
 
 .list .item .img {
     background: var(--main-color);
@@ -296,6 +312,14 @@
 .list .title {
     font-size: x-large;
     color: #fff;
+
+}
+
+.list .title a {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .list .desc {
@@ -306,6 +330,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
 
 .list .price {
     font-size: large;
@@ -319,12 +344,13 @@
     width: 100%;
     border: none;
 }
+
 .listPage {
     text-align: center;
     list-style: none;
     margin: 30px;
 }
-.listPage li {
+.listPage a {
     background-color: #ffffffBD;
     padding: 20px;
     display: inline-block;

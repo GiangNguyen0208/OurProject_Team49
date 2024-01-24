@@ -8,6 +8,9 @@ public class Brand {
         this.id = id;
         this.name = name;
     }
+    public Brand() {
+
+    }
 
     public int getId() {
         return id;
@@ -24,4 +27,15 @@ public class Brand {
     public void setName(String name) {
         this.name = name;
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public String toString() {
+        return "Brand{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+>>>>>>> 0e3f2594ca2143b0867aaffefee7030c20aa9694
 }
