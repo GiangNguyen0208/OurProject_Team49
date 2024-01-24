@@ -60,11 +60,14 @@ public class CartController extends HttpServlet {
     protected void doGet_Buy(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+
         if (session.getAttribute("cart") == null) {
             System.out.println("run if");
             List<Item> cart = new ArrayList<>();
+            String selectedCodeColor = request.getParameter("selectedCodeColor");
             Item item = new Item(productDetailService.getProductById(Integer.parseInt(request.getParameter("id"))), 1);
             cart.add(item);
+            session.setAttribute("selectedColorName", selectedCodeColor);
             session.setAttribute("cart", cart);
         } else {
             System.out.println("run else");

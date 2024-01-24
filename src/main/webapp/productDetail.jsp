@@ -8,6 +8,7 @@
 <%@ page import="service.ProductDetailService" %>
 <%@ page import="java.util.Locale" %>
 <%@ page import="java.text.NumberFormat" %>
+<%@ page import="dao.ColorDAO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -126,8 +127,14 @@
                         <div class="product__info-row">
                             <div class="product-color title">Màu sắc</div>
                             <div class="product-color-cta">
-                                <% for (Product_Color color : productColors) { %>
-                                    <button class="cta <%= color.getNameColor().toLowerCase() %>"></button>
+                                <% List<Product_Color> colorList = (List<Product_Color>) request.getAttribute("productColors");
+                                    for (Product_Color color : colorList) { %>
+<%--                                    <button class="cta <%= )ImageDAO.getImageByProductId(color.getId() %>"></button>--%>
+                                <form action="cart" method="get">
+                                    <label class="option_color" style="background-color: <%= color.getCodeColor()%>">
+                                        <input type="radio" name="selectedCodeColor" hidden="" value="<%= color.getCodeColor()%>">
+                                    </label>
+                                </form>
                                 <% } %>
                             </div>
                         </div>

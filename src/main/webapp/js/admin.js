@@ -13,13 +13,11 @@ manageUser.addEventListener('click', function() {
     manageBillContent.classList.remove('active');
 });
 
-
 manageProduct.addEventListener('click', function() {
     manageUserContent.classList.remove('active');
     manageProductContent.classList.add('active');
     manageBillContent.classList.remove('active');
 });
-
 
 manageBill.addEventListener('click', function() {
     manageUserContent.classList.remove('active');
