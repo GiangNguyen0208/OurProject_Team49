@@ -4,6 +4,14 @@ public class Image_Product {
     int id;
     String link;
 
+    public Image_Product(int id, String link) {
+        this.id = id;
+        this.link = link;
+    }
+
+    public Image_Product() {
+    }
+
     int detailId;
 
     public int getId() {

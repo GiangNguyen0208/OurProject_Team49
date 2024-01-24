@@ -25,8 +25,8 @@ public class HomeController extends HttpServlet {
             req.setAttribute("products", productList);
             req.getRequestDispatcher("index.jsp").forward(req, resp);
         } catch (NumberFormatException e) {
-            e.printStackTrace();  // Handle or log the exception appropriately
-            resp.sendRedirect("error.jsp");
+            e.printStackTrace();
+            resp.sendRedirect("errorPage.jsp");
         }
     }
     @Override

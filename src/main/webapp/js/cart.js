@@ -1,29 +1,38 @@
-function decrease() {
-    var quantityInput = document.getElementById('quantity');
-    var currentQuantity = parseInt(quantityInput.value);
-    if (currentQuantity > 1) {
-        quantityInput.value = currentQuantity - 1;
-        updateTotalPrice();
-    }
+function decrease(rowId) {
+    var quantityElement = document.getElementById('quantity' + rowId);
+    var currentQuantity = parseInt(quantityElement.value);
+    currentQuantity = Math.max(1, currentQuantity - 1);
+    quantityElement.value = currentQuantity;
+    updateTotalPrice(rowId);
 }
 
-// Hàm tăng số luogngwj
-function increase() {
-    var quantityInput = document.getElementById('quantity');
-    var currentQuantity = parseInt(quantityInput.value);
-    quantityInput.value = currentQuantity + 1;
-    updateTotalPrice();
+function increase(rowId) {
+    var quantityElement = document.getElementById('quantity' + rowId);
+    var currentQuantity = parseInt(quantityElement.value);
+    currentQuantity++;
+    quantityElement.value = currentQuantity;
+    updateTotalPrice(rowId);
 }
 
-// Hàm cập nhật lại giá tiền.
-function updateTotalPrice() {
-    let priceElement = document.getElementById('price');
-    var quantityInput = document.getElementById('quantity').value;
+function updateTotalPrice(rowId) {
+    var quantityElement = document.getElementById('quantity' + rowId);
+    var currentQuantity = parseInt(quantityElement.value);
+    var priceElement = document.getElementById('price' + rowId);
+    var price = parseFloat(priceElement.innerText.replace('Đ', '').trim());
+    var totalPriceElement = document.getElementById('totalPriceOfProduct' + rowId);
+    var totalPrice = currentQuantity * price;
+    totalPriceElement.innerText = '<%= formatCurrency(' + totalPrice + ') %>';
+    updateTotal();
+}
 
-    if (priceElement.length > 0) {
-        priceElement.slice(0, -1);
-        let price = priceElement.parseFloat();
-        var totalPrice = price * quantityInput;
-        document.getElementById('totalPriceOfProduct').innerText = totalPrice + " Đ";
+function updateTotal() {
+    var total = 0;
+    var rowCount = <%= cart.size() %>;
+    for (var i = 0; i < rowCount; i++) {
+        var totalPriceElement = document.getElementById('totalPriceOfProduct' + i);
+        var totalPrice = parseFloat(totalPriceElement.innerText.replace('Đ', '').trim());
+        total += totalPrice;
     }
+    document.querySelector('.total').innerText = '<%= formatCurrency(' + total + ') %>';
+}
 }

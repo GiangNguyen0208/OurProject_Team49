@@ -1,7 +1,6 @@
 package dao;
 
 import bean.Brand;
-import bean.Product;
 import db.JDBIConnector;
 
 import java.util.List;
@@ -17,11 +16,20 @@ public class BrandDAO {
         return brandList;
     }
 
-    public static void main(String[] args) {
-        List<Brand> getBrands = BrandDAO.getAllBrands();
-        System.out.println(getBrands + "\n");
+    public static Brand getNameBrandById(int brandId) {
+        Brand brand = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT name FROM brands " +
+                                "WHERE id = :id")
+                        .bind("id", brandId)
+                        .mapToBean(Brand.class)
+                        .findOne()
+                        .orElse(null) // Giả sử trả về null nếu không tìm thấy sản phẩm
+        );
+        return brand;
     }
 
-
-
+    public static void main(String[] args) {
+        Brand brand = getNameBrandById(1);
+        System.out.println(brand);
+    }
 }

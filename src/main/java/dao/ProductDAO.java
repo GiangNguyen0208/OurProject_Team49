@@ -102,6 +102,16 @@ public static List<Product> getProductByCategory(String cateName) {
     return quantityInStock;
 }
 
+    public static int getTotalProductNumber() {
+        int totalProductNumber = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT count(*) FROM product_details")
+                        .mapTo(int.class)
+                        .findOne()
+                        .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
+        );
+        return totalProductNumber;
+}
+
     public void updateProductQuantityInStock(int newQuantity, int id) {
         JDBIConnector.me().useHandle(handle ->
                 handle.createUpdate("UPDATE product_details SET quantity = :newQuantity WHERE id = :productId")
@@ -209,19 +219,15 @@ public static List<Product> getProductByCategory(String cateName) {
     }
 
     public static void main(String[] args) {
-//        List<Product> all = ProductDAO.getProductList();
-//        List<Product> productByCate = ProductDAO.getProductByCategory("Electric");
-//        List<Product> productByPrice = ProductDAO.getProductByPriceRange(0,10000000);
-//        List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
-//        List<Product> productByASC = ProductDAO.getProductAZ("ASC");
-//        List<Product> productDiscount = ProductDAO.getProductByDiscount();
-//        List<Product> productById = ProductDAO.getProductById(1);
-//        int productQuantityInStock = ProductDAO.getQuantityInStock(1);
-//      Item item = ProductDAO.getItemById(1);
-//        System.out.println(productQuantityInStock);
-//        System.out.println(adminViewProduct(1));
-        Product product = new Product(1, "jadl", 1, 1, 1, 1, 1, 100, "akdalfjaklfjaklf");
-        changeInforProduct(product);
+        List<Product> productByCate = ProductDAO.getProductByCategory("Electric");
+        List<Product> productByPrice = ProductDAO.getProductByPriceRange(0,10000000);
+        List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
+        List<Product> productByASC = ProductDAO.getProductAZ("ASC");
+        List<Product> productDiscount = ProductDAO.getProductByDiscount();
+        List<Product> productById = ProductDAO.getProductById(1);
+        int totalProductNumber = ProductDAO.getTotalProductNumber();
+        System.out.println(totalProductNumber);
+//        Item item = ProductDAO.getItemById(1);
     }
 
 

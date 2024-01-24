@@ -28,4 +28,13 @@ public class Product_Color {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+    @Override
+    public String toString() {
+        return "Product_Color{" +
+                "id=" + id +
+                ", nameColor='" + nameColor + '\'' +
+                ", product=" + product +
+                '}';
+    }
 }
