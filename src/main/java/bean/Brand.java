@@ -27,8 +27,6 @@ public class Brand {
     public void setName(String name) {
         this.name = name;
     }
-<<<<<<< HEAD
-=======
 
     @Override
     public String toString() {
@@ -37,5 +35,5 @@ public class Brand {
                 ", name='" + name + '\'' +
                 '}';
     }
->>>>>>> 0e3f2594ca2143b0867aaffefee7030c20aa9694
+
 }

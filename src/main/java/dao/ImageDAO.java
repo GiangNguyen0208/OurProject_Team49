@@ -1,8 +1,4 @@
 package dao;
-<<<<<<< HEAD
-=======
-
->>>>>>> 0e3f2594ca2143b0867aaffefee7030c20aa9694
 import bean.Image_Product;
 import bean.Product;
 import db.JDBIConnector;
