@@ -2,8 +2,10 @@ package dao;
 
 import bean.Category;
 import bean.Product;
+import bean.Supplier;
 import db.JDBIConnector;
 
+import javax.swing.*;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,7 +14,7 @@ public class CategoryDAO {
 
     public static List<Category> getAllCategory(){
         List<Category> categoryList = JDBIConnector.me().withHandle(handle ->
-                handle.createQuery("select name from categories")
+                handle.createQuery("select id, name from categories")
                         .mapToBean(Category.class)
                         .collect(Collectors.toList())
         );
@@ -55,6 +57,15 @@ public class CategoryDAO {
         );
     }
 
+    public static List<Supplier> getAllSupplier() {
+        List<Supplier> supplierList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("select id, name from suppliers")
+                        .mapToBean(Supplier.class)
+                        .collect(Collectors.toList())
+        );
+        return supplierList;
+    }
+
     public static Double getDiscountAmount(int id){
         return  JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT amount FROM discount WHERE id = :id")
@@ -85,9 +96,32 @@ public class CategoryDAO {
         );
     }
 
+    public static List<Supplier> getListSupplier() {
+        List<Supplier> supplierList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("select id, brandId, name, email, phone from suppliers")
+                        .mapToBean(Supplier.class)
+                        .collect(Collectors.toList())
+        );
+        return supplierList;
+    }
+
+    public static boolean addNewCategory(String newCategory) {
+        try {
+            return JDBIConnector.me().withHandle(handle ->
+                    handle.createUpdate("INSERT INTO categories(name) VALUES (:name)")
+                            .bind("name", newCategory)
+                            .execute() > 0); // Kiểm tra xem có bản ghi nào bị ảnh hưởng hay không
+        } catch (Exception e) {
+            // Xử lý ngoại lệ nếu cần thiết
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
-        Product product = ProductDAO.getProductById(4).get(0);
-        System.out.println(product.toString());
-        System.out.println(getDiscountAmount(product.getDiscountId()));
+//        Product product = ProductDAO.getProductById(4).get(0);
+//        System.out.println(product.toString());
+//        System.out.println(getDiscountAmount(product.getDiscountId()));
+        System.out.println(addNewCategory("haha"));
     }
 }

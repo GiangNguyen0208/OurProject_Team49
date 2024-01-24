@@ -17,9 +17,17 @@ public class ImageDAO {
         );
         return imageList;
     }
+
+    public static int removeImg(int idImg) {
+        return JDBIConnector.me().withHandle((handle -> {
+            return handle.createUpdate("DELETE FROM image_products WHERE id = :id")
+                    .bind("id", idImg)
+                    .execute();
+        }));
+    }
     public static void main(String[] args) {
 
-        System.out.println(getImageByProductId(1));
+        System.out.println(removeImg(23));
     }
 
 

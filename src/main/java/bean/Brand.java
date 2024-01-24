@@ -4,8 +4,6 @@ public class Brand {
     int id;
     String name;
 
-
-
     public int getId() {
         return id;
     }

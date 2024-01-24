@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class BrandDAO {
     public static List<Brand> getAllBrands(){
         List<Brand> brandList = JDBIConnector.me().withHandle(handle ->
-                handle.createQuery("select name from brands")
+                handle.createQuery("select id, name from brands")
                         .mapToBean(Brand.class)
                         .collect(Collectors.toList())
         );

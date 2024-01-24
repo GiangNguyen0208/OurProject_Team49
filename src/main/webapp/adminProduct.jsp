@@ -96,7 +96,7 @@
                     <c:forEach items="${requestScope.productList}" var="o">
                         <tr>
                             <td class="s-cl">
-                                <a class="link" href="adminViewProduct?productId=${o.getId()}">
+                                <a class="link" target="_blank" href="adminViewProduct?productId=${o.getId()}">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </td>

@@ -33,8 +33,6 @@ public class LoginController extends HttpServlet {
         pass = Encode.toSHA1(pass);
 
         verifyCode = VerificationCode.generateVerificationCode();
-
-
 //        Session
         User user = UserService.getInstance().checkLogin(username, pass);
         HttpSession session = req.getSession();

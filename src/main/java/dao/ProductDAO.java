@@ -177,12 +177,30 @@ public static List<Product> getProductByCategory(String cateName) {
 
     }
 
-
     public static <Product> List<Product> mergeListsDistinct(List<Product>... lists) {
         return Stream.of(lists)
                 .flatMap(List::stream)
                 .distinct()
                 .collect(Collectors.toList());
+    }
+
+    public static void changeInforProduct(Product product) {
+        JDBIConnector.me().useHandle(handle ->
+                handle.createUpdate("UPDATE product_details set " +
+                                "name = :name, discountId = :discountId, categoryId = :categoryId, brandId = :brandId, supplierId = :supplierId, quantity = :quantity, totalPrice = :totalPrice, description = :description" +
+                                " where id = :id")
+                        .bind("name", product.getName())
+                        .bind("discountId", product.getDiscountId())
+                        .bind("categoryId", product.getCategoryId())
+                        .bind("brandId", product.getBrandId())
+                        .bind("supplierId", product.getSupplierId())
+                        .bind("quantity", product.getQuantity())
+                        .bind("totalPrice", product.getTotalPrice())
+                        .bind("description", product.getDescription())
+                        .bind("id", product.getId())
+                        .execute()
+        );
+        System.out.println("Done");
     }
 
     public static List<Product> adminSearchProduct(String value) {
@@ -191,17 +209,19 @@ public static List<Product> getProductByCategory(String cateName) {
     }
 
     public static void main(String[] args) {
-        List<Product> all = ProductDAO.getProductList();
-        List<Product> productByCate = ProductDAO.getProductByCategory("Electric");
-        List<Product> productByPrice = ProductDAO.getProductByPriceRange(0,10000000);
-        List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
-        List<Product> productByASC = ProductDAO.getProductAZ("ASC");
-        List<Product> productDiscount = ProductDAO.getProductByDiscount();
-        List<Product> productById = ProductDAO.getProductById(1);
-        int productQuantityInStock = ProductDAO.getQuantityInStock(1);
-//        Item item = ProductDAO.getItemById(1);
-        System.out.println(productQuantityInStock);
-        System.out.println(adminViewProduct(1));
+//        List<Product> all = ProductDAO.getProductList();
+//        List<Product> productByCate = ProductDAO.getProductByCategory("Electric");
+//        List<Product> productByPrice = ProductDAO.getProductByPriceRange(0,10000000);
+//        List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
+//        List<Product> productByASC = ProductDAO.getProductAZ("ASC");
+//        List<Product> productDiscount = ProductDAO.getProductByDiscount();
+//        List<Product> productById = ProductDAO.getProductById(1);
+//        int productQuantityInStock = ProductDAO.getQuantityInStock(1);
+//      Item item = ProductDAO.getItemById(1);
+//        System.out.println(productQuantityInStock);
+//        System.out.println(adminViewProduct(1));
+        Product product = new Product(1, "jadl", 1, 1, 1, 1, 1, 100, "akdalfjaklfjaklf");
+        changeInforProduct(product);
     }
 
 
