@@ -31,7 +31,7 @@ public class BrandDAO {
     public static int getBiggestBrandId() {
         return JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("select max(id) from brands")
-                        .mapToBean(Integer.class)
+                        .mapTo(Integer.class)
                         .findOne()
                         .orElse(null)
         );
