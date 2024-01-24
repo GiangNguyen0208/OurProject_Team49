@@ -47,6 +47,7 @@ public class AdminAddCategory extends HttpServlet {
         session.setAttribute("brands", brandList);
         session.setAttribute("suppliers", supplierList);
         session.setAttribute("productId", productId);
+
         if(addSuccess) {
             req.getRequestDispatcher("/adminEditProduct.jsp").forward(req, resp);
         }else {
