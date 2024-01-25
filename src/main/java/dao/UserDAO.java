@@ -27,6 +27,25 @@ public class UserDAO {
         return user.isEmpty() ? null : user.get();
     }
 
+    public static User getUserById(int id) {
+        Optional<User> user = JDBIConnector.me().withHandle((handle ->
+                handle.createQuery("select * from users where users.id = ?")
+                        .bind(0, id)
+                        .mapToBean(User.class).stream().findFirst()
+        ));
+        return user.isEmpty() ? null : user.get();
+    }
+
+    public static List<User> getListUserById(int id) {
+        List<User> userList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM users WHERE user.id = ?")
+                        .bind(0, id)
+                        .mapToBean(User.class)
+                        .collect(Collectors.toList())
+        );
+        return userList;
+    }
+
 
     public static List<User> getUserList() {
         return JDBIConnector.me().withHandle(handle ->

@@ -35,6 +35,25 @@ public class UserService {
         return null;
     }
 
+    public User checkLoginByUsername (String username) {
+        User userByUsername = UserDAO.getUserByUsername(username);
+        if (userByUsername != null && userByUsername.getUsername().equals(username))
+        {
+            return userByUsername;
+        }
+        return null;
+    }
+
+
+    public User getListUserById(int id) {
+        return UserDAO.getListUserById(id).get(0);
+    }
+
+    public List<User> getAllUser() {
+        return UserDAO.getUserList();
+    }
+
+
     public boolean isPhoneNumberValid(String phoneNumber) {
         return phoneNumber.matches("^\\d{10}$");
     }
