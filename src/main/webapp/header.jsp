@@ -58,23 +58,17 @@
                     <span>Đăng Nhập</span>
                 </a>
             </c:when>
-            <c:when test="${auth.gender == 'M'}">
-                <div class="avatar-user male">
-                    <img src="./assets/img/icon/male.png" alt="">
-                    <ul class="user-menu">
-                        <li>Xin chào  ${auth.fullName}</li>
-                        <li>
-                            <a href="profile">Cài đặt</a>
-                        </li>
-                        <li>
-                            <a href="logout" class="sign-out">Đăng xuất</a>
-                        </li>
-                    </ul>
-                </div>
-            </c:when>
             <c:otherwise>
-                <div class="avatar-user female">
-                    <img src="./assets/img/icon/female.png" alt="">
+                <div class="avatar-user" >
+                    <c:choose>
+                        <c:when test="${auth.gender == 'F'}">
+                            <img src="./assets/img/icon/female.png" alt="">
+                        </c:when>
+                        <c:otherwise>
+                            <img src="./assets/img/icon/male.png" alt="">
+                        </c:otherwise>
+                    </c:choose>
+
                     <ul class="user-menu">
                         <li>
                             <a href="profile.jsp">Xin chào  ${auth.fullName}</a>
@@ -82,6 +76,11 @@
                         <li>
                             <a href="profile.jsp">Cài đặt</a>
                         </li>
+                        <c:if test="${auth.getRole() == 1}">
+                            <li>
+                                <a href="adminUserIndex">Quản lý</a>
+                            </li>
+                        </c:if>
                         <li>
                             <a href="logout" class="sign-out">Đăng xuất</a>
                         </li>

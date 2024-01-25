@@ -27,8 +27,27 @@ public class UserDAO {
         return user.isEmpty() ? null : user.get();
     }
 
+    public static User getUserById(int id) {
+        Optional<User> user = JDBIConnector.me().withHandle((handle ->
+                handle.createQuery("select * from users where users.id = ?")
+                        .bind(0, id)
+                        .mapToBean(User.class).stream().findFirst()
+        ));
+        return user.isEmpty() ? null : user.get();
+    }
 
-    public List<User> getUserList() {
+    public static List<User> getListUserById(int id) {
+        List<User> userList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM users WHERE user.id = ?")
+                        .bind(0, id)
+                        .mapToBean(User.class)
+                        .collect(Collectors.toList())
+        );
+        return userList;
+    }
+
+
+    public static List<User> getUserList() {
         return JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("select * from users")
                         .mapToBean(User.class)
@@ -104,8 +123,17 @@ public class UserDAO {
         System.out.println("done");
     }
 
+    public static List<User> adminSearchUser(String value) {
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM users WHERE username LIKE :value OR email LIKE :value")
+                        .bind("value", "%" + value + "%")
+                        .mapToBean(User.class)
+                        .collect(Collectors.toList())
+        );
+    }
+
     public static void main(String[] args) {
-     changePassword("cunoccho0601@gmail.com", "hahaha");
+        changePassword("cunoccho0601@gmail.com", "hahaha");
 
     }
 }

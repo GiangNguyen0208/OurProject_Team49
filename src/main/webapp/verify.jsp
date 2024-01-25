@@ -61,7 +61,7 @@
                 <!-- Hiển thị thông báo thành công -->
                 <p class="success-message">${verificationSuccess}</p>
                 <button class="submit sub-btn">
-                    <a href="./logIn.jsp" class="back-to-login">Quay lại trang đăng nhập</a>
+                    <a class="link" href="./logIn.jsp" class="back-to-login">Quay lại trang đăng nhập</a>
                 </button>
             </c:when>
             <c:otherwise>

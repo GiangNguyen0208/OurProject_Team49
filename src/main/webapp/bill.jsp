@@ -167,41 +167,31 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Samsung Galaxy S5</td>
-                                <td class="text-center">$900</td>
-                                <td class="text-center">1</td>
-                                <td class="text-right">$900</td>
-                            </tr>
-<%--                            <tr>--%>
-<%--                                <td>Samsung Galaxy S5 Extra Battery</td>--%>
-<%--                                <td class="text-center">$30.00</td>--%>
-<%--                                <td class="text-center">1</td>--%>
-<%--                                <td class="text-right">$30.00</td>--%>
-<%--                            </tr>--%>
-<%--                            <tr>--%>
-<%--                                <td>Screen protector</td>--%>
-<%--                                <td class="text-center">$7</td>--%>
-<%--                                <td class="text-center">4</td>--%>
-<%--                                <td class="text-right">$28</td>--%>
-<%--                            </tr>--%>
+                            <c:forEach var="item" items="${sessionScope.cart}">
+                                <tr>
+                                    <td>${item.product.name}</td>
+                                    <td class="text-center">${item.product.price}</td>
+                                    <td class="text-center">${item.quantity}</td>
+                                    <td class="text-right">${item.totalPrice}</td>
+                                </tr>
+                            </c:forEach>
                             <tr>
                                 <td class="highrow"></td>
                                 <td class="highrow"></td>
                                 <td class="highrow text-center"><strong>Tổng giá đơn hàng</strong></td>
-                                <td class="highrow text-right">$958.00</td>
+                                <td class="highrow text-right">${totalOrderPrice}</td>
                             </tr>
                             <tr>
                                 <td class="emptyrow"></td>
                                 <td class="emptyrow"></td>
                                 <td class="emptyrow text-center"><strong>Phí giao hàng</strong></td>
-                                <td class="emptyrow text-right">20.000đ</td>
+                                <td class="emptyrow text-right">${deliveryFee}</td>
                             </tr>
                             <tr>
                                 <td class="emptyrow"></td>
                                 <td class="emptyrow"></td>
                                 <td class="emptyrow text-center"><strong>Tổng tiền</strong></td>
-                                <td class="emptyrow text-right">$978.00</td>
+                                <td class="emptyrow text-right">${totalAmount}</td>
                             </tr>
                             </tbody>
                         </table>
