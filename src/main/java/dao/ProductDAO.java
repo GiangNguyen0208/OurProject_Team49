@@ -9,24 +9,24 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ProductDAO {
-public static List<Product> getProductList(){
-    List<Product> productList = JDBIConnector.me().withHandle(handle ->
-            handle.createQuery("Select *  from product_details")
-                    .mapToBean(Product.class)
-                    .collect(Collectors.toList())
-    );
-    return productList;
-}
-public static List<Product> getProductByCategory(String cateName) {
-    List<Product> productList = JDBIConnector.me().withHandle(handle ->
-            handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice FROM product_details \n" +
-                            "JOIN categories ON product_details.categoryId = categories.id \n" +
-                            "WHERE categories.name = ?")
-                    .bind(0, cateName)
-                    .mapToBean(Product.class)
-                    .collect(Collectors.toList())
-    );
-    return productList;
+    public static List<Product> getProductList(){
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("Select *  from product_details")
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
+        );
+        return productList;
+    }
+    public static List<Product> getProductByCategory(String cateName) {
+        List<Product> productList = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice FROM product_details \n" +
+                                "JOIN categories ON product_details.categoryId = categories.id \n" +
+                                "WHERE categories.name = ?")
+                        .bind(0, cateName)
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
+        );
+        return productList;
     }
     public static List<Product> getProductByPriceRange(double minPrice, double maxPrice) {
         List<Product> productList = JDBIConnector.me().withHandle(handle ->
@@ -59,7 +59,7 @@ public static List<Product> getProductByCategory(String cateName) {
                         .collect(Collectors.toList())
         );
         return productList;
-}
+    }
     public static List<Product> getProductAzPrice(String AZorZA) {
         List<Product> productList = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice\n" +
@@ -69,7 +69,7 @@ public static List<Product> getProductByCategory(String cateName) {
                         .collect(Collectors.toList())
         );
         return productList;
-}
+    }
     public static List<Product> getProductByDiscount() {
         List<Product> productList = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice " +
@@ -80,27 +80,27 @@ public static List<Product> getProductByCategory(String cateName) {
                         .collect(Collectors.toList())
         );
         return productList;
-}
+    }
     public static List<Product> getProductById(int id) {
         List<Product> productList = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice " +
                                 "From product_details Where product_details.id = ?")
-                                        .bind(0, id)
-                                        .mapToBean(Product.class)
-                                        .collect(Collectors.toList())
+                        .bind(0, id)
+                        .mapToBean(Product.class)
+                        .collect(Collectors.toList())
         );
         return productList;
-}
+    }
     public static int getQuantityInStock(int id) {
-    int quantityInStock = JDBIConnector.me().withHandle(handle ->
-            handle.createQuery("SELECT quantity FROM product_details WHERE id = :id")
-                    .bind("id", id)
-                    .mapTo(int.class)
-                    .findOne()
-                    .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
-    );
-    return quantityInStock;
-}
+        int quantityInStock = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT quantity FROM product_details WHERE id = :id")
+                        .bind("id", id)
+                        .mapTo(int.class)
+                        .findOne()
+                        .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
+        );
+        return quantityInStock;
+    }
 
     public static int getTotalProductNumber() {
         int totalProductNumber = JDBIConnector.me().withHandle(handle ->
@@ -110,7 +110,7 @@ public static List<Product> getProductByCategory(String cateName) {
                         .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
         );
         return totalProductNumber;
-}
+    }
 
     public void updateProductQuantityInStock(int newQuantity, int id) {
         JDBIConnector.me().useHandle(handle ->
@@ -120,7 +120,7 @@ public static List<Product> getProductByCategory(String cateName) {
                         .execute()
         );
     }
-//    Phương thức để kiểm tra xem số lượng trong đơn hàng có vượt quá số lượng trong kho hay không
+    //    Phương thức để kiểm tra xem số lượng trong đơn hàng có vượt quá số lượng trong kho hay không
     public boolean isOrderQuantityValid(Order order) {
         for (Map.Entry<Product, Integer> entry : order.getOrderItems().entrySet()) {
             Product product = entry.getKey();

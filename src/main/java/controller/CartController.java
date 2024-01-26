@@ -17,8 +17,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-@WebServlet(name ="CartController", value = "/cart")
+@WebServlet(name = "CartController", value = "/cart")
 public class CartController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -28,14 +29,15 @@ public class CartController extends HttpServlet {
     public CartController() {
         super();
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
             doGet_DisplayCart(request, response);
         } else {
-            if (action.equalsIgnoreCase("buy")) {
-                doGet_Buy(request, response);
+            if (action.equalsIgnoreCase("update")) {
+                doPut(request, response);
             } else if (action.equalsIgnoreCase("remove")) {
                 doGet_Remove(request, response);
             }
@@ -59,30 +61,7 @@ public class CartController extends HttpServlet {
 
     protected void doGet_Buy(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
 
-        if (session.getAttribute("cart") == null) {
-            System.out.println("run if");
-            List<Item> cart = new ArrayList<>();
-            String selectedCodeColor = request.getParameter("selectedCodeColor");
-            Item item = new Item(productDetailService.getProductById(Integer.parseInt(request.getParameter("id"))), 1);
-            cart.add(item);
-            session.setAttribute("selectedColorName", selectedCodeColor);
-            session.setAttribute("cart", cart);
-        } else {
-            System.out.println("run else");
-            List<Item> cart = (List<Item>) session.getAttribute("cart");
-            int index = isExisting(Integer.parseInt(request.getParameter("id")), cart);
-            if (index == -1) {
-                cart.add(new Item(productDetailService.getProductById(Integer.parseInt(request.getParameter("id"))), 1));
-            } else {
-                int quantity = cart.get(index).getQuantity() + 1;
-                cart.get(index).setQuantity(quantity);
-            }
-            session.setAttribute("cart", cart);
-        }
-
-       response.sendRedirect("cart.jsp");
     }
 
     private int isExisting(int id, List<Item> cart) {
@@ -94,8 +73,56 @@ public class CartController extends HttpServlet {
         return -1;
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    private boolean checkIsExist(int id, List<Item> cart) {
+        return cart.stream()
+                .anyMatch(item -> item.getProduct().getId() == id);
     }
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        String selectedCodeColor = request.getParameter("selectedCodeColor");
+        String quantity = request.getParameter("quantity");
+        String id = request.getParameter("id");
+
+        if (Objects.isNull(session.getAttribute("cart"))) {
+            List<Item> cart = new ArrayList<>();
+            Item item = new Item(productDetailService.getProductById(Integer.parseInt(id)), Integer.parseInt(quantity), selectedCodeColor);
+            cart.add(item);
+            session.setAttribute("cart", cart);
+        } else {
+            List<Item> cart = (List<Item>) session.getAttribute("cart");
+            boolean isExist = checkIsExist(Integer.parseInt(id), cart);
+            if (isExist) {
+                cart.forEach(item -> {
+                    if (item.getProduct().getId() == Integer.parseInt(id)) {
+                        item.setQuantity(item.getQuantity() + Integer.parseInt(quantity));
+                    }
+                });
+            } else {
+                Item item = new Item(productDetailService.getProductById(Integer.parseInt(id)), Integer.parseInt(quantity), selectedCodeColor);
+                cart.add(item);
+            }
+            session.setAttribute("cart", cart);
+        }
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        HttpSession session = req.getSession();
+        var quantity = req.getParameter("quantity");
+        var id = req.getParameter("productId");
+        List<Item> cart = (List<Item>) session.getAttribute("cart");
+        cart.forEach(item -> {
+            if (item.getProduct().getId() == Integer.parseInt(id)) {
+                if(Integer.parseInt(quantity) == 0) {
+                    cart.remove(item);
+                }else {
+                    item.setQuantity(Integer.parseInt(quantity));
+                    item.setPrice(item.getProduct().getTotalPrice() * Integer.parseInt(quantity));
+                }
+            }
+        });
+        session.setAttribute("cart", cart);
+    }
 }

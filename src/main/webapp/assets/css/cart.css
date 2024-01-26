@@ -13,7 +13,7 @@ body{
     background-color: #fff;
     letter-spacing: 1px;
 }
- html {
+html {
     font-size: 18px;
     /* 1rem = 18px */
     /* Nếu không khai báo font-size thì 1rem tự động là 16px */
@@ -151,7 +151,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-} 
+}
 .left__content  h3 {
     font-size: 2.0rem;
     font-weight: 600;
@@ -167,7 +167,7 @@ h2 {
     border-radius: 5px;
     box-shadow: 1px 2px rgb(144, 136, 136);
     margin-top: 50px;
-} 
+}
 
 .box .box__order {
     margin: 30px 10px;
@@ -296,4 +296,3 @@ th {
 .content .manage-cart-item .input {
     align-items: center;
 }
-
