@@ -256,6 +256,7 @@
                                         <div class="detail">
                                             <label for="phone" class="input-label">Số điện thoại</label>
                                         </div>
+
                                     </div>
                                     <div>
                                         <div class="input-content">
@@ -268,6 +269,7 @@
                                                     placeholder="Phone"
                                                     onkeyup="validatePhone()"
                                                     value = "0<%=phone%>"
+
 
                                             />
                                             <span id = "phone-error"></span>
