@@ -75,7 +75,6 @@
                 <table>
                     <thead>
                     <tr>
-                        <th class="s-cl">Xem</th>
                         <th class="s-cl">Chỉnh sửa</th>
                         <th class="s-cl">ID</th>
                         <th class="l-cl">Tên</th>
@@ -90,10 +89,9 @@
                     <c:forEach items="${requestScope.userList}" var="o">
                         <tr>
                             <td>
-                                <i class="fa-solid fa-eye"></i>
-                            </td>
-                            <td>
-                                <i class="fa-solid fa-pen-to-square"></i>
+                                <a class="link" target="_blank" href="adminViewUser?userId=${o.getId()}">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
                             </td>
                             <td>${o.getId()}</td>
                             <td>${o.getFullName()}</td>

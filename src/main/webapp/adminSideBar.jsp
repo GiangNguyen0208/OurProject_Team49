@@ -49,7 +49,7 @@
         <li class="side-bar__item">
             <i class="icon fa-solid fa-receipt"></i>
             <button class="manage-bill item-cta">
-                <a href="adminBill.jsp">Quản lý hóa đơn</a>
+                <a href="adminBillIndex">Quản lý hóa đơn</a>
             </button>
         </li>
         <li class="side-bar__item"></li>

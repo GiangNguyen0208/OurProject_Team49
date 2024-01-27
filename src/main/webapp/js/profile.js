@@ -1,28 +1,5 @@
 
 
-// // JS Thông báo
-// const buttons = document.querySelectorAll('. ');
-// const alerts = document.querySelectorAll('.submit-alert');
-//
-// buttons.forEach((button, index) => {
-//     button.addEventListener('click', (event) => {
-//         event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
-//         event.stopPropagation();
-//         alerts[index].style.right = '34px';
-//         let length = 70;
-//         let process = alerts[index].querySelector('.process');
-//         const run = setInterval(() =>  {
-//             process.style.height = length + 'px';
-//             length -= 5;
-//             if (length <= -10) {
-//                 clearInterval(run);
-//                 alerts[index].style.right = '-500px';
-//
-//             }
-//         }, 200);
-//     });
-// });
-
 document.getElementById("updatePasswordLink").addEventListener("click", function(event) {
     // Ngăn chặn hành vi mặc định của liên kết
     event.preventDefault();
@@ -37,6 +14,7 @@ document.getElementById("updatePasswordLink").addEventListener("click", function
 //JS email error
 const emailField = document.getElementById("email");
 const emailError = document.getElementById("email-error");
+
 
 function validateEmail() {
     if (!emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
@@ -55,8 +33,9 @@ function validateEmail() {
 //JS phone error
 const phoneField = document.getElementById("phone");
 const phoneError = document.getElementById("phone-error");
+
 function validatePhone() {
-    if (!phoneField.value.match(/^\d{10}$/)) {
+    if (!phoneField.value.match(/^(0|\+84)(3[2-9]|5[689]|7[06-9]|8[1-9]|9\d)\d{7}$/)) {
         phoneError.innerHTML = "Vui lòng nhập số điện thoại hợp lệ";
         phoneField.style.border = "1px solid red";
         phoneError.style.top = "32%";

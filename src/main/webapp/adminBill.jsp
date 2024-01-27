@@ -69,49 +69,33 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>Xem</th>
                         <th>Chỉnh sửa</th>
                         <th>ID</th>
                         <th>ID người dùng</th>
                         <th>Phương thức thanh toán</th>
                         <th>Ngày tạo hóa đơn</th>
                         <th>Tổng tiền đơn hàng</th>
-                        <th>Trạng thái</th>
+                        <th>Trạng thái đơn hàng</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            <i class="fa-solid fa-eye"></i>
-                        </td>
-                        <td>
-                            <i
-                                    class="fa-solid fa-pen-to-square"
-                            ></i>
-                        </td>
-                        <td>001</td>
-                        <td>001</td>
-                        <td>VISA</td>
-                        <td>16/11/2023</td>
-                        <td>2000000</td>
-                        <td>Đã thanh toán</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox"/>
-                        </td>
-                        <td>
-                            <i
-                                    class="fa-solid fa-pen-to-square"
-                            ></i>
-                        </td>
-                        <td>001</td>
-                        <td>001</td>
-                        <td>COD</td>
-                        <td>16/11/2023</td>
-                        <td>4500000</td>
-                        <td>Đã thanh toán</td>
-                    </tr>
+                    <c:forEach items="${requestScope.billList}" var="o">
+
+                        <tr>
+                            <td>
+                                <a class="link" target="_blank" href="adminViewBill?billId=${o.getId()}">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>${o.getId()}</td>
+                            <td>${o.getUserId()}</td>
+                            <td>${o.getPaymentMethod()}</td>
+                            <td>${o.getCreateDate()}</td>
+                            <td>${o.getTotalPrice()}</td>
+                            <td>${o.getStatus() == 'IN_PROGRESS' ? 'Chờ xử lý' : (o.getStatus() == 'DONE' ? 'Đã nhận đơn' : 'Đang giao hàng')}</td>
+                        </tr>
+
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
