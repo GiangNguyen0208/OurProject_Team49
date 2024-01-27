@@ -268,7 +268,6 @@
                                                     placeholder="Phone"
                                                     onkeyup="validatePhone()"
                                                     value = "0<%=phone%>"
-
                                             />
                                             <span id = "phone-error"></span>
 

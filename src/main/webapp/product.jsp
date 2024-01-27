@@ -354,8 +354,8 @@
             <%--                    Phân trang--%>
             <div class="listPage">
                 <c:forEach begin="1" end="${endPage}" var="i">\ư
-                <lí><a href="search?index=${i}&&txtSearch=${txtSearch}>${i}</a></lí>
-                        </c:forEach>
+                    <lí><a href="search?index=${i}&&txtSearch=${txtSearch}>${i}</a></lí>
+                </c:forEach>
                     </div>
                 </div>
             </section>

@@ -3,20 +3,16 @@
 <%@ page import="bean.ShoppingCart" %>
 <%@ page import="bean.Item" %>
 <%@ page import="bean.Product" %>
-<%@ page import="java.util.Map" %>
 <%@ page import="dao.ImageDAO" %>
 <%@ page import="service.ImageService" %>
-<%@ page import="java.util.HashMap" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Locale" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="service.ColorService" %>
+<%@ page import="java.util.*" %>
 <% List<Item> shoppingCart = (List<Item>) request.getSession().getAttribute("cart");
     String announce = "";
 %>
 <% if (shoppingCart == null || shoppingCart.isEmpty()) {
-    announce = "Giỏ hàng bạn hiện đang trống.!";%>
-<%
+    announce = "Giỏ hàng bạn hiện đang trống.!";
     } else {
         announce = "Giỏ hàng bạn hiện đang có " + shoppingCart.size() + " Sản phẩm.!";
     }

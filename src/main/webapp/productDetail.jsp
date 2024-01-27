@@ -129,12 +129,10 @@
                 <div class="product__info-row">
                     <div class="product-color title">Màu sắc</div>
                     <div class="product-color-cta">
-                        <form action="cart" method="get" class="d-flex flex-row">
+                        <form action="cart" method="post" class="d-flex flex-row">
                             <c:forEach var="color" items="${productColors}">
-                                <label class="option_color" style="background-color: ${color.codeColor}"
-                                       title="${color.nameColor}">
-                                    <input type="radio" name="selectedCodeColor" hidden=""
-                                           value="${color.nameColor}">
+                                <label class="option_color" style="background-color: ${color.codeColor}" title="${color.nameColor}">
+                                    <input type="checkbox" name="selectedCodeColors" value="${color.nameColor}">
                                 </label>
                             </c:forEach>
                         </form>
@@ -454,6 +452,8 @@
             },
         },
     });
+
+    // Thực hiện lệnh
     $(document).ready(function () {
         $('.up').on('click', function () {
             changeQuantity(1);
@@ -489,8 +489,8 @@
                     console.error('Error:', error);
                 }
             });
-
         })
+
 
         function changeQuantity(amount) {
             var currentCount = parseInt($('.count').text());
