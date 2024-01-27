@@ -169,6 +169,7 @@
                 </div>
             </div>
             <form action="./profile" method="post" class="form">
+                <input value="<%=user.getId()%>" hidden="hidden" name="userId">
                 <div id="manage-account" class="account active">
                     <div class="account_title">Thông tin tài khoản</div>
                     <!-- Thông báo -->
@@ -316,8 +317,18 @@
                                                         maxlength="128"
                                                         placeholder="Phone"
                                                         onkeyup="validatePhone()"
-<%--                                                        value = "0<%=phone%>"--%>
-                                                        value="<%= phone == 0 ? "" : "0" + phone %>"
+                                                        <%
+                                                            if (phone == 0) {
+                                                        %>
+                                                            value=""
+                                                        <%
+                                                            } else {
+                                                        %>
+                                                            value = "0<%=phone%>"
+                                                        <%
+                                                            }
+                                                        %>
+
 
                                                 />
                                                 <span id = "phone-error"></span>

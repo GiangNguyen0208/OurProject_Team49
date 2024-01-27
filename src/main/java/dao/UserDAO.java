@@ -1,5 +1,6 @@
 package dao;
 
+import bean.Product;
 import bean.User;
 import db.JDBIConnector;
 
@@ -35,6 +36,45 @@ public class UserDAO {
         ));
         return user.isEmpty() ? null : user.get();
     }
+
+    public static User adminViewUser(int id) {
+        User user = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM users WHERE id = :id")
+                        .bind("id", id)
+                        .mapToBean(User.class)
+                        .findOne()
+                        .orElse(null) // Giả sử trả về null nếu không tìm thấy sản phẩm
+        );
+        return user;
+    }
+
+    public static void changeInfoUserWithRole(int id, int role) {
+        JDBIConnector.me().useHandle(handle ->
+                handle.createUpdate("UPDATE users set " +
+                                "role = :role" +
+                                " where id = :id")
+                        .bind("id", id)
+                        .bind("role", role)
+                        .execute()
+        );
+    }
+
+    public static void changeSpecificInfo(int id, String email, int phone, String firstName, String lastName, String birthDate, String gender) {
+        JDBIConnector.me().useHandle(handle ->
+                handle.createUpdate("UPDATE users set email = :email, phone = :phone, firstName = :firstName, lastName = :lastName, birthDate = :birthDate, gender =:gender" +
+                                " where id = :id")
+                        .bind("id", id)
+                        .bind("email", email)
+                        .bind("phone", phone)
+                        .bind("firstName", firstName)
+                        .bind("lastName", lastName)
+                        .bind("birthDate", birthDate)
+                        .bind("gender", gender)
+                        .execute()
+        );
+    }
+
+
 
     public static List<User> getListUserById(int id) {
         List<User> userList = JDBIConnector.me().withHandle(handle ->
@@ -133,7 +173,9 @@ public class UserDAO {
     }
 
     public static void main(String[] args) {
-        changePassword("cunoccho0601@gmail.com", "hahaha");
+//        changePassword("cunoccho0601@gmail.com", "hahaha");
+
+        changeInfoUserWithRole(5, 0);
 
     }
 }
