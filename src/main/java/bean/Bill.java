@@ -36,6 +36,11 @@ public class Bill {
 
     }
 
+    public Bill(int id, String status) {
+        this.id = id;
+        this.status = status;
+    }
+
     public Bill(User user, String name, String phone, String address, double totalPrice, String paymentMethod) {
         this.user = user;
         this.createDate = new java.util.Date().toString();
