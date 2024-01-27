@@ -795,6 +795,7 @@ header {
         padding: 20px;
         display: inline-block;
         margin: 0 10px;
+        margin-bottom: 24px !important;
         cursor: pointer;
 
     }

@@ -117,6 +117,7 @@
                     <c:forEach items="${sessionScope.discountList}" var="o">
                         <c:set var="amount" value="${o.getAmount() * 100}"/>
                         <c:set var="roundedPrice" value="${Math.round(amount)}"/>
+
                         <tr>
                             <td class="s-cl">
                                 <a class="link" target="_blank" href="adminViewProduct?productId=${o.getId()}">

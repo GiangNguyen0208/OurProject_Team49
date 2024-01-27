@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page import="java.lang.Math" %>
 
 <html lang="en">
 <head>
@@ -64,9 +66,23 @@
                 <input id="product-name" name="product-name" class="product-sub" value="${product.getName()}"></input>
             </div>
             <div class="product product-discount">
-                <label for="product-discount" class="product-title">Giảm giá: </label>
-                <input id="product-discount" name="product-discount" class="product-sub"
-                       value="${product.getDiscountId()}"></input>
+                <label for="selectOptionDiscount" class="product-title">Giảm giá: </label>
+                <select id="selectOptionDiscount" class="custom-select" name="product-category">
+                    <c:forEach var="discount" items="${sessionScope.discountList}">
+                        <c:choose>
+                            <c:set var="roundedPrice" value="${Math.round(discount.getDiscountAmount(discount.getId()))}"/>
+                                <fmt:formatNumber var="formattedPrice" value="${roundedPrice}" pattern="###,###,###"/>
+                            <c:when test="${product.getDiscountId() == discount.getId()}">
+                                <option class="product-sub" selected="selected"
+                                        value="${product.getDiscountId()}">${formattedPrice}&nbsp;%</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option class="product-sub"
+                                        value="${discount.getId()}">${formattedPrice}&nbsp;%</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </select>
             </div>
             <div class="product product-discount-start">
                 <label for="product-discount-start" class="product-title">Ngày bắt đầu: </label>
@@ -93,7 +109,6 @@
                         </c:choose>
                     </c:forEach>
                 </select>
-                <button type="button" class="add-category btn btn-submit btn-admin">Thêm</button>
             </div>
             <div class="product product-brand">
                 <label class="product-title">Thương hiệu: </label>
@@ -110,7 +125,6 @@
                         </c:choose>
                     </c:forEach>
                 </select>
-                <button type="button" class="add-brand btn btn-submit btn-admin">Thêm</button>
             </div>
             <div class="product product-supplier">
                 <label class="product-title">Nhà Cung Cấp</label>
@@ -126,9 +140,6 @@
                         </c:choose>
                     </c:forEach>
                 </select>
-                <a href="">
-                    <button class="btn btn-submit btn-admin">Thêm</button>
-                </a>
             </div>
             <div class="product product-quantity">
                 <label for="product-quantity" class="product-title">Số lượng: </label>

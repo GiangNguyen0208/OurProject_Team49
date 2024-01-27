@@ -610,44 +610,44 @@
     });
 </script>
 
-        <script type="text/javascript">
-            function addReview(productId) {
+<%--        <script type="text/javascript">--%>
+<%--            function addReview(productId) {--%>
 
-                <%if(u == null) {%>
-                document.getElementById('notifyLogin').style.display = 'block';
-                setTimeout(function () {
-                    document.getElementById('notifyLogin').style.display = 'none';
-                }, 2000);
-                <% } else {%>
-                var xhttp;
-                var content = document.myform.content.value;
-                var url = "productdetails?content=" + content + "&productId=" + productId;
+<%--                <%if(u == null) {%>--%>
+<%--                document.getElementById('notifyLogin').style.display = 'block';--%>
+<%--                setTimeout(function () {--%>
+<%--                    document.getElementById('notifyLogin').style.display = 'none';--%>
+<%--                }, 2000);--%>
+<%--                <% } else {%>--%>
+<%--                var xhttp;--%>
+<%--                var content = document.myform.content.value;--%>
+<%--                var url = "productdetails?content=" + content + "&productId=" + productId;--%>
 
-                // Tạo đối tượng XMLHttpRequest
-                if (window.XMLHttpRequest) {
-                    xhttp = new XMLHttpRequest();
-                } else {
-                    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
+<%--                // Tạo đối tượng XMLHttpRequest--%>
+<%--                if (window.XMLHttpRequest) {--%>
+<%--                    xhttp = new XMLHttpRequest();--%>
+<%--                } else {--%>
+<%--                    xhttp = new ActiveXObject("Microsoft.XMLHTTP");--%>
+<%--                }--%>
 
-                // Xử lý sự kiện khi trạng thái của XMLHttpRequest thay đổi
-                xhttp.onreadystatechange = function () {
-                    if (xhttp.readyState == 4) {
-                        var data = xhttp.responseText;
+<%--                // Xử lý sự kiện khi trạng thái của XMLHttpRequest thay đổi--%>
+<%--                xhttp.onreadystatechange = function () {--%>
+<%--                    if (xhttp.readyState == 4) {--%>
+<%--                        var data = xhttp.responseText;--%>
 
-                        // Hiển thị đánh giá mới trên trang web
-                        var row = document.getElementById("reviews");
-                        row.innerHTML += data;
-                    }
+<%--                        // Hiển thị đánh giá mới trên trang web--%>
+<%--                        var row = document.getElementById("reviews");--%>
+<%--                        row.innerHTML += data;--%>
+<%--                    }--%>
 
-                }
+<%--                }--%>
 
-                // Mở kết nối và gửi dữ liệu đến server
-                xhttp.open("POST", url, true);
-                xhttp.send();
-                <% }%>
-            }
-        </script>
+<%--                // Mở kết nối và gửi dữ liệu đến server--%>
+<%--                xhttp.open("POST", url, true);--%>
+<%--                xhttp.send();--%>
+<%--                <% }%>--%>
+<%--            }--%>
+<%--        </script>--%>
     </body>
 </html>
 <%

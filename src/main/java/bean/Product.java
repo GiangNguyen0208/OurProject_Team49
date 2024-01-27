@@ -160,7 +160,7 @@ public class Product extends ProductDAO {
         return DiscountDAO.getDiscountEndDay(id);
     }
 
-    public Double getDiscountAmount(int id) {
+    public static Double getDiscountAmount(int id) {
         return 100 * DiscountDAO.getDiscountAmount(id);
     }
 

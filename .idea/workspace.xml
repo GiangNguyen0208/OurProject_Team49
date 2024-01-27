@@ -10,60 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="admin change information product">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/BillController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/UpdateQuantityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddBrand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminAddCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminProductManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminRemoveProductImg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminSearchProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminSearchUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminUserManagementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminViewProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/adminChangeInforProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminBill.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminEditProduct.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminProduct.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminSideBar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminUser.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/adminProductView.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Discount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bean/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Product_Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Product_Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/ShoppingCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BrandDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BrandDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ColorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ColorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DiscountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DiscountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ImageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ImageDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/AdminEditProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/AdminEditProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ColorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ColorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/DB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminIndex.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminEditProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminEditProduct.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/productDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/productDetail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bill.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bill.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forgetPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forgetPassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/log.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/logIn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logIn.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/orderSucecssfully.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orderSucecssfully.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/productDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/signUp.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signUp.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/verify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verify.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +76,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging Thuong",
+    "git-widget-placeholder": "Dai",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/Thuong/Documents/ProjectLTW/OurProject_Team49",
@@ -402,10 +357,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProductDAO" />
         <item itemvalue="Application.ReviewService" />
         <item itemvalue="Smart Tomcat.Tomcat: Login" />
         <item itemvalue="Application.BrandDAO" />
-        <item itemvalue="Application.ProductDAO" />
         <item itemvalue="Application.CategoryDAO" />
       </list>
     </recent_temporary>
@@ -513,7 +468,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/profile.jsp</url>
-          <line>163</line>
+          <line>150</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -525,11 +480,6 @@
           <url>file://$PROJECT_DIR$/src/main/webapp/profile.jsp</url>
           <line>92</line>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/profile.jsp</url>
-          <line>187</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

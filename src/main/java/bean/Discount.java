@@ -15,6 +15,8 @@ public class Discount {
         this.endDate = endDate;
     }
 
+    public Discount() {}
+
     public int getId() {
         return id;
     }
@@ -55,6 +57,9 @@ public class Discount {
         return DiscountDAO.getDiscountEndDay(discountId);
     }
 
+    public Double getDiscountAmount(int discountId) {
+        return 100 * DiscountDAO.getDiscountAmount(id);
+    }
     @Override
     public String toString() {
         return "Discount{" +
