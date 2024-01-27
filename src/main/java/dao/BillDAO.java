@@ -8,6 +8,7 @@ import org.jdbi.v3.core.Handle;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BillDAO {
     private static BillDAO instance;
@@ -27,6 +28,27 @@ public class BillDAO {
                     .mapToBean(Bill.class)
                     .list();
         }
+    }
+
+
+    public List<Bill> getBillList() {
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("select * from bills")
+                        .mapToBean(Bill.class)
+                        .collect(Collectors.toList())
+        );
+    }
+
+
+    public static Bill adminViewBill(int id) {
+        Bill bill = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM bills WHERE id = :id")
+                        .bind("id", id)
+                        .mapToBean(Bill.class)
+                        .findOne()
+                        .orElse(null) // Giả sử trả về null nếu không tìm thấy hóa đơn
+        );
+        return bill;
     }
 
 
@@ -62,5 +84,32 @@ public class BillDAO {
                 }
             });
         }
+    }
+
+    public Bill getBillById(int id) {
+        Bill bill = JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT bills.id, bills.status FROM bills WHERE id = :id")
+                        .bind("id", id)
+                        .mapToBean(Bill.class)
+                        .findOne()
+                        .orElse(null) // Giả sử trả về null nếu không tìm thấy sản phẩm
+        );
+        return bill;
+    }
+
+    public static void main(String[] args) {
+        Bill bill = BillDAO.getInstance().getBillById(1);
+        System.out.println(bill);
+    }
+
+    public static void changeInfoBill(int id, String status) {
+        JDBIConnector.me().useHandle(handle ->
+                handle.createUpdate("UPDATE bills set " +
+                                "status = :status" +
+                                " where id = :id")
+                        .bind("id", id)
+                        .bind("status", status)
+                        .execute()
+        );
     }
 }

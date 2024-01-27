@@ -43,7 +43,7 @@ public class UserDAO {
                         .bind("id", id)
                         .mapToBean(User.class)
                         .findOne()
-                        .orElse(null) // Giả sử trả về null nếu không tìm thấy sản phẩm
+                        .orElse(null) // Giả sử trả về null nếu không tìm thấy user
         );
         return user;
     }

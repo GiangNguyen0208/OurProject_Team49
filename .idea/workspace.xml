@@ -9,54 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="pull main">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/HistoryBillController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ThankYouController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/BillDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/checkout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/history-bill.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/sidebar-profile.jsp" afterDir="false" />
+    <list default="true" id="0ccba5c5-c562-4470-b4e4-b723a98f8bf9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bean/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Discount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/Product_Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/Product_Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/BillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/BillController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LogoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessPayment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UpdateQuantityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UpdateQuantityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/VerifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/VerifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ColorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ColorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ImageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ImageDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PaymentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PaymentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProfileUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfileUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BillDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BillDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/SessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminEditUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminEditUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/cart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/infor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/infor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bill.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bill.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forgetPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forgetPassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminBill.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminBill.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminSideBar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminSideBar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/productDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/productDetail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/logIn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logIn.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/orderSucecssfully.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orderSucecssfully.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/payment.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/policy.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/policy.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/productDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resetPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resetPassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/signUp.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signUp.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/sidebar-profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sidebar-profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,37 +35,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="CSS File" />
         <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="main" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;NguyenHoaiThuong26&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="bbc43d05-a90f-4511-bd42-d783fb0862f3" />
-        <option name="url" value="https://github.com/GiangNguyen0208/OurProject_Team49.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -108,11 +53,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2Zona6r7kYZP0nMlQoK15SXiaDS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2bX2elxmSnha74GJ5cqg9ukdtew" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -123,25 +67,18 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Merging Thuong",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/Thuong/Documents/ProjectLTW/OurProject_Team49",
-    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.85">
-    <configuration name="BrandDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dao.BrandDAO" />
+    <configuration name="BillDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.BillDAO" />
       <module name="Login" />
       <extension name="coverage">
         <pattern>
@@ -153,21 +90,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dao.ProductDAO" />
-      <module name="Login" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReviewService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.ReviewService" />
+    <configuration name="BillService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.BillService" />
       <module name="Login" />
       <extension name="coverage">
         <pattern>
@@ -179,30 +103,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dao.UserDAO" />
-      <module name="Login" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.85" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.85" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Login:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/Ban_Trong" />
+            <option name="CONTEXT_PATH" value="/Login_war" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="6712d6ba-5949-4d8b-93e6-4203cf9f2e16" />
+        <option name="BASE_DIRECTORY_NAME" value="df9e2dca-3bfa-4a1b-b1e9-7848d7d18dd9" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -210,7 +122,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="63698" />
+        <option name="DEBUG_PORT" value="57739" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -282,7 +194,7 @@
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="f580ab90-2255-4190-8e1f-a9d03cd8b6cb" />
+        <option name="BASE_DIRECTORY_NAME" value="e68ed1a3-648b-4335-82d9-1df5873f3a59" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -290,7 +202,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="63698" />
+        <option name="DEBUG_PORT" value="57886" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -356,38 +268,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Smart-Tomcat" type="com.poratu.idea.plugins.tomcat" temporary="true">
-      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
-      <predefined_log_file enabled="true" id="Tomcat Access Log" />
-      <predefined_log_file id="Tomcat Catalina Log" />
-      <predefined_log_file id="Tomcat Manager Log" />
-      <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="catalinaBase" value="C:\Users\PhatNT\.SmartTomcat\OurProject_Team49\Login" />
-      <option name="contextPath" value="/Login" />
-      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="extraClassPath" value="" />
-      <option name="tomcatInfo">
-        <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.83 (2)" />
-          <option name="path" value="$PROJECT_DIR$/../../../../Extensions/apache-tomcat-9.0.83" />
-          <option name="version" value="9.0.83.0" />
-        </TomcatInfo>
-      </option>
-      <option name="vmOptions" value="" />
-      <module name="Login" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="com.poratu.idea.plugins.tomcat">
+    <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="catalinaBase" value="" />
-      <option name="contextPath" value="" />
-      <option name="docBase" value="" />
+      <option name="contextPath" value="/Login" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -397,124 +286,53 @@
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
+      <module name="Login" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.UserDAO" />
-      <item itemvalue="Application.ReviewService" />
-      <item itemvalue="Application.BrandDAO" />
-      <item itemvalue="Application.ProductDAO" />
-      <item itemvalue="Smart Tomcat.Smart-Tomcat" />
+      <item itemvalue="Application.BillDAO" />
+      <item itemvalue="Application.BillService" />
+      <item itemvalue="Smart Tomcat.Tomcat" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.85" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Smart Tomcat.Smart-Tomcat" />
-        <item itemvalue="Application.ReviewService" />
-        <item itemvalue="Application.BrandDAO" />
-        <item itemvalue="Application.ProductDAO" />
+        <item itemvalue="Application.BillDAO" />
+        <item itemvalue="Application.BillService" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="" />
-      <created>1703097360558</created>
+      <changelist id="0ccba5c5-c562-4470-b4e4-b723a98f8bf9" name="Changes" comment="" />
+      <created>1706343510673</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1703097360558</updated>
-      <workItem from="1703097361540" duration="129000" />
-      <workItem from="1703173859418" duration="883000" />
-      <workItem from="1703176935292" duration="597000" />
-      <workItem from="1703308744632" duration="2002000" />
-      <workItem from="1703335656897" duration="1317000" />
-      <workItem from="1703342089824" duration="1584000" />
-      <workItem from="1703343705538" duration="1427000" />
-      <workItem from="1703399735931" duration="1194000" />
-      <workItem from="1703424022735" duration="3093000" />
-      <workItem from="1703430884180" duration="2329000" />
-      <workItem from="1703433611324" duration="463000" />
-      <workItem from="1703485218363" duration="3639000" />
-      <workItem from="1703491948357" duration="5923000" />
-      <workItem from="1703663721216" duration="1822000" />
-      <workItem from="1703665598004" duration="5526000" />
-      <workItem from="1703828972918" duration="1633000" />
-      <workItem from="1703833268195" duration="869000" />
-      <workItem from="1703834224222" duration="48000" />
-      <workItem from="1703834566993" duration="226000" />
-      <workItem from="1703863519802" duration="723000" />
-      <workItem from="1704027511232" duration="611000" />
-      <workItem from="1704185508136" duration="4695000" />
-      <workItem from="1704200089052" duration="4410000" />
-      <workItem from="1704379614412" duration="610000" />
-      <workItem from="1704730554344" duration="2302000" />
-      <workItem from="1705156793691" duration="165000" />
-      <workItem from="1705212592999" duration="8737000" />
-      <workItem from="1705226312723" duration="278000" />
-      <workItem from="1705226838195" duration="2237000" />
-      <workItem from="1705237313168" duration="11477000" />
-      <workItem from="1705295470859" duration="10666000" />
-      <workItem from="1705311212202" duration="8000" />
-      <workItem from="1705312049260" duration="15637000" />
-      <workItem from="1705332286255" duration="1605000" />
-      <workItem from="1705838323832" duration="661000" />
-      <workItem from="1705840053363" duration="8798000" />
-      <workItem from="1705904873878" duration="22889000" />
-      <workItem from="1705985187533" duration="925000" />
-      <workItem from="1705986125669" duration="25793000" />
-      <workItem from="1706074674547" duration="17375000" />
-      <workItem from="1706126545470" duration="2459000" />
-      <workItem from="1706174628577" duration="875000" />
-      <workItem from="1706333279095" duration="3173000" />
+      <updated>1706343510673</updated>
+      <workItem from="1706343512857" duration="463000" />
+      <workItem from="1706347201133" duration="11885000" />
     </task>
-    <task id="LOCAL-00001" summary="admin view product">
-      <option name="closed" value="true" />
-      <created>1705937773954</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1705937773954</updated>
-    </task>
-    <task id="LOCAL-00002" summary="admin view product">
-      <option name="closed" value="true" />
-      <created>1705937827443</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1705937827443</updated>
-    </task>
-    <task id="LOCAL-00003" summary="admin change information product">
-      <option name="closed" value="true" />
-      <created>1706093365939</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1706093365940</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="xml" />
-    <MESSAGE value="admin view product" />
-    <MESSAGE value="admin change information product" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin change information product" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/BillDAO.java</url>
+          <line>99</line>
+          <properties class="dao.BillDAO" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

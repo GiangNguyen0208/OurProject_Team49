@@ -9,7 +9,6 @@
 <%@ page import="java.util.Locale" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="dao.ColorDAO" %>
-<%@ page import="service.UserService" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -21,6 +20,7 @@
     double discount = (double) request.getAttribute("discount");
     List<Image_Product> productImages = (List<Image_Product>) request.getAttribute("productImages");
     List<Product_Color> productColors = (List<Product_Color>) request.getAttribute("productColors");
+
     List<Review> productReviews = (List<Review>) request.getAttribute("productReviews");
     List<User> users = (List<User>) request.getAttribute("users");
 
@@ -51,11 +51,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 
-        <%--BOOTRAPS--%>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-        <!-- FONT GOOGLE -->
-        <link
+    <!-- FONT GOOGLE -->
+    <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
             rel="stylesheet"
     />
@@ -92,14 +91,15 @@
     <link
             rel="stylesheet"
             href="./assets/css/owl.theme.default.min.css"
-        />
-    </head>
-    <body>
-        <!-- HEADER -->
-        <c:import url="header.jsp"/>
-        <%
-            User u = (User) session.getAttribute("auth");
-        %>
+    />
+</head>
+<body>
+<!-- HEADER -->
+<c:import url="header.jsp"/>
+
+<%
+    User u = (User) session.getAttribute("auth");
+%>
 
 <!-- PRODUCT DETAIL -->
 <div class="product__detail">
@@ -246,110 +246,86 @@
                 V-Drums mà Roland đem lại trong những buổi biểu diễn
                 live chuyên nghiệp của bạn.
             </p>
-                    <img
-                        src="./assets/img/product/sp1.jpg"
-                        alt=""
-                        class="info-img"
-                    />
+
+            <img
+                    src="./assets/img/product/sp1.jpg"
+                    alt=""
+                    class="info-img"
+            />
+        </div>
+    </div>
+</div>
+
+<div class="product__review container mt-50 mb-50" id="reviews">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="review__title__container">
+                <p class = "review__title" >Product Reviews</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 id="countReview" class="card-title"><%= productReviews.size()%> reviews for <%= selectedProduct.getName() %></h4>
+                </div>
+                <div>
+                    <form name = "myform">
+                        <!-- Your review -->
+                        <div class="md-form md-outline">
+                            <textarea placeholder="Your eview" class = "card-textarea" name="content"></textarea>
+                        </div>
+                        <div class="text-right inp button-review-container">
+                            <input class="button-review" type="button" value="ADD A REVIEW" onclick="addReview(<%=selectedProductId%>)"></input>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-
-        <%-- PRODUCT REVIEW--%>
-        <div class="product__review container mt-50 mb-50" id="reviews">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="review__title__container">
-                        <p class = "review__title" >Product Reviews</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 id="countReview" class="card-title"><%= productReviews.size()%> reviews for <%= selectedProduct.getName() %></h4>
-                        </div>
-                        <div>
-                            <form name = "myform">
-                                <!-- Your review -->
-                                <div class="md-form md-outline">
-                                    <textarea placeholder="Your eview" class = "card-textarea" name="content"></textarea>
-                                </div>
-                                <div class="text-right inp button-review-container">
-                                    <input class="button-review" type="button" value="ADD A REVIEW" onclick="addReview(<%=selectedProductId%>)"></input>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
 
 
-                    <div class="comment-widgets m-b-20">
+            <div class="comment-widgets m-b-20">
 
-                        <% for (Review review : productReviews) { %>
+                <% for (Review review : productReviews) { %>
 
-                        <div class="d-flex flex-row comment-row">
+                <div class="d-flex flex-row comment-row">
 
-                            <div class="p-2"><span class="round"><img src="https://i.imgur.com/uIgDDDd.jpg" alt="user" width="50"></span></div>
-                            <div class="comment-text w-100">
-                                <% for (User user : users) { %>
-                                <% if (review.getUserId() == user.getId()) {%>
-                                <p class="review__username"><%= user.getUsername()%></p>
-                                <% } %>
-                                <% } %>
-                                <div class="comment-footer">
-                                    <span class="dot mb-1"></span>
-                                    <span class="review__date"><%= review.getDateReview()%></span>
-
-                                </div>
-                                <p class="review__content m-b-5 m-t-10"><%= review.getContent()%></p>
-                            </div>
-                        </div>
-
+                    <div class="p-2"><span class="round"><img src="https://i.imgur.com/uIgDDDd.jpg" alt="user" width="50"></span></div>
+                    <div class="comment-text w-100">
+                        <% for (User user : users) { %>
+                        <% if (review.getUserId() == user.getId()) {%>
+                        <p class="review__username"><%= user.getUsername()%></p>
                         <% } %>
-                    </div>
+                        <% } %>
+                        <div class="comment-footer">
+                            <span class="dot mb-1"></span>
+                            <span class="review__date"><%= review.getDateReview()%></span>
 
+                        </div>
+                        <p class="review__content m-b-5 m-t-10"><%= review.getContent()%></p>
+                    </div>
                 </div>
+
+                <% } %>
             </div>
+
         </div>
+    </div>
+</div>
 
-        <div id="notifyLogin">
-            Bạn chưa đăng nhập. Vui lòng đăng nhập để thêm đánh giá.
-        </div>
-
-
-        <!-- FEEDBACK -->
-        <section class="feedback">
-            <h2>Phản hồi của khách hàng.</h2>
-            <div class="feedback__content">
-                <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <p>
-                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit. Nihil facilis
-                            aspernatur temporibus magni culpa beatae repellat
-                            delectus accusantium explicabo veniam?
-                            <i class="fa fa-quote-right"></i>
-                        </p>
-                        <p class="feedback__name">GIANG</p>
-                    </div>
-                    <div class="item">
-                        <p>
-                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit. Nihil facilis
-                            aspernatur temporibus magni culpa beatae repellat
-                            delectus accusantium explicabo veniam?
-                            <i class="fa fa-quote-right"></i>
-                        </p>
-                        <p class="feedback__name">DAI</p>
-                    </div>
-                    <div class="item">
-                        <p>
-                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit. Nihil facilis
-                            aspernatur temporibus magni culpa beatae repellat
-                            delectus accusantium explicabo veniam?
-                            <i class="fa fa-quote-right"></i>
-                        </p>
-                        <p class="feedback__name">THUONG</p>
-                    </div>
-                </div>
+<div id="notifyLogin">
+    Bạn chưa đăng nhập. Vui lòng đăng nhập để thêm đánh giá.
+</div>
+<!-- FEEDBACK -->
+<section class="feedback">
+    <h2>Phản hồi của khách hàng.</h2>
+    <div class="feedback__content">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <p>
+                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor
+                    sit amet consectetur adipisicing elit. Nihil facilis
+                    aspernatur temporibus magni culpa beatae repellat
+                    delectus accusantium explicabo veniam?
+                    <i class="fa fa-quote-right"></i>
+                </p>
+                <p class="feedback__name">GIANG</p>
             </div>
             <div class="item">
                 <p>
@@ -593,45 +569,44 @@
     });
 </script>
 
-        <script type="text/javascript">
-            function addReview(productId) {
+<script type="text/javascript">
+    function addReview(productId) {
+        <%if(u == null) {%>
+        // window.location.href = 'logIn.jsp';
+        // alert("Bạn chưa đăng nhập. Vui lòng đăng nhập để thêm đánh giá.");
+        document.getElementById('notifyLogin').style.display = 'block';
+        setTimeout(function () {
+            document.getElementById('notifyLogin').style.display = 'none';
+        }, 2000);
+        <% } else {%>
+        var xhttp;
+        var content = document.myform.content.value;
+        var url = "productdetails?content=" + content + "&productId=" + productId;
 
-                <%if(u == null) {%>
-                document.getElementById('notifyLogin').style.display = 'block';
-                setTimeout(function () {
-                    document.getElementById('notifyLogin').style.display = 'none';
-                }, 2000);
-                <% } else {%>
-                var xhttp;
-                var content = document.myform.content.value;
-                var url = "productdetails?content=" + content + "&productId=" + productId;
+        // Tạo đối tượng XMLHttpRequest
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        } else {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
 
-                // Tạo đối tượng XMLHttpRequest
-                if (window.XMLHttpRequest) {
-                    xhttp = new XMLHttpRequest();
-                } else {
-                    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-
-                // Xử lý sự kiện khi trạng thái của XMLHttpRequest thay đổi
-                xhttp.onreadystatechange = function () {
-                    if (xhttp.readyState == 4) {
-                        var data = xhttp.responseText;
-
-                        // Hiển thị đánh giá mới trên trang web
-                        var row = document.getElementById("reviews");
-                        row.innerHTML += data;
-                    }
-
-                }
-
-                // Mở kết nối và gửi dữ liệu đến server
-                xhttp.open("POST", url, true);
-                xhttp.send();
-                <% }%>
+        // Xử lý sự kiện khi trạng thái của XMLHttpRequest thay đổi
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4) {
+                var data = xhttp.responseText;
+                // Hiển thị đánh giá mới trên trang web
+                var row = document.getElementById("reviews");
+                row.innerHTML += data;
             }
-        </script>
-    </body>
+
+        }
+        // Mở kết nối và gửi dữ liệu đến server
+        xhttp.open("POST", url, true);
+        xhttp.send();
+        <% }%>
+    }
+</script>
+</body>
 </html>
 <%
     } else {

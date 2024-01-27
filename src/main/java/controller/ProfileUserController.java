@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -25,7 +26,10 @@ public class ProfileUserController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        int userId = Integer.parseInt(req.getParameter("userId"));
+        HttpSession session = req.getSession();
+        User u = (User) session.getAttribute("auth");
+        int userId = u.getId();
+
         email = req.getParameter("email");
         phone = req.getParameter("phone");
         int phoneValue = 0;
@@ -42,26 +46,19 @@ public class ProfileUserController extends HttpServlet {
         req.setAttribute("lastName", lastName);
         req.setAttribute("birthDate", birthDate);
 
-        Object obj = req.getSession().getAttribute("auth");
-        User user = null;
-        if (obj != null) {
-            user = (User) obj;
-            if (user != null) {
-                String username = user.getUsername();
+        String username = u.getUsername();
 
-                if (!phone.isEmpty()) {
-                    UserDAO.changeSpecificInfo(userId, email, phoneValue, firstName, lastName, birthDate, gender);
+        if (!phone.isEmpty()) {
+            UserDAO.changeSpecificInfo(userId, email, phoneValue, firstName, lastName, birthDate, gender);
 
-                }
-                if (!email.isEmpty()) {
-                    UserDAO.changeSpecificInfo(userId, email, phoneValue, firstName, lastName, birthDate, gender);
-                }
-
-                User user2 = UserDAO.getUserByUsername(username);
-                req.getSession().setAttribute("auth", user2);
-
-            }
         }
+        if (!email.isEmpty()) {
+            UserDAO.changeSpecificInfo(userId, email, phoneValue, firstName, lastName, birthDate, gender);
+        }
+
+        User user2 = UserDAO.getUserByUsername(username);
+        req.getSession().setAttribute("auth", user2);
+
 
         req.getRequestDispatcher("profile.jsp").forward(req, resp);
     }
