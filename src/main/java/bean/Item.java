@@ -7,10 +7,13 @@ public class Item implements Serializable {
     private Product product;
     private int quantity;
     private double price;
+    private String colorName;
 
-    public Item(Product product, int quantity) {
+    public Item(Product product, int quantity, String colorName) {
         this.product = product;
         this.quantity = quantity;
+        this.colorName = colorName;
+        this.price = product.getTotalPrice() * quantity;
     }
 
     public int getId() {
@@ -43,6 +46,14 @@ public class Item implements Serializable {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public void setColorName(String colorName) {
+        this.colorName = colorName;
+    }
+
+    public String getColorName() {
+        return colorName;
     }
 
     @Override

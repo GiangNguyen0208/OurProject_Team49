@@ -56,7 +56,7 @@ public class LoginController extends HttpServlet {
 
 
         if (user != null) {
-             if(user.getStatus() == 0) {
+            if(user.getStatus() == 0) {
                 req.setAttribute("isNotVerify", "Tài khoản chưa được xác thực");
                 req.getRequestDispatcher("./logIn.jsp").forward(req, resp);
                 return;

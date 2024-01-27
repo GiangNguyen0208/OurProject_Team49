@@ -63,8 +63,7 @@ public class ProductDAO {
                         .collect(Collectors.toList())
         );
         return productList;
-    }
-
+}
     public static List<Product> getProductAzPrice(String AZorZA) {
         List<Product> productList = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice\n" +
@@ -74,8 +73,7 @@ public class ProductDAO {
                         .collect(Collectors.toList())
         );
         return productList;
-    }
-
+}
     public static List<Product> getProductByDiscount() {
         List<Product> productList = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice " +
@@ -86,29 +84,27 @@ public class ProductDAO {
                         .collect(Collectors.toList())
         );
         return productList;
-    }
-
+}
     public static List<Product> getProductById(int id) {
         List<Product> productList = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT product_details.id, product_details.name, description, totalPrice " +
                                 "From product_details Where product_details.id = ?")
-                        .bind(0, id)
-                        .mapToBean(Product.class)
-                        .collect(Collectors.toList())
+                                        .bind(0, id)
+                                        .mapToBean(Product.class)
+                                        .collect(Collectors.toList())
         );
         return productList;
-    }
-
+}
     public static int getQuantityInStock(int id) {
-        int quantityInStock = JDBIConnector.me().withHandle(handle ->
-                handle.createQuery("SELECT quantity FROM product_details WHERE id = :id")
-                        .bind("id", id)
-                        .mapTo(int.class)
-                        .findOne()
-                        .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
-        );
-        return quantityInStock;
-    }
+    int quantityInStock = JDBIConnector.me().withHandle(handle ->
+            handle.createQuery("SELECT quantity FROM product_details WHERE id = :id")
+                    .bind("id", id)
+                    .mapTo(int.class)
+                    .findOne()
+                    .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
+    );
+    return quantityInStock;
+}
 
     public static int getTotalProductNumber() {
         int totalProductNumber = JDBIConnector.me().withHandle(handle ->
@@ -118,7 +114,7 @@ public class ProductDAO {
                         .orElse(0) // Giả sử trả về 0 nếu không tìm thấy sản phẩm
         );
         return totalProductNumber;
-    }
+}
 
     public void updateProductQuantityInStock(int newQuantity, int id) {
         JDBIConnector.me().useHandle(handle ->
@@ -128,8 +124,7 @@ public class ProductDAO {
                         .execute()
         );
     }
-
-    //    Phương thức để kiểm tra xem số lượng trong đơn hàng có vượt quá số lượng trong kho hay không
+//    Phương thức để kiểm tra xem số lượng trong đơn hàng có vượt quá số lượng trong kho hay không
     public boolean isOrderQuantityValid(Order order) {
         for (Map.Entry<Product, Integer> entry : order.getOrderItems().entrySet()) {
             Product product = entry.getKey();
@@ -143,7 +138,6 @@ public class ProductDAO {
         }
         return true;
     }
-
     public Product getProductId(int id) {
         Product product = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT product_details.id, product_details.name, totalPrice, quantity FROM product_details WHERE id = :id")
@@ -228,25 +222,9 @@ public class ProductDAO {
         return productList;
     }
 
-    public static void addProduct(Product product) {
-        JDBIConnector.me().withHandle(handle ->
-                handle.createUpdate("insert into product_details(name, discountId, categoryId, brandId, supplierId, quantity, totalPrice, description) " +
-                                "values (:name, :discountId, :categoryId, :brandId, :supplierId, :quantity, :totalPrice, :description)")
-                        .bind("name", product.getName())
-                        .bind("discountId", product.getDiscountId())
-                        .bind("categoryId", product.getCategoryId())
-                        .bind("brandId", product.getBrandId())
-                        .bind("supplierId", product.getSupplierId())
-                        .bind("quantity", product.getQuantity())
-                        .bind("totalPrice", product.getTotalPrice())
-                        .bind("description", product.getDescription())
-                        .execute()
-        );
-    }
-
     public static void main(String[] args) {
         List<Product> productByCate = ProductDAO.getProductByCategory("Electric");
-        List<Product> productByPrice = ProductDAO.getProductByPriceRange(0, 10000000);
+        List<Product> productByPrice = ProductDAO.getProductByPriceRange(0,10000000);
         List<Product> productByBrand = ProductDAO.getProductByBrand("Manhwa");
         List<Product> productByASC = ProductDAO.getProductAZ("ASC");
         List<Product> productDiscount = ProductDAO.getProductByDiscount();

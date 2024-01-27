@@ -14,11 +14,12 @@
 <% List<Item> shoppingCart = (List<Item>) request.getSession().getAttribute("cart");
     String announce = "";
 %>
-<% if (shoppingCart == null || shoppingCart.isEmpty()) {announce = "Giỏ hàng bạn hiện đang trống.!";%>
+<% if (shoppingCart == null || shoppingCart.isEmpty()) {
+    announce = "Giỏ hàng bạn hiện đang trống.!";%>
 <%
-} else {
-    announce = "Giỏ hàng bạn hiện đang có " + shoppingCart.size() + " Sản phẩm.!";
-}
+    } else {
+        announce = "Giỏ hàng bạn hiện đang có " + shoppingCart.size() + " Sản phẩm.!";
+    }
 %>
 
 <html lang="en">
@@ -97,7 +98,8 @@
     <section class="cart__content">
         <div class="left__content">
 
-            <h3><%=announce%></h3>
+            <h3><%=announce%>
+            </h3>
             <div class="main-content">
                 <div><h3>Thông tin chi tiết</h3></div>
                 <div class="your__cart">
@@ -107,6 +109,7 @@
                             <th>Mã SP</th>
                             <th>Tên SP</th>
                             <th>Ảnh</th>
+                            <th>Màu sắc</th>
                             <th>Giá</th>
                             <th>Số lượng</th>
                             <th>Tổng giá</th>
@@ -114,7 +117,6 @@
                         <%
                             double total = 0;
                             double priceOfItem = 0;
-                            String codeColor = (String) request.getAttribute("selectedCodeColor");
                             List<Item> cart = (List<Item>) session.getAttribute("cart");
                             if (cart != null) {
                                 for (int i = 0; i < cart.size(); i++) {
@@ -130,21 +132,29 @@
                                     <button>Xóa</button>
                                 </a>
                             </td>
-                            <td><%= item.getId() %></td>
-                            <td><%= item.getName() %></td>
+                            <td><%= item.getId() %>
+                            </td>
+                            <td><%= item.getName() %>
+                            </td>
                             <td>
-                                <img src="<%= ImageService.getInstance().getImageByProductId(item.getId()).get(0).getLink() %>" width="80">
+                                <img src="<%= ImageService.getInstance().getImageByProductId(item.getId()).get(0).getLink() %>"
+                                     width="80">
+                            </td>
+                            <td><%= cart.get(i).getColorName() %>
                             </td>
 
-                            <td id="price<%= i %>"><%= formatCurrency(item.getTotalPrice()) %></td>
-                            <td>
-                                <form action="" method="post">
-                                    <input type="text" id="quantity<%= i %>" name="quantity<%= i %>" value="<%= quantity %>">
-                                    <button type="submit" name="action" value="minus">Giảm</button>
-                                    <button type="submit" name="action" value="add">Tăng</button>
-                                </form>
+                            <td id="price<%= item.getId() %>"><%= formatCurrency(item.getTotalPrice()) %>
                             </td>
-                            <td id="totalPriceOfProduct<%= i %>"><%= formatCurrency(priceOfItem) %></td>
+                            <td>
+                                <div class="_grid">
+                                    <button class="_btn _column product-subtract" data-pid="<%= item.getId() %>">&minus;</button>
+                                    <div class="_column product-qty<%= item.getId() %>"><%= quantity %>
+                                    </div>
+                                    <button class="_btn _column product-plus" data-pid="<%= item.getId() %>">&plus;</button>
+                                </div>
+                            </td>
+                            <td id="totalPriceOfProduct<%= item.getId() %>"><%= formatCurrency(priceOfItem) %>
+                            </td>
                         </tr>
                         <%
                                 }
@@ -152,7 +162,8 @@
                         %>
                         <tr>
                             <td colspan="6" align="right">Tổng tiền</td>
-                            <td class="total"><%= formatCurrency(total) %></td>
+                            <td class="total"><%= formatCurrency(total) %>
+                            </td>
                         </tr>
                     </table>
                     <br>
@@ -182,13 +193,13 @@
                         </p>
                     </div>
                     <div class="box__order__active">
-                        <form action="processPayment" method="post">
+                        <form action="<%= request.getContextPath()%>/bill" method="get">
                             <!-- Include hidden input fields for order details -->
                             <input type="hidden" name="total" value="<%= total %>">
                             <!-- Add other necessary hidden fields -->
 
                             <button type="submit" class="btn__payment">
-                                <a href="#">Thanh toán</a>
+                                Thanh toán
                             </button>
                         </form>
                     </div>
@@ -285,10 +296,10 @@
         </div>
     </footer>
 </section>
-    <!-- MAIN JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/product.js"></script>
-    <script src="js/paging.js"></script>
+<!-- MAIN JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/product.js"></script>
+<script src="js/paging.js"></script>
 
 <%!
     private String formatCurrency(double totalPrice) {
@@ -298,6 +309,41 @@
         return currencyFormatter.format(price);
     }
 %>
-    <script src="js/cart.js"></script>
+<script>
+    $(document).ready(function () {
+        // Xử lý khi nút tăng được nhấn
+        $('.product-plus').on('click', function () {
+            var productId = $(this).data('pid');
+            updateQuantity(productId, 1);
+        });
+
+        // Xử lý khi nút giảm được nhấn
+        $('.product-subtract').on('click', function () {
+            var productId = $(this).data('pid');
+            updateQuantity(productId, -1);
+        });
+
+        function updateQuantity(productId, amount) {
+            var currentQuantity = parseInt($('.product-qty' + productId).text());
+            var newQuantity = currentQuantity + amount;
+
+            // Gửi yêu cầu Ajax để cập nhật số lượng
+            $.ajax({
+                url: '<%= request.getContextPath()%>/cart?action=update',
+                type: 'GET',
+                data: {
+                    productId: productId,
+                    quantity: newQuantity
+                },
+                success: function (response) {
+                    window.location.reload();
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
