@@ -27,6 +27,6 @@ public class AdminSearchUser extends HttpServlet {
         List<User> userList = UserDAO.adminSearchUser(searchValue);
         req.setAttribute("userList", userList);
         req.setAttribute("searchValue", searchValue);
-        req.getRequestDispatcher("./adminUser.jsp").forward(req, resp);
+        req.getRequestDispatcher("/adminUser.jsp").forward(req, resp);
     }
 }

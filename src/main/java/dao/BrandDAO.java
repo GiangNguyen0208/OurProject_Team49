@@ -51,6 +51,16 @@ public class BrandDAO {
         }
     }
 
+    public static String getBrandName(int id) {
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT name FROM brands WHERE id = :id")
+                        .bind("id", id)
+                        .mapTo(String.class)
+                        .findOne()
+                        .orElse(null)
+        );
+    }
+
     public static void main(String[] args) {
         Brand brand = getNameBrandById(1);
         System.out.println(getBiggestBrandId());

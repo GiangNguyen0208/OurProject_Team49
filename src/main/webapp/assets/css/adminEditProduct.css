@@ -140,6 +140,12 @@ button {
     cursor: pointer;
 }
 
+.back-cta {
+    font-weight: 600;
+    display: inline-block;
+    color: var(--sub-main-color);
+    padding: 12px;
+}
 
 .dialog,
 .dialog-category,

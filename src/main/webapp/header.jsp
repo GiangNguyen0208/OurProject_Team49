@@ -13,12 +13,6 @@
         <p>
             <a href="./home"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
         </p>
-        <div class="search">
-            <label>
-                <input type="text" placeholder="Tìm kiếm"/>
-            </label>
-            <button type="submit">Search</button>
-        </div>
         <nav>
             <ul class="menu__bar">
                 <li class="menu__items">
@@ -56,6 +50,10 @@
                 <a href="logIn.jsp" class="sign__in">
                     <i class="fa fa-user"></i>
                     <span>Đăng Nhập</span>
+                </a>
+                <a href="signUp.jsp" class="sign__in">
+                    <i class="fa fa-user"></i>
+                    <span>Đăng Ký</span>
                 </a>
             </c:when>
             <c:otherwise>

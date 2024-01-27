@@ -7,6 +7,7 @@ import bean.Supplier;
 import dao.BrandDAO;
 import dao.CategoryDAO;
 import dao.ProductDAO;
+import dao.SupplierDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,7 +40,7 @@ public class AdminAddCategory extends HttpServlet {
 
         List<Brand> brandList = BrandDAO.getAllBrands();
 
-        List<Supplier> supplierList = CategoryDAO.getListSupplier();
+        List<Supplier> supplierList = SupplierDAO.getListSupplier();
 
         HttpSession session = req.getSession();
         session.setAttribute("product", product);

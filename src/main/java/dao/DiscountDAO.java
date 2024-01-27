@@ -30,9 +30,47 @@ public class DiscountDAO {
         );
     }
 
-    public static void main(String[] args) {
-        double amount = DiscountDAO.getDiscount(1);
-        System.out.println(amount);
+    public static List<Discount> getDiscountList() {
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("select id, amount, startDate, endDate from discount")
+                        .mapToBean(Discount.class)
+                        .collect(Collectors.toList())
+        );
+    }
 
+    public static Double getDiscountAmount(int id){
+        return  JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT amount FROM discount WHERE id = :id")
+                        .bind("id", id)
+                        .mapTo(Double.class)
+                        .findOne()
+                        .orElse(null)
+        );
+    }
+
+    public static String getDiscountStartDay(int id){
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT startDate FROM discount WHERE id = :id")
+                        .bind("id", id)
+                        .mapTo(String.class)
+                        .findOne()
+                        .orElse(null)
+        );
+    }
+
+    public static String getDiscountEndDay(int id){
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT endDate FROM discount WHERE id = :id")
+                        .bind("id", id)
+                        .mapTo(String.class)
+                        .findOne()
+                        .orElse(null)
+        );
+    }
+
+    public static void main(String[] args) {
+//        double amount = DiscountDAO.getDiscount(1);
+//        System.out.println(amount);
+        System.out.println(getDiscountList());
     }
 }

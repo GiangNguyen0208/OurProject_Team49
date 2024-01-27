@@ -1,7 +1,7 @@
 package controller.admin;
 
-import bean.User;
-import dao.UserDAO;
+import bean.Supplier;
+import dao.SupplierDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "adminIndex", value = "/adminUserIndex")
-public class AdminUserManagementController extends HttpServlet {
+@WebServlet(value = "/addSupplier")
+public class AdminAddSupplier extends HttpServlet {
+    String nameSupplier, email;
+    int phone;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,10 +22,14 @@ public class AdminUserManagementController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<User> userList = UserDAO.getUserList();
+        int id = 0;
+        nameSupplier = req.getParameter("new-supplier-name");
+        email  =req.getParameter("new-supplier-email");
+        phone = Integer.parseInt(req.getParameter("new-supplier-phone"));
 
-        req.setAttribute("userList", userList);
 
-        req.getRequestDispatcher("/adminUser.jsp").forward(req, resp);
+        Supplier supplier = new Supplier(id, nameSupplier, email, phone);
+        SupplierDAO.addNewSupplier(supplier);
+        resp.sendRedirect("/adminProductIndex");
     }
 }

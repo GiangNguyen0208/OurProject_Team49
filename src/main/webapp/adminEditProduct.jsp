@@ -8,8 +8,8 @@
     <title>Admin</title>
 
     <!-- reset CSS -->
-    <link rel="stylesheet" href="assets/css/reset.css"/>
-    <link rel="stylesheet" href="assets/css/index.css"/>
+    <link rel="stylesheet" href="./assets/css/reset.css"/>
+    <link rel="stylesheet" href="./assets/css/index.css"/>
     <!-- FONT AWRSOME -->
     <link
             rel="stylesheet"
@@ -43,11 +43,15 @@
             rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="assets/css/adminProductView.css"/>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/adminEditProduct.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body>
 <div class="container">
+    <div>
+        <i class="fa-solid fa-arrow-left"></i>
+        <a class="back-cta" href="/adminProductIndex">Trang Quản Lý</a>
+    </div>
     <div class="title">Chỉnh sửa sản phẩm</div>
     <c:set var="product" value="${sessionScope.product}"/>
     <c:set var="productId" value="${sessionScope.productId}"/>
@@ -114,8 +118,7 @@
                     <c:forEach var="supplier" items="${sessionScope.suppliers}">
                         <c:choose>
                             <c:when test="${product.getSupplierId() == supplier.getId()}">
-                                <option class="product-sub" selected="selected"
-                                        value="${product.getSupplierName(product.getSupplierId())}">${product.getSupplierName(product.getSupplierId())}</option>
+                                <option class="product-sub" selected="selectedvalue="${product.getSupplierName(product.getSupplierId())}">${product.getSupplierName(product.getSupplierId())}</option>
                             </c:when>
                             <c:otherwise>
                                 <option class="product-sub"  value="${supplier.getName()}">${supplier.getName()}</option>
@@ -162,7 +165,6 @@
                     Thêm hình ảnh
                 </a>
             </button>
-
         </form>
         <form method="get" action="addCategory" class="dialog-category">
             <div class="dialog-wrapper">

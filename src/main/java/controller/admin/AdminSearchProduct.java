@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -25,10 +26,15 @@ public class AdminSearchProduct extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setContentType("text/html;charset=UTF-8");
+
         searchValue = req.getParameter("search-product");
         List<Product> productList = ProductDAO.adminSearchProduct(searchValue);
-        req.setAttribute("productList", productList);
+        HttpSession session = req.getSession();
+
+        session.setAttribute("productList", productList);
         req.setAttribute("searchValue", searchValue);
-        req.getRequestDispatcher("./adminProduct.jsp").forward(req, resp);
+        req.getRequestDispatcher("/adminProduct.jsp").forward(req, resp);
     }
 }
