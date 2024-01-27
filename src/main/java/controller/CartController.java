@@ -110,6 +110,7 @@ public class CartController extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         HttpSession session = req.getSession();
+
         var quantity = req.getParameter("quantity");
         var id = req.getParameter("productId");
         List<Item> cart = (List<Item>) session.getAttribute("cart");
