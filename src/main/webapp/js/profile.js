@@ -1,27 +1,27 @@
 
 
-// JS Thông báo
-const buttons = document.querySelectorAll('. ');
-const alerts = document.querySelectorAll('.submit-alert');
-
-buttons.forEach((button, index) => {
-    button.addEventListener('click', (event) => {
-        event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
-        event.stopPropagation();
-        alerts[index].style.right = '34px';
-        let length = 70;
-        let process = alerts[index].querySelector('.process');
-        const run = setInterval(() =>  {
-            process.style.height = length + 'px';
-            length -= 5;
-            if (length <= -10) {
-                clearInterval(run);
-                alerts[index].style.right = '-500px';
-
-            }
-        }, 200);
-    });
-});
+// // JS Thông báo
+// const buttons = document.querySelectorAll('. ');
+// const alerts = document.querySelectorAll('.submit-alert');
+//
+// buttons.forEach((button, index) => {
+//     button.addEventListener('click', (event) => {
+//         event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
+//         event.stopPropagation();
+//         alerts[index].style.right = '34px';
+//         let length = 70;
+//         let process = alerts[index].querySelector('.process');
+//         const run = setInterval(() =>  {
+//             process.style.height = length + 'px';
+//             length -= 5;
+//             if (length <= -10) {
+//                 clearInterval(run);
+//                 alerts[index].style.right = '-500px';
+//
+//             }
+//         }, 200);
+//     });
+// });
 
 document.getElementById("updatePasswordLink").addEventListener("click", function(event) {
     // Ngăn chặn hành vi mặc định của liên kết

@@ -338,7 +338,8 @@ h2 {
     border: 1px solid rgb(196, 196, 207);
 }
 
-#email,
+
+
 #phone {
     position: relative;
     width: 150%;
@@ -353,6 +354,13 @@ h2 {
     top: 24%;
     left: 73.5%;
     transition: top 0.5s;
+}
+
+#email {
+    position: relative;
+    width: 150%;
+    float: right;
+    z-index: 10;
 }
 
 #email-error
