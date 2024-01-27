@@ -317,18 +317,7 @@
                                                         maxlength="128"
                                                         placeholder="Phone"
                                                         onkeyup="validatePhone()"
-                                                        <%
-                                                            if (phone == 0) {
-                                                        %>
-                                                            value=""
-                                                        <%
-                                                            } else {
-                                                        %>
-                                                            value = "0<%=phone%>"
-                                                        <%
-                                                            }
-                                                        %>
-
+                                                        value = "0<%=phone%>"
 
                                                 />
                                                 <span id = "phone-error"></span>

@@ -1,24 +1,22 @@
 package controller;
 
+
+import dao.BillDAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(value = "/logout")
-public class LogoutController extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
-    }
+@WebServlet(name = "HistoryBillController", value = "/history-bill")
+public class HistoryBillController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        session.invalidate();
-        resp.sendRedirect("index.jsp");
+        var myBill = BillDAO.getInstance().getBillsByUser((bean.User) req.getSession().getAttribute("auth"));
+        req.setAttribute("listOrder", myBill);
+        req.getRequestDispatcher("history-bill.jsp").forward(req, resp);
     }
 }

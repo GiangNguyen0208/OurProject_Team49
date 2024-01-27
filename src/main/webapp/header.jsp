@@ -13,12 +13,6 @@
         <p>
             <a href="./home"><i class="fa fa-drum"></i> <span>Dr/</span>um</a>
         </p>
-        <div class="search">
-            <label>
-                <input type="text" placeholder="Tìm kiếm"/>
-            </label>
-            <button type="submit">Search</button>
-        </div>
         <nav>
             <ul class="menu__bar">
                 <li class="menu__items">
@@ -29,9 +23,9 @@
                 <li class="menu__items">
                     <a href="products">Sản Phẩm</a>
                     <ul class="drum__container">
-                         <li class="drum__item">
+                        <li class="drum__item">
                             <a href="">Cymbal</a>
-                         </li>
+                        </li>
                         <li class="drum__item">
                             <a href="#">Trống bộ</a>
                         </li>

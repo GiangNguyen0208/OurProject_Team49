@@ -48,6 +48,10 @@
 </head>
 <body>
 <div class="container">
+    <div>
+        <i class="fa-solid fa-arrow-left"></i>
+        <a class="back-cta" href="adminProductIndex">Trang Quản Lý</a>
+    </div>
     <div class="title">Chỉnh sửa người dùng</div>
     <c:set var="user" value="${sessionScope.user}"/>
     <c:set var="userId" value="${sessionScope.userId}"/>
