@@ -37,7 +37,7 @@
 }
 
 .shop.checkout .form .form-group label span {
-    color: #ff2c18;
+    color: #ee6c4d;
     display: inline-block;
     position: absolute;
     right: -12px;
@@ -147,7 +147,7 @@
     bottom: 0;
     height: 2px;
     width: 50px;
-    background: #F7941D;
+    background: #ee6c4d;
 }
 
 .shop.checkout .single-widget .content ul {

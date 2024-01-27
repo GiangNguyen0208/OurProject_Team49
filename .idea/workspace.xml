@@ -10,6 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="fix admin" />
+    <list default="true" id="701121a4-0132-4c18-a223-79713d38fe31" name="Changes" comment="pull main">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/HistoryBillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UpdateQuantityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UpdateQuantityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productDetail.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +33,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -81,9 +97,29 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Giang&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Thuong/Documents/ProjectLTW/OurProject_Team49&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.85">
+}</component>
+  <component name="RunManager" selected="Smart Tomcat.Smart-Tomcat">
     <configuration name="BrandDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.BrandDAO" />
       <module name="Login" />
@@ -345,11 +381,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ReviewService" />
+      <item itemvalue="Application.BrandDAO" />
+      <item itemvalue="Application.CategoryDAO" />
+      <item itemvalue="Application.ProductDAO" />
+      <item itemvalue="Smart Tomcat.Smart-Tomcat" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.85" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ProductDAO" />
+        <item itemvalue="Smart Tomcat.Smart-Tomcat" />
         <item itemvalue="Application.ReviewService" />
-        <item itemvalue="Smart Tomcat.Tomcat: Login" />
         <item itemvalue="Application.BrandDAO" />
         <item itemvalue="Application.CategoryDAO" />
       </list>
@@ -405,6 +449,7 @@
       <workItem from="1706074674547" duration="17375000" />
       <workItem from="1706126545470" duration="2459000" />
       <workItem from="1706174628577" duration="875000" />
+      <workItem from="1706333279095" duration="3173000" />
     </task>
     <task id="LOCAL-00001" summary="admin view product">
       <option name="closed" value="true" />
@@ -482,5 +527,6 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="admin change information product" />
   </component>
 </project>
