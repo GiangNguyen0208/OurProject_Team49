@@ -38,17 +38,12 @@ public class ProductDetailController extends HttpServlet {
                 List<Image_Product> productImages = ImageService.getInstance().getImageByProductId(selectedProductId);
                 List<Product_Color> productColors = ColorService.getInstance().getListColorCodeByIdProduct(selectedProductId);
 
-                List<Review> productReviews = ReviewService.getInstance().getReviewByProductId(selectedProductId);
-                List<User> users = UserService.getInstance().getAllUser();
-
                 // Đặt thông tin vào request
                 req.setAttribute("discount", discount);
                 req.setAttribute("selectedProduct", selectedProduct);
                 req.setAttribute("brands", selectedBrand);
                 req.setAttribute("productImages", productImages);
                 req.setAttribute("productColors", productColors);
-                req.setAttribute("productReviews", productReviews);
-                req.setAttribute("users", users);
 
                 // Chuyển hướng sang trang productDetail.jsp
                 req.getRequestDispatcher("productDetail.jsp").forward(req, resp);

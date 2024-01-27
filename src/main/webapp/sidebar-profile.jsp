@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li>
-                <a class="" href="<%= request.getContextPath()%>/history-bill">
+                <a class="" href="<%= request.getContextPath()%>/history-bill.jsp">
                     <i class="fa fa-list-alt"></i>
                     <span>Quản lý đơn hàng</span>
                 </a>
