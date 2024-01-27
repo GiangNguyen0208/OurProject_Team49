@@ -20,6 +20,15 @@ public class ImageDAO {
         return imageList;
     }
 
+    public static int addImg(String link, int detailId) {
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createUpdate("insert into image_products(link, detailId) " +
+                        "values (:link, :detailId)")
+                        .bind("link", link)
+                        .bind("detailId", detailId)
+                        .execute()
+        );
+    }
 
     public static int removeImg(int idImg) {
         return JDBIConnector.me().withHandle((handle -> {
@@ -30,7 +39,6 @@ public class ImageDAO {
     }
     public static void main(String[] args) {
 
-        System.out.println(removeImg(23));
     }
 
 

@@ -103,6 +103,7 @@
                     <c:forEach items="${sessionScope.productList}" var="o">
                         <c:set var="price" value="${o.getTotalPrice()}"/>
                         <c:set var="roundedPrice" value="${Math.round(price)}"/>
+
                         <tr>
                             <td class="s-cl">
                                 <a class="link" target="_blank" href="adminViewProduct?productId=${o.getId()}">
@@ -120,7 +121,6 @@
                             <td class="s-cl">${o.getQuantity()}</td>
                         </tr>
                     </c:forEach>
-
                     </tbody>
                 </table>
             </div>

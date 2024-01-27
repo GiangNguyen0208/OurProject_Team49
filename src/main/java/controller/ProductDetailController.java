@@ -57,47 +57,47 @@ public class ProductDetailController extends HttpServlet {
         }
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        super.doPost(req, resp);
-        resp.setContentType("application/json;charset=UTF-8");
-        HttpSession session = req.getSession();
-        User u = (User) session.getAttribute("auth");
-        if(u==null) {
-            resp.getWriter();
-            return;
-        }
-
-        String content = req.getParameter("content");
-        int productId = Integer.parseInt(req.getParameter("productId"));
-        int userId = u.getId();
-        List<Review> productReviews = ReviewService.getInstance().getReviewByProductId(productId);
-
-//      Thêm review
-        ReviewDAO.insertReview(userId, productId, content);
-
-
-//      Lấy ra review mới nhất
-        Review newReview = new Review();
-        newReview = ReviewService.getInstance().getNewReview(userId, productId);
-        req.setAttribute("newReview", newReview);
-
-        PrintWriter out = resp.getWriter();
-
-
-        out.println("<div class=\"d-flex flex-row comment-row\">");
-        out.println("<div class=\"p-2\"><span class=\"round\"><img src=\"https://i.imgur.com/uIgDDDd.jpg\" alt=\"user\" width=\"50\"></span></div>");
-        out.println("<div class=\"comment-text w-100\">");
-        if (newReview.getUserId() == userId) {
-            out.println("<p class=\"review__username\">" + u.getUsername() + "</p>");
-        }
-        out.println("<div class=\"comment-footer\">");
-        out.println("<span class=\"dot mb-1\"></span>");
-        out.println("<span class=\"review__date\">" + newReview.getDateReview()+ "</span>");
-        out.println("</div>");
-        out.println("<p class=\"review__content m-b-5 m-t-10\">" + newReview.getContent() + "</p>");
-        out.println("</div>");
-        out.println("</div>");
-        out.println("</div>");
-    }
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+////        super.doPost(req, resp);
+//        resp.setContentType("application/json;charset=UTF-8");
+//        HttpSession session = req.getSession();
+//        User u = (User) session.getAttribute("auth");
+//        if(u==null) {
+//            resp.getWriter();
+//            return;
+//        }
+//
+//        String content = req.getParameter("content");
+//        int productId = Integer.parseInt(req.getParameter("productId"));
+//        int userId = u.getId();
+//        List<Review> productReviews = ReviewService.getInstance().getReviewByProductId(productId);
+//
+////      Thêm review
+//        ReviewDAO.insertReview(userId, productId, content);
+//
+//
+////      Lấy ra review mới nhất
+//        Review newReview = new Review();
+//        newReview = ReviewService.getInstance().getNewReview(userId, productId);
+//        req.setAttribute("newReview", newReview);
+//
+//        PrintWriter out = resp.getWriter();
+//
+//
+//        out.println("<div class=\"d-flex flex-row comment-row\">");
+//        out.println("<div class=\"p-2\"><span class=\"round\"><img src=\"https://i.imgur.com/uIgDDDd.jpg\" alt=\"user\" width=\"50\"></span></div>");
+//        out.println("<div class=\"comment-text w-100\">");
+//        if (newReview.getUserId() == userId) {
+//            out.println("<p class=\"review__username\">" + u.getUsername() + "</p>");
+//        }
+//        out.println("<div class=\"comment-footer\">");
+//        out.println("<span class=\"dot mb-1\"></span>");
+//        out.println("<span class=\"review__date\">" + newReview.getDateReview()+ "</span>");
+//        out.println("</div>");
+//        out.println("<p class=\"review__content m-b-5 m-t-10\">" + newReview.getContent() + "</p>");
+//        out.println("</div>");
+//        out.println("</div>");
+//        out.println("</div>");
+//    }
 }
