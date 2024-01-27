@@ -6,6 +6,13 @@ public class Discount {
     String startDate;
     String endDate;
 
+    public Discount(int id, double amount, String startDate, String endDate) {
+        this.id = id;
+        this.amount = amount;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
     public int getId() {
         return id;
     }

@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<fmt:setLocale value="vi_VN"/>
+<fmt:setBundle basename="java.text.resources"/>
 <html>
 <head>
     <title>Hóa Đơn của bạn</title>
@@ -32,25 +34,26 @@
         }
     </style>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Chi tiết sản phẩm</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- reset CSS -->
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/bill.css" />
-    <link rel="stylesheet" href="assets/css/bill2.css" />
+    <link rel="stylesheet" href="assets/css/reset.css"/>
+    <link rel="stylesheet" href="assets/css/index.css"/>
+    <link rel="stylesheet" href="assets/css/bill.css"/>
+    <link rel="stylesheet" href="assets/css/bill2.css"/>
     <!-- <link rel="stylesheet" href="./assets/css/product.css"> -->
 
     <!-- embed fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 
     <!-- FONT GOOGLE -->
     <link
@@ -82,127 +85,170 @@
             referrerpolicy="no-referrer"
     />
     <!-- styles -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/productDetail.css" />
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/productDetail.css"/>
 
     <!-- OWL CAROUSEL CSS -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css"/>
     <link
             rel="stylesheet"
             href="assets/css/owl.theme.default.min.css"
     />
+    <link rel="stylesheet" href="assets/css/checkout.css">
 </head>
 <body>
 <%--HEADER--%>
 <c:import url="header.jsp"/>
 <div class="clear"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="text-center">
-                <h2>Đơn hàng số: ###</h2>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
-                    <div class="panel panel-default height">
-                        <div class="panel-heading">Chi tiết đơn hàng</div>
-                        <div class="panel-body">
-                            <strong>David Peere:</strong><br>
-                            1111 Army Navy Drive<br>
-                            Arlington<br>
-                            VA<br>
-                            <strong>22 203</strong><br>
+<section class="shop checkout section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                <div class="checkout-form">
+                    <h2>Điền thông tin vào</h2>
+                    <p>Vui lòng điền đầy đủ thông tin</p>
+                    <!-- Form -->
+                    <form class="form" method="post" action="bill">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>Họ tên<span>*</span></label>
+                                    <input type="text" name="name" value="${sessionScope.auth.fullName}" placeholder=""
+                                           required="required">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>Số điện thoại<span>*</span></label>
+                                    <input type="number" value="${sessionScope.auth.phone}"  name="phone" placeholder=""
+                                           required="required"/>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Địa chỉ<span>*</span></label>
+                                    <input type="text" name="address" placeholder=""
+                                           required="required"/>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-3 col-lg-3">
-                    <div class="panel panel-default height">
-                        <div class="panel-heading">Thông tin thanh toán</div>
-                        <div class="panel-body">
-                            <strong>Tên thẻ:</strong> Visa<br>
-                            <strong>Số tài khoản:</strong> ***** 332<br>
-                            <strong>Ngày mua:</strong> 09/2020<br>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-3 col-lg-3">
-                    <div class="panel panel-default height">
-                        <div class="panel-heading">Phương thức nhận hàng</div>
-                        <div class="panel-body">
-                            <strong>Nhận hàng tận tay</strong> Yes <br>
-                            <strong>Chuyển khoản</strong> No <br>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-3 col-lg-3 pull-right">
-                    <div class="panel panel-default height">
-                        <div class="panel-heading">Địa chỉ nhận hàng</div>
-                        <div class="panel-body">
-                            <strong>Tên người nhận:</strong><br>
-                            33 Ngô Quyền<br>
-                            Quận 9<br>
-                            Tp. Hồ Chí Minh<br>
-                        </div>
-                    </div>
+                    </form>
+                    <!--/ End Form -->
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="text-center"><strong>Thứ tự đơn hàng</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-condensed">
-                            <thead>
-                            <tr>
-                                <td><strong>Tên Sản phẩm</strong></td>
-                                <td class="text-center"><strong>Giá Sản phẩm</strong></td>
-                                <td class="text-center"><strong>Số lượng sản phẩm</strong></td>
-                                <td class="text-right"><strong>Tổng tiền</strong></td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach var="item" items="${sessionScope.cart}">
-                                <tr>
-                                    <td>${item.product.name}</td>
-                                    <td class="text-center">${item.product.price}</td>
-                                    <td class="text-center">${item.quantity}</td>
-                                    <td class="text-right">${item.totalPrice}</td>
-                                </tr>
-                            </c:forEach>
-                            <tr>
-                                <td class="highrow"></td>
-                                <td class="highrow"></td>
-                                <td class="highrow text-center"><strong>Tổng giá đơn hàng</strong></td>
-                                <td class="highrow text-right">${totalOrderPrice}</td>
-                            </tr>
-                            <tr>
-                                <td class="emptyrow"></td>
-                                <td class="emptyrow"></td>
-                                <td class="emptyrow text-center"><strong>Phí giao hàng</strong></td>
-                                <td class="emptyrow text-right">${deliveryFee}</td>
-                            </tr>
-                            <tr>
-                                <td class="emptyrow"></td>
-                                <td class="emptyrow"></td>
-                                <td class="emptyrow text-center"><strong>Tổng tiền</strong></td>
-                                <td class="emptyrow text-right">${totalAmount}</td>
-                            </tr>
-                            </tbody>
-                        </table>
+            <div class="col-lg-4 col-12">
+                <div class="order-details">
+                    <!-- Order Widget -->
+                    <div class="single-widget">
+                        <h2>Tổng tiền</h2>
+                        <div class="content">
+                            <ul>
+                                <li>Tổng hóa đơn<span><fmt:formatNumber value="${total}" type="currency"
+                                                                        currencyCode="VND"/></span></li>
+                                <li>(+) Shipping<span>Free</span></li>
+                                <li class="last">Thành tiền<span><fmt:formatNumber value="${total}" type="currency"
+                                                                                   currencyCode="VND"/></span></li>
+                            </ul>
+                        </div>
                     </div>
+                    <!--/ End Order Widget -->
+                    <!-- Order Widget -->
+                    <div class="single-widget">
+                        <h2>Hình thức thanh toán</h2>
+                        <div class="content">
+                            <div class="checkbox">
+                                <label for="COD" class="check-out-cod checked"><input name="news" id="COD" type="checkbox" checked>
+                                    Thanh toán khi nhận hàng</label>
+                                <label for="BANK" class="check-out-bank"><input name="news" id="BANK" type="checkbox">
+                                    Chuyển khoản</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ End Order Widget -->
+                    <!-- Button Widget -->
+                    <div class="single-widget get-button">
+                        <div class="content">
+                            <div class="button">
+                                <button type="submit" id="continue-checkout">Tiếp tục</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ End Button Widget -->
                 </div>
             </div>
         </div>
     </div>
-    <a href="orderSucecssfully.jsp">
-        <button class="add">Thêm vào giỏ hàng</button>
-    </a>
-</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Sự kiện khi click vào input[type="checkbox"]
+        $('input[type="checkbox"]').change(function () {
+            if ($(this).is(':checked')) {
+                $(this).parent("label").addClass("checked");
+            } else {
+                $(this).parent("label").removeClass("checked");
+            }
+        });
+
+        // Sự kiện khi click vào label
+        $('.check-out-cod').click(function () {
+            $('#COD').prop('checked', true);
+            $('#BANK').prop('checked', false);
+            $(this).addClass("checked");
+            $('.check-out-bank').removeClass("checked");
+        });
+
+        $('.check-out-bank').click(function () {
+            $('#BANK').prop('checked', true);
+            $('#COD').prop('checked', false);
+            $(this).addClass("checked");
+            $('.check-out-cod').removeClass("checked");
+        });
+
+
+        $('#continue-checkout').click(function () {
+            if ($('#COD').is(':checked') || $('#BANK').is(':checked')) {
+                const name = $('input[name="name"]').val();
+                const phone = $('input[name="phone"]').val();
+                const address = $('input[name="address"]').val();
+                const payment = $('#COD').is(':checked') ? 'COD' : 'BANK';
+
+                if(name == '' || phone == '' || address == ''){
+                    alert('Vui lòng điền đầy đủ thông tin');
+                    return;
+                }
+
+                const data = {
+                    name: name,
+                    phone: phone,
+                    address: address,
+                    payment: payment
+                };
+
+                $.ajax({
+                    url: '<%= request.getContextPath()%>/bill',
+                    type: 'POST',
+                    data: data,
+                    success: function (response) {
+                        alert('Thêm vào giỏ hàng thành công');
+                        // direct to cart page
+                        window.location.href = '<%= request.getContextPath()%>/thank-you';
+                    },
+                    error: function (error) {
+                    }
+                });
+
+                console.log(data);
+            } else {
+                alert("Vui lòng chọn hình thức thanh toán");
+            }
+        });
+    });
+</script>
 </body>
 </html>

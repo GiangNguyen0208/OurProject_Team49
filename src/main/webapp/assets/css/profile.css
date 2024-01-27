@@ -7,7 +7,7 @@
 .clear {
     clear: both;
 
-    
+
 }
 body{
     font-family: 'Montserrat', sans-serif;
@@ -15,7 +15,7 @@ body{
     background-color: #fff;
     letter-spacing: 1px;
 }
- html {
+html {
     font-size: 18px;
     /* 1rem = 18px */
     /* Nếu không khai báo font-size thì 1rem tự động là 16px */
@@ -200,7 +200,7 @@ h2 {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    color: rgb(100, 100, 109);  
+    color: rgb(100, 100, 109);
     border-bottom: 1px solid #ee6c4d;
 }
 
