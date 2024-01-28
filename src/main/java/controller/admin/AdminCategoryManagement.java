@@ -24,6 +24,6 @@ public class AdminCategoryManagement extends HttpServlet {
         HttpSession session = req.getSession();
         List<Category> categoryList = CategoryDAO.getAllCategory();
         session.setAttribute("categoryList", categoryList);
-        req.getRequestDispatcher("/adminCategory.jsp").forward(req, resp);
+        req.getRequestDispatcher("./adminCategory.jsp").forward(req, resp);
     }
 }

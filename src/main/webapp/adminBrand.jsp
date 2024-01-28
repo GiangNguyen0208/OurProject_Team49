@@ -76,10 +76,6 @@
                 <div class="btn-grp">
                     <p>Thương Hiệu</p>
                     <div class="btn-item">
-                        <button class="del-brand add open-dialog-btn">
-                            <i class="fa-solid fa-minus"></i>
-                            Xóa thương hiệu
-                        </button>
                         <button class="add-brand add open-dialog-btn">
                             <i class="fa-solid fa-plus"></i>
                             Thêm thương hiệu
@@ -99,6 +95,7 @@
                 <table>
                     <thead>
                     <tr>
+                        <th class="s-cl">Xóa</th>
                         <th class="s-cl">Chỉnh sửa</th>
                         <th class="m-cl">Mã Thương Hiệu</th>
                         <th class="l-cl">Tên</th>
@@ -107,6 +104,11 @@
                     <tbody>
                     <c:forEach items="${sessionScope.brandList}" var="o">
                         <tr>
+                            <td class="s-cl">
+                                <a class="link" href="removeBrand?brandId=${o.getId()}">
+                                    <i class="fa-regular fa-square-minus"></i>
+                                </a>
+                            </td>
                             <td class="s-cl">
                                 <a class="link" target="_blank" href="adminViewProduct?productId=${o.getId()}">
                                     <i class="fa-solid fa-pen-to-square"></i>

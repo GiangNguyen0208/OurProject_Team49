@@ -1,7 +1,6 @@
 package controller.admin;
 
-import bean.User;
-import dao.UserDAO;
+import dao.DiscountDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,11 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "adminIndex", value = "/adminUserIndex")
-public class AdminUserManagementController extends HttpServlet {
-
+@WebServlet(value = "/addDiscount")
+public class AdminAddDiscount extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
@@ -21,10 +18,12 @@ public class AdminUserManagementController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<User> userList = UserDAO.getUserList();
+        double amount = Double.parseDouble(req.getParameter("percentage-discount"));
+        String startDate = req.getParameter("start-date");
+        String endDate = req.getParameter("end-date");
 
-        req.setAttribute("userList", userList);
+        DiscountDAO.addDiscount(amount/100, startDate, endDate);
 
-        req.getRequestDispatcher("./adminUser.jsp").forward(req, resp);
+        req.getRequestDispatcher("./adminDiscountManagement").forward(req, resp);
     }
 }

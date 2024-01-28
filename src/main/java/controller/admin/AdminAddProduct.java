@@ -23,7 +23,7 @@ public class AdminAddProduct extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        doGet(req, resp);
     }
 
     @Override
@@ -40,6 +40,6 @@ public class AdminAddProduct extends HttpServlet {
                 brandId, supplierId, quantity, price, description);
         ProductDAO.addProduct(product);
 
-        resp.sendRedirect("/adminProductIndex");
+        resp.sendRedirect("./adminProductIndex");
     }
 }

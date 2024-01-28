@@ -42,7 +42,7 @@ public class VerifyController extends HttpServlet {
                     req.setAttribute("verificationSuccess", "Xác minh thành công!");
                     req.getRequestDispatcher("./verify.jsp").forward(req, resp);
                 } else {
-                    req.setAttribute("errorMessage", "Mã xác minh không hợp lệ");
+                    req.setAttribute("errorMessage", "Mã xác minh không đúng");
                     req.getRequestDispatcher("./verify.jsp").forward(req, resp);
                 }
             }
@@ -52,7 +52,7 @@ public class VerifyController extends HttpServlet {
                     req.setAttribute("emailForgetPassword", emailForgetPassword);
                     req.getRequestDispatcher("./resetPassword.jsp").forward(req, resp);
                 } else {
-                    req.setAttribute("errorMessage", "Mã xác minh không hợp lệ");
+                    req.setAttribute("errorMessage", "Mã xác minh không đúng");
                     req.getRequestDispatcher("./verify.jsp").forward(req, resp);
                 }
             }

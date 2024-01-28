@@ -79,6 +79,6 @@ public class AdminChangeInforProduct extends HttpServlet {
         Product product = new Product(idProduct, nameProduct, discountId, categoryId, brandId, supplierId, quantity, price, desc);
         ProductDAO.changeInforProduct(product);
         System.out.println(category);
-        req.getRequestDispatcher("/adminEditProduct.jsp").forward(req, resp);
+        req.getRequestDispatcher("./adminEditProduct.jsp").forward(req, resp);
     }
 }

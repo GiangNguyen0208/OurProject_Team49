@@ -50,7 +50,7 @@
 </head>
 <body>
 <c:import url="header.jsp"/>
-<div class="container" >
+<div class="container">
     <c:import url="adminSideBar.jsp"/>
     <div class="main-content">
         <div id="manage-product" class="content-wrapper">
@@ -77,10 +77,6 @@
                 <div class="btn-grp">
                     <p>Sản phẩm</p>
                     <div class="btn-item">
-                        <button class="delete">
-                            <i class="fa-solid fa-minus"></i>
-                            Xóa Sản Phẩm
-                        </button>
                         <button class="add open-dialog-btn" onclick="openDialog()">
                             <i class="fa-solid fa-plus"></i>
                             Thêm sản phẩm
@@ -90,6 +86,7 @@
                 <table>
                     <thead>
                     <tr>
+                        <th class="s-cl">Xóa</th>
                         <th class="s-cl">Chỉnh sửa</th>
                         <th class="m-cl">Product ID</th>
                         <th class="l-cl">Tên</th>
@@ -106,6 +103,12 @@
 
                         <tr>
                             <td class="s-cl">
+                                <a class="link" href="removeProduct?productId=${o.getId()}">
+                                    <i class="fa-regular fa-square-minus"></i>
+                                </a>
+                            </td>
+
+                            <td class="s-cl">
                                 <a class="link" target="_blank" href="adminViewProduct?productId=${o.getId()}">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
@@ -114,7 +117,7 @@
                             <td class="l-cl">${o.getName()}</td>
                             <td class="m-cl">
                                 <fmt:formatNumber var="formattedPrice" value="${roundedPrice}" pattern="###,###,###"/>
-                                ${formattedPrice}&nbsp;₫
+                                    ${formattedPrice}&nbsp;₫
                             </td>
                             <td class="m-cl">${o.getCategoryName(o.getCategoryId())}</td>
                             <td class="m-cl">${o.getBrandName(o.getBrandId())}</td>
@@ -135,7 +138,7 @@
             <select id="discount" name="discount">
                 <c:forEach var="discount" items="${sessionScope.discountList}">
                     <c:choose>
-                        <c:when test="${discount.getId() == 99999}">
+                        <c:when test="${discount.getId() == 0}">
                             <option value="0">Không giảm giá</option>
                         </c:when>
                         <c:otherwise>
@@ -175,23 +178,10 @@
 
             <label for="price">Giá Sản Phẩm:</label>
             <input type="number" id="price" name="price">
-
-            <label for="description">Mô Tả Sản Phẩm:</label>
-            <!-- Sử dụng CKEditor cho ô mô tả sản phẩm -->
+            <label for="description">Mô Tả Sản Phẩm: </label>
             <textarea id="description" name="description"></textarea>
-
             <div class="button-container">
                 <button type="submit">Thêm Sản Phẩm</button>
-            </div>
-        </form>
-        <form class="dialog-container">
-            <!-- Các trường khác -->
-            <label for="image">Ảnh Sản Phẩm:</label>
-            <textarea id="image" name="image"></textarea>
-
-            <div class="button-container">
-                <button type="submit" >Thêm Sản Phẩm</button>
-                <button class="close-dialog-btn" onclick="closeDialog()">Đóng</button>
             </div>
         </form>
     </div>
@@ -201,33 +191,19 @@
 
 <script src="https://cdn.ckeditor.com/4.16.2/full-all/adapters/ckfinder/ckfinder.js"></script>
 
-    <script>
-        function decrementQuantity() {
-            let quantityInput = document.getElementById('quantity');
-            if (quantityInput.value > 1) {
-                quantityInput.value = parseInt(quantityInput.value) - 1;
-            }
+<script>
+    function decrementQuantity() {
+        let quantityInput = document.getElementById('quantity');
+        if (quantityInput.value > 1) {
+            quantityInput.value = parseInt(quantityInput.value) - 1;
         }
+    }
 
-        function incrementQuantity() {
-            let quantityInput = document.getElementById('quantity');
-            quantityInput.value = parseInt(quantityInput.value) + 1;
-        }
-
-        CKEDITOR.replace('description', {
-            filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
-            filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
-            filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-            filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
-        });
-
-        CKEDITOR.replace('image', {
-            filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
-            filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
-            filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-            filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
-        });
-    </script>
+    function incrementQuantity() {
+        let quantityInput = document.getElementById('quantity');
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+    }
+</script>
 <script>
     // Hàm mở dialog
     function openDialog() {

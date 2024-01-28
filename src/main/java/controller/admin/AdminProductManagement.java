@@ -35,6 +35,6 @@ public class AdminProductManagement extends HttpServlet {
         session.setAttribute("categoryList", categoryList);
         session.setAttribute("brandList", brandList);
         session.setAttribute("supplierList", supplierList);
-        req.getRequestDispatcher("/adminProduct.jsp").forward(req, resp);
+        req.getRequestDispatcher("./adminProduct.jsp").forward(req, resp);
     }
 }

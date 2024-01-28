@@ -321,11 +321,11 @@ button {
 
 .dialog-container {
     position: absolute;
-    top: 120px;
+    top: 50px;
     left: 50%;
     transform: translate(-50%);
     display: none;
-    max-width: 800px;
+    min-width: 600px;
     margin: 120px auto;
     background-color: #fff;
     padding: 20px;

@@ -77,10 +77,6 @@
                 <div class="btn-grp">
                     <p>Nhà Cung Cấp</p>
                     <div class="btn-item">
-                        <button class="open-dialog-btn">
-                            <i class="fa-solid fa-minus"></i>
-                            Xóa nhà cung cấp
-                        </button>
                         <button class="add open-dialog-btn">
                             <i class="fa-solid fa-plus"></i>
                             Thêm nhà cung cấp
@@ -104,6 +100,7 @@
                 <table>
                     <thead>
                     <tr>
+                        <th class="s-cl">Xóa</th>
                         <th class="s-cl">Chỉnh sửa</th>
                         <th class="m-cl">Mã nhà cung cấp</th>
                         <th class="l-cl">Tên nhà cung cấp</th>
@@ -114,6 +111,11 @@
                     <tbody>
                     <c:forEach items="${sessionScope.supplierList}" var="o">
                         <tr>
+                            <td class="s-cl">
+                                <a class="link" target="_blank" href="removeSupplier?supplierId=${o.getId()}">
+                                    <i class="fa-regular fa-square-minus"></i>
+                                </a>
+                            </td>
                             <td class="s-cl">
                                 <a class="link" target="_blank" href="adminViewProduct?productId=${o.getId()}">
                                     <i class="fa-solid fa-pen-to-square"></i>

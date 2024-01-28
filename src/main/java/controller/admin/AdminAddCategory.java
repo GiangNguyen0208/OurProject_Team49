@@ -32,30 +32,12 @@ public class AdminAddCategory extends HttpServlet {
         String newCategory = req.getParameter("new-category");
         boolean addSuccess = CategoryDAO.addNewCategory(newCategory);
 
-        int productId = Integer.parseInt(req.getParameter("productId"));
-
-        Product product = ProductDAO.adminViewProduct(productId);
-
-        List<Category> categoryList = CategoryDAO.getAllCategory();
-
-        List<Brand> brandList = BrandDAO.getAllBrands();
-
-        List<Supplier> supplierList = SupplierDAO.getListSupplier();
-
-        HttpSession session = req.getSession();
-        session.setAttribute("product", product);
-        session.setAttribute("categories", categoryList);
-        session.setAttribute("brands", brandList);
-        session.setAttribute("suppliers", supplierList);
-        session.setAttribute("productId", productId);
-
         if(addSuccess) {
-            req.getRequestDispatcher("/adminEditProduct.jsp").forward(req, resp);
+            req.getRequestDispatcher("./adminCategoryManagement").forward(req, resp);
         }else {
             req.setAttribute("error", error);
-            req.getRequestDispatcher("/adminEditProduct.jsp").forward(req, resp);
+            req.getRequestDispatcher("./adminCategoryManagement").forward(req, resp);
         }
     }
-
 
 }

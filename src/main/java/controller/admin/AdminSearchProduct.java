@@ -35,6 +35,6 @@ public class AdminSearchProduct extends HttpServlet {
 
         session.setAttribute("productList", productList);
         req.setAttribute("searchValue", searchValue);
-        req.getRequestDispatcher("/adminProduct.jsp").forward(req, resp);
+        req.getRequestDispatcher("./adminProduct.jsp").forward(req, resp);
     }
 }

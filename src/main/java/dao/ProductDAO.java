@@ -228,6 +228,14 @@ public class ProductDAO {
         return productList;
     }
 
+    public static void removeProduct(int id) {
+        JDBIConnector.me().withHandle(handle ->
+                handle.createUpdate("delete from product_details where id = :id")
+                        .bind("id", id)
+                        .execute()
+        );
+    }
+
     public static void addProduct(Product product) {
         JDBIConnector.me().withHandle(handle ->
                 handle.createUpdate("insert into product_details(name, discountId, categoryId, brandId, supplierId, quantity, totalPrice, description) " +

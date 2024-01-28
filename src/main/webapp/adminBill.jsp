@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page import="java.lang.Math" %>
 
 <html lang="en">
 <head>
@@ -80,6 +82,8 @@
                     </thead>
                     <tbody>
                     <c:forEach items="${requestScope.billList}" var="o">
+                        <c:set var="price" value="${o.getTotalPrice()}"/>
+                        <c:set var="roundedPrice" value="${Math.round(price)}"/>
 
                         <tr>
                             <td>
@@ -91,7 +95,10 @@
                             <td>${o.getUserId()}</td>
                             <td>${o.getPaymentMethod()}</td>
                             <td>${o.getCreateDate()}</td>
-                            <td>${o.getTotalPrice()}</td>
+                            <td>
+                                <fmt:formatNumber var="formattedPrice" value="${roundedPrice}" pattern="###,###,###"/>
+                                    ${formattedPrice}&nbsp;₫
+                            </td>
                             <td>${o.getStatus() == 'IN_PROGRESS' ? 'Chờ xử lý' : (o.getStatus() == 'DONE' ? 'Đã nhận đơn' : 'Đang giao hàng')}</td>
                         </tr>
 

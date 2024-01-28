@@ -27,5 +27,17 @@ public class SupplierDAO {
                 );
     }
 
+    public static boolean removeSupplier(int id) {
+        try {
+            return JDBIConnector.me().withHandle(handle ->
+                    handle.createUpdate("delete from suppliers where id = :id")
+                            .bind("id", id)
+                            .execute() > 0
+            );
+        }catch (Exception e) {
+            return false;
+        }
+    }
+
 
 }

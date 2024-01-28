@@ -50,7 +50,19 @@ public class CategoryDAO {
                             .bind("name", newCategory)
                             .execute() > 0);
         } catch (Exception e) {
-            System.out.println("Lỗi");
+            System.out.println("Không thể thêm");
+            return false;
+        }
+    }
+
+    public static boolean removeCategory(int id) {
+        try {
+            return JDBIConnector.me().withHandle(handle ->
+                    handle.createUpdate("delete from categories where id = :id")
+                            .bind("id", id)
+                            .execute() > 0
+            );
+        }catch (Exception e) {
             return false;
         }
     }

@@ -77,10 +77,6 @@
                 <div class="btn-grp">
                     <p>Mã Giảm Giá</p>
                     <div class="btn-item">
-                        <button class="del open-dialog-btn" onclick="openDialogDiscount()">
-                            <i class="fa-solid fa-minus"></i>
-                            Xóa mã giảm giá
-                        </button>
                         <button class="add open-dialog-btn" onclick="openDialogDiscount()">
                             <i class="fa-solid fa-plus"></i>
                             Thêm mã giảm giá
@@ -92,7 +88,7 @@
                         <div class="dialog-title">Thêm mã giảm giá</div>
                         <span class="close-btn">X</span>
                         <label>Phần trăm giảm </label>
-                        <input type="text" name="percentage-discount" required>
+                        <input type="number" name="percentage-discount" placeholder="0-99" required>
                         <br>
                         <label>Ngày bắt đầu</label>
                         <input type="datetime-local" name="start-date" required>
@@ -106,6 +102,7 @@
                 <table>
                     <thead>
                     <tr>
+                        <th class="s-cl">Xóa</th>
                         <th class="s-cl">Chỉnh sửa</th>
                         <th class="m-cl">Mã Giảm Giá</th>
                         <th class="l-cl">Giảm giá (%)</th>
@@ -119,6 +116,11 @@
                         <c:set var="roundedPrice" value="${Math.round(amount)}"/>
 
                         <tr>
+                            <td class="s-cl">
+                                <a class="link" href="removeDiscount?discountId=${o.getId()}">
+                                    <i class="fa-regular fa-square-minus"></i>
+                                </a>
+                            </td>
                             <td class="s-cl">
                                 <a class="link" target="_blank" href="adminViewProduct?productId=${o.getId()}">
                                     <i class="fa-solid fa-pen-to-square"></i>

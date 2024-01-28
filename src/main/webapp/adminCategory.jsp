@@ -72,14 +72,16 @@
                     ></i>
                 </form>
             </div>
+            <c:set var="success" value="${requestScope.success}"/>
+            <c:set var="fail" value="${requestScope.fail}"/>
+            <c:choose>
+                <c:when test="${not empty success}">${success}</c:when>
+                <c:when test="${ not empty fail}">${fail}</c:when>
+            </c:choose>
             <div class="content">
                 <div class="btn-grp">
                     <p>Danh Mục</p>
                     <div class="btn-item">
-                        <button class="del-category add open-dialog-btn">
-                            <i class="fa-solid fa-minus"></i>
-                            Xóa danh mục
-                        </button>
                         <button class="add-category add open-dialog-btn">
                             <i class="fa-solid fa-plus"></i>
                             Thêm danh mục
@@ -100,6 +102,7 @@
                 <table>
                     <thead>
                     <tr>
+                        <th class="s-cl">Xóa</th>
                         <th class="s-cl">Chỉnh sửa</th>
                         <th class="m-cl">Danh mục ID</th>
                         <th class="l-cl">Tên</th>
@@ -108,6 +111,11 @@
                     <tbody>
                     <c:forEach items="${sessionScope.categoryList}" var="o">
                         <tr>
+                            <td class="s-cl">
+                                <a class="link" href="removeCategory?categoryId=${o.getId()}">
+                                    <i class="fa-regular fa-square-minus"></i>
+                                </a>
+                            </td>
                             <td class="s-cl">
                                 <a class="link" target="_blank" href="#1">
                                     <i class="fa-solid fa-pen-to-square"></i>

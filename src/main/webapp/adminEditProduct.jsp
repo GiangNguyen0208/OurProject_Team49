@@ -85,16 +85,6 @@
                     </c:forEach>
                 </select>
             </div>
-            <div class="product product-discount-start">
-                <label for="product-discount-start" class="product-title">Ngày bắt đầu: </label>
-                <input id="product-discount-start" type="datetime-local" name="product-discount-start"
-                       class="product-sub" value="${product.getDiscountStartDay(product.getDiscountId())}"></input>
-            </div>
-            <div class="product product-discount-end">
-                <label for="product-discount-end" class="product-title">Ngày kết thúc: </label>
-                <input id="product-discount-end" type="datetime-local" name="product-discount-end" class="product-sub"
-                       value="${product.getDiscountEndDay(product.getDiscountId())}"></input>
-            </div>
             <div class="product product-category">
                 <label class="product-title">Danh mục: </label>
                 <select id="selectOption" class="custom-select" name="product-category">

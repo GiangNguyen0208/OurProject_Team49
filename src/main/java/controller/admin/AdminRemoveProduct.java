@@ -1,7 +1,6 @@
 package controller.admin;
 
-import bean.Supplier;
-import dao.SupplierDAO;
+import dao.ProductDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,11 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(value = "/addSupplier")
-public class AdminAddSupplier extends HttpServlet {
-    String nameSupplier, email;
-    int phone;
 
+@WebServlet(value = "/removeProduct")
+public class AdminRemoveProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
@@ -22,14 +19,8 @@ public class AdminAddSupplier extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = 0;
-        nameSupplier = req.getParameter("new-supplier-name");
-        email  =req.getParameter("new-supplier-email");
-        phone = Integer.parseInt(req.getParameter("new-supplier-phone"));
-
-
-        Supplier supplier = new Supplier(id, nameSupplier, email, phone);
-        SupplierDAO.addNewSupplier(supplier);
-        resp.sendRedirect("./adminSupplierManagement");
+        int productId = Integer.parseInt(req.getParameter("productId"));
+        ProductDAO.removeProduct(productId);
+        resp.sendRedirect("./adminProductIndex");
     }
 }

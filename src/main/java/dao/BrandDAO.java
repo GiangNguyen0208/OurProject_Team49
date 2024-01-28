@@ -61,6 +61,18 @@ public class BrandDAO {
         );
     }
 
+    public static boolean removeBrand(int id) {
+        try {
+            return JDBIConnector.me().withHandle(handle ->
+                    handle.createUpdate("delete from brands where id = :id")
+                            .bind("id", id)
+                            .execute() > 0
+            );
+        }catch (Exception e) {
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         Brand brand = getNameBrandById(1);
         System.out.println(getBiggestBrandId());

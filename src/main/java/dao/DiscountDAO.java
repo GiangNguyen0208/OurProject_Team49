@@ -68,6 +68,33 @@ public class DiscountDAO {
         );
     }
 
+    public static boolean addDiscount(double amount, String startDate, String endDate) {
+        try {
+            return JDBIConnector.me().withHandle(handle ->
+                    handle.createUpdate("insert into discount(amount, startDate, endDate) " +
+                                    "values (:amount, :startDate, :endDate)")
+                            .bind("amount", amount)
+                            .bind("startDate", startDate)
+                            .bind("endDate", endDate)
+                            .execute() > 0
+            );
+        }catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean removeDiscount(int id) {
+        try {
+            return JDBIConnector.me().withHandle(handle ->
+                    handle.createUpdate("delete from discount where id = :id")
+                            .bind("id", id)
+                            .execute() > 0
+            );
+        }catch (Exception e) {
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
 //        double amount = DiscountDAO.getDiscount(1);
 //        System.out.println(amount);

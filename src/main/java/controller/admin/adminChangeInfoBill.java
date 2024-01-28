@@ -29,8 +29,6 @@ public class adminChangeInfoBill extends HttpServlet {
         int billId = Integer.parseInt(req.getParameter("billId"));
 
 
-
-
         BillDAO.changeInfoBill(billId, status);
 
         Bill updatedBill = BillDAO.getInstance().getBillById(billId);
@@ -38,6 +36,6 @@ public class adminChangeInfoBill extends HttpServlet {
         session.setAttribute("bill", updatedBill);
 
 
-        req.getRequestDispatcher("/adminEditBill.jsp").forward(req, resp);
+        req.getRequestDispatcher("./adminEditBill.jsp").forward(req, resp);
     }
 }

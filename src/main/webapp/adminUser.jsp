@@ -77,7 +77,7 @@
                     <tr>
                         <th class="s-cl">Chỉnh sửa</th>
                         <th class="s-cl">ID</th>
-                        <th class="l-cl">Tên</th>
+                        <th class="m-cl">Tên</th>
                         <th class="l-cl">Tài khoản</th>
                         <th class="l-cl">Email</th>
                         <th class="m-cl">Số điện thoại</th>

@@ -22,13 +22,18 @@ select {
 }
 
 .btn-admin {
-    margin-left: 12px;
+    margin: 24px 12px;
     min-width: 120px;
 }
 
 button {
     color: #fff;
 }
+
+.btn-grp {
+    display: flex;
+}
+
 .title {
     background: var(--main-color);
     color: #fff;
