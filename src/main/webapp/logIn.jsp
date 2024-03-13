@@ -147,7 +147,6 @@
 
                     <div class="footer">
                         <span>Chưa đăng ký tài khoản ?</span>
-
                         <button type="button" class="link" id="sign-up-link">
                             <a class="link" href="signUp.jsp">Đăng ký</a>
                         </button>

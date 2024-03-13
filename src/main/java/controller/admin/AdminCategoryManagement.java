@@ -1,9 +1,7 @@
 package controller.admin;
 
-import bean.Product;
-import bean.User;
-import dao.ProductDAO;
-import dao.UserDAO;
+import bean.Category;
+import dao.CategoryDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,11 +12,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(value = "/adminSearchProduct")
-public class AdminSearchProduct extends HttpServlet {
-
-    String searchValue;
-
+@WebServlet(value = "/adminCategoryManagement")
+public class AdminCategoryManagement extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
@@ -26,15 +21,9 @@ public class AdminSearchProduct extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        resp.setContentType("text/html;charset=UTF-8");
-
-        searchValue = req.getParameter("search-product");
-        List<Product> productList = ProductDAO.adminSearchProduct(searchValue);
         HttpSession session = req.getSession();
-
-        session.setAttribute("productList", productList);
-        req.setAttribute("searchValue", searchValue);
-        req.getRequestDispatcher("./adminProduct.jsp").forward(req, resp);
+        List<Category> categoryList = CategoryDAO.getAllCategory();
+        session.setAttribute("categoryList", categoryList);
+        req.getRequestDispatcher("./adminCategory.jsp").forward(req, resp);
     }
 }

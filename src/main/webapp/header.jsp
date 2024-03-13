@@ -51,6 +51,10 @@
                     <i class="fa fa-user"></i>
                     <span>Đăng Nhập</span>
                 </a>
+                <a href="signUp.jsp" class="sign__in">
+                    <i class="fa fa-user"></i>
+                    <span>Đăng Ký</span>
+                </a>
             </c:when>
             <c:otherwise>
                 <div class="avatar-user" >
