@@ -97,13 +97,9 @@ public class BillDAO {
         return bill;
     }
 
-    public static void main(String[] args) {
-        Bill bill = BillDAO.getInstance().getBillById(1);
-        System.out.println(bill);
-    }
 
     public static void changeInfoBill(int id, String status) {
-        JDBIConnector.me().useHandle(handle ->
+        JDBIConnector.me().withHandle(handle ->
                 handle.createUpdate("UPDATE bills set " +
                                 "status = :status" +
                                 " where id = :id")
@@ -111,5 +107,12 @@ public class BillDAO {
                         .bind("status", status)
                         .execute()
         );
+        System.out.println("DOne");
     }
+    public static void main(String[] args) {
+//        Bill bill = BillDAO.getInstance().getBillById(1);
+//        System.out.println(bill);
+        changeInfoBill(1, "SHIPPING");
+    }
+
 }

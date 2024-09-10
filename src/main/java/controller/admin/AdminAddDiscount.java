@@ -1,18 +1,16 @@
 package controller.admin;
 
-import dao.ImageDAO;
+import dao.DiscountDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(value = "/adminRemoveImg")
-public class AdminRemoveProductImg extends HttpServlet {
-    int imgId, productId;
+@WebServlet(value = "/addDiscount")
+public class AdminAddDiscount extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
@@ -20,11 +18,12 @@ public class AdminRemoveProductImg extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        productId = Integer.parseInt(req.getParameter("productId"));
+        double amount = Double.parseDouble(req.getParameter("percentage-discount"));
+        String startDate = req.getParameter("start-date");
+        String endDate = req.getParameter("end-date");
 
-        imgId = Integer.parseInt(req.getParameter("imgId"));
-        ImageDAO.removeImg(imgId);
+        DiscountDAO.addDiscount(amount/100, startDate, endDate);
 
-        resp.sendRedirect("./adminViewProduct?productId=" + productId);
+        req.getRequestDispatcher("./adminDiscountManagement").forward(req, resp);
     }
 }

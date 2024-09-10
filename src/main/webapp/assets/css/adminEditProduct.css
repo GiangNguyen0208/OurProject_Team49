@@ -22,13 +22,18 @@ select {
 }
 
 .btn-admin {
-    margin-left: 12px;
+    margin: 24px 12px;
     min-width: 120px;
 }
 
 button {
     color: #fff;
 }
+
+.btn-grp {
+    display: flex;
+}
+
 .title {
     background: var(--main-color);
     color: #fff;
@@ -76,13 +81,11 @@ button {
     /* border-bottom: 1px solid #ccc; */
 }
 
-.product,
-.user {
+.product {
     display: inline-flex;
 }
 
-.product .product-sub,
-.user .user-sub-input {
+.product .product-sub {
     border: none;
     border-bottom: 1px solid #000;
     width: 100%;
@@ -110,6 +113,7 @@ button {
 }
 
 .right {
+    position: relative;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -146,6 +150,7 @@ button {
 }
 
 .list-img {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
@@ -174,6 +179,12 @@ button {
     cursor: pointer;
 }
 
+.back-cta {
+    font-weight: 600;
+    display: inline-block;
+    color: var(--sub-main-color);
+    padding: 12px;
+}
 
 .dialog,
 .dialog-category,
@@ -225,4 +236,49 @@ button {
 
 .mgr-20 {
     margin-right: 20px!important;
+}
+
+#imageForm {
+    flex-direction: column;
+    gap: 12px;
+}
+
+#imageForm input {
+    padding: 12px;
+}
+
+.list-img .confirm-form {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    min-width: 320px;
+    min-height: 120px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 24px;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.list-img .confirm-form button {
+    min-width: 120px;
+    margin: 12px;
+}
+
+.form-title {
+    font-size: 2.4rem;
+}
+
+.important {
+    color: red;
+}
+
+#addImageForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

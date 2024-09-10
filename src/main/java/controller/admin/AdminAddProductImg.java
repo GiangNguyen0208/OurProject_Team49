@@ -1,7 +1,6 @@
 package controller.admin;
 
-import bean.*;
-import dao.*;
+import dao.ImageDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,12 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
 
-@WebServlet(value = "/changeInfoBill")
-public class adminChangeInfoBill extends HttpServlet {
-
+@WebServlet(value = "/addProductImage")
+public class AdminAddProductImg extends HttpServlet {
+    int productId;
+    String linkImg;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,18 +22,16 @@ public class adminChangeInfoBill extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        productId = Integer.parseInt(req.getParameter("productId"));
+        linkImg = req.getParameter("imageUrl");
+        String[] listLink = linkImg.split(" ");
 
-        String status = req.getParameter("bill-status");
-        int billId = Integer.parseInt(req.getParameter("billId"));
-
-
-        BillDAO.changeInfoBill(billId, status);
-
-        Bill updatedBill = BillDAO.getInstance().getBillById(billId);
-        HttpSession session = req.getSession();
-        session.setAttribute("bill", updatedBill);
-
-
-        req.getRequestDispatcher("./adminEditBill.jsp").forward(req, resp);
+//        HttpSession session = req.getSession();
+//        session.setAttribute("productId", productId);
+        for (String link : listLink
+        ) {
+            ImageDAO.addImg(link, productId);
+        }
+        resp.sendRedirect("./adminViewProduct?productId=" + productId);
     }
 }

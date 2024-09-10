@@ -40,6 +40,6 @@ public class adminChangeInfoUser extends HttpServlet {
         HttpSession session = req.getSession();
         session.setAttribute("user", updatedUser);
         
-        req.getRequestDispatcher("/adminEditUser.jsp").forward(req, resp);
+        req.getRequestDispatcher("./adminEditUser.jsp").forward(req, resp);
     }
 }
